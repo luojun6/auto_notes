@@ -120,13 +120,23 @@ In case there's no error in the system, the coupling resistance both from the po
 
 Still on the left side we see the normal state with no isolation error. On the right side we have simulated a symmetrical fault in our high voltage system. In that case, both coupling resistances between the positive battery side and chassis ground as well as the negative battery side and chassis ground dropped to 50k ohms.
 
-Now what does that mean to the measured isolation voltages,
+Now what does that mean to the measured isolation voltages, you still measure 1/2 of the isolation voltage from the positive and the negative pole of the high voltage battery to ground.
 
-## Active Isolation Monitoring
+So despite the presence of an isolation fault, there is no voltage shift to be detected when a symmetrical fault occurs.
 
-## High Voltage Sensing Points
+### Pros and Cons of the 3 Various Methods
+
+![isolation_monitoring_3](./images/isolation_monitoring_3.png)
+
+## Voltage Sensing Points For Active Isolation Monitoring In HV Batery Systems
+
+### Preference Point in HV Minus Path
+
+![active_isolation_monitoring_0](./images/active_isolation_monitoring_0.png)
 
 ## Technical Objectives
+
+![technical_objectives](./images/technical_objectives.png)
 
 ## You Mentioned Active Isolation Measurement has Longer Response
 

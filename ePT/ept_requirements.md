@@ -1,4 +1,4 @@
-# Electrical Powertrain Requirements
+# Electric Powertrain Requirements
 
 ## Core Requirements
 
