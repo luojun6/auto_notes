@@ -206,3 +206,38 @@ We actually have two different ways of utilizing the engine or the motor, or app
 
 - First just the standard way.
 - The second way is using this profile, which is a much more effective way of approaching propulsion.
+
+## 3 Power Plant Sizing
+
+### 3.1 The Requirements of The Power Plant
+
+![torque_speed_curve](./images/torque_speed_curve.png)
+
+Assuming that we're operating with this type of method, we want to be able to understand:
+
+- how much power do we need?
+- how do we determine that?
+- what are these quantities based on?
+
+### 3.2 Attractive Force
+
+**$F_{T}$ =**
+
+- $P_{Tmax}/v_{B}$, $v \leq v_{B}$ <-> $F_{Tmax}$
+- $P_{Tmax}/v$, $v_{B} \leq v_{max}$
+
+### 3.3 The Motion of The Vehicle
+
+$\vartheta M{du\over{dt}} = F_{T} - F_{R}$
+
+$F_{R} = \beta_{1} + \beta_{2}v^{2}$
+
+Please notice that we can't assume that $F_{T}$ is constant. We have to consider it for what it actually is.
+
+$\vartheta M\int 0^t {dv \over F*{T}-\beta*{1}-\beta*{2}v^{2}} = \int 0^t_{f}$
+
+In most cases we say that steady state is a hundred kilometers.
+
+$\vartheta M + qm\int\$
+
+$dv \over {{{Ptmax}}}$
