@@ -224,7 +224,11 @@ Assuming that we're operating with this type of method, we want to be able to un
 **$F_{T}$ =**
 
 - $P_{Tmax}/v_{B}$, $v \leq v_{B}$ <-> $F_{Tmax}$
-- $P_{Tmax}/v$, $v_{B} \leq v_{max}$
+- $P_{Tmax}/v$, $v_{B} \leq v \leq v_{max}$
+
+When we drive vehicle or we operate vehicles, we become an extension of the control. There is an internal control that controls the speed, the mount of power, the force, we dont sit there when we're driving a vehicle and say exert this much force.
+
+For this duration of time we sit there and we kind of press the gas and we have this low resolution feedback where it just feels like we're fast enough and there's usually speedmeters all that kind of stuff that tell you when you're fast enough or not. But for a lot of people they are also able to understand when they're going too fast.
 
 ### 3.3 The Motion of The Vehicle
 
@@ -232,12 +236,56 @@ $\vartheta M{du\over{dt}} = F_{T} - F_{R}$
 
 $F_{R} = \beta_{1} + \beta_{2}v^{2}$
 
-Please notice that we can't assume that $F_{T}$ is constant. We have to consider it for what it actually is.
+Notice that the $\beta_{1}$ and $\beta_{2}$ are the $K_{1}$ and $K_{2}$ in [2.4 Steady State Speed](#24-steady-state-speed).
 
-$\vartheta M\int 0^t {dv \over F*{T}-\beta*{1}-\beta*{2}v^{2}} = \int 0^t_{f}$
+Separate these two to get the acttractive force. Because the acttractive is not a constant throughout the entire region as above.
 
-In most cases we say that steady state is a hundred kilometers.
+What we are interested in is how long it takes the vehicle to start from 0 to start from steady or stand still, and to reach some steady state speed $v_{f}$.
 
-$\vartheta M + qm\int\$
+$\vartheta M \int_0^{v_{f}} {dv \over {F_{T}-\beta_{1}-\beta_{2}v^{2}}} = \int_0^{t_{f}}dt$ ---> (0 to $v_{f}$)m/s in $t_{f}$ seconds
 
-$dv \over {{{Ptmax}}}$
+$t_{f}$ and $v{f}$ are again these steady state type of parameters, so in most cases we say that steady state is 100km/h. We go with that because that's usually a good measure of a sufficient large speed starting from 0.
+
+But now $F{T}$ has two different conditions, so in one case it's a constant in the other case it depends on speed. So we can go take this integral one step further, and we can substitude that into there:
+
+$\vartheta M \int_0^{v_{B}} {dv \over {{P_{Tmax} \over v_{B}}-\beta_{1}-\beta_{2}v^{2}}} + \int_0^{v_{f}}{dt \over {{P_{Tmax} \over v} - \beta_{1}-\beta_{2}v^{2}}} = t_{f}$
+
+### 3.4 The Equation of $P_{Tmax}$
+
+This is a challenging integral to solve, $\vartheta M \int_0^{v_{B}} {dv \over {{P_{Tmax} \over v_{B}}-\beta_{1}-\beta_{2}v^{2}}}$ is still quite lengthy but you can still solve it because this term is constant and this is $v^{2}$ so you can have trigonometric subsitution there.
+
+But $\int_0^{v*{f}}{dt \over {{P_{Tmax} \over v} - \beta_{1}-\beta_{2}v^{2}}}$ has no real convenient anlytic expression for this, so what you can do some numerical analysis, or you can do some series representation and solve it that way.
+
+But rather than do that what we're going to do is going to make some simplification.
+
+- $P_{Tmax} \over v_{B}$ ---> CF region (constant)
+- $P_{Tmax} \over v$ ---> CP region, which is also evident based on the integral limits
+- $\beta_{1}+\beta_{2}v^{2}$ ---> road load
+
+So we can do is to consider an ideal case, let's there is no road load. What are the requirements our vehicle then? The reason we want to do that because these integrals are difficult to solve. They don't give much insight into what's going on.
+
+Remember that the $F_{R}$ depends on $v^{2}$ as well as $\beta_{1}$, $\beta_{1}$ is usually small compared to everything else, and $\beta_{2}v^{2}$ because $v^{2}$ is going to be zero or close to zero, this term is going to be very small. It's OK if we neglect it.
+
+$t_{f} \vartheta M \int_0^{v_{B}} {v_{B}dv \over P_{Tmax}} + \int_{v_{b}}^{v_{f}} {vdv \over P_{Tmax}}$
+
+$t_{f} = {\vartheta M \over {2P_{Tmax}}}(v_{f}^{2} + v_{B}^{2}) \rightarrow P_{Tmax} = {\vartheta M \over 2t_{f}}(v_{f}^{2} + v_{B}^{2})$
+
+It tells us that the maximum tract of power is dependent directly on the steady state speed, you're trying to achieve as well as the base speed of your motor or engine, it tells you it's also inversely proportional to the amount of time you take.
+
+So the amount of power needed will decrease as the amount of time you have to readch a steady state increases, remember that we had some requirments from **US PN GV** or something like that, and there were certain acceleration times.
+
+- **$P_{Tmax1}$:** Let's say we want to achieve 100km/h which is a reasonable $v_{f}$, we want to do it in 10s -> $t_{f}$, that will give you a certian $P_{Tmax}$.
+
+- **$P_{Tmax2}$:** Let's say we want to achieve 100km/h in 20s -> $t_{f}$.
+
+It's very clear that **$P_{Tmax2}$** is smaller than **$P_{Tmax1}$**. So this is the insight that this equation for $P_{Tmax}$ and it allows us to determone the power plant requirements based on the desired acceleration time.
+
+### 3.5 Considering the Road Load
+
+**$P_{Tmax} = {\vartheta M \over 2t_{f}}(v_{f}^{2} + v_{B}^{2}) + {Mg(C_{0} + C_{1}v_{f}^{2})v_{f}} + {{1 \over 2}pA_{f}C_{d}v_{f}^{3}}$**
+
+- ${Mg(C_{0} + C_{1}v_{f}^{2})v_{f}} + {{1 \over 2}pA_{f}C_{d}v_{f}^{3}}$: Power loss @ $v = v_{f}$
+
+If you want to rate this motor for a steady state speed $v_{f}$, let's call it that's what we've that's the whole purpose of $v_{f}$ is that it's a steady state speed, then we can say we mean it's not we can say it's obvious that the paremeters of the road load or the resistive forces the resistive forces that are speed dependent terms, which in the case of power losses it's all speed dependent, you can say those losses will be the largest at the highest speed.
+
+These losses will only be smaller than ${Mg(C_{0} + C_{1}v_{f}^{2})v_{f}} + {{1 \over 2}pA_{f}C_{d}v_{f}^{3}}$ for lower speed, meaning if I can design my motor/engine for providing this maximum attractive power, then I should be able to deal with anything less than this too. Because this is the worst case scenario.
