@@ -8,12 +8,12 @@
 
 - Tractive forces
 
-  - F$_{T}$: Tractive force
+  - $F_{T}$: Tractive force
 
 - Reistive forces (road load)
-  - F$_{d}$: Aerodynmaic drag
-  - F$_{r}$: Rolling resistance
-  - F$_{g}$(F$\alpha$): grade resistance
+  - $F_{d}$: Aerodynmaic drag
+  - $F_{r}$: Rolling resistance
+  - $F_{g}$($F\alpha$): grade resistance
 
 ### 1.2 Aerodynmaic Drag
 
@@ -32,7 +32,8 @@ The larger the cross-sectional area of vehicle that faces the wind because that'
 
 - Approximate drag by external componnet. Mathematically:
   <br>
-  F$_{d}$ = (1/2)pA$_{f}$C$_{d}$(v-v$_{w}$)$^{2}$sgn(v-v$_{w}$) [N]
+
+  $F_{d} = {1 \over 2}pA_{f}C_{d}{(v-v_{w})_{2}}sgn(v-v_{w})  [N]$
 
   - p: air density, 1.225(kg/m$^{3}$)
   - A$_{f}$: cross-section area of the vehicle [m$^{2}$]
@@ -207,9 +208,9 @@ We actually have two different ways of utilizing the engine or the motor, or app
 - First just the standard way.
 - The second way is using this profile, which is a much more effective way of approaching propulsion.
 
-## 3 Power Plant Sizing
+## 4 Power Plant Sizing
 
-### 3.1 The Requirements of The Power Plant
+### 4.1 The Requirements of The Power Plant
 
 ![torque_speed_curve](./images/torque_speed_curve.png)
 
@@ -219,7 +220,7 @@ Assuming that we're operating with this type of method, we want to be able to un
 - how do we determine that?
 - what are these quantities based on?
 
-### 3.2 Attractive Force
+### 4.2 Attractive Force
 
 **$F_{T}$ =**
 
@@ -230,7 +231,7 @@ When we drive vehicle or we operate vehicles, we become an extension of the cont
 
 For this duration of time we sit there and we kind of press the gas and we have this low resolution feedback where it just feels like we're fast enough and there's usually speedmeters all that kind of stuff that tell you when you're fast enough or not. But for a lot of people they are also able to understand when they're going too fast.
 
-### 3.3 The Motion of The Vehicle
+### 4.3 The Motion of The Vehicle
 
 $\vartheta M{du\over{dt}} = F_{T} - F_{R}$
 
@@ -250,7 +251,7 @@ But now $F{T}$ has two different conditions, so in one case it's a constant in t
 
 $\vartheta M \int_0^{v_{B}} {dv \over {{P_{Tmax} \over v_{B}}-\beta_{1}-\beta_{2}v^{2}}} + \int_0^{v_{f}}{dt \over {{P_{Tmax} \over v} - \beta_{1}-\beta_{2}v^{2}}} = t_{f}$
 
-### 3.4 The Equation of $P_{Tmax}$
+### 4.4 The Equation of $P_{Tmax}$
 
 This is a challenging integral to solve, $\vartheta M \int_0^{v_{B}} {dv \over {{P_{Tmax} \over v_{B}}-\beta_{1}-\beta_{2}v^{2}}}$ is still quite lengthy but you can still solve it because this term is constant and this is $v^{2}$ so you can have trigonometric subsitution there.
 
@@ -280,7 +281,7 @@ So the amount of power needed will decrease as the amount of time you have to re
 
 It's very clear that **$P_{Tmax2}$** is smaller than **$P_{Tmax1}$**. So this is the insight that this equation for $P_{Tmax}$ and it allows us to determone the power plant requirements based on the desired acceleration time.
 
-### 3.5 Considering the Road Load
+### 4.5 Considering the Road Load
 
 **$P_{Tmax} = {\vartheta M \over 2t_{f}}(v_{f}^{2} + v_{B}^{2}) + {Mg(C_{0} + C_{1}v_{f}^{2})v_{f}} + {{1 \over 2}pA_{f}C_{d}v_{f}^{3}}$**
 
@@ -289,3 +290,80 @@ It's very clear that **$P_{Tmax2}$** is smaller than **$P_{Tmax1}$**. So this is
 If you want to rate this motor for a steady state speed $v_{f}$, let's call it that's what we've that's the whole purpose of $v_{f}$ is that it's a steady state speed, then we can say we mean it's not we can say it's obvious that the paremeters of the road load or the resistive forces the resistive forces that are speed dependent terms, which in the case of power losses it's all speed dependent, you can say those losses will be the largest at the highest speed.
 
 These losses will only be smaller than ${Mg(C_{0} + C_{1}v_{f}^{2})v_{f}} + {{1 \over 2}pA_{f}C_{d}v_{f}^{3}}$ for lower speed, meaning if I can design my motor/engine for providing this maximum attractive power, then I should be able to deal with anything less than this too. Because this is the worst case scenario.
+
+## 5 Maximum Tolerable Tractive Force
+
+![forces_on_vehicles_0](./images/forces_on_vehicles_0.png)
+
+Essentially there's a limit on the tractive force that you can exert the wheels on the surface and beyond that limit you start to skid.
+
+You'll probably have noticed that if it's been raining and you are at a traffic light, and all of a sudden, you floor your gas pedal you'll probably notice that your vehicle skids a bit, it's definitely skids in the winter if there's snow on the ground.
+
+- **$F_{T} \leq \mu W_{f}$** ---> for front wheel drive
+- **$F_{T} \leq \mu W_{r}$** ---> for rear wheel drive
+
+  - **$W_{f}$** is the weight on the front axle.
+  - **$\mu$** is the coefficient of friction.
+    - ![road_suface_friction](./images/road_suface_friction.png)
+  - The 4-wheel drive has some variation of the two, which needs to consider the combination of two depending on how they're distributed.
+
+- $W_{f} = {Lr \over L}W - {h \over L}(F_{T} - F_{r})$
+- $W_{r} = {Lr \over L}W + {h \over L}(F_{T} - F_{r})$
+
+  - Rolling resistance, $F_{r} = C_{r} \cdot Mg$
+
+- FRONT WHEEL DRIVE: $F_{T} \leq {\mu W(L_{r} + hC_{r}) \over {L + \mu h}}$
+- REAR WHEEL DRIVE: $F_{T} \leq {\mu W(L_{r} - hC_{r}) \over {L + \mu h}}$
+
+**Example**
+
+Let's say you have a vehicle
+
+- front wheel drive
+- on dry asphalt -> $\mu = 0.9$
+- $L_{f} = {1 \over 3}L$, $L_{f} = {2 \over 3}L$, $L = 2.75m$
+- $h = 0.75m$
+- $C_{r} = 0.01$
+- $W = 1500 \cdot 9.81 = 14715N$
+
+$F_{T} \leq {0.9 \cdot 14715({{2 \over 3} \cdot 2.75} + {0.75 \over 0.01}) \over {2.75 + 0.9 \cdot 0.75}}$
+
+**$F_{T} \leq 7117[N]$**
+
+What that means is if you apply any force greater than 7117[N] of force, so basically if you have an initial accelerating force that is less than there won't be any skdding.
+
+## 5 Vehicle Block Model
+
+### 5.1 Control Model
+
+$\vartheta M {dv \over dt} = F_{T} - F_{R}$
+
+![vehicle_control_model_0](./images/vehicle_control_model_0.png)
+
+### Simplified Model
+
+Based on the exact same type of logic.
+
+![vehicle_control_model_1](./images/vehicle_control_model_1.png)
+
+How do I convert v into a torque? So if I want to convert from v (linear velocity) to an angular velocity. I can use the radius of the wheels because that's where the tractive force is acting in this case.
+
+The torque on the shaft (tractive torque) is not the same as the one that the motor outputs, because there's usually a gear box between these things. And what the gearbox does is it either increases or decreases the speed or the torque. Which means there's always an objective of the gearbox in order to adjust these ratios bascially.
+
+So in order to account for that, the difference between the motor torque and the actual torque on the shaft, is simply a factor of **GR(Gear Ratio)**.
+
+![vehicle_control_model_2](./images/vehicle_control_model_2.png)
+
+How does all of this tie together? Because now you have the $\omega_{M}$ and you pass the $\omega_{M}$ back into **when we say machine we say this torque speed characteristic**, because that's what governs how the torque speed characteristic or how the vehicle operates.
+
+So that produces the torque on the machine side multiplied by the **GR(Gear Ratio)** and then you get your torque on the actual on hte wheels and themselves that gives you the tractive and so on. And you can sort of closed loop where there's usually an external observer which is giving the command for $P_{Tmax}$.
+
+- Aerodynmaic Drag: $F_{d} = {1 \over 2}pA_{f}C_{d}{(v-v_{w})_{2}}sgn(v-v_{w})  [N]$
+
+$T_{M}$
+
+- $x_{\theta M} {P_{Tmax} \over \omega_{B}}$ --- $\omega_{M} \leq \omega_{B}$
+- $x_{\theta M} {P_{Tmax} \over \omega_{M}}$ --- $\omega_{M} \geq \omega_{B}$
+- $-1 \leq x_{\theta M} \leq 1$
+
+You can image is your foot on the accelerator, what does the $x_{\theta M}$ is it controls the torque of motor/machine is producing. So by doing that you can control the speed of the vehicle.
