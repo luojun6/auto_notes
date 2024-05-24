@@ -55,7 +55,9 @@ The larger the cross-sectional area of vehicle that faces the wind because that'
 
 ![rolling_resistance.drawio](./images/rolling_resistance.drawio.png)
 
-**F$_{r}$ = M$_{g}$cos$\alpha$(C$_{0}$ + C$_{1}$v$^{2}$)sgn(v)**
+<!-- **F$_{r}$ = M$_{g}$cos$\alpha$(C$_{0}$ + C$_{1}$v$^{2}$)sgn(v)** -->
+
+**$F{r} = Mg\cos\alpha (C_{0} + C_{1}v^{2})sgn(v)$**
 
 - C$_{r} \triangleq$ (C$_{0}$ + C$_{1}$v$^{2}$): rolling resistance coefficent
 
@@ -76,22 +78,32 @@ The larger the cross-sectional area of vehicle that faces the wind because that'
 
 ![grade_resistance.drawio](./images/grade_resistance.drawio.png)
 
-- F$_{g}$ = M$_{g}$sin$\alpha$
-- Grade, G $\triangleq$ tan$\alpha$
+<!-- - F$_{g}$ = M$_{g}$sin$\alpha$ -->
+
+- $F_{g} = Mg \sin\alpha$
+<!-- - Grade, G $\triangleq$ tan$\alpha$ -->
+- Grade, $G \triangleq \tan\alpha$
   - Increase in hight for every 100m travelled
   - G = 0.1
-  - %G $\triangleq$ 100tan$\alpha$ = 100(h/x)
+  - $\%G \triangleq 100\tan\alpha$ = 100(h/x)
 
 **Grade ability:** Max grade climbable at 0 accelearation
 
 - ignoring F$_{r}$, F$_{d}$, dv/dt
-- F$_{T}$ \simeq$ F${_g}$
-- F$_{T}$ = Mgsin$\alpha$
-- tan$\alpha$ = sin$\alpha$ / cos$\alpha$
-  - sin$\alpha$ = tan$\alpha$cos$\alpha$ = G(1 - sin$^{2}/alpha$)$^{1/2}$
-- F$_{T}$ = Mg$\cdot$G$\cdot$(1 - sin$^{2}/alpha$)$^{1/2}$ = G$\cdot$((Mg)$^{2}$ - (Mgsin$/alpha$)$^{2}$)$^{1/2}$
+<!-- - F$_{T}$ \simeq$ F${_g}$ -->
+- $F_{T} \simeq F_{g}$
+<!-- - F$_{T}$ = Mgsin$\alpha$ -->
+- $F_{T} = Mg \sin\alpha$
+<!-- - tan$\alpha$ = sin$\alpha$ / cos$\alpha$ -->
+- $\tan\alpha = {\sin\alpha \over \cos\alpha}$
+    <!-- - sin$\alpha$ = tan$\alpha$cos$\alpha$ = G(1 - sin$^{2}/alpha$)$^{1/2}$ -->
+  - $\sin\alpha = \tan\alpha\cos\alpha = {G(1 - \sin^{2}\alpha)^{1 \over 2}}$
+  <!-- - F$_{T}$ = Mg$\cdot$G$\cdot$(1 - sin$^{2}/alpha$)$^{1/2}$ = G$\cdot$((Mg)$^{2}$ - (Mgsin$/alpha$)$^{2}$)$^{1/2}$ -->
+- $F_{T} = Mg\cdot G \cdot {(1 - \sin^{2}\alpha)^{1 \over 2}} = G{(\cdot{(Mg)^{2}} - {(Mg\sin\alpha)^{2}})}^{1 \over 2}$
 
-- G' = F$_{T}$ / ((Mg)$^{2}$ - (F$_{T}$)$_{2}$)$^{1/2}$
+<!-- - G' = F$_{T}$ / ((Mg)$^{2}$ - (F$_{T}$)$_{2}$)$^{1/2}$ -->
+
+- $G' = {F_{T} \over {((Mg)^{2} - (F_{T}^2))}^{1 \over 2}}$
 
 ### 1.5 Summay of Road Load
 
@@ -358,7 +370,9 @@ How does all of this tie together? Because now you have the $\omega_{M}$ and you
 
 So that produces the torque on the machine side multiplied by the **GR(Gear Ratio)** and then you get your torque on the actual on hte wheels and themselves that gives you the tractive and so on. And you can sort of closed loop where there's usually an external observer which is giving the command for $P_{Tmax}$.
 
-- Aerodynmaic Drag: $F_{d} = {1 \over 2}pA_{f}C_{d}{(v-v_{w})_{2}}sgn(v-v_{w})  [N]$
+- Grade: $G' = **{F_{T} \over {((Mg)^{2} - (F_{T}^2))}^{1 \over 2}}$\*\*
+- Aerodynmaic Drag: **$F_{d} = {1 \over 2}pA_{f}C_{d}{(v-v_{w})_{2}}sgn(v-v_{w})  [N]$**
+- Rolling Resistance: **$F{r} = Mg\cos\alpha (C_{0} + C_{1}v^{2})sgn(v)$**
 
 $T_{M}$
 
