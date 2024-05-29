@@ -352,7 +352,7 @@ $\vartheta M {dv \over dt} = F_{T} - F_{R}$
 
 ![vehicle_control_model_0](./images/vehicle_control_model_0.png)
 
-### Simplified Model
+### 5.2 Simplified Model
 
 Based on the exact same type of logic.
 
@@ -381,3 +381,127 @@ $T_{M}$
 - $-1 \leq x_{\theta M} \leq 1$
 
 You can image is your foot on the accelerator, what does the $x_{\theta M}$ is it controls the torque of motor/machine is producing. So by doing that you can control the speed of the vehicle.
+
+## 6 The Gear Ratio
+
+### 6.1 Basic Concept
+
+The purpose of a grear box, or the gear in general, is essentially it's a torque multiplier, or it's a speed reducer I guess you can say you can increase you can adjust the torque from a source to an output.
+
+So you give some torque to the input of the gearbox and some speed to the input of the gearbox. And the torque and speed on the outside of the gearbox will be different.
+
+### 6.2 Ideal Model
+
+Gear box assumption:
+
+- 100% efficiency
+- perfectly rigid - otherwise we get into the a whole mess of other calculations
+- No space between teeth of the gear
+
+  - That's how they kind of push on one another or connect to one another
+
+![gear_ratio.drawio](./images/gear_ratio.drawio.png)
+
+- Tangential velocity: $v$
+- Angular velocity: $\omega$
+- $v = r\omega$
+- $v_{in} = v_{out}$ => $r_{in}\omega_{in} = r_{out}\omega_{out}$
+- => ${\omega_{in} \over \omega_{out}} = {r_{out} \over r_{in}} = GR$
+
+- $P_{out} = P_{in}$ <--- No loss, 100% efficiency
+- => **$GR = {T_{out} \over T_{in}} = {\omega_{in} \over \omega_{out}}$**
+
+![gear_ratio_0](./images/gear_ratio_0.png)
+
+When we have a condition at the roadside, if we say that the vehicle is travelling 10m/s, that's the condition on the wheel - on the road side, so then you have to convert this 10m/s to some torque using the radius of the wheel. Then you'll have the output as tractive torque or shaft torque.
+
+In order to convert the trative torque to the motor side, you have to have the gear box.
+
+## 7 Toqure-Speed Characteristic Examples
+
+### 7.1 Example 1
+
+Assume $Me = 1000kg$ & an acceleration time of 10s from standstil to a speed of 25m/s. Ignoring forms of resistance, determine the power requirements of the motor for:
+
+- (a) Constant-force accelearation
+  - During acceleration: ${dv \over dt} = {{25 - 0} \over 10} = 2.5[m/s^{2}]$
+  - Newton's law: $F_{T} = Me\cdot{dv \over dt} = 1000 \cdot 2.5 = 2500[N]$
+  - $P_{T} = 2500 \cdot v$ => $P_{Tmax} = 2500 \cdot (25) = 62.5[kW]$
+  - Deceleartion is the same, needs the force in the opposite direction for deceleration
+
+![speed_torque_characteristic_0](./images/speed_torque_characteristic_0.png)
+
+- (b) Constant-force / constant-power accelearation $\omega$ -> $F{T} = 3625[N]$ and $v_{B} = 10[m/s]$
+  - For 10 to 10m/s:
+    - $F_{T} = 3625[N] \rightarrow 1000{dv \over dt} = 3625$
+    - $dv/dt = 3.625[m/s^{2}]$
+    - $\int_{0}^{10} dv = 3.625\int_{0}^{t_{1}}dt \rightarrow t_{1} = 2.76s$
+  - For 0 to 25m/s:
+    - $P_{T} = 36.25kW = F_{T}\cdot v \rightarrow F_{T} = 36250/v$
+    - $\int_{10}^{25}v\cdot dv = \int_{0}^{t2}dt \rightarrow t_{2} = 10[s]$
+  - $F_{T_{SteadyState}} = F_{T}|_{v=25} = 35250/25 = 1450[N]$
+
+![speed_torque_characteristic_1](./images/speed_torque_characteristic_1.png)
+
+![speed_torque_characteristic_2](./images/speed_torque_characteristic_2.png)
+
+### 7.2 Example 2
+
+Determine the power rating of an inductive motor for an all electric vehicle $\omega$ -> the following parameters:
+
+- $M = 1500Kg$
+- $\vartheta = 1$
+- $C_{d} = 0.26$
+- $C_{0} = 0.01$
+- $C_{1} = 0$
+- $A_{f} = 2.16m^{2}$
+- $v_{max} = 1600km/h$
+- $v_{f} = 100kw/h$
+- $g = 9.81 m/s^{2}$
+- $\varrho = 1.204kg/m^{3}$
+- $t_{f} = 10s$
+- $\alpha = 0$
+- $v_{B} = 40km/h = 11.1m/s$
+
+->
+
+$P_{Tmax} = {\vartheta \over 2t\varrho}(v_{f}^{2} + v_{B}^{2}) + Mg(C_{0} + C_{1}v\varrho^{2})v_{f} + {1 \over 2}\varrho A_{f}C_{d}v_{f}^3$
+
+$P_{Tmax} = 78463[W]$
+
+$F\_{T} = $
+
+- $78463/1.1 - v \leq 11.1$
+- $78463/v - 11.1 \leq v \leq 44.4(160km/h)$
+
+$F_{R} = 147 + 0.338v^{2}$
+
+**Balance of $F_{1}P_{1}{dv \over dt}$ @ v:**
+
+| $v[m/s]$ | $F_{T}[N]$ | $F_{R}$[N] | $P_{T}[W]$   | $P_{R}[W]$ | ${dv\over dt}[m/s^{2}]$ |
+| -------- | ---------- | ---------- | ------------ | ---------- | ----------------------- |
+| 11.1     | 7,069      | 189        | 78,464       | 2,098      | 4.59                    |
+| 27.8     | 2,824      | 408        | $\downarrow$ | 11,342     | 1.62                    |
+| 44.4     | 1,767      | 813        | $\downarrow$ | 36,097     | 0.64                    |
+| $v_{ss}$ | 1,328      | 1,328      | $\downarrow$ | 78,463     | 0                       |
+
+$v_{ss}$: $v=v_{ss}, {dv \over dt} = 0, F_{R} = F_{T}, F_{R} = 147 + 0.338v_{ss} = 78463/v_{ss}$
+-> $v_{ss} = 59.1[m/s] = 212.7[km/h]$
+
+This is very clearly larger than our maximum speed, we are never going to reach this if our vehicle operates as intended. But htis is the speed that it would settle at if the tractive power was kept constant at 78.4kW rougly.
+
+So the vehicle would speed up to this speed, we're not going to let that happen, but it would. So at that point we would expect then the tractive power, the attractive force, and the resistive forces to become equal.
+
+Look at some simulation result:
+
+![speed_torque_characteristic_3](./images/speed_torque_characteristic_3.png)
+
+![speed_torque_characteristic_4](./images/speed_torque_characteristic_4.png)
+
+It meets the 10s requirement that we had, and something we should be mindful of is that the steady state speed as we showed as above, is greater than the maximum speed, that we want to allow the vehicle to operate at, what that means is once our vehcle reaches our maximum speed (160km/h in 25s), we should decrease our attractive force.
+
+So we need to add some strategy like this:
+
+![speed_torque_characteristic_5](./images/speed_torque_characteristic_5.png)
+
+![speed_torque_characteristic_6](./images/speed_torque_characteristic_6.png)
