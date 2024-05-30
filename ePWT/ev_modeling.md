@@ -505,3 +505,57 @@ So we need to add some strategy like this:
 ![speed_torque_characteristic_5](./images/speed_torque_characteristic_5.png)
 
 ![speed_torque_characteristic_6](./images/speed_torque_characteristic_6.png)
+
+## 8 DC Machines - Circuit Model
+
+### 8.1 Circuit Model
+
+![dc_motor_circuit_0](./images/dc_motor_circuit_0.png)
+
+$e_{a} = K\Phi \omega m$
+
+- $K\Phi$ - flux constant [$v\cdots$ or $\omega m \over A$]
+- $\omega m$ - shaft speed [rad/s]
+
+### 8.2 Armature Circuit
+
+-> $v_{a} = i_{a}R_{a} + L_{a}{di_{a} \over dt} + K\Phi \omega m$ <br>
+-> $P_{in} = v_{a}\cdot i_{a} = ia^{2}R_{a} + {d \over dt}({1 \over 2} L_{a}i_{a}^{2}) + K\Phi \omega mi_{a}$
+
+- $ia^{2}R_{a}$ - Power loss in $R_{a}$
+- ${d \over dt}({1 \over 2} L_{a}i_{a}^{2})$ - power exchanged with $L_{a}$
+  - $({1 \over 2} L_{a}i_{a}^{2})$ - energy stored in $L_{a}$
+- $K\Phi \omega mi_{a}$ - $P_{M}$: developed mechanical power
+
+### 8.3 DC Machines
+
+<br>-> $P_{M} \triangleq K\Phi \omega mi_{a}$
+<br>-> $P_{M} = T_{M}\cdot \omega$ ($T_{M}$: mechanical torque)
+<br>-> $T_{M}\omega = K\Phi \omega mi_{a}$
+<br>-> $T_{M} = K\Phi \omega i_{a}$
+
+### 8.4 Field Circuit
+
+$v_{f} = R_{f}i_{f + {d\lambda f \over dt}}$
+
+- ${d\lambda f \over dt}$ - Fraday's law
+- $lambda f$ - flux linkcd by field winding
+
+Whatever flux is linkde the filed winding will appear in the filed voltage here.
+
+![dc_motor_circuit_1](./images/dc_motor_circuit_1.png)
+
+$\phi = B \cdot A$
+$\phi \propto \lambda f$ -> $\phi = K^{'}\lambda f$
+
+If we make sure that we never exceed the linear region, you can make an approximation of a straight line. In this case, we assume that in our magnetizaiton curve,
+
+![dc_motor_circuit_2](./images/dc_motor_circuit_2.png)
+
+### 8.5 Summary
+
+**Steady State:**
+
+- $v_{a} = i_{a}R_{a} + K\phi \omega_{M} \cong K\phi \omega_{M}$
+- $v_{f} = i_{f}R_{f}$
+- $T_{M} = K\phi i_{a}$
