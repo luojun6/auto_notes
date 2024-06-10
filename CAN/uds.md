@@ -156,3 +156,78 @@ This grouping of SIDS are done to perform a specific set of operation with the h
 #### 1.8.4 Upload Download functional unit (5 SIDs)
 
 ![uds_12](./images/uds_12.png)
+
+## 2 UDS: Diagnostic Session Control (SID: 0x10)
+
+### 2.1 UDS: ECU Diagnostic Sessions
+
+| Service ID(s) | Session Definition               |
+| ------------- | -------------------------------- |
+| 0x01          | Default Session                  |
+| 0x02          | Programming Session              |
+| 0x03          | Extended Diagnostic Session      |
+| 0x04          | Safety System Diagnostic Session |
+| 0x40 - 0x5F   | Vehicle Manufactureer Sepecific  |
+| 0x60 - 0xyE   | System Supplier Specific         |
+
+Session control service 0x10 is used to enable different diagnostic sessions in the ECU.
+
+### 2.2 UDS: ECU Diagnostic Default Session
+
+In normal operating condition of an ECU, default diagnostic session (**DEFAULT_SESSION**) is always active or in other terms whenever ECU is powered-on, its current active diagnostic session is set to **DEFAULT_SESSION**.
+
+![uds_13](./images/uds_13.png)
+
+So the **DEFAULT_SESSION** is the first session of the diagnostic session.
+
+### 2.3 Non-default Sessions
+
+- **Programming Session**
+
+  - This diagnostic sesion enables all diagnostic services required to support the memory programming of a server.
+  - is used for flashing
+  - the ECU at the EOL, or a software ban or updated the ECU garage
+  - remote software updates like FOTA, SOTA are happening with the help of programming sessions
+
+- **Extended Diagnostic Session**
+
+  - This diagnostic session can be used to enable all diagnostic services required to support the adjustment of functions like "Idel Speed, CO Value, etc." in the server's memory.
+  -
+
+- **Safety System Diagnostic Session**
+
+  - This diagnostic sesion enables all diagnostic services required to support safety system related functions (e.g., airbog deployment).
+
+- **Vehicle Manufacturer Specific**
+
+  - This range of value is reserved for vehicle manufacturer specific use.
+
+- **System Supplier Specific**
+
+  - This range of value is reserved for system supplier specific use.
+
+### 2.4 UDS: SIDs Supported by Different Sessions
+
+![uds_14](./images/uds_14.png)
+
+### 2.5 UDS: Non-Default Session SIDs
+
+![uds_15](./images/uds_15.png)
+
+### 2.6 UDS: ECU Diagnostic Session State Diagram
+
+![uds_16](./images/uds_16.png)
+
+### 2.7 UDS: DiagnosticSessionControl(ox10) Service
+
+![uds_17](./images/uds_17.png)
+
+What do we do with the help of tester is that we are able to get into these different kinds of session with the help of a request message from the tester.
+
+And the ECU responds with a postive response, by informing that the ECU server diagnostics services are successully executed, and you know it got into those sessions.
+
+In DiagnosticSessionControl(0x10),support these 6 sub-functions which are nothing but the different sessions of ECU diagnostic server.
+
+With the help of this sub-function, the client can request the ECU diagnostic server to all possible diagnostic sessions, that means the tester or the client sends the SID request 0x10 DiagnosticSessionControl service request with the sub-function 0x01, to set the current session to default session.
+
+If you replace the sub-function 0x01 with 0x02 or 0x03 or 0x04 ... or 0x70 or any other diagnostic session with that particular ID. Then it is possible to get into those sessions you know which is requested by the diagnositc tester.
