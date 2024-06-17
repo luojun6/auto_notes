@@ -220,6 +220,8 @@ So the **DEFAULT_SESSION** is the first session of the diagnostic session.
 
 ### 2.7 UDS: DiagnosticSessionControl(ox10) Service
 
+#### 2.7.1 Positive Response 0x50
+
 ![uds_17](./images/uds_17.png)
 
 What do we do with the help of tester is that we are able to get into these different kinds of session with the help of a request message from the tester.
@@ -231,3 +233,48 @@ In DiagnosticSessionControl(0x10),support these 6 sub-functions which are nothin
 With the help of this sub-function, the client can request the ECU diagnostic server to all possible diagnostic sessions, that means the tester or the client sends the SID request 0x10 DiagnosticSessionControl service request with the sub-function 0x01, to set the current session to default session.
 
 If you replace the sub-function 0x01 with 0x02 or 0x03 or 0x04 ... or 0x70 or any other diagnostic session with that particular ID. Then it is possible to get into those sessions you know which is requested by the diagnositc tester.
+
+So the request message starts with 0x10 which is nothing but diagnostic session control 0x10, and sub-function ID where you can see start with 0x1, 0x02, 0x04 and 0x40 to 0x5F, 0x60 to 0x7E. When the request is sent then the ECU diagnostic server responds back to the diagnostic tester with the positive response and the positive value is 0x50.
+
+There is a relation between the tester SID and the response which is received from the diagnostic server. So whenever you have a positive response, the server always adds a value 0x40 into the SID request. So that means if you receive a value of 50 that means it's a positive response, and whatever the session that have been asked from the diagnostic tester is successfully executed in the ECU.
+
+#### 2.7.2 Negative Response 0x7F
+
+![uds_18](./images/uds_18.png)
+
+Note: The 0x22 - contions NOT Correct is a unqiue situation, where it is expected that whenever you perform a diagnstic session in the vehicle. It is expected that the vehicle is not moving or the engine should not be running. These are few environmental conditons, that will impact your diagnostic session.
+
+## 3 UDS: Input Output By Identifier - SID: 0x2F
+
+### 3.1 Service Description
+
+The client requests the control of an input/output specific to the server. The server
+
+### 3.2 Engine Management System - Block Diagram
+
+![uds_19](./images/uds_19.png)
+
+- Left hand side -> a number of sensors
+- Right hand side -> a number of actuators
+
+The understanding of InputOutputByIdentifier_0x2F in this example is to substitute a value for the sensor, or take a momentory control of the actuators directly from the tester by providing a SID along with some parameter values.
+
+So these are helpful in the garage diagnostic to identify some of the faults in some particular components. Either both in the sensor side as well as on the actuator side.
+
+### 3.3 Bosch ESP ECU
+
+![uds_20](./images/uds_20.png)
+
+The input unit on the left side and output unit on the right side, the values can be substituted with the help InputOutputByIdentifier_0x2F, and momentarily we can take control of these values from diagnostic tester, thereby creating some scenario to understand how the given or observed component is working.
+
+### 3.4 The Input Output Conrol by Identifier
+
+The Input Output Conrol by Identifier service is used by the client to substitute a value for an input signal, internal server function, either it could be an input signal directly which is comming from the sensor. you can change the value of it, or any sub-function which is using this sensor signal.
+
+![uds_21](./images/uds_21.png)
+
+Then there is some calculation happens internally even then with the help of a specifiic data indentifiers you can replace those values.
+
+That is also possible, so either you can directly change the input signal and then use.
+
+The client to substitude the value of input signal that means either it could be a input signal.
