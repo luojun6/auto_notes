@@ -2,6 +2,10 @@
 
 ## Introduction
 
+An airbags, in its most elemental forms is an automotive safety restraint system designed to inflate a cushioning bag extremely quickly, then rapidly deflate it in a controlled manner, during a collision. They’re considered a passive restraint system, because unlike seatbelts, they require no interaction by the occupant for their operation.
+
+## Anatomy of an Collision
+
 ![airbag_0.png](./images/airbag_0.png)
 
 If two cars collide head-on each moving at just 24km/h or about 15m/h a speed just 2/3 that of an Olympic sprinter somewhere around 25G's of deceleration force will be experienced by both drivers in the front-end collision given that they're both wearing seat belts, assuming 80kg or 176LBS drivers their seat belts would have reduced the average force experienced by their bodies to around 27,000N or the equivalent of around 6,000LBS of mass being pressed against the drivers.
@@ -48,6 +52,8 @@ However they offer this protection to the occupants in regions of the interior t
 
 ![airbag_10.png](./images/airbag_10.png)
 
+## System Design
+
 An airbag system is fundamentally composed of one or more inflation mechanisms located primarily within the steering wheel for the driver and the upper dashboard for the front passenger.
 
 Additional mechanisms may also be embedded within the lower dashboard doors pillars, the roof structure, the seats and even the seat belts.
@@ -93,6 +99,8 @@ This is typically accomplished within 15ms to 50ms from detection of initial con
 This is increadibly narrow window to act within the first 1/3 of the entire collision duration, is due to the airbags needing to deploy before the occupant contacts any portion of the vehicle's interior as it crushes and before the limits of the seat belt stretch are reached.
 
 ![airbag_19.png](./images/airbag_19.png)
+
+## Compressed Air
 
 The airbag's inflation must also be timed so that it's fully inflated before the occupant engages with it to minimize Trauma from the inflation process itself.
 
@@ -144,4 +152,56 @@ From this Breed devives an inflation mechanism that used just 30g to 150g of the
 
 The sodium azide charged would be ignited by a resistive wire that would heat up to over 300 degres Celsius or about 572 degrees Fahrenheit wihtin 2ms when a current was applied to it.
 
-The sodium azide would then exothermically decompose rapidly to sodium and nitrogen fully inflating the airbag with the resultant gas within just 60ms to 80ms while nitrogen produced is inert the resultant sodium metals within the generated gas proved to be hazardous and inheritant so additional additives such as potassium nitrate and silica would be
+![airbag_31.png](./images/airbag_31.png)
+
+The sodium(钠) azide(叠氮化物) would then exothermically decompose rapidly to sodium and nitrogen(氮) fully inflating the airbag with the resultant gas within just 60ms to 80ms while nitrogen produced is inert the resultant sodium metals within the generated gas proved to be hazardous and inheritant so additional additives such as potassium(钾) nitrate(硝酸盐) and silica(二氧化硅) would be added neutralize sodium, converting it to silicate glass within the reaction.
+
+## Airbag History
+
+Any car sold in the United States must now be certified to meet the Federal Motor Vehicle Safety Standards or FMVSS, a comprehensive set of regulations on vehicle design, construction, and performance. The NHTSA began to prepare for a second wave of mandates during the 1970’s, specifically targeting a push for new safety technologies, with the airbag being a prime technology for regulatory compliance. The first mass-produced vehicle to have an airbag system was introduced on a government-purchased in 1973. Called the The Air Cushion Restraint System or ACRS, General Motors employed impact sensors mounted in the vehicle's front bumper in order to deploy the airbags embedded in the steering wheel, for the driver, and in the dashboard for the passenger.
+
+![airbag_32.png](./images/airbag_32.png)
+
+![airbag_33.png](./images/airbag_33.png)
+
+The Air Cushion Restraint System (ACRS), was developed by General Motors in the early 1970s, and consisted of both a driver's and passenger's side air bag, along with a lap belt and status indicator light. The system was first installed in a test fleet of 1,000 1973 Chevrolet Impala 4-door sedans, painted in a unique green color. The exterior of these Impalas were identical to regular 1973 production models, but used a 1974-style Oldsmobile instrument panel and brand-new steering wheel design. The chassis of these cars were reinforced, and each Impala was equipped with a high-performance 350 cubic-inch V8 engine, the same one used in the Corvette.
+
+ACRS used impact sensors mounted in the vehicle's front bumper in order to deploy the airbags, one of which was installed in a unique four-spoke steering wheel, and the other installed in the dashboard on the passenger side of the vehicle. The passenger-side airbag was a "dual-stage" airbag, meaning that the impact sensors determined the force used to deploy the airbag based on the severity of the impact.
+
+By 1984, the NHTSA would reach a compromise with the industry, and with this agreeing to the introduction of a passive restraint system mandate for all new vehicles produced in the US, beginning on April 1, 1989. Manufacturers had 2 options, either an automatic seat belt system or the airbag.
+
+![airbag_34.png](./images/airbag_34.png)
+
+The 1980s saw the shift of the industry's view of airbag as a primary safety system to one designated as a supplemental restraint system or **SRS**, or the less common designation of supplemental inflatable restraints or SIR.
+
+## The Next Wave of Airbag Technology
+
+This proliferation led to the development of a new generation of airbag systems during the 1990s that overcame the flaws of earlier systems through the use of recent breakthroughs in the semiconductor industry.
+
+![airbag_35.png](./images/airbag_35.png)
+
+At the heart of this evolution, was the transition from electromeechanical triggers to **MEMS ACCELEROMETERs**.
+
+MEMS or microeletronic, or microeletronic mechanical systems are microscopic mechanical elements that embedded into integrated circuits. They can be designed to perform a board range of enviromental sensing though accelerometer are their most popular application.
+
+![airbag_36.png](./images/airbag_36.png)
+
+MEMS ACCELEROMETERs were small, durable, extremely reliable less costly and easily embedded throughout our vehicle.
+
+But what made them so groundbreaking was the signal they produced and how it was used, the electronic control unit that form the backbone of airbag systems called Airbag Control Unit or ACU.
+
+![airbag_37.png](./images/airbag_37.png)
+
+The ACU would now become an embedded computer, relying on a fusion of mems sensor data and other vehicle inputs to employ algorithms that could now manage a larger spectrum of collision types and inflation response strategies.
+
+## Algorithmic Crash Detection
+
+The kinematics(动力学的) of the collision can be quantified by several orders of motion measurements.
+
+At the bottom is the displacement of vehicle in distance then above. This is the vehicle's displacement over time or its velocity from this the next order of measurements the change in the vehicle's velocity over time or its acceleration is determined.
+
+![airbag_38.png](./images/airbag_38.png)
+
+And finally the next motion meaasurement is called **jerk**, which is the rate of change of acceleration over time.
+
+On the early mass spring systems, acceleration was used as a trigger, this proved to be dangerously inaccurate as the trigger acceleration could easily overlap with the dynamic found on a normal vehicle's operation.
