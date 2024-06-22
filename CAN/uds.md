@@ -269,12 +269,81 @@ The input unit on the left side and output unit on the right side, the values ca
 
 ### 3.4 The Input Output Conrol by Identifier
 
-The Input Output Conrol by Identifier service is used by the client to substitute a value for an input signal, internal server function, either it could be an input signal directly which is comming from the sensor. you can change the value of it, or any sub-function which is using this sensor signal.
+The Input Output Conrol by Identifier service is used by the client to substitute a value for an input signal, internal server function, either it could be an input signal directly which is comming from the sensor. You can change the value of it, or any sub-function which is using this sensor signal.
 
 ![uds_21](./images/uds_21.png)
 
 Then there is some calculation happens internally even then with the help of a specifiic data indentifiers you can replace those values.
 
-That is also possible, so either you can directly change the input signal and then use.
+That is also possible, so either you can directly change the input signal and then use. The client to substitude the value of input signal that means either it could be a input signal.
 
-The client to substitude the value of input signal that means either it could be a input signal.
+Force control to a value for an output (actuator) of an electronic system.
+
+![uds_22](./images/uds_22.png)
+
+The DID here are used to forced the control to an output actuator of an electronic system. Anything like motors, solenoid wall, pumps, heaters and relays all these comes under actuator.
+
+And these can be directly controlled by the diagnostic tester with the help of assigned DID for each of the element, with some specific parameter value we should be in a position to override the function from the ECU server.
+
+And the diagnostic tester takes over the control of this component momentarily, we call it short-term-adjustment.
+
+### 3.5 dataidentifier - Input Signals
+
+The client request message contains a **dataidentifier** to reference the input server funciton, and/or output signal(s) - acuators(s) (in case of a device control might reference a group of signals) of the server.
+
+![uds_23](./images/uds_23.png)
+
+Before going into the request response, understanding this particular SID, there are few impact and calibration parameter which is happening inside the ECU need to be understood, because these are the data element which we are going to control from the diagnostic tester.
+
+So a dataidentifier is nothing but you can say an array of signal packed into a data packet with unique dataidentifier value. So for example you can view this as like a one-dimension array with n number of elements in it.
+
+In this example, we have defined DID `0x00` which has 10 signals in it, and every signal as a unique value assigned to it. These unique values are previously well defined within the control unit itself, so that when you give the reference value of `0x0C`, it's always understood that is engine speed, these are mapped internally in the software.
+
+So when you use a DID with the value `0x0C` or `0x0D` or `0x05` then it means that engine speed value, vehicle speed value and engine temperature value, and so on. Like this you can have n number of DID defined inside the ECU.
+
+Why these DIDs are required, so since the ECU as several inputs and there are several calculated values which are created internally by the software.
+
+When the vehicle is going for a svervice, if there are some issue with specific circuit or with specific components in the vehicle, then these data are read through a service called `ReadDataByIdentifier`, in that service also this DIDs are used to read the real-time values of the signals which are there as part of the ECU.
+
+In this example this DID `0x00` consists of 10 signals, so I can define one more DID `0x01` and I can have another 10 signals of different values variables.
+
+These DIDs can be called outside from a service called `ReadDataByIdentifier` where you can act, this can act like you know a snapshot of values coming out of ECU.
+
+But in our specific data IO control any data by IO control, our idea is to change override this value with the help of our parameters in order to momentarily sit and see what's happening by the consumers of these signals thereby understanding the software flow or the effect of execution in the software.
+
+So that is the whole idea of doing this short-term adjustments.
+
+### 3.6 dataidentifier - Actuators
+
+| DID | Parameter                              |
+| --- | -------------------------------------- |
+| 4C  | Commanded throttle actuator            |
+| 69  | Actual EGR, Command EGR, and EGR Error |
+| 74  | Turbocharger RPM                       |
+| A5  | Commanded Diesel Exhaust Fluid Dosing  |
+
+These individual component value can be also set from the diagnostic tester and override this parameters in the ECU server.
+
+This is also can be done with the short-term adjustment parameters.
+
+### 3.7 Control Option
+
+![uds_24](./images/uds_24.png)
+
+### 3.8 controlEnabledMaskRecord
+
+![uds_25](./images/uds_25.png)
+
+There is one more parameter which should be sent as part of our request is that controlled enable mask assigning.
+
+Sometimes I don't want to change the `0x0C`, but I want to change only `0x0D`. In that case, there is one more parameter called **controlEnabledMaskRecord**.
+
+This parameter is used along with the request where it says that what are all the parameter which I want to change as part of the request.
+
+### 3.9 controlEnabledMaskRecord
+
+![uds_26](./images/uds_26.png)
+
+### 3.10 Input Output Control Identifier Request SID: 0x2F
+
+![uds_27](./images/uds_27.png)
