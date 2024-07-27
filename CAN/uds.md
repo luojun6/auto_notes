@@ -353,7 +353,7 @@ This parameter is used along with the request where it says that what are all th
 ![uds_29](./images/uds_29.png)
 
 - `0x03` is the **shortTermAdjustment** identifier
-- `0x3C` is the percentage of vale which we are expecting the air inlet door position.
+- `0x3C` is the presentage of vale which we are expecting the air inlet door position.
 
 ![uds_30](./images/uds_30.png)
 
@@ -399,7 +399,7 @@ The security mechanism in the ECU is called as **Seed & Key Algorithms**.
 
 ![uds_38](./images/uds_38.png)
 
-### 4.8 Supported Negative Response Codes (NRC\_)
+### 4.8 Supported Negative Response Codes (NRC)
 
 | Data Byte | Parameter Name                             |
 | --------- | ------------------------------------------ |
@@ -505,3 +505,143 @@ With the help of this and the other parameter we should be in a position to have
 ![uds_46](./images/uds_46.png)
 
 ![uds_47](./images/uds_47.png)
+
+## 6 UDS: ECU Reset Service - SID: 0x11
+
+### 6.1 A simplified ECU - Battery connection
+
+![uds_48](./images/uds_48.png)
+
+![uds_49](./images/uds_49.png)
+
+![uds_50](./images/uds_50.png)
+
+### 6.2 ECU rest sub-functions
+
+| Sl.# | Value       | Sub-function                  |
+| ---- | ----------- | ----------------------------- |
+| 1    | 0x01        | Hard Reset                    |
+| 2    | 0x02        | Key Off-On Reset              |
+| 3    | 0x03        | Soft Reset                    |
+| 4    | 0x04        | Enable Rapid Power Shut Down  |
+| 5    | 0x05        | Disable Rapid Power Shut Down |
+| 6    | 0x40 - 0x5F | Vehicle Manufacturer Specific |
+| 7    | 0x60 - 0x7E | System Supplier Specific      |
+
+### 6.3 ECUReset Request SID - 0x11
+
+![uds_51](./images/uds_51.png)
+
+![uds_52](./images/uds_52.png)
+
+## 7 UDS: Tester Present Service - SID: 0x3E
+
+### 7.1 Description
+
+This service is used to indicate to a server (or servers) that a client is still connected to the vehicle and that certain diagnostic services and/or communication that have been previously activated are to remain active.
+
+![uds_53](./images/uds_53.png)
+
+In such cases, a periodic tester present message normally sent, this periodic tester present message can be configured to request from the server or the ECU with the responsor without a response.
+
+So the tester request for a routine control and its wait for the till the operaiton is completed by the ECU, during such time, a periodic tester present message will be sent till the time it completes the IO retain or in some cases where the security has to be unlocked in some of diagnostic session, and to maintain during that security unlocked state of that particular session.
+
+And executing some further services in the security unlocked state, and also you can request the test present message.
+
+### 7.2 Request Message
+
+[SID][Sub-function]
+
+| Data byte | Parameter Name                   | Byte Value  |
+| --------- | -------------------------------- | ----------- |
+| #1        | TesterPresent Request SID        | 0x3E        |
+| #2        | sub-function = [zeroSubFunction] | 0x00 / 0x80 |
+
+0x00 zero Sub Function
+This parameter value is used to indicate that no sub-function value. If response from server is not required 0x80 value issent from tester.
+
+### 7.3 Request & Response Message
+
+![uds_54](./images/uds_54.png)
+
+### 7.4 Keep Alive Logic - Concurrent Tester Present
+
+It is possible, that functional "TesterPresent" commands are sent by the tester in parallel to physical requests/responses.
+
+Functional TesterPresent (and only functional TesterPresent without response)
+
+![uds_55](./images/uds_55.png)
+
+## 8 UDS: Data Identifiers (DID)
+
+### 8.1 DID parameter definitions
+
+![uds_56](./images/uds_56.png)
+
+### 8.2 An xemaple of DID in scan tool - Predefined
+
+![uds_57](./images/uds_57.png)
+
+![uds_58](./images/uds_58.png)
+
+### 8.3 Dynamic Defined Data Identifier
+
+![uds_59](./images/uds_59.png)
+
+![uds_60](./images/uds_60.png)
+
+### 8.4 Pre-defined DIDs
+
+![uds_61](./images/uds_61.png)
+
+## 9 UDS: Read Data By Identifier Service - SID:0x22
+
+### 9.1 Description
+
+The ead Data By Identifier Service allows the client to request "data record (Data Identifiers - DID)" values from the server.
+
+### 9.2 DID parameter definitions
+
+![uds_56](./images/uds_56.png)
+
+### 9.3 Examples of ODB2 PIDS
+
+![uds_62](./images/uds_62.png)
+
+### 9.4 Request Message
+
+![uds_63](./images/uds_63.png)
+
+### 9.5 Request & Response Message
+
+![uds_64](./images/uds_64.png)
+
+### 9.6 Message flow example Read Data By Identifier
+
+![uds_65](./images/uds_65.png)
+
+![uds_66](./images/uds_66.png)
+
+## 10 UDS: Write Data By Identifier - SID: 0x2E
+
+### 10.1 Description
+
+The Write Data By Identifier service allows the client to write information into the server memory location.
+
+### 10.2 Request Message
+
+![uds_67](./images/uds_67.png)
+
+### 10.3 Positive response message
+
+![uds_68](./images/uds_68.png)
+
+### 10.4 Request & Response Message
+
+![uds_69](./images/uds_69.png)
+
+### 10.5 Message flow example WrietDataByIdentifier
+
+#### 1o.5.1 Example #1: write data identifier 0xF190 (VIN)
+
+![uds_70](./images/uds_70.png)
