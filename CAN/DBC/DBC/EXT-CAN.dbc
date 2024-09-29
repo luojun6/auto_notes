@@ -1,0 +1,2071 @@
+VERSION ""
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: AAM ANC AUDIOamp CGW CPLC CSCM CSTB DOP_RES DOP_TCU DOP_secu DSU NIC SceneRecorder TACHY
+
+
+BO_ 32 ACU_A102: 8 CGW
+  SG_ AirbagCrashOrder_v3 : 5|6@0+ (1,0) [0|0] "" DOP_TCU,SceneRecorder
+  SG_ RolloverDetection : 57|1@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 116 ECM_A110: 8 CGW
+  SG_ PowerTrainSetPoint : 11|10@0+ (0.125,0) [0|125] "%" AUDIOamp,DOP_TCU
+  SG_ RawSensor : 17|10@0+ (0.125,0) [0|125] "%" AAM,ANC,AUDIOamp,DOP_TCU,SceneRecorder
+  SG_ StopAutoPhase : 47|3@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 117 ECM_A112: 8 CGW
+  SG_ EngineRPM : 39|16@0+ (0.125,0) [0|8191.75] "rpm" AAM,ANC,AUDIOamp,DOP_RES,DOP_TCU
+  SG_ MeanEffectiveTorque : 55|12@0+ (0.5,-400) [-400|1647] "Nm" AAM,ANC,AUDIOamp,DOP_TCU
+
+BO_ 125 HEVC_R106: 4 CGW
+  SG_ Combo_EVTargetVoltage : 11|14@0+ (0.1,0) [0|1000] "V" CPLC,CSCM
+  SG_ Combo_EVReady : 29|1@0+ (1,0) [0|0] "" CPLC
+
+BO_ 168 STRG_A1: 7 CGW
+  SG_ SteeringWheelAngleRaw : 22|15@0+ (0.1,-1080) [-1080|1080] "°" SceneRecorder
+  SG_ SteeringWheelRotationSpeed : 47|16@0+ (0.1,-3276.7) [-3276.7|3276.7] "°/s" SceneRecorder
+
+BO_ 171 VDC_A6: 8 CGW
+  SG_ YawRateCorrected : 10|11@0+ (0.1,-100) [-100|100] "°/s" DOP_TCU
+  SG_ BrakingPressure : 31|8@0+ (0.5,0) [0|126] "bar" DOP_TCU,SceneRecorder
+  SG_ YawRateRaw : 55|11@0+ (0.1,-100) [-100|100] "°/s" DOP_TCU
+
+BO_ 180 VDC_A5: 8 CGW
+  SG_ LongitudinalAccelCorrected : 23|12@0+ (0.001,-2) [-2|2] "G" ANC,AUDIOamp,DOP_TCU
+  SG_ TransversalAccelCorrected : 47|12@0+ (0.001,-2) [-2|2] "G" DOP_TCU
+
+BO_ 303 ATCU_A108: 7 CGW
+  SG_ GearLeverPosition_v2 : 20|4@0+ (1,0) [0|0] "" ANC,AUDIOamp,DOP_TCU,SceneRecorder
+  SG_ AT_StartingAuthorization : 23|3@0+ (1,0) [0|0] "" DOP_RES
+
+BO_ 514 VDC_A4: 8 CGW
+  SG_ ABSinRegulation : 0|1@0+ (1,0) [0|0] "" AAM,DOP_TCU,SceneRecorder
+  SG_ ASRinRegulation : 8|1@0+ (1,0) [0|0] "" AAM,SceneRecorder
+  SG_ MSRinRegulation : 16|1@0+ (1,0) [0|0] "" AAM,SceneRecorder
+  SG_ ESCMalfunction : 33|1@0+ (1,0) [0|0] "" AAM
+  SG_ AYCMalfunction : 44|1@0+ (1,0) [0|0] "" AAM
+  SG_ AYCinRegulation : 45|1@0+ (1,0) [0|0] "" AAM,SceneRecorder
+  SG_ ABSMalfunction : 47|1@0+ (1,0) [0|0] "" AAM,DOP_TCU
+
+BO_ 534 EPS_A101: 4 CGW
+  SG_ EPSWarning : 19|2@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 538 HEVC_A125: 4 CGW
+  SG_ ePedalStatus : 17|1@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 546 USM_A102: 4 CGW
+  SG_ BatteryCurrentSensorValue : 15|10@0+ (1,-320) [-320|320] "A" DOP_TCU
+  SG_ ACCompClutchStatus : 31|1@0+ (1,0) [0|0] "" AAM,DOP_TCU
+
+BO_ 549 VDC_A115: 3 CGW
+  SG_ StopLampFlashingRequest : 21|1@0+ (1,0) [0|0] "" AAM
+
+BO_ 649 VDC_A3: 8 CGW
+  SG_ WheelSpeedRL : 23|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" DOP_TCU
+  SG_ WheelSpeedRR : 39|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" DOP_TCU
+
+BO_ 650 VDC_A9: 8 CGW
+  SG_ WheelSpeedFR : 7|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" DOP_TCU
+  SG_ WheelSpeedFL : 23|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" DOP_TCU
+  SG_ VehicleSpeed : 39|16@0+ (0.01,0) [0|655.34] "km/h" AAM,ANC,AUDIOamp,CPLC,SceneRecorder
+
+BO_ 694 HEVC_R125: 8 CGW
+  SG_ ElecMachineSpeed_v2 : 7|12@0+ (10,-20000) [-20000|20000] "rpm" AUDIOamp
+  SG_ REL_ElecMachineSpeed_v2 : 11|12@0+ (10,-20000) [-20000|20000] "rpm" AUDIOamp
+  SG_ RER_ElecMachineSpeed_v2 : 31|12@0+ (10,-20000) [-20000|20000] "rpm" AUDIOamp
+  SG_ ME_ElecMachineTorque_v2 : 35|9@0+ (2,-300) [-300|500] "Nm" AUDIOamp
+  SG_ REL_ElecMachineTorque_v2 : 42|9@0+ (2,-300) [-300|500] "Nm" AUDIOamp
+  SG_ RER_ElecMachineTorque_v2 : 49|9@0+ (2,-300) [-300|500] "Nm" AUDIOamp
+
+BO_ 696 ECM_R104: 4 CGW
+  SG_ LPGFuelConsumption : 7|8@0+ (0.000020,0) [0|0.00508] "L" CSTB
+  SG_ CNGFuelConsumption : 15|8@0+ (0.000010,0) [0|0.00254] "kg" CSTB
+  SG_ GasInstantCarburationMod : 18|1@0+ (1,0) [0|0] "" CSTB
+  SG_ LPG_NGSystemMalfunction : 19|1@0+ (1,0) [0|0] "" CSTB
+  SG_ LPGModeDisplayRequest : 23|1@0+ (1,0) [0|0] "" CSTB
+
+BO_ 711 TCU_A105: 8 CGW
+  SG_ PnCcertificateData_v3 : 7|48@0+ (1,0) [0|2.81474976710655E14] "" CPLC
+  SG_ PnCcertificateDataBlockNumber_v2 : 51|12@0+ (1,0) [0|4095] "" CPLC
+  SG_ CertificateDataBlockSize : 55|4@0+ (1,0) [0|15] "byte" CPLC
+
+BO_ 791 HVAC_A1: 8 CGW
+  SG_ BlowerFanMotorStatus_AC : 0|1@0+ (1,0) [0|0] "" DOP_secu
+
+BO_ 896 TCO1: 3 TACHY
+  SG_ DTCO_Driver1TimeRelatedStates : 11|4@0+ (1,0) [0|0] "" CGW
+  SG_ DTCO_OverSpeed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ DTCO_Driver2TimeRelatedStates : 19|4@0+ (1,0) [0|0] "" CGW
+
+BO_ 909 VKM_N113: 8 CGW
+  SG_ NFCframe_VKM_to_NFC_Inside : 7|64@0+ (1,0) [0|0] "" NIC
+
+BO_ 955 ECM_R102: 8 CGW
+  SG_ RST_Boost_Duration_MMI : 7|7@0+ (1,0) [0|100] "%" AUDIOamp
+  SG_ RST_Boost_Activation_MMI : 15|2@0+ (1,0) [0|0] "" AUDIOamp
+  SG_ LPGLevelForDisplay : 23|8@0+ (0.25,0) [0|63.5] "L" CSTB
+  SG_ CNGLevelForDisplay : 31|8@0+ (0.2,0) [0|50.8] "kg" CSTB
+  SG_ RST_Boost_Potential_MMI : 39|7@0+ (1,0) [0|100] "%" AUDIOamp
+
+BO_ 956 AAM_R102: 8 AAM
+  SG_ AAM_AnalogInputMonitoring1 : 7|16@0+ (1,0) [0|65534] "wu" CGW
+  SG_ AAM_AnalogInputMonitoring2 : 23|16@0+ (1,0) [0|65534] "wu" CGW
+  SG_ AAM_AnalogInputMonitoring3 : 39|16@0+ (1,0) [0|65534] "wu" CGW
+  SG_ AAM_DigitalInputMonitoring4 : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ AAM_DigitalInputMonitoring3 : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ AAM_DigitalInputMonitoring2 : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ AAM_DigitalInputMonitoring1 : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ AAM_DigitalInputMonitoring5 : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 959 HEVC_N101: 8 CGW
+  SG_ DCcharge_MaxChargingTime : 7|11@0+ (10,0) [0|15300] "s" CSCM
+  SG_ CHADEMO_VehicleStatus : 8|1@0+ (1,0) [0|0] "" CSCM
+  SG_ HVB_CurrentDeviationError : 9|1@0+ (1,0) [0|0] "" CSCM
+  SG_ HVB_VoltageDeviationError : 10|1@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_SystemError : 11|1@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_StopReqBeforeCharging : 12|1@0+ (1,0) [0|0] "" CSCM
+  SG_ CHADEMO_ProtocolNumber : 23|8@0+ (1,0) [0|255] "" CSCM
+  SG_ CHADEMO_AutomakerCode : 31|8@0+ (1,0) [0|255] "" CSCM
+  SG_ DCcharge_RemainDischargingTime : 36|16@0+ (1,0) [0|65534] "min" CSCM
+  SG_ CHADEMO_DynamicControl : 37|1@0+ (1,0) [0|0] "" CSCM
+  SG_ CHADEMO_HighCurrentControl : 38|1@0+ (1,0) [0|0] "" CSCM
+  SG_ CHADEMO_VehicleChargingEnabled : 39|1@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVminVoltageLimit : 52|10@0+ (1,0) [0|600] "V" CSCM
+
+BO_ 967 IVI_A5: 8 CGW
+  SG_ Audio_WorkingAuthorize : 5|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ IVI_RefusetoSleep : 7|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 974 ADAS_A147: 7 CGW
+  SG_ ADADAS_ReflectiveFocus_Status : 23|36@0+ (1,0) [0|68719476734] "" SceneRecorder
+
+BO_ 978 IVI_R13: 8 CGW
+  SG_ MMI_Req_PWM_Freq_func12 : 7|8@0+ (2,0) [0|510] "Hz" AAM
+  SG_ MMI_Req_PWM_Freq_func13 : 15|8@0+ (2,0) [0|510] "Hz" AAM
+  SG_ MMI_Req_PWM_Freq_func14 : 23|8@0+ (2,0) [0|510] "Hz" AAM
+  SG_ MMI_Req_PWM_Freq_func15 : 31|8@0+ (2,0) [0|510] "Hz" AAM
+  SG_ MMI_Req_PWM_Freq_func16 : 39|8@0+ (2,0) [0|510] "Hz" AAM
+  SG_ MMI_Req_PWM_Freq_func17 : 47|8@0+ (2,0) [0|510] "Hz" AAM
+  SG_ MMI_Req_PWM_DC_func16 : 55|8@0+ (0.5,0) [0|100] "%" AAM
+  SG_ MMI_Req_PWM_DC_func17 : 63|8@0+ (0.5,0) [0|100] "%" AAM
+
+BO_ 999 BCM_A105: 4 CGW
+  SG_ V2_WakeUpSleepCommand : 7|2@0+ (1,0) [0|0] "" ANC
+
+BO_ 1004 IVI_R14: 8 CGW
+  SG_ MMI_Req_log_func6 : 1|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func5 : 3|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func4 : 5|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func3 : 7|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func10 : 9|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func9 : 11|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func8 : 13|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func7 : 15|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_PWM_DC_func11 : 23|8@0+ (0.5,0) [0|100] "%" AAM
+  SG_ MMI_Req_PWM_DC_func12 : 31|8@0+ (0.5,0) [0|100] "%" AAM
+  SG_ MMI_Req_PWM_DC_func13 : 39|8@0+ (0.5,0) [0|100] "%" AAM
+  SG_ MMI_Req_PWM_DC_func14 : 47|8@0+ (0.5,0) [0|100] "%" AAM
+  SG_ MMI_Req_PWM_DC_func15 : 55|8@0+ (0.5,0) [0|100] "%" AAM
+  SG_ MMI_Req_PWM_Freq_func11 : 63|8@0+ (2,0) [0|510] "Hz" AAM
+
+BO_ 1008 IVI_R15: 8 CGW
+  SG_ MMI_Req_log_func2 : 5|2@0+ (1,0) [0|0] "" AAM
+  SG_ MMI_Req_log_func1 : 7|2@0+ (1,0) [0|0] "" AAM
+
+BO_ 1011 VKM_N107: 6 CGW
+  SG_ NFC_Inside_activation_frame : 45|1@0+ (1,0) [0|0] "" NIC
+
+BO_ 1012 TCU_A101: 7 CGW
+  SG_ ECALL_StateDisplay_V3 : 4|4@0+ (1,0) [0|0] "" CSTB
+  SG_ TCU_MuteRadioOrder : 5|1@0+ (1,0) [0|0] "" AUDIOamp
+
+BO_ 1049 AAM_R101: 2 AAM
+  SG_ MuteRadioOrderByAAM : 0|1@0+ (1,0) [0|0] "" CGW
+  SG_ AAM_StopAutoForbidden : 2|2@0+ (1,0) [0|0] "" CGW
+  SG_ VoltageRateByAAM : 4|2@0+ (1,0) [0|0] "" CGW
+  SG_ MinimumVoltageByAAM : 7|3@0+ (0.5,12) [12|15] "V" CGW
+  SG_ AAM_DigitalInputMonitoring7 : 10|2@0+ (1,0) [0|0] "" CGW
+  SG_ AAM_DigitalInputMonitoring6 : 12|2@0+ (1,0) [0|0] "" CGW
+  SG_ EngIdleSpeedIncreaseReqByAAM : 15|1@0+ (1,0) [0|0] "" CGW
+
+BO_ 1064 HEVC_A104: 7 CGW
+  SG_ VehicleAutonomyZEV : 22|10@0+ (1,0) [0|1022] "km" CSTB
+
+BO_ 1065 HEVC_A105: 8 CGW
+  SG_ HVBatteryEnergyLevel : 15|7@0+ (1,0) [0|100] "%" AAM,CPLC,CSCM,CSTB
+  SG_ ChargingStatusDisplay : 21|3@0+ (1,0) [0|0] "" CSTB
+  SG_ ChargingPlugConnected_v2 : 23|2@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1066 HEVC_A106: 8 CGW
+  SG_ ReadyLampStatus : 28|2@0+ (1,0) [0|0] "" CSTB,DOP_TCU
+
+BO_ 1068 HEVC_A108: 8 CGW
+  SG_ HEV_ElecMotorFailureDisplay : 3|1@0+ (1,0) [0|0] "" CSTB
+  SG_ HVchargerStatus : 12|2@0+ (1,0) [0|0] "" AAM
+  SG_ ChargeRemainingTimeDisplay_v2 : 55|11@0+ (1,0) [0|2046] "min" CPLC,CSCM
+
+BO_ 1070 HEVC_R101: 7 CGW
+  SG_ UserSOC : 7|8@0+ (0.392157,0) [0|100] "%" CPLC,CSTB
+
+BO_ 1076 HFM_A104: 8 CGW
+  SG_ HFM_RKE_Request : 39|5@0+ (1,0) [0|0] "" DOP_secu
+  SG_ PushtoStartButton : 51|1@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU
+  SG_ StopInductiveChargingRequest : 52|1@0+ (1,0) [0|0] "" NIC
+  SG_ HFM_HandFree_Request_v2 : 59|4@0+ (1,0) [0|0] "" DOP_secu
+
+BO_ 1081 VDC_A114: 7 CGW
+  SG_ DistanceTotalizer : 15|28@0+ (0.01,0) [0|2600000] "km" AAM,ANC,AUDIOamp,CPLC,CSCM,CSTB,DOP_TCU,NIC,SceneRecorder
+  SG_ VDC_Deactivated : 33|1@0+ (1,0) [0|0] "" AAM
+
+BO_ 1083 DVR_N3: 2 SceneRecorder
+  SG_ DVR_FOTA_Status : 5|5@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_FOTA_Progress : 15|7@0+ (1,0) [0|100] "%" CGW
+
+BO_ 1086 HVAC_A2: 8 CGW
+  SG_ AC_CustomerRequest : 24|1@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1099 ATCU_A109: 8 CGW
+  SG_ ATCVT_RangeIndicationExtended : 44|6@0+ (1,0) [0|0] "" AUDIOamp,CSTB
+
+BO_ 1100 ATCU_A110: 6 CGW
+  SG_ RST_LaunchControlReady : 11|2@0+ (1,0) [0|0] "" AUDIOamp
+  SG_ AT_Level2FailureDisplayRequest : 23|2@0+ (1,0) [0|0] "" AAM
+  SG_ TransmRangeEngaged_Current : 24|4@0+ (1,0) [0|0] "" AAM,SceneRecorder
+  SG_ ParkStatus : 31|2@0+ (1,0) [0|0] "" CSCM,DOP_RES,DOP_TCU
+
+BO_ 1101 BCM_A107: 5 CGW
+  SG_ FlashingIndicatorStatusDisplay : 23|3@0+ (1,0) [0|0] "" CSTB,SceneRecorder
+
+BO_ 1102 BCM_A108: 6 CGW
+  SG_ RearWiperStatus : 9|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ LowBeamDisplay : 30|1@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU,DSU,SceneRecorder
+  SG_ HighBeamDisplay : 31|1@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU,DSU,SceneRecorder
+
+BO_ 1103 BCM_A109: 8 CGW
+  SG_ FrontRightDoorOpenWarning : 9|2@0+ (1,0) [0|0] "" CSTB
+  SG_ FrontLeftDoorOpenWarning : 11|2@0+ (1,0) [0|0] "" CSTB
+  SG_ PositionLightsDisplay : 13|1@0+ (1,0) [0|0] "" AAM,CSTB,DSU
+  SG_ BootOpenWarning : 15|2@0+ (1,0) [0|0] "" CSTB
+  SG_ RearRightDoorOpenWarning : 21|2@0+ (1,0) [0|0] "" CSTB
+  SG_ RearLeftDoorOpenWarning : 23|2@0+ (1,0) [0|0] "" CSTB
+  SG_ CockpitLocked_State : 40|1@0+ (1,0) [0|0] "" AAM
+  SG_ LoadingAreaLocked_State : 55|1@0+ (1,0) [0|0] "" AAM
+
+BO_ 1104 METER_A103: 8 CGW
+  SG_ RawFuelGaugeResistance : 7|10@0+ (1,0) [0|1022] "Ohm" AAM
+  SG_ ExternalTempDisplayUnit : 8|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ ExternalTempDisplayValue : 23|8@0+ (1,-40) [-40|140] "" DOP_TCU
+  SG_ MuteRadioOrder : 32|1@0+ (1,0) [0|0] "" AUDIOamp
+  SG_ DisplayedOilLevel : 39|4@0+ (1,0) [0|0] "" AAM,CSTB
+  SG_ FuelLevelDisplayed : 47|7@0+ (1,0) [0|80] "L" AAM,CSTB,DOP_TCU
+
+BO_ 1105 METER_A104: 8 CGW
+  SG_ OdoCustomerAction : 18|3@0+ (1,0) [0|6] "" CSTB
+  SG_ DisplayedSpeedUnit : 19|1@0+ (1,0) [0|0] "" ANC,AUDIOamp,CSTB
+  SG_ GlobalVehicleWarningState : 21|2@0+ (1,0) [0|0] "" CSTB
+  SG_ DayNightForBacklights : 23|2@0+ (1,0) [0|0] "" CSTB,NIC
+  SG_ NightRheostatedLightMaxPercent : 31|8@0+ (0.4,0) [0|100] "%" AAM,CSTB,SceneRecorder
+  SG_ ExternalTemperature : 37|9@0+ (0.25,-50) [-50|70] "°C" AAM,DOP_TCU
+  SG_ ParkingBrakeStatus : 39|2@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU
+  SG_ LowBrakeFluidLevelStatus : 44|2@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1106 METER_A108: 5 CGW
+  SG_ DayNightStatusForB_Switches : 17|1@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ TripAverageSpeed : 31|12@0+ (0.1,0) [0|409.5] "" CSTB
+
+BO_ 1107 USM_A101: 8 CGW
+  SG_ CRC_USM_A101 : 7|8@0+ (1,0) [0|255] "" DOP_RES,DOP_TCU
+  SG_ NeutralContact : 9|2@0+ (1,0) [0|0] "" AAM
+  SG_ RearGearEngaged : 11|2@0+ (1,0) [0|0] "" AAM
+  SG_ Clock_USM_A101 : 15|4@0+ (1,0) [0|15] "" DOP_RES,DOP_TCU
+  SG_ EngineHoodState : 17|2@0+ (1,0) [0|0] "" CSTB,DOP_RES,DOP_TCU,DOP_secu
+  SG_ IgnitionSupplyConfirmation : 20|1@0+ (1,0) [0|0] "" CSTB,SceneRecorder
+  SG_ BatteryVoltage : 31|8@0+ (0.06,6) [6|18] "V" AAM,ANC,AUDIOamp,DOP_TCU
+  SG_ EEM_StaticPowerLimitationRequest : 36|3@0+ (1,0) [0|0] "" AAM,NIC
+
+BO_ 1108 USM_A103: 8 CGW
+  SG_ SOCBattery14V : 13|6@0+ (0.5,69) [69|100] "%" AAM,CSTB
+  SG_ FrontWiperStatus : 31|2@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1109 VDC_A113: 8 CGW
+  SG_ AccurateOdometer : 23|5@0+ (4,0) [0|120] "cm" CSTB
+  SG_ EBDstateDisplayRequest : 26|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ ABSstateDisplayRequest : 29|2@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1119 ECM_A108: 4 CGW
+  SG_ BattWarnReq_Level_Hi_ECM_v2 : 11|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ EngineCoolantTemp : 23|8@0+ (1,-40) [-40|214] "°C" AAM,CSTB,DOP_TCU
+  SG_ BattWarnReq_Level_Lo_ECM : 31|1@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1136 ECM_A107: 8 CGW
+  SG_ EngineControlFailureLevel2 : 11|1@0+ (1,0) [0|0] "" AAM,CSTB
+  SG_ VoltageRegulationStatus_V2 : 15|4@0+ (1,0) [0|0] "" AAM
+  SG_ EngineControlFailureLevel1 : 32|1@0+ (1,0) [0|0] "" AAM,CSTB
+  SG_ ProducerLoad : 39|7@0+ (1,0) [0|100] "%" AAM
+
+BO_ 1137 ECM_A114: 8 CGW
+  SG_ ShiftIndicator : 1|2@0+ (1,0) [0|0] "" AAM
+  SG_ RequestedSpeedDisplayRequest : 15|8@0+ (1,0) [0|253] "" ANC,AUDIOamp
+  SG_ CruiseControlStatus : 31|3@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,CSTB,DOP_TCU
+
+BO_ 1138 ECM_A116: 8 CGW
+  SG_ VehicleSpeedDisplayedinkmh : 7|12@0+ (0.1,0) [0|409.4] "km/h" ANC,AUDIOamp,CSTB,DOP_TCU,SceneRecorder
+  SG_ VehicleSpeedDisplayedinmph : 23|12@0+ (0.1,0) [0|409.4] "m/h" ANC,AUDIOamp,CSTB,DOP_TCU,SceneRecorder
+  SG_ EngIdleSpeedIncreaseStatus : 58|1@0+ (1,0) [0|0] "" AAM
+
+BO_ 1143 BCM_A110: 8 CGW
+  SG_ CRC_BCM_A110 : 7|8@0+ (1,0) [0|255] "" DOP_RES,DOP_TCU,DOP_secu
+  SG_ RESstatus : 11|4@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU,DOP_secu
+  SG_ Clock_BCM_A110 : 15|4@0+ (1,0) [0|15] "" DOP_RES,DOP_TCU,DOP_secu
+  SG_ RearRightDoorState : 18|2@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,DOP_RES,DOP_TCU,DOP_secu
+  SG_ KeyVehicle : 25|2@0+ (1,0) [0|0] "" AAM
+  SG_ V_WakeUpType : 45|3@0+ (1,0) [0|0] "" CPLC
+  SG_ V_WakeUpSleepCommand : 47|2@0+ (1,0) [0|0] "" AUDIOamp,CPLC,CSCM,DOP_RES,DOP_TCU,DOP_secu,SceneRecorder
+  SG_ RearFogLightStateDisplay : 48|1@0+ (1,0) [0|0] "" CSTB,DOP_TCU
+  SG_ DriverDoorState : 55|2@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,CSTB,DOP_RES,DOP_TCU,DOP_secu
+  SG_ PassengerDoorState : 61|2@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,CSTB,DOP_RES,DOP_TCU,DOP_secu
+  SG_ RearLeftDoorState : 63|2@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,DOP_RES,DOP_TCU,DOP_secu
+
+BO_ 1144 BCM_A111: 8 CGW
+  SG_ TailGateButtonPushed : 10|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ BCM_WakeUpSleepCommand : 15|2@0+ (1,0) [0|0] "" CSTB
+  SG_ RearDefrostEngaged : 16|1@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU
+  SG_ PositionLightsRequest : 17|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ FrontFogLightsRequest : 18|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ SmartKeylessInformationDisplay : 23|5@0+ (1,0) [0|0] "" CSTB
+  SG_ OriginOfVehOutsideLockedChangev2 : 27|4@0+ (1,0) [0|0] "" DOP_secu
+  SG_ DriverDoorLockedStatus : 32|1@0+ (1,0) [0|0] "" CSTB,DOP_RES,DOP_TCU,DOP_secu
+  SG_ DayTimeRunningLightRequest : 33|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ HornRequest : 36|3@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU,DOP_secu,SceneRecorder
+  SG_ WarningLightsStatus : 41|1@0+ (1,0) [0|0] "" DSU
+  SG_ VehicleOutsideLockedState : 42|1@0+ (1,0) [0|0] "" AAM,CSTB,DOP_RES,DOP_TCU,DOP_secu
+  SG_ FrontFogLightsDisplay : 48|1@0+ (1,0) [0|0] "" AAM,CSTB
+  SG_ ShiftPaddleRequest : 55|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ RearFogLightsRequest : 56|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ BrakeLampStatus : 57|1@0+ (1,0) [0|0] "" AAM
+
+BO_ 1145 BCM_A112: 8 CGW
+  SG_ SRU_Position : 23|4@0+ (1,0) [0|0] "" ANC
+  SG_ WindowPosition_FR : 36|3@0+ (1,0) [0|0] "" ANC,CSTB
+  SG_ WindowPosition_FL : 39|3@0+ (1,0) [0|0] "" ANC,CSTB
+  SG_ ProbableCustomerFeedBackNeed : 41|1@0+ (1,0) [0|0] "" CSTB,SceneRecorder
+  SG_ WindowPosition_RR : 44|3@0+ (1,0) [0|0] "" ANC,CSTB
+  SG_ WindowPosition_RL : 47|3@0+ (1,0) [0|0] "" ANC,CSTB
+  SG_ BackDoorLockedStatus : 50|1@0+ (1,0) [0|0] "" CSTB
+  SG_ AutoACC2Status_MM : 55|2@0+ (1,0) [0|0] "" AUDIOamp
+  SG_ RearRightDoorLockedStatus : 57|1@0+ (1,0) [0|0] "" CSTB
+  SG_ RearLeftDoorLockedStatus : 58|1@0+ (1,0) [0|0] "" CSTB
+  SG_ PassengerDoorLockedStatus : 59|1@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1146 BCM_A113: 8 CGW
+  SG_ IgnitionSwitchPosition : 8|1@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU,DOP_secu
+  SG_ DriverSafetyBeltBuckleState : 11|2@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU
+  SG_ ClutchSwitchMinimumTravel : 17|2@0+ (1,0) [0|0] "" AAM,DOP_TCU
+  SG_ TailGateStatus : 19|2@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,CSTB,DOP_RES,DOP_TCU,DOP_secu
+  SG_ VehicleStates : 23|4@0+ (1,0) [0|0] "" AAM,AUDIOamp,CPLC,CSTB,DOP_RES,DOP_TCU,DOP_secu,SceneRecorder
+  SG_ BrakeInfoStatus : 26|3@0+ (1,0) [0|0] "" AAM,AUDIOamp,CSTB,DOP_TCU,SceneRecorder
+  SG_ DeliveryModeInformation_v2 : 28|2@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,CPLC,DOP_TCU,SceneRecorder
+  SG_ FlashingIndicatorCommandPosition : 33|2@0+ (1,0) [0|0] "" DOP_TCU,DSU
+  SG_ FlashingIndicatorStatus : 36|3@0+ (1,0) [0|0] "" AAM,DOP_TCU,DSU
+  SG_ GADE_v2 : 39|3@0+ (1,0) [0|0] "" AAM,ANC,AUDIOamp,CPLC,CSCM,DOP_TCU,NIC,SceneRecorder
+  SG_ StopLampDiagnosis : 41|2@0+ (1,0) [0|0] "" AAM
+  SG_ TrailerPresence : 44|1@0+ (1,0) [0|0] "" AAM
+  SG_ FrontWipingRequest : 47|3@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ HighBeamPassingRequest : 50|1@0+ (1,0) [0|0] "" DSU
+  SG_ ClutchSwitchMaximumTravel : 63|2@0+ (1,0) [0|0] "" AAM,DOP_TCU
+
+BO_ 1147 ECM_A105: 8 CGW
+  SG_ EngineOilTempDisplay : 15|8@0+ (1,-50) [-50|204] "°C" DOP_TCU
+  SG_ OilPressureWarning_ECM : 17|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ WarningWaterTemp : 18|1@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU
+  SG_ FuelConsumption : 31|8@0+ (80,0) [0|20400] "mm3" CSTB,DOP_TCU
+  SG_ MILLamp : 39|4@0+ (1,0) [0|0] "" AAM,DOP_TCU
+  SG_ ECM_OilPressureSwitchFaultDisp : 47|1@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1160 DOP_A1: 1 DOP_secu
+  SG_ DOP_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1164 HEVC_R14: 7 CGW
+  SG_ Combo_EVMaximumVoltageLimit : 7|14@0+ (0.1,0) [0|1000] "V" CPLC,CSCM
+  SG_ Combo_ChargingComplete : 8|1@0+ (1,0) [0|0] "" CPLC
+  SG_ Combo_BulkChargingComplete : 9|1@0+ (1,0) [0|0] "" CPLC
+  SG_ Combo_EVErrorCode : 43|4@0+ (1,0) [0|0] "" CPLC
+  SG_ CPLC_RequestedEnergyTransferMode : 50|3@0+ (1,0) [0|0] "" CPLC
+  SG_ CPLC_ChargingSession : 52|2@0+ (1,0) [0|0] "" CPLC
+  SG_ CPLC_ChargeProgress : 55|3@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1188 WCBS_N101: 8 NIC
+  SG_ NFCframe_NFC_Inside_to_VKM : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1199 BMS_CANHS_R_09: 8 CGW
+  SG_ ClosedCircuit_CellMaxVoltage_Threshold : 0|9@0+ (0.01,1) [1|5] "V" CSCM
+
+BO_ 1210 HEVC_A160: 5 CGW
+  SG_ Combo_EVMaximumPowerLimit_v2 : 7|13@0+ (50,0) [0|400000] "W" CPLC
+  SG_ DCcharge_EVMaxCurrentLimit_v2 : 10|13@0+ (0.1,0) [0|800] "A" CPLC
+  SG_ Combo_EVchargeHLCRequest_v2 : 29|5@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1218 TCU_N101: 8 CGW
+  SG_ ConnectionData_IVC_ID : 7|48@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ TransportContent_IVC_ID : 49|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ DataLength_IVC_ID : 55|6@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ Heavy_crash_state : 59|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ DataIndex_IVC_ID : 63|4@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1219 CPLC_A111: 4 CPLC
+  SG_ CPLC_CVN : 7|32@0+ (1,0) [0|4.294967295E9] "" CGW
+
+BO_ 1223 CPLC_A112: 8 CPLC
+  SG_ CPLC_CALID1 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" CGW
+
+BO_ 1226 CPLC_A113: 8 CPLC
+  SG_ CPLC_CALID2 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" CGW
+
+BO_ 1233 BCM_A103: 8 CGW
+  SG_ HazardLampStatus : 45|1@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1247 DVR_N103: 7 SceneRecorder
+  SG_ GeneralRecordingStatus_v2 : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ WiFiStatus_v2 : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ UpdateStatus_Command_Response : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ RecordVideoQuality_HSL : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ ComandResp_fileExport : 10|2@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_CommandRespList_Passenger : 15|5@0+ (1,0) [0|0] "" CGW
+  SG_ INcamWrongModeWarning : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ INcamModeStatus : 20|3@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_EthernetStatus : 23|3@0+ (1,0) [0|0] "" CGW
+  SG_ SuperpositionOSDShow : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ RRCameraStatus : 28|3@0+ (1,0) [0|0] "" CGW
+  SG_ INCameraStatus : 31|3@0+ (1,0) [0|0] "" CGW
+  SG_ UsageCounterOfDVRRemote : 34|3@0+ (1,0) [0|0] "" CGW
+  SG_ eMMCStatus : 36|2@0+ (1,0) [0|0] "" CGW
+  SG_ FRCameraStatus : 39|3@0+ (1,0) [0|0] "" CGW
+  SG_ FilesExportingStatus : 40|1@0+ (1,0) [0|0] "" CGW
+  SG_ UpgradeProgress : 47|7@0+ (1,0) [0|0] "" CGW
+  SG_ Diary_mode_status : 55|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1252 ECM_A14: 8 CGW
+  SG_ DieselFilterWaterDetection : 26|1@0+ (1,0) [0|0] "" AAM
+  SG_ NominalFuelConsumption : 55|8@0+ (80,0) [0|20400] "mm3" AAM
+
+BO_ 1253 CPLC_R103: 6 CPLC
+  SG_ EVSEscheduleDuration_v2 : 7|14@0+ (10,0) [0|86400] "s" CGW
+  SG_ EVSEschedulePowerAllowed_v3 : 23|13@0+ (100,0) [0|800000] "W" CGW
+  SG_ EVSEscheduleStatus_v2 : 26|3@0+ (1,0) [0|0] "" CGW
+  SG_ EVSEscheduleCost_v2 : 39|7@0+ (1,0) [0|100] "%" CGW
+  SG_ EVSEscheduleSlotNumber_v2 : 47|5@0+ (1,0) [0|24] "-" CGW
+
+BO_ 1255 IVI_N110: 8 CGW
+  SG_ DVR_CamView_Change : 2|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ MMI_CommandList_Passenger : 7|5@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ SetINcamMode : 9|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ EN_SuperpositionOSDShow : 11|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ WiFiInfoDisplayRequest : 13|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ CommandfileExport : 15|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ Diary_mode_request : 57|2@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1296 TCU_A103: 8 CGW
+  SG_ TCU_DVR_Photo_Request : 1|1@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ Heavy_crash_activate : 40|1@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1314 CPLC_R104: 2 CPLC
+  SG_ CRC_CPLC_R104 : 7|8@0+ (1,0) [0|255] "" CGW
+  SG_ Combo_DCExtendedConnectStatus_V2 : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Clock_CPLC_R104 : 15|4@0+ (1,0) [0|15] "" CGW
+
+BO_ 1315 BCM_A8: 3 CGW
+  SG_ AbsoluteTimeSince1rstIgnition : 7|24@0+ (1,0) [0|1.677E7] "min" AAM
+
+BO_ 1318 IVI_A3: 6 CGW
+  SG_ ESE_Soundvolume_Request : 36|5@0+ (1,0) [0|0] "" AUDIOamp
+  SG_ ESE_Soundtype_Request : 47|4@0+ (1,0) [0|0] "" AUDIOamp
+
+BO_ 1321 IVI_N19: 8 CGW
+  SG_ SetParkingMonitor : 1|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ SetRecordQuality : 3|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ MuteRecordSet : 5|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ RecordTimeSet : 7|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ SetCollideSensitivity : 13|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ SetCollideCheck : 15|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ FilePlayNum : 19|4@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ EN_SuperpositionOthersShow : 21|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ EN_SuperpositionSpeedShow : 23|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ GPSClockStatus : 24|1@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ GatherPhoto : 26|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ MMI_CommandList : 31|5@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ DataLength : 39|5@0+ (1,0) [0|17] "" SceneRecorder
+  SG_ DataIndex : 45|4@0+ (1,0) [0|9] "" SceneRecorder
+  SG_ TransportContent : 47|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ ConnectionData1 : 55|8@0+ (1,0) [0|254] "" SceneRecorder
+  SG_ ConnectionData2 : 63|8@0+ (1,0) [0|254] "" SceneRecorder
+
+BO_ 1330 DVR_N101: 8 SceneRecorder
+  SG_ GeneralRecordingStatus : 0|1@0+ (1,0) [0|0] "" CGW
+  SG_ SDCardStatus : 3|3@0+ (1,0) [0|0] "" CGW
+  SG_ DVRWorkStatus : 7|4@0+ (1,0) [0|0] "" CGW
+  SG_ LanguageStatus : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ FolderStatus : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ FileStatus : 14|3@0+ (1,0) [0|0] "" CGW
+  SG_ PhotoReady : 15|1@0+ (1,0) [0|0] "" CGW
+  SG_ CollideCheckStatus : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ ParkingMonitor : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ CollideSensitivityStatus : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ MuteRecordStatus : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ SuperpositionSpeedShow : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ SuperpositionOthersShow : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ RecordVideoQuality : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ RecordTime : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ WiFiStatus : 32|1@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_FileSelectStatus : 33|1@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_Collision_Status : 34|1@0+ (1,0) [0|0] "" CGW
+  SG_ AutoACC2_ON_Request_DVR : 35|1@0+ (1,0) [0|0] "" CGW
+  SG_ NetworkStatus : 39|4@0+ (1,0) [0|0] "" CGW
+  SG_ SelftimerState : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ ContrastStateRRcam : 44|3@0+ (1,0) [0|0] "" CGW
+  SG_ ContrastStateFRcam : 47|3@0+ (1,0) [0|0] "" CGW
+  SG_ NetworkStatus_CameraAngle : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ BrightnessStateRRcam : 52|3@0+ (1,0) [0|0] "" CGW
+  SG_ BrightnessStateINcam : 55|3@0+ (1,0) [0|0] "" CGW
+  SG_ NetworkStatus_CameraView : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ ContrastStateINcam : 60|3@0+ (1,0) [0|0] "" CGW
+  SG_ BrightnessState : 63|3@0+ (1,0) [0|0] "" CGW
+
+BO_ 1331 DVR_N2: 4 SceneRecorder
+  SG_ DVR_CommandResult : 2|3@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_CommandRespList : 7|5@0+ (1,0) [0|0] "" CGW
+  SG_ DVRSystemVersion_Major : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ WifiAuthenticationRequest : 12|1@0+ (1,0) [0|0] "" CGW
+  SG_ UpdateStatus : 15|3@0+ (1,0) [0|0] "" CGW
+  SG_ DVRSystemVersion_MCU : 19|4@0+ (1,0) [0|0] "" CGW
+  SG_ DVRSystemVersion_DSP : 23|4@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_CommandRespList_2 : 29|5@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_RemoteCommandResult : 31|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1332 ACU_A101: 8 CGW
+  SG_ AIRBAGMalfunction : 8|1@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU
+  SG_ PassengerAlertState : 17|2@0+ (1,0) [0|0] "" CSTB
+  SG_ PassengerAIRBAG_Inhibition : 18|1@0+ (1,0) [0|0] "" CSTB
+  SG_ CrashDetected_v2 : 22|2@0+ (1,0) [0|0] "" CSTB,SceneRecorder
+  SG_ RolloverDetectionMalfunction : 27|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ PassengerSafetyBeltBuckleState : 29|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SecondRowLeftSafetyBeltState : 35|2@0+ (1,0) [0|0] "" ANC,AUDIOamp,CSTB
+  SG_ SecondRowCenterSafetyBeltState : 39|2@0+ (1,0) [0|0] "" ANC,AUDIOamp,CSTB
+  SG_ ThirdRowCenterSafetyBeltState : 43|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SecondRowRightSafetyBeltState : 47|2@0+ (1,0) [0|0] "" ANC,AUDIOamp,CSTB
+  SG_ ThirdRowRightSafetyBeltState : 51|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ ThirdRowLeftSafetyBeltState : 55|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ PassengerAIRBAG_Inhibition_v2 : 61|2@0+ (1,0) [0|0] "" AAM
+  SG_ FirstRowCenterSafetyBeltState : 63|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 1339 TIME_R1: 8 CGW
+  SG_ TimeHour : 7|5@0+ (1,0) [0|23] "h" SceneRecorder
+  SG_ TimeMinute : 15|6@0+ (1,0) [0|59] "min" SceneRecorder
+  SG_ DateYear : 23|10@0+ (1,2000) [2000|3000] "year" CPLC,SceneRecorder
+  SG_ TimeSeconde : 29|6@0+ (1,0) [0|59] "s" SceneRecorder
+  SG_ DateMonth : 39|4@0+ (1,0) [0|12] "month" CPLC,SceneRecorder
+  SG_ TimeWeekDay : 42|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ DateDay : 47|5@0+ (1,0) [0|31] "day" CPLC,SceneRecorder
+
+BO_ 1341 SONAR_A4: 8 CGW
+  SG_ UPA_Obstacle_Zone_Front_Right : 12|3@0+ (1,0) [0|0] "" CSTB
+  SG_ UPA_Obstacle_Zone_Front_Left : 15|3@0+ (1,0) [0|0] "" CSTB
+  SG_ UPA_Obstacle_Zone_Rear_Right : 20|3@0+ (1,0) [0|0] "" CSTB
+  SG_ UPA_Obstacle_Zone_Rear_Left : 23|3@0+ (1,0) [0|0] "" CSTB
+  SG_ UPA_Obstacle_Zone_Rear_Center : 28|3@0+ (1,0) [0|0] "" CSTB
+  SG_ UPA_Obstacle_Zone_Front_Center : 31|3@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1349 TCU_R102: 3 CGW
+  SG_ PnCcertifInstallTrigger : 2|4@0+ (1,0) [0|15] "-" CPLC
+  SG_ PnCactivationRequest_IVC : 4|2@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1367 TCU_N105: 6 CGW
+  SG_ PnCContCertifInstMng : 36|5@0+ (1,0) [0|0] "" CPLC
+  SG_ PnCProV2GCertifInstMng : 47|4@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1380 METER_A106: 8 CGW
+  SG_ TripAverageConsumption : 7|10@0+ (0.1,0) [0|102.3] "" CSTB
+  SG_ TripUnitConsumption : 10|3@0+ (1,0) [0|0] "" CSTB
+  SG_ TripUnitDistance : 13|2@0+ (1,0) [0|0] "" CSTB
+  SG_ TripDistance : 31|17@0+ (0.1,0) [0|13107.1] "" CSTB
+
+BO_ 1381 SRRR_A106: 6 CGW
+  SG_ BSWrad_AlertStatus : 4|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ CTA_AlertStatus : 7|2@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1389 HEVC_A154: 8 CGW
+  SG_ CHG_MinimumDischargePower : 12|11@0+ (0.05,0) [0|60] "kW" CPLC
+  SG_ EV_PresentActivePower : 17|13@0+ (0.05,-200) [-200|200] "kW" CPLC
+  SG_ EV_PresentReactivePower : 36|13@0+ (0.05,-200) [-200|200] "kVAR" CPLC
+
+BO_ 1398 HEVC_A155: 7 CGW
+  SG_ DCcharge_EVMinCurrentLimit_v2 : 20|13@0+ (0.1,0) [0|800] "A" CPLC
+
+BO_ 1402 ADAS_A103: 8 CGW
+  SG_ LDW_FailureDisplay : 35|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ EcallRequest : 46|1@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1431 HEVC_R26: 5 CGW
+  SG_ CustomerDepartureTime : 7|13@0+ (5,0) [0|10080] "min" CPLC
+  SG_ CPLC_ACEnergyAmount : 10|9@0+ (100,0) [0|50000] "Wh" CPLC
+  SG_ CPLC_ACelectricityVMaxVoltage : 17|14@0+ (0.1,0) [0|1000] "V" CPLC
+
+BO_ 1439 HEVC_A133: 7 CGW
+  SG_ InstantConsumptionZEVdisplay_v3 : 23|11@0+ (0.1,-102.2) [-102.2|102.2] "" AAM,CSTB
+
+BO_ 1443 HEVC_R104: 8 CGW
+  SG_ AverageConsumptionZEV_LastTrip : 11|10@0+ (0.1,0) [0|102.2] "" AAM,CSTB
+  SG_ VehicleAutonomyZEVdisplay : 17|10@0+ (1,0) [0|1022] "wu" CSTB
+  SG_ VehicleAutonomyHEVdisplay : 49|10@0+ (1,0) [0|1022] "" CSTB
+
+BO_ 1447 MMI_SR_CANHS_R_02: 8 SceneRecorder
+  SG_ SR_CustomerRecordStatus : 10|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1450 MMI_SR_CANHS_R_01: 8 SceneRecorder
+  SG_ SR_AutomaticRecordStatus : 14|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1451 CPLC_A105: 8 CPLC
+  SG_ EVSE_TargetActivePower_v2 : 44|19@0+ (0.001,-200) [-200|200] "kW" CGW
+
+BO_ 1458 HEVC_R112: 8 CGW
+  SG_ EcoModePWTcancelReq : 27|2@0+ (1,0) [0|0] "" CSTB
+  SG_ PnCHEVCauthorizationReq : 29|2@0+ (1,0) [0|0] "" CPLC
+  SG_ RST_Boost_Launch_Ctrl_Alert_MMI : 53|4@0+ (1,0) [0|0] "" AUDIOamp
+
+BO_ 1466 BCM_A2: 5 CGW
+  SG_ FrontLeftWheelPressure_V2 : 7|8@0+ (30,0) [0|7620] "mbar" CSTB,DOP_TCU
+  SG_ FrontRightWheelPressure_V2 : 15|8@0+ (30,0) [0|7620] "mbar" CSTB,DOP_TCU
+  SG_ RearLeftWheelPressure_V2 : 23|8@0+ (30,0) [0|7620] "mbar" CSTB,DOP_TCU
+  SG_ RearRightWheelPressure_V2 : 31|8@0+ (30,0) [0|7620] "mbar" CSTB,DOP_TCU
+
+BO_ 1469 IVI_UserSetPref_A4: 8 CGW
+  SG_ CockpitLanguageRequest : 47|8@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1472 MULTIDRIVE_A1: 8 CGW
+  SG_ MexModeState : 44|3@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1480 HEVC_A152: 8 CGW
+  SG_ ChargeTimeDisplayAtDPrct : 51|12@0+ (1,0) [1|4094] "min" CPLC
+
+BO_ 1482 IVI_UserSetPref_A2: 8 CGW
+  SG_ AEB_FCWactivationRequest2 : 28|3@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1485 RemoteFunctionService_BCM_Frame: 8 CGW
+  SG_ RemoteFunctionService_BCM : 7|64@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU
+
+BO_ 1492 CPLC_R101: 7 CPLC
+  SG_ PnCcontractCertifExpiry_Month : 11|4@0+ (1,0) [0|12] "month" CGW
+  SG_ PnCcontractCertifExpiry_Year : 18|9@0+ (1,2000) [2000|2500] "year" CGW
+  SG_ PnCcontractCertifExpiry_Day : 23|5@0+ (1,0) [0|31] "day" CGW
+  SG_ PnCcontractCertifValidity_Year : 25|9@0+ (1,2000) [2000|2500] "year" CGW
+  SG_ PnCchargeStationIdentMode : 42|2@0+ (1,0) [0|0] "" CGW
+  SG_ PnCcontractCertifValidity_Day : 47|5@0+ (1,0) [0|31] "day" CGW
+  SG_ Combo_EVSEchargeHLCState_v2 : 51|4@0+ (1,0) [0|0] "" CGW
+  SG_ PnCcontractCertifValidity_Month : 55|4@0+ (1,0) [0|12] "month" CGW
+
+BO_ 1493 HEVC_A150: 8 CGW
+  SG_ CPLC_ACenergyAmount_v2 : 41|12@0+ (0.1,-200) [-200|200] "kWh" CPLC
+
+BO_ 1496 WCBS_A101: 7 NIC
+  SG_ WCBS_Memory_Fault : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ WCBS_Coil_Disconnection : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ WCBS_ChargingStopReason : 20|5@0+ (1,0) [0|0] "" CGW
+  SG_ Smartphone_Manufacturer : 23|3@0+ (1,0) [0|0] "" CGW
+  SG_ Smartphone_Charging_Time : 31|16@0+ (1,1) [1|36000] "s" CGW
+  SG_ Smartphone_Charging_Standard : 42|3@0+ (1,0) [0|0] "" CGW
+  SG_ WCBS_temperature : 47|5@0+ (5,0) [0|100] "°C" CGW
+  SG_ InductiveChargerStatus : 52|2@0+ (1,0) [0|0] "" CGW
+  SG_ WCBS_HMI : 55|3@0+ (1,0) [0|0] "" CGW
+
+BO_ 1499 RemoteFunctionService_HFM_Frame: 8 CGW
+  SG_ RemoteFunctionService_HFM : 7|64@0+ (1,0) [0|0] "" DOP_secu
+
+BO_ 1507 CPLC_A101: 1 CSCM
+  SG_ CPLC_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1508 BCM_A115: 8 CGW
+  SG_ CRC_BCM_A115 : 7|8@0+ (1,0) [0|255] "" DOP_RES,DOP_TCU
+  SG_ Clock_BCM_A115 : 15|4@0+ (1,0) [0|15] "" DOP_RES,DOP_TCU
+  SG_ RESPreSoak_SmartphoneError : 18|3@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ LeftTimeDuringThisRESCycle : 31|11@0+ (1,0) [0|1200] "s" DOP_RES,DOP_TCU
+  SG_ AlarmState : 32|1@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ LightSwitchStatus : 36|2@0+ (1,0) [0|0] "" DSU
+
+BO_ 1510 METER_A107: 8 CGW
+  SG_ DistanceToEmptyTank : 15|11@0+ (1,0) [0|2046] "km" DOP_TCU
+
+BO_ 1511 BCM_A116: 7 CGW
+  SG_ WheelStateRL : 36|3@0+ (1,0) [0|0] "" CSTB,DOP_TCU
+  SG_ WheelStateRR : 39|3@0+ (1,0) [0|0] "" CSTB,DOP_TCU
+  SG_ WheelStateFL : 44|3@0+ (1,0) [0|0] "" CSTB,DOP_TCU
+  SG_ WheelStateFR : 47|3@0+ (1,0) [0|0] "" CSTB,DOP_TCU
+
+BO_ 1519 IVI_A101: 8 CGW
+  SG_ CurrentUserState_v2 : 23|3@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1537 ADAS_A119: 8 CGW
+  SG_ ACC_StatusDisplay : 5|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ ADAS_ModeDisplay : 7|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ ACC_TargetDistanceAlert : 10|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ LCA_SteeringWheelDisplay : 46|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ LCA_ActivationState : 47|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ LDP_StatusDisplay : 49|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ LDP_AlertStatus : 54|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ ContextSpeed_ActivationState : 58|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ ContextRoad_ActivationState : 60|2@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1538 ADAS_A120: 8 CGW
+  SG_ LDW_AlertStatus : 21|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ BSI_AlertStatus : 23|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ RAB_AlertStatus : 44|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ WDA_DriverAttentionLevel : 63|4@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1543 BCM_A106: 8 CGW
+  SG_ GlasshatchStatus : 63|2@0+ (1,0) [0|0] "" DOP_RES,DOP_TCU,DOP_secu
+
+BO_ 1544 CSCM_A106: 5 CSCM
+  SG_ DCcharge_EVSEPresentCurrent : 7|15@0+ (0.1,-400) [-400|1023] "A" CGW
+  SG_ DCcharge_CANconnectStatus : 19|3@0+ (1,0) [0|0] "" CGW
+  SG_ DCchargeMode_EVSE : 23|4@0+ (1,0) [0|0] "" CGW
+  SG_ CRC_CSCM_A106 : 31|8@0+ (1,0) [0|255] "" CGW
+  SG_ Clock_CSCM_A106 : 39|4@0+ (1,0) [0|15] "" CGW
+
+BO_ 1552 HEVC_A128: 7 CGW
+  SG_ DCcharge_EVminimumCurrentLimit : 7|8@0+ (1,0) [0|200] "A" CSCM
+  SG_ V2X_EVminOutputEnergy : 15|8@0+ (0.1,0) [0|25.5] "kWh" CSCM
+  SG_ V2X_EVmaxOutputEnergy : 23|8@0+ (0.1,0) [0|25.5] "kWh" CSCM
+  SG_ V2X_EVsequenceNumber : 31|8@0+ (1,0) [0|255] "-" CSCM
+  SG_ V2X_EVoptionCode : 39|8@0+ (1,0) [0|255] "-" CSCM
+  SG_ DCcharge_EVMaximumCurrentLimit : 47|13@0+ (0.1,-400) [-400|400] "A" CSCM
+
+BO_ 1555 ANC_A1: 1 ANC
+  SG_ ANC_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1557 IVI_A105: 8 CGW
+  SG_ GPS_LongitudePosition : 7|29@0+ (0.00010,-18000) [-18000|17959.999] "min" SceneRecorder
+  SG_ GPS_LatitudePosition : 39|28@0+ (0.00010,-9000) [-9000|8959.999] "min" SceneRecorder
+
+BO_ 1561 HEVC_A131: 8 CGW
+  SG_ HVB_RatedVoltage : 7|14@0+ (0.1,0) [0|1500] "V" CSCM
+  SG_ HVB_MaxCapacity_HEVC_v2 : 9|16@0+ (0.1,0) [0|6553.5] "kWh" CPLC,CSCM
+  SG_ DCcharge_EVpresentVoltage : 25|14@0+ (0.1,0) [0|1500] "V" CSCM
+  SG_ DCcharge_EVchargeAuthorization : 40|1@0+ (1,0) [0|0] "" CSCM
+  SG_ HVB_OverCurrent : 41|1@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_ChargeModeRequest : 43|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_MaxTemperature : 55|8@0+ (1,-50) [-50|200] "°C" CSCM
+
+BO_ 1562 HEVC_A132: 8 CGW
+  SG_ DCcharge_EVpresentCurrent : 0|13@0+ (0.1,-400) [-400|400] "A" CSCM
+  SG_ HVB_MaxTempProbe : 7|7@0+ (1,-40) [-40|80] "°C" CSCM
+  SG_ DCcharge_EVTargetCurrent : 17|15@0+ (0.1,-400) [-400|1023] "A" CPLC,CSCM
+  SG_ DCcharge_EVtimeOutStatistics : 19|2@0+ (1,0) [0|0] "" CSCM
+  SG_ HVinterlockAlert : 32|1@0+ (1,0) [0|0] "" CSCM
+  SG_ HVFOTAConditionCheckStatus : 34|2@0+ (1,0) [0|0] "" CPLC
+  SG_ HVB_MinTempProbe : 47|7@0+ (1,-40) [-40|80] "°C" CSCM
+  SG_ EVMaximumV2XEnergyRequest : 55|12@0+ (0.1,-200) [-200|200] "KWh" CPLC
+
+BO_ 1564 HEVC_A135: 8 CGW
+  SG_ HVB_OverVoltageAlert : 20|1@0+ (1,0) [0|0] "" CSCM
+  SG_ HVB_UnderVoltageAlert : 21|1@0+ (1,0) [0|0] "" CSCM
+
+BO_ 1567 AUDIOamp_A1: 2 AUDIOamp
+  SG_ AUDIOamp_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ AudioAvailability_Amp : 10|1@0+ (1,0) [0|0] "" CGW
+
+BO_ 1570 HEVC_A6: 8 CGW
+  SG_ RIsolFailureAlert : 1|1@0+ (1,0) [0|0] "" CSCM
+  SG_ ModeEcoIncitationPrompt : 10|1@0+ (1,0) [0|0] "" CSTB
+
+BO_ 1581 HEVC_A129: 8 CGW
+  SG_ V2X_EVmaxSupplyEnergy : 7|16@0+ (0.1,0) [0|6553.3] "kWh" CSCM
+  SG_ V2X_EVvehicleInfo : 16|1@0+ (1,0) [0|0] "" CSCM
+  SG_ V2X_EVminOutputEnergyPercent : 23|7@0+ (1,0) [0|100] "%" CSCM
+  SG_ V2X_EVsecondBattery : 24|1@0+ (1,0) [0|0] "" CSCM
+  SG_ V2X_EVmaxOutputEnergyPercent : 31|7@0+ (1,0) [0|100] "%" CSCM
+  SG_ HVB_VoltageAlert : 33|2@0+ (1,0) [0|0] "" CSCM
+  SG_ V2X_EVpriorityOrder : 37|4@0+ (1,0) [0|15] "-" CSCM
+  SG_ V2X_EVdischargeAllowed : 38|1@0+ (1,0) [0|0] "" CSCM
+  SG_ V2X_EVfuelCell : 39|1@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVtimeOutChargerParam : 41|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVtimeOutChargerIdent : 43|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVreadyStatus : 45|2@0+ (1,0) [0|0] "" CSCM
+  SG_ HVB_SOCstatus : 47|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVtimeOutChargeEnd : 49|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVtimeOutChargeState : 51|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVtimeOutChargerPrep : 53|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVtimeOutChargerSync : 55|2@0+ (1,0) [0|0] "" CSCM
+  SG_ V2X_HEVinterCombustionEngine : 56|1@0+ (1,0) [0|0] "" CSCM
+  SG_ CHADEMO_ChargedRateRefConstant : 63|7@0+ (1,0) [0|100] "%" CSCM
+
+BO_ 1583 ANC_A101: 3 AUDIOamp
+  SG_ R_ANC_ModeStatus : 5|3@0+ (1,0) [0|0] "" CGW
+  SG_ R_ANC_ActivationStatus : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ ANC_SeatFocusStatus : 11|4@0+ (1,0) [0|0] "" CGW
+  SG_ ANC_ModeVariationStatus : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ ANC_ActivationStatus : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ ASE_SoundActivationStatus : 20|2@0+ (1,0) [0|0] "" CGW
+  SG_ ASE_SoundvolumeState : 23|3@0+ (1,0) [0|0] "" CGW
+
+BO_ 1584 HEVC_A130: 8 CGW
+  SG_ GBT27930_EVprotocolNumber : 7|24@0+ (1,0) [0|1.6777215E7] "-" CSCM
+  SG_ GBT27930_BatteryType : 31|8@0+ (1,0) [0|255] "-" CSCM
+  SG_ DCcharge_EVchargeEnd : 39|8@0+ (1,0) [0|254] "-" CSCM
+  SG_ DCcharge_EVchargeEndErrorReason : 47|8@0+ (1,0) [0|254] "-" CSCM
+  SG_ DCcharge_EVchargeEndFaultReason : 55|16@0+ (1,0) [0|65534] "-" CSCM
+
+BO_ 1601 RemoteFunctionService_DOP_TCU_Frame: 8 DOP_TCU
+  SG_ RemoteFunctionService_DOP_TCU : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1602 RemoteFunctionService_HFM_DOPRES_Frame: 8 CGW
+  SG_ RemoteFunctionService_HFM_DOPRES : 7|64@0+ (1,0) [0|0] "" DOP_RES
+
+BO_ 1608 CSCM_A102: 7 CSCM
+  SG_ DCcharge_CurrentChargeDuration : 7|10@0+ (1,0) [0|600] "min" CGW
+  SG_ DCcharge_TimeOutHVbattCharge : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEdischarge : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_TimeOutChargePrepa : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEuserStopRequest : 16|1@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEmanualRequest : 17|1@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEdischargeAllowed : 18|1@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_VehicleIdentification : 19|1@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_ReadyStatus : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_TimeOutVehicleID : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEprotocolVersion : 31|8@0+ (1,0) [0|255] "-" CGW
+  SG_ DCcharge_RemainChargingTime : 39|11@0+ (10,0) [0|20460] "s" CGW
+  SG_ V2X_EVSEsequenceNumber : 40|8@0+ (1,0) [0|255] "-" CGW
+  SG_ V2X_EVSEpriorityOrder : 44|4@0+ (1,0) [0|15] "-" CGW
+
+BO_ 1609 CSCM_A103: 8 CSCM
+  SG_ DCcharge_ChargeEnd : 7|8@0+ (1,0) [0|255] "-" CGW
+  SG_ DCcharge_ChargeEndErrorReason : 15|8@0+ (1,0) [0|255] "-" CGW
+  SG_ DCcharge_ChargeEndFaultReason : 23|16@0+ (1,0) [0|65535] "-" CGW
+  SG_ GBT27930_StationProtocolNumber : 39|32@0+ (1,0) [0|4.294967295E9] "-" CGW
+
+BO_ 1610 CSCM_A104: 8 CSCM
+  SG_ DCcharge_ChargeNumber : 7|32@0+ (1,0) [0|4.294967295E9] "-" CGW
+  SG_ DCcharge_ChargerLocalCode : 39|32@0+ (1,0) [0|4.294967295E9] "-" CGW
+
+BO_ 1611 CSCM_A105: 8 CSCM
+  SG_ DCcharge_EVSEMinimumCurrentLimit : 7|13@0+ (0.1,-400) [-400|400] "A" CGW
+  SG_ DCcharge_EVSEminVoltageLimit : 10|13@0+ (0.1,0) [0|750] "V" CGW
+  SG_ DCcharge_TimeOutChargeState : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_TimeOutChargeEnd : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_TimeOutChargeRequest : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ DCcharge_EVSEoutputEnergy : 39|14@0+ (0.1,0) [0|1000] "kWh" CGW
+  SG_ DCcharge_EVSEMaximumCurrentLimit : 40|15@0+ (0.1,-400) [-400|1023] "A" CGW
+  SG_ DCcharge_ChargeAuthorization : 41|1@0+ (1,0) [0|0] "" CGW
+
+BO_ 1612 CSCM_N102: 8 CSCM
+  SG_ CHADEMO_StationProtocolNumber : 7|8@0+ (1,0) [0|255] "" CGW
+  SG_ CHADEMO_CorrespondingAutomaker : 15|8@0+ (1,0) [0|255] "" CGW
+  SG_ CHADEMO_ThresholdVoltage : 23|13@0+ (0.1,0) [0|600] "V" CGW
+  SG_ CHADEMO_OperatingCondition : 24|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_TerminalHighCurrentCtrl : 25|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_TerminalDynamicCtrl : 26|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ReliabilityDesign : 32|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ChargerStatus : 33|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ChargerError : 34|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_OverTempProtectionInst : 35|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ConnectorCurrLimitFunctInst : 36|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ConnectorCoolingFunc : 37|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_CableCurrLimitFunctInst : 38|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_CableCoolingFuncStatus : 39|1@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEminDischargeVoltageLimit : 42|10@0+ (1,0) [0|600] "V" CGW
+  SG_ CHADEMO_EnergizingState : 43|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_BatteryCompatibility : 44|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ChargingSystError : 45|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_ChargingStopControl : 46|1@0+ (1,0) [0|0] "" CGW
+  SG_ CHADEMO_WeldingDetection : 47|1@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEmaxDischargeCurrentLimit : 48|8@0+ (1,-255) [-255|0] "A" CGW
+
+BO_ 1614 IVI_A129: 8 CGW
+  SG_ R_ANC_ModeSwitchRequest : 13|3@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ R_ANC_ActivationRequest : 15|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ PairingMode : 56|1@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1623 CPLC_A106: 8 CPLC
+  SG_ Combo_EVSEMaximumCurrentLimit_v2 : 7|13@0+ (0.1,0) [0|800] "A" CGW
+  SG_ Combo_EVSEMaximumPowerLimit_v2 : 10|13@0+ (50,0) [0|400000] "W" CGW
+  SG_ Combo_EVSEMinimumCurrentLimit_v2 : 29|13@0+ (0.1,0) [0|800] "A" CGW
+  SG_ Combo_EVSEPeakCurrentRipple_v2 : 32|13@0+ (0.1,0) [0|800] "A" CGW
+
+BO_ 1624 CPLC_A107: 8 CPLC
+  SG_ Combo_EVSEPresentCurrent_v2 : 7|13@0+ (0.1,0) [0|800] "A" CGW
+  SG_ EVSE_TargetReactivePower_v2 : 10|19@0+ (0.001,-200) [-200|200] "kVAR" CGW
+  SG_ V2G_OEMRootCert_Status : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ CertificateInstallationStatus : 37|4@0+ (1,0) [0|0] "" CGW
+  SG_ PLCReceptionAvailability : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ PnC_OEMProvCert_Status : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ PnC_LegOEMRootCert_Status : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ PnC_OEMRootCert_Status : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2G_VehicleCert_Status : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_BCM_Communication : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_InternalFailure : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_PWS_RangLow : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_PWS_RangHi : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ PnC_MOSub2Cert_Status : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ PnC_MOSub1Cert_Status : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_EVSE_Communication : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1625 CPLC_A109: 8 CPLC
+  SG_ V2G_EVSEmaximumDischargePower_v2 : 7|13@0+ (0.05,-400) [-400|0] "kW" CGW
+  SG_ V2X_EVSEmaximumChargePower : 10|13@0+ (0.05,0) [0|400] "kW" CGW
+  SG_ EVSESelectedProtocol : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSE_ActivePowerRampLimit : 47|12@0+ (0.5,0) [0|2000] "%Pmax/s" CGW
+  SG_ HLC_AC_Nominal_Voltage : 51|9@0+ (1,0) [0|500] "V" CGW
+  SG_ PnC_Contract_Certificate_Status : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ HLC_AC_Connector : 58|1@0+ (1,0) [0|0] "" CGW
+
+BO_ 1631 HEVC_A159: 7 CGW
+  SG_ V2G_EVmaximumDischargeCurrent_v2 : 7|13@0+ (0.1,-800) [-800|0] "A" CPLC
+  SG_ V2G_EVmaximumDischargePower_v2 : 10|13@0+ (0.05,-400) [-400|0] "kW" CPLC
+  SG_ V2G_EVminimumDischargeCurrent_v2 : 29|13@0+ (0.1,-800) [-800|0] "A" CPLC
+  SG_ V2G_EVminimumDischargePower_v2 : 32|13@0+ (0.05,-400) [-400|0] "kW" CPLC
+
+BO_ 1633 CPLC_A110: 4 CPLC
+  SG_ CRC_CPLC_A110 : 7|8@0+ (1,0) [0|255] "" CGW
+  SG_ V2G_EVSEservicesParameters : 11|5@0+ (1,0) [0|31] "-" CGW
+  SG_ Clock_CPLC_A110 : 15|4@0+ (1,0) [0|15] "" CGW
+  SG_ V2G_EVSE_Service_AC_BPT_param_v2 : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2G_Vehicle_CertifStatus : 21|4@0+ (1,0) [0|0] "" CGW
+  SG_ HLC_AC_BPT_Active_Islanding : 22|1@0+ (1,0) [0|0] "" CGW
+  SG_ PnCCPLCActivationStatus : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2G_EVSE_Service_DC_param_v2 : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2G_EVSE_Service_DC_BPT_param_v2 : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ V2G_EVSE_Service_AC_param_v2 : 31|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1635 HEVC_A162: 6 CGW
+  SG_ V2G_EVserviceParameterSelected : 7|5@0+ (1,0) [0|31] "-" CPLC
+  SG_ V2G_EVservices : 15|5@0+ (1,0) [0|18] "-" CPLC
+
+BO_ 1637 CDM_A112: 8 CGW
+  SG_ MultiDriveMode_ASC : 22|3@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ MultiDriveMode_ANC : 36|3@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 1639 HEVC_A113: 8 CGW
+  SG_ ChargingPlugStatus : 0|1@0+ (1,0) [0|0] "" AAM
+
+BO_ 1644 HEVC_A161: 8 CGW
+  SG_ V2G_MaximumEnergyRequest : 7|12@0+ (0.1,-200) [-200|200] "kWh" CPLC
+  SG_ V2G_MinimumEnergyRequest : 11|12@0+ (0.1,-200) [-200|200] "kWh" CPLC
+  SG_ EVTargetEnergyRequest : 31|12@0+ (0.1,-200) [-200|200] "kWh" CPLC
+  SG_ V2G_EVmaximumchargePower : 35|13@0+ (0.05,0) [0|400] "kW" CPLC
+  SG_ V2G_EVminimumchargePower : 54|13@0+ (0.05,0) [0|400] "kW" CPLC
+
+BO_ 1645 ADAS_A117: 8 CGW
+  SG_ AEB_FCWactivationState2 : 10|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ AEB_CyclistAlertRequest2 : 11|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ AEB_PedestrianAlertRequest2 : 21|1@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ AEB_VehicleAlertRequest2 : 23|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ AEB_FailureDisplay2 : 30|2@0+ (1,0) [0|0] "" DOP_TCU
+  SG_ AEB_StatusDisplay2_v2 : 36|3@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1650 DVR_N102: 8 SceneRecorder
+  SG_ ConnectionData_DVR_WiFi : 7|48@0+ (1,0) [0|0] "" CGW
+  SG_ DVR_Incident_state : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ DataLength_DVR_WiFi : 55|6@0+ (1,0) [0|0] "" CGW
+  SG_ eMMCStatus_v2 : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ TransportContent_DVR_WiFi : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ DataIndex_DVR_WiFi : 63|4@0+ (1,0) [0|0] "" CGW
+
+BO_ 1655 HEVC_A163: 8 CGW
+  SG_ EVchargingProfileDuration_v2 : 7|16@0+ (10,0) [0|604800] "s" CPLC
+  SG_ EVchargingProfileStatus : 18|3@0+ (1,0) [0|0] "" CPLC
+  SG_ EVchargingProfileSlotNumber : 23|5@0+ (1,0) [0|24] "" CPLC
+  SG_ EVchargingProfilePower_v2 : 31|12@0+ (100,0) [0|400000] "W" CPLC
+  SG_ HVB_MaxCapacity_Ah_HEVC : 35|13@0+ (0.1,0) [0|500] "Ah" CSCM
+  SG_ EVMinimumV2XEnergyRequest : 54|12@0+ (0.1,-200) [-200|200] "KWh" CPLC
+
+BO_ 1666 IVI_A134: 8 CGW
+  SG_ ANC_ModeVariationRequest : 49|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ ANC_ActivationRequest : 51|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ ANC_SeatFocusRequest : 63|4@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 1673 RemoteFunctionService_DOP_RES_Frame: 8 DOP_RES
+  SG_ RemoteFunctionService_DOP_RES : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1690 METER_A8: 7 CGW
+  SG_ TripDistanceHEV : 7|17@0+ (0.1,0) [0|10000] "-" CSTB
+  SG_ TripDistanceZEV : 37|17@0+ (0.1,0) [0|10000] "-" CSTB
+
+BO_ 1695 VehicleID_CANHS_R_01: 4 CGW
+  SG_ VehicleID : 7|32@0+ (1,0) [0|0] "" AAM,CSTB,DOP_TCU
+
+BO_ 1699 DSU_CANHS_R_01: 1 DSU
+  SG_ RightTurnIndicatorRequest_DSU : 3|1@0+ (1,0) [0|0] "" CGW
+  SG_ LeftTurnIndicatorRequest_DSU : 4|1@0+ (1,0) [0|0] "" CGW
+  SG_ HighBeamRequest_DSU : 5|1@0+ (1,0) [0|0] "" CGW
+  SG_ LowBeamRequest_DSU : 6|1@0+ (1,0) [0|0] "" CGW
+  SG_ PositionLightsRequest_DSU : 7|1@0+ (1,0) [0|0] "" CGW
+
+BO_ 1710 RemoteFunctionService_HFM_DOPTCU_Frame: 8 CGW
+  SG_ RemoteFunctionService_HFM_DOPTCU : 7|64@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1724 IVI_R18: 8 CGW
+  SG_ SC_TargetSOC : 63|5@0+ (5,0) [0|100] "%" CPLC
+
+BO_ 1733 CPLC_R4: 8 CPLC
+  SG_ CPLC_ToggleRequestNumber : 3|2@0+ (1,0) [0|3] "wu" CGW
+  SG_ CPLC_ToggleRequestTime : 7|4@0+ (20,200) [200|400] "ms" CGW
+
+BO_ 1736 HEVC_A21: 8 CGW
+  SG_ BMS_MinTempProbeID_BLMS : 7|8@0+ (1,0) [0|255] "" CSCM
+  SG_ BMS_MaxTempProbeID_BLMS : 15|8@0+ (1,0) [0|255] "" CSCM
+  SG_ BMS_CellHighestVoltageID_BLMS : 23|8@0+ (1,0) [0|255] "" CSCM
+
+BO_ 1737 HEVC_A22: 8 CGW
+  SG_ CellHighestVoltage_BLMS : 0|9@0+ (0.01,1) [1|5] "V" CSCM
+  SG_ CellLowestVoltage_BLMS : 16|9@0+ (0.01,1) [1|5] "V" CSCM
+  SG_ BMS_HVNetworkVoltage_BLMS : 36|13@0+ (0.1,0) [0|500] "V" CSCM
+
+BO_ 1742 ADAS_A124: 8 CGW
+  SG_ AEB_CancelReason_v2 : 15|4@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1746 CPLC_R102: 6 CPLC
+  SG_ EVSE_TargetActivePower_v2_EVA : 7|19@0+ (0.001,-200) [-200|200] "kW" CGW
+  SG_ EVSE_TargetReactivePower_v2_EVA : 20|19@0+ (0.001,-200) [-200|200] "kVAR" CGW
+
+BO_ 1752 CPLC_A102: 8 CSCM
+  SG_ Combo_EVSEMaximumVoltageLimit : 35|14@0+ (0.1,0) [0|1000] "V" CGW
+  SG_ Combo_EVSEMinimumVoltageLimit : 53|14@0+ (0.1,0) [0|1000] "V" CGW
+
+BO_ 1753 CPLC_A103: 7 CSCM
+  SG_ Combo_EVSEPresentVoltage : 7|14@0+ (0.1,0) [0|1000] "V" CGW
+  SG_ Combo_EVSEPowerLimitAchieved : 8|1@0+ (1,0) [0|0] "" CGW
+  SG_ Combo_EVSECurrentLimitAchieved : 9|1@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_ACconnectStatus : 26|3@0+ (1,0) [0|0] "" CGW
+  SG_ Combo_EVSEVoltageLimitAchieved : 27|1@0+ (1,0) [0|0] "" CGW
+  SG_ V2X_EVSEnominalFrequency : 32|1@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_CommunicationStatus : 35|3@0+ (1,0) [0|0] "" CGW
+  SG_ CPLC_FaultType : 51|4@0+ (1,0) [0|0] "" CGW
+
+BO_ 1754 CPLC_A104: 8 CPLC
+  SG_ CRC_CPLC_A104 : 7|8@0+ (1,0) [0|255] "" CGW
+  SG_ CPLC_NotificationMaxDelay : 11|13@0+ (10,0) [0|65535] "s" CGW
+  SG_ Clock_CPLC_A104 : 15|4@0+ (1,0) [0|15] "" CGW
+  SG_ EVSE_ACmaxCurrent : 30|12@0+ (0.1,0) [0|400] "A" CGW
+  SG_ PnC_ContractRevocation_Status : 32|1@0+ (1,0) [0|0] "" CGW
+  SG_ PnC_V2GRootCert_Status : 34|2@0+ (1,0) [0|0] "" CGW
+  SG_ EVSE_ACnominalVoltage : 47|14@0+ (0.1,0) [0|1000] "V" CGW
+  SG_ Combo_DCExtendedConnectStatus : 49|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1755 HEVC_A111: 8 CGW
+  SG_ HVB_HighTempAlert : 16|1@0+ (1,0) [0|0] "" CSCM
+  SG_ GBT27930_EVmode : 27|4@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_CANcomActivation : 29|2@0+ (1,0) [0|0] "" CSCM
+  SG_ DCcharge_EVSEwakeUpInhibition : 32|1@0+ (1,0) [0|0] "" CSCM
+
+BO_ 1768 IVI_N107: 8 CGW
+  SG_ DVR_CameraView_Change : 10|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ DVR_Adjustment_Rotation : 12|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ ContrastRequestINcam : 18|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ ContrastRequestFRcam : 21|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ MMI_CommandList_2 : 28|5@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ ContrastRequestRRcam : 31|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ BrightnessRequest : 34|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ SelftimerRequest : 37|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ SetRecordQuality_HSL : 41|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ BrightnessRequestRRcam : 44|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ BrightnessRequestINcam : 47|3@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ WiFiSetting_v2 : 50|2@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ GetSSIDandPassword : 56|1@0+ (1,0) [0|0] "" SceneRecorder
+  SG_ GeneralRecordingSetting_v2 : 58|2@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1774 HEVC_A166: 8 CGW
+  SG_ V2X_SOClimitationLevelState : 47|7@0+ (1,0) [0|100] "%" CPLC
+
+BO_ 1775 TCU_A106: 3 CGW
+  SG_ PnCcertificateTotalBlockNb_v2 : 7|12@0+ (1,0) [0|4095] "" CPLC
+  SG_ PnC_IVC_Transfer_Status_V2 : 11|3@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1776 METER_A121: 3 CGW
+  SG_ ASE_SoundvolumeRequest : 11|3@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ ASE_SoundActivationRequest : 23|2@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 1790 HEVC_R108: 8 CGW
+  SG_ CPLC_ACelectricityMinCurrent : 7|8@0+ (0.1,0) [0|20] "A" CPLC
+  SG_ CPLC_ACelectricityMaxCurrent : 35|12@0+ (0.1,0) [0|400] "A" CPLC
+  SG_ CPLC_ToggleStatus : 55|2@0+ (1,0) [0|0] "" CPLC
+
+BO_ 1862 DTOOL_to_DOP_TCU: 8 CGW
+  SG_ DTOOL_to_DOP_TCU : 7|64@0+ (1,0) [0|0] "" DOP_TCU
+
+BO_ 1865 DTOOL_to_ANC: 8 CGW
+  SG_ DTOOL_to_ANC : 7|64@0+ (1,0) [0|0] "" ANC
+
+BO_ 1922 DTOOL_to_AMPLI: 8 CGW
+  SG_ DTOOL_to_AMPLI : 7|64@0+ (1,0) [0|0] "" AUDIOamp
+
+BO_ 1928 DTOOL_to_SceneRecorder: 8 CGW
+  SG_ DTOOL_to_SceneRecorder : 7|64@0+ (1,0) [0|0] "" SceneRecorder
+
+BO_ 1954 AMPLI_to_DTOOL: 8 AUDIOamp
+  SG_ AMPLI_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1960 SceneRecorder_to_DTOOL: 8 SceneRecorder
+  SG_ SceneRecorder_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1962 DTOOL_to_WCBS: 8 CGW
+  SG_ DTOOL_to_WCBS : 7|64@0+ (1,0) [0|0] "" NIC
+
+BO_ 1965 WCBS_to_DTOOL: 8 NIC
+  SG_ WCBS_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1992 CPLC_to_DTOOL: 8 CPLC
+  SG_ CPLC_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 2002 AAM_to_DTOOL: 8 AAM
+  SG_ AAM_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 2006 DTOOL_to_AAM: 8 CGW
+  SG_ DTOOL_to_AAM : 7|64@0+ (1,0) [0|0] "" AAM
+
+BO_ 2008 DTOOL_to_CPLC: 8 CGW
+  SG_ DTOOL_to_CPLC : 7|64@0+ (1,0) [0|0] "" CPLC
+
+BO_ 2549874689 CPLC_N101: 8 CPLC
+  SG_ Data_CPLC_ID : 7|56@0+ (1,0) [0|7.2057594037927904E16] "-" CGW
+  SG_ DataLength_CPLC_ID : 60|5@0+ (1,0) [0|31] "-" CGW
+  SG_ DataIndex_CPLC_ID : 63|3@0+ (1,0) [0|7] "-" CGW
+
+BO_ 2563507968 SIGMA_CDMTriggerFrame: 7 CGW
+  SG_ SIGMA_CDM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCCDM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508007 SIGMA_eHBoxTriggerFrame: 7 CGW
+  SG_ SIGMA_eHBox : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCeHBox : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508009 SIGMA_PSD_RTriggerFrame: 7 CGW
+  SG_ SIGMA_PSD_R : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCPSD_R : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508019 SIGMA_PBDTriggerFrame: 7 CGW
+  SG_ SIGMA_PBD : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCPBD : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508021 SIGMA_RADARTriggerFrame: 7 CGW
+  SG_ SIGMA_RADAR : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCRADAR : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508022 SIGMA_PSCUTriggerFrame: 7 CGW
+  SG_ SIGMA_PSCU : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCPSCU : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508030 SIGMA_SRad_RLTriggerFrame: 7 CGW
+  SG_ SIGMA_SRad_RL : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSRad_RL : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508035 SIGMA_eRDC_LTriggerFrame: 7 CGW
+  SG_ SIGMA_eRDC_L : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCeRDC_L : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508037 SIGMA_eRDC_RTriggerFrame: 7 CGW
+  SG_ SIGMA_eRDC_R : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCeRDC_R : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508042 SIGMA_ANCTriggerFrame: 7 ANC
+  SG_ SIGMA_ANC : 4|29@0+ (1,0) [0|0] "" AUDIOamp,CGW
+  SG_ SIGMA_DTCANC : 39|24@0+ (1,0) [0|0] "" AUDIOamp,CGW
+
+BO_ 2563508064 SIGMA_VDCTriggerFrame: 7 CGW
+  SG_ SIGMA_VDC : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCVDC : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508066 SIGMA_EPSTriggerFrame: 7 CGW
+  SG_ SIGMA_EPS : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCEPS : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508067 SIGMA_METERTriggerFrame: 7 CGW
+  SG_ SIGMA_METER : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCMETER : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508068 SIGMA_HVACTriggerFrame: 7 CGW
+  SG_ SIGMA_HVAC : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCHVAC : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508069 SIGMA_BCMTriggerFrame: 7 CGW
+  SG_ SIGMA_BCM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCBCM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508071 SIGMA_IVITriggerFrame: 7 CGW
+  SG_ SIGMA_IVI : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCIVI : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508072 SIGMA_4WDTriggerFrame: 7 CGW
+  SG_ SIGMA_4WD : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTC4WD : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508077 SIGMA_USMTriggerFrame: 7 CGW
+  SG_ SIGMA_USM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCUSM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508078 SIGMA_SONARTriggerFrame: 7 CGW
+  SG_ SIGMA_SONAR : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSONAR : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508079 SIGMA_DSMUTriggerFrame: 7 CGW
+  SG_ SIGMA_DSMU : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCDSMU : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508082 SIGMA_ACUTriggerFrame: 7 CGW
+  SG_ SIGMA_ACU : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCACU : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp,SceneRecorder
+
+BO_ 2563508089 SIGMA_PSD_LTriggerFrame: 7 CGW
+  SG_ SIGMA_PSD_L : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCPSD_L : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508093 SIGMA_ADASTriggerFrame: 7 CGW
+  SG_ SIGMA_ADAS : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCADAS : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508099 SIGMA_A_IVCTriggerFrame: 7 CGW
+  SG_ SIGMA_A_IVC : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCA_IVC : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508108 SIGMA_INV_METriggerFrame: 7 CGW
+  SG_ SIGMA_INV_ME : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCINV_ME : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508115 SIGMA_OBC_ACTriggerFrame: 7 CGW
+  SG_ SIGMA_OBC_AC : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCOBC_AC : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508122 SIGMA_HEVCTriggerFrame: 7 CGW
+  SG_ SIGMA_HEVC : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCHEVC : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508130 SIGMA_AUDIOampTriggerFrame: 7 AUDIOamp
+  SG_ SIGMA_AUDIOamp : 4|29@0+ (1,0) [0|0] "" ANC,CGW
+  SG_ SIGMA_DTCAUDIOamp : 39|24@0+ (1,0) [0|0] "" ANC,CGW
+
+BO_ 2563508133 SIGMA_HNSTriggerFrame: 7 CGW
+  SG_ SIGMA_HNS : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCHNS : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508139 SIGMA_VKMTriggerFrame: 7 CGW
+  SG_ SIGMA_VKM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCVKM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508153 SIGMA_HFMTriggerFrame: 7 CGW
+  SG_ SIGMA_HFM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCHFM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508154 SIGMA_AVMTriggerFrame: 7 CGW
+  SG_ SIGMA_AVM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCAVM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508157 SIGMA_SCUTriggerFrame: 7 CGW
+  SG_ SIGMA_SCU : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSCU : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508164 SIGMA_eShifterTriggerFrame: 7 CGW
+  SG_ SIGMA_eShifter : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCeShifter : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508181 SIGMA_SRad_RRTriggerFrame: 7 CGW
+  SG_ SIGMA_SRad_RR : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSRad_RR : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508189 SIGMA_FrCameraTriggerFrame: 7 CGW
+  SG_ SIGMA_FrCamera : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCFrCamera : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508200 SIGMA_ECMTriggerFrame: 7 CGW
+  SG_ SIGMA_ECM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCECM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508201 SIGMA_ATCUTriggerFrame: 7 CGW
+  SG_ SIGMA_ATCU : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCATCU : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508205 SIGMA_BMS_HVTriggerFrame: 7 CGW
+  SG_ SIGMA_BMS_HV : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCBMS_HV : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563508207 SIGMA_INV_HSGTriggerFrame: 7 CGW
+  SG_ SIGMA_INV_HSG : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCINV_HSG : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563567883 SIGMA_BMS_12VTriggerFrame: 7 CGW
+  SG_ SIGMA_BMS_12V : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCBMS_12V : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563567951 SIGMA_EPS_subTriggerFrame: 7 CGW
+  SG_ SIGMA_EPS_sub : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCEPS_sub : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563567958 SIGMA_eShiftActTriggerFrame: 7 CGW
+  SG_ SIGMA_eShiftAct : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCeShiftAct : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563567968 SIGMA_HUDTriggerFrame: 7 CGW
+  SG_ SIGMA_HUD : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCHUD : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568024 SIGMA_HPCUTriggerFrame: 7 CGW
+  SG_ SIGMA_HPCU : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCHPCU : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568093 SIGMA_DCDC_HVTriggerFrame: 7 CGW
+  SG_ SIGMA_DCDC_HV : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCDCDC_HV : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568098 SIGMA_EBATriggerFrame: 7 CGW
+  SG_ SIGMA_EBA : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCEBA : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568101 SIGMA_INV_RETriggerFrame: 7 CGW
+  SG_ SIGMA_INV_RE : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCINV_RE : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568130 SIGMA_AirSUSPTriggerFrame: 7 CGW
+  SG_ SIGMA_AirSUSP : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCAirSUSP : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568148 SIGMA_BSGTriggerFrame: 7 CGW
+  SG_ SIGMA_BSG : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCBSG : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568163 SIGMA_SRad_FL_TriggerFrame: 7 CGW
+  SG_ SIGMA_SRad_FL : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSRad_FL : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568164 SIGMA_SRad_FRTriggerFrame: 7 CGW
+  SG_ SIGMA_SRad_FR : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSRad_FR : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568201 SIGMA_STBWTriggerFrame: 7 CGW
+  SG_ SIGMA_STBW : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSTBW : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568233 SIGMA_DMCTriggerFrame: 7 CGW
+  SG_ SIGMA_DMC : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCDMC : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568267 SIGMA_RSCU3RTriggerFrame: 7 CGW
+  SG_ SIGMA_RSCU3R : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCRSCU3R : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568288 SIGMA_BLM_RPKTriggerFrame: 7 CGW
+  SG_ SIGMA_BLM_RPK : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCBLM_RPK : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568290 SIGMA_SCCMTriggerFrame: 7 CGW
+  SG_ SIGMA_SCCM : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCSCCM : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2563568300 SIGMA_RSCU2RTriggerFrame: 7 CGW
+  SG_ SIGMA_RSCU2R : 4|29@0+ (1,0) [0|0] "" ANC,AUDIOamp
+  SG_ SIGMA_DTCRSCU2R : 39|24@0+ (1,0) [0|0] "" ANC,AUDIOamp
+
+BO_ 2564443378 DTOOL_to_DOP_RES: 8 CGW
+  SG_ DTOOL_to_DOP_RES : 7|64@0+ (1,0) [0|0] "" DOP_RES
+
+BO_ 2564478962 DTOOL_to_CSCM: 8 CGW
+  SG_ DTOOL_to_CSCM : 7|64@0+ (1,0) [0|0] "" CSCM
+
+BO_ 2564484850 DTOOL_to_Tachyextd: 8 CGW
+  SG_ DTOOL_to_Tachyextd : 7|64@0+ (1,0) [0|0] "" TACHY
+
+BO_ 2564485847 CSCM_to_DTOOL: 8 CSCM
+  SG_ CSCM_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 2564485870 Tachy_to_DTOOLextd: 8 TACHY
+  SG_ Tachy_to_DTOOLextd : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 2609102848 CGW_WakeUpFrame_extd: 2 CGW
+  SG_ CGW_WakeUp_Signal : 7|16@0+ (1,0) [0|0] "" AUDIOamp
+
+BO_ 2609102853 DVR_WakeUpFrame: 2 SceneRecorder
+  SG_ DVR_WakeUp_Signal : 7|16@0+ (1,0) [0|0] "" CGW
+
+BO_ 2609102867 CSCM_WakeUpFrame: 2 CSCM
+  SG_ CSCM_WakeUp_Signal : 7|16@0+ (1,0) [0|0] "" CGW
+
+BO_ 2615052018 FTOOLS_CGWtoAUDIOamp: 8 CGW
+  SG_ FTOOLS_CGWtoAUDIOamp : 7|64@0+ (1,0) [0|0] "" AUDIOamp
+
+BO_ 2615056370 FTOOLS_CGWtoCPLC: 8 CGW
+  SG_ FTOOLS_CGWtoCPLC : 7|64@0+ (1,0) [0|0] "" CPLC
+
+BO_ 2615079558 FTOOLS_AUDIOamptoCGW: 8 AUDIOamp
+  SG_ FTOOLS_AUDIOamptoCGW : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 2615082647 FTOOLS_CPLCtoCGW: 8 CPLC
+  SG_ FTOOLS_CPLCtoCGW : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_TX_BU_ 1160 : DOP_RES,DOP_TCU,DOP_secu;
+BO_TX_BU_ 1507 : CPLC,CSCM;
+BO_TX_BU_ 1583 : ANC,AUDIOamp;
+BO_TX_BU_ 1752 : CPLC,CSCM;
+BO_TX_BU_ 1753 : CPLC,CSCM;
+
+
+
+
+
+
+
+
+VAL_ 32 AirbagCrashOrder_v3 0 "Crash not detected" 15 "Medium crash" 31 "Violent crash" 47 "Rear crash"; 
+VAL_ 32 RolloverDetection 0 "Rollover not detected" 1 "Rollover detected"; 
+VAL_ 116 StopAutoPhase 0 "NotInAutoPhase" 1 "StartAuto" 2 "StopAuto" 3 "Not Used" 4 "StopAutoOngoing" 5 "StartByInjectionOnly" 6 "ReflexStart" 7 "Unavailable"; 
+VAL_ 125 Combo_EVReady 0 "EV isn't ready to charge" 1 "EV is ready to charge"; 
+VAL_ 303 GearLeverPosition_v2 0 "Parking - P" 1 "Reverse - R" 2 "Neutral - N" 3 "Drive - D" 4 "Manual mode - M" 5 "L" 6 "Ds" 7 "Confirmed lever position (no switch signal)" 8 "B (Brake)" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not available (init or lever switched failure)"; 
+VAL_ 303 AT_StartingAuthorization 0 "Unavailable Value" 1 "Cranking not allowed" 2 "Reserved for Safety" 3 "Reserved for Safety" 4 "Cranking allowed" 5 "Reserved for Safety" 6 "Reserved for Safety" 7 "Cranking stop required"; 
+VAL_ 514 ABSinRegulation 0 "no ABS regulation" 1 "ABS in regulation"; 
+VAL_ 514 ASRinRegulation 0 "no ASR regulation" 1 "ASR in regulation"; 
+VAL_ 514 MSRinRegulation 0 "no MSR regulation" 1 "MSR in regulation"; 
+VAL_ 514 ESCMalfunction 0 "No VDC (ESC) malfunction" 1 "VDC (ESC) malfunction"; 
+VAL_ 514 AYCMalfunction 0 "no AYC malfunction" 1 "AYC malfunction"; 
+VAL_ 514 AYCinRegulation 0 "no AYC regulation" 1 "AYC in regulation"; 
+VAL_ 514 ABSMalfunction 0 "no ABS malfunction" 1 "ABS malfunction"; 
+VAL_ 534 EPSWarning 0 "No EPS warning" 1 "EPS failure level 1" 2 "EPS failure level 2" 3 "EPS meter lamp check"; 
+VAL_ 538 ePedalStatus 0 "e-Pedal OFF" 1 "e-Pedal ON"; 
+VAL_ 546 ACCompClutchStatus 0 "Compressor clutch off" 1 "Compressor clutch on"; 
+VAL_ 549 StopLampFlashingRequest 0 "Stop lamps flashing no requested" 1 "Stop lamps flashing requested"; 
+VAL_ 696 GasInstantCarburationMod 0 "Gasoline mode" 1 "LPG or CNG"; 
+VAL_ 696 LPG_NGSystemMalfunction 0 "no failure" 1 "LPG/NG system failure"; 
+VAL_ 696 LPGModeDisplayRequest 0 "LPG Mode OFF" 1 "LPG Mode ON"; 
+VAL_ 791 BlowerFanMotorStatus_AC 0 "Blower fan motor off" 1 "Blower fan motor on"; 
+VAL_ 896 DTCO_Driver1TimeRelatedStates 0 "Normal_No Limits Reached" 1 "Limit1_15Min Before 4h30" 2 "Limit2_4h30 Reached" 3 "Limit3_15Min Before 9h" 4 "Limit4_9h Reached" 5 "Limit5_15Min Before 16h" 6 "Limit6_16h Reached" 7 "WeeklyDrivingTimePreWarningActive" 8 "WeeklyDrivingTimeWarningActive" 9 "2WeeksDrivingTimePreWarningActive" 10 "2WeeksDrivingTimeWarningActive" 11 "Driver1CardExpiryWarningActive" 12 "NextMandatoryDriver1CardDownloadWarningActive" 13 "Other" 14 "Error" 15 "NotAvailable"; 
+VAL_ 896 DTCO_OverSpeed 0 "No Overspeed" 1 "Overspeed" 2 "Error" 3 "Not Available"; 
+VAL_ 896 DTCO_Driver2TimeRelatedStates 0 "no time related warning detected." 1 "Reserved" 2 "Reserved" 3 "Reserved" 4 "Reserved" 5 "daily/weekly rest pre-warning active" 6 "daily/weekly rest warning active" 7 "Reserved" 8 "Reserved" 9 "Reserved" 10 "Reserved" 11 "driver 2 card expiry warning active" 12 "next mandatory driver 2 card download warning active" 13 "Other" 14 "Error" 15 "Not available"; 
+VAL_ 909 NFCframe_VKM_to_NFC_Inside 0 "Table Value609510"; 
+VAL_ 955 RST_Boost_Activation_MMI 0 "No Display" 1 "Boost Deactivated" 2 "Boost Activated" 3 "Boost Unavailable"; 
+VAL_ 956 AAM_DigitalInputMonitoring4 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 956 AAM_DigitalInputMonitoring3 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 956 AAM_DigitalInputMonitoring2 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 956 AAM_DigitalInputMonitoring1 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 956 AAM_DigitalInputMonitoring5 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 959 CHADEMO_VehicleStatus 0 "EV contactor close or during welding detection" 1 "EV contactor open or termination of welding detection"; 
+VAL_ 959 HVB_CurrentDeviationError 0 "normal" 1 "error"; 
+VAL_ 959 HVB_VoltageDeviationError 0 "No Error" 1 "Error"; 
+VAL_ 959 DCcharge_SystemError 0 "normal" 1 "error"; 
+VAL_ 959 DCcharge_StopReqBeforeCharging 0 "No request" 1 "Stop request"; 
+VAL_ 959 CHADEMO_DynamicControl 0 "incompatible" 1 "compatible"; 
+VAL_ 959 CHADEMO_HighCurrentControl 0 "incompatible" 1 "compatible"; 
+VAL_ 959 CHADEMO_VehicleChargingEnabled 0 "disabled" 1 "enabled"; 
+VAL_ 967 Audio_WorkingAuthorize 0 "Not authorized" 1 "reserved" 2 "reserved" 3 "Authorized "; 
+VAL_ 967 IVI_RefusetoSleep 0 "reserved" 1 "IVI refuse to sleep" 2 "IVI ready to sleep" 3 "reserved"; 
+VAL_ 999 V2_WakeUpSleepCommand 0 "Go to Sleep" 1 "reserved" 2 "reserved" 3 "WakeUp"; 
+VAL_ 1004 MMI_Req_log_func6 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func5 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func4 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func3 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func10 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func9 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func8 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1004 MMI_Req_log_func7 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1008 MMI_Req_log_func2 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1008 MMI_Req_log_func1 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1011 NFC_Inside_activation_frame 0 "Not activate" 1 "Activate"; 
+VAL_ 1012 ECALL_StateDisplay_V3 0 "No message" 1 "Not used" 2 "Not used" 3 "Not used" 4 "Manual Ecall launch" 5 "Ecall auto launch" 6 "Manual Ecall failure" 7 "Ecall launch cancelled" 8 "Ecall on going" 9 "Voice communication on going - MSD not sent" 10 "Voice communication on going - MSD sent" 11 "Voice call failure" 12 "End of voice communication" 13 "Incoming call" 14 "Not used" 15 "Ecall malfunction"; 
+VAL_ 1012 TCU_MuteRadioOrder 0 "No mute radio order" 1 "Mute radio order"; 
+VAL_ 1049 MuteRadioOrderByAAM 0 "No mute requested" 1 "Mute requested"; 
+VAL_ 1049 AAM_StopAutoForbidden 0 "Not used" 1 "Auto Stop forbidden" 2 "Auto stop authorized" 3 "Not used"; 
+VAL_ 1049 VoltageRateByAAM 0 "No request" 1 "Rate 1" 2 "Rate 2" 3 "Rate 3"; 
+VAL_ 1049 AAM_DigitalInputMonitoring7 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1049 AAM_DigitalInputMonitoring6 0 "Not used" 1 "ON" 2 "OFF" 3 "Unavailable"; 
+VAL_ 1049 EngIdleSpeedIncreaseReqByAAM 0 "no Idle Speed Increase Requested by customer" 1 "Idle Speed Increase Requested by customer"; 
+VAL_ 1065 ChargingStatusDisplay 0 "No charge" 1 "Waiting a planned charge" 2 "Ended charge" 3 "Charge in progress" 4 "Charge failure" 5 "Waiting for current charge" 6 "Energy Flap opened: welcome MMI" 7 "Unavailable"; 
+VAL_ 1065 ChargingPlugConnected_v2 0 "No display request (Charging Plug is NOT Connected)" 1 "Charging Plug is Connected" 2 "PWT Start impossible - Plug Connected" 3 "Unavailable value"; 
+VAL_ 1066 ReadyLampStatus 0 "LED OFF" 1 "LED ON" 2 "PWT Starting Information" 3 "Unavailable value"; 
+VAL_ 1068 HEV_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1068 HVchargerStatus 0 "No HV charge" 1 "HV battery charge" 2 "HV consumers charge" 3 "Not used"; 
+VAL_ 1076 HFM_RKE_Request 0 "No request" 1 "Not used" 2 "Short Press - Lock" 3 "Short Press - Unlock" 4 "Short Press -  Backdoor or Trunk" 5 "Short Press - Panic" 6 "Short Press - PowerSlidingDoorRH" 7 "Short Press - PowerSlidingDoorLH" 8 "Short Press - Remote Lighting" 9 "Short Press - RES" 10 "Short Press - Roof" 11 "Remote Lock" 12 "Remote Unlock" 13 "Short Press - Unlock Cockpit requested" 14 "Short Press - Unlock Loading Area requested" 15 "Short Press - EV unlock and/or Stop charge request" 16 "Released Button-Backdoor or Trunk" 17 "Not used" 18 "Long Press - Lock" 19 "Long Press - Unlock" 20 "Long Press - Backdoor or Trunk" 21 "Long Press - Panic" 22 "Long Press - PowerSlidingDoorRH" 23 "Long Press - PowerSlidingDoorLH" 24 "Long Press - Remote Lighting" 25 "Long Press - RES" 26 "Long Press - Roof" 27 "Very Long - Lock & Unlock" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Unavailable"; 
+VAL_ 1076 PushtoStartButton 0 "No Button pressed" 1 "Push to Start button is pressed"; 
+VAL_ 1076 StopInductiveChargingRequest 0 "No request" 1 "Stop Inductive Charging Requested"; 
+VAL_ 1076 HFM_HandFree_Request_v2 0 "No Request" 1 "Handfree Unlock (Push to Unlock)" 2 "UnLock by APRUN" 3 "Handfree Lock (Push to Lock)" 4 "Lock by WAC" 5 "Handfree back door operation authorized" 6 "ETA Kick detected and CID authenticated" 7 "Partial Unlock" 8 "HandFree_Left_Authorized" 9 "HandFree_Right_Authorized" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1081 VDC_Deactivated 0 "VDC available" 1 "VDC disable"; 
+VAL_ 1083 DVR_FOTA_Status 0 "idle" 1 "Inventory read in progress" 2 "Inventory read complete" 3 "Distribution in progress" 4 "Integrity check in progress" 5 "Distribution complete" 6 "Installation in progress" 7 "Installation complete" 8 "Vehicle Condition check in progress" 9 "Ready for activation" 10 "Activation in progress" 11 "Activation complete" 12 "Cancel in progress" 13 "Cancel complete" 14 "Rollback in progress" 15 "Rollback complete" 16 "Reboot in progress" 17 "Setting in progress" 18 "Setting completed" 19 "Inventory upload in progress" 20 "Inventory upload completed" 21 "Not used" 22 "Not used" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "invalid"; 
+VAL_ 1083 DVR_RefuseToSleep 0 "reserved" 1 "DVR refuse to sleep" 2 "DVR ready to sleep" 3 "reserved"; 
+VAL_ 1086 AC_CustomerRequest 0 "No AC customer request" 1 "AC customer request"; 
+VAL_ 1099 ATCVT_RangeIndicationExtended 0 "OFF" 1 "P range" 2 "R range" 3 "N range" 4 "D range" 5 "S range" 6 "L range" 7 "B range" 8 "1st range" 9 "2nd range" 10 "3rd range" 11 "4th range" 12 "5th range" 13 "6th range" 14 "7th range" 15 "8th range" 16 "9th range" 17 "10th range" 18 "Not used" 19 "Not used" 20 "M1st" 21 "M2nd" 22 "M3rd" 23 "M4th" 24 "M5th" 25 "M6th" 26 "M7th" 27 "M8th" 28 "M9th" 29 "M10th" 30 "Not used" 31 "Not used" 32 "Auto 1st" 33 "Auto 2nd" 34 "Auto 3rd" 35 "Auto 4th" 36 "Auto 5th" 37 "Auto 6th" 38 "Auto 7th" 39 "Auto 8th" 40 "Auto 9th" 41 "Auto 10th" 42 "Not used" 43 "Not used" 44 "Not used" 45 "Not used" 46 "Not used" 47 "Not used" 48 "Not used" 49 "Not used" 50 "Not used" 51 "Not used" 52 "Not used" 53 "Not used" 54 "Not used" 55 "Not used" 56 "Not used" 57 "Not used" 58 "Not used" 59 "Not used" 60 "Not used" 61 "Not used" 62 "Not used" 63 "Not used"; 
+VAL_ 1100 RST_LaunchControlReady 0 "Launch Control Not Available" 1 "Launch Control Not Active" 2 "Launch Control Active" 3 "Launch Control Take-Off"; 
+VAL_ 1100 AT_Level2FailureDisplayRequest 0 "Unavailable" 1 "No warning" 2 "AT  major failure warning (Level 2)" 3 "Protection mode activated"; 
+VAL_ 1100 TransmRangeEngaged_Current 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 1100 ParkStatus 0 "Not used" 1 "Park not engaged" 2 "Park engaged" 3 "Unavailable"; 
+VAL_ 1101 FlashingIndicatorStatusDisplay 0 "left and right flashing indicators OFF" 1 "left flashing indicator ON and right flashing indicator OFF" 2 "left flashing indicator OFF and right flashing indicator ON" 3 "left flashing indicator ON and right flashing indicator ON" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1102 RearWiperStatus 0 "Unavailable" 1 "Rear wiper activation requested" 2 "Rear wiper de-activation requested" 3 "Not used"; 
+VAL_ 1102 LowBeamDisplay 0 "low beam display not requested" 1 "low beam display requested"; 
+VAL_ 1102 HighBeamDisplay 0 "High beam display not requested" 1 "High beam display requested"; 
+VAL_ 1103 FrontRightDoorOpenWarning 0 "No front right door open warning" 1 "front right door open warning - level 1(vehicle stopped)" 2 "front right door open warning - level 2 (vehicle running)" 3 "not used"; 
+VAL_ 1103 FrontLeftDoorOpenWarning 0 "No front left door open warning" 1 "Front left door open warning - level 1(vehicle stopped)" 2 "Front left door open warning - level 2 (vehicle running)" 3 "not used"; 
+VAL_ 1103 PositionLightsDisplay 0 "position lights display not requested" 1 "position lights display requested"; 
+VAL_ 1103 BootOpenWarning 0 "No boot open warning" 1 "boot open warning - level 1(vehicle stopped)" 2 "boot open warning - level 2 (vehicle running)" 3 "not used"; 
+VAL_ 1103 RearRightDoorOpenWarning 0 "No rear right door open warning" 1 "rear right door open warning - level 1(vehicle stopped)" 2 "rear right door open warning - level 2 (vehicle running)" 3 "not used"; 
+VAL_ 1103 RearLeftDoorOpenWarning 0 "No rear left door open warning" 1 "rear left door open warning - level 1(vehicle stopped)" 2 "rear left door open warning - level 2 (vehicle running)" 3 "not used"; 
+VAL_ 1103 CockpitLocked_State 0 "Not Locked" 1 "Locked"; 
+VAL_ 1103 LoadingAreaLocked_State 0 "Loading area Not Locked" 1 "Loading area Locked"; 
+VAL_ 1104 ExternalTempDisplayUnit 0 "display mode in °C" 1 "display mode in °F"; 
+VAL_ 1104 MuteRadioOrder 0 "No mute radio order" 1 "Mute radio order"; 
+VAL_ 1104 DisplayedOilLevel 0 "warning" 1 "1 bargraph element displayed" 2 "2 bargraph element displayed" 3 "3 bargraph element displayed" 4 "4 bargraph element displayed" 5 "5 bargraph element displayed" 6 "6 bargraph element displayed" 7 "7 bargraph element displayed" 8 "8 bargraph element displayed" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "not available"; 
+VAL_ 1104 FuelLevelDisplayed 0 "petrol tank reserve"; 
+VAL_ 1105 DisplayedSpeedUnit 0 "Speed Unit in kmph" 1 "Speed Unit in mph"; 
+VAL_ 1105 GlobalVehicleWarningState 0 "No global  vehicle  Fault" 1 "SERV is ON (alert type R3)" 2 "STOP is ON (alert type D3)" 3 "SERV and STOP are ON (alert type R3& D3)"; 
+VAL_ 1105 DayNightForBacklights 0 "Day" 1 "Twilight" 2 "Night" 3 "Unavailable"; 
+VAL_ 1105 ParkingBrakeStatus 0 "Not used" 1 "Automatic or manual Parking brake not applied" 2 "Automatic or manual Parking brake applied" 3 "Unavailable"; 
+VAL_ 1105 LowBrakeFluidLevelStatus 0 "Unavailable" 1 "No brake system malfunction" 2 "Brake system malfunction" 3 "Not used"; 
+VAL_ 1106 DayNightStatusForB_Switches 0 "Conditionned backlight" 1 "Permanent backlight"; 
+VAL_ 1107 NeutralContact 0 "not used" 1 "neutral contact not reached" 2 "neutral contact reached" 3 "unavailable"; 
+VAL_ 1107 RearGearEngaged 0 "Not used" 1 "Rear Gear not Engaged" 2 "Rear Gear Engaged" 3 "unavailable"; 
+VAL_ 1107 EngineHoodState 0 "Unvailable value" 1 "Hood opened" 2 "Hood closed" 3 "Not used"; 
+VAL_ 1107 IgnitionSupplyConfirmation 0 "no primary ignition supply" 1 "primary ignition supply on"; 
+VAL_ 1107 EEM_StaticPowerLimitationRequest 0 "No Request" 1 "Life on Board Low SOC power limitation" 2 "Delivery Mode power limitation" 3 "Battery Disconnection power limitation" 4 "Producer failure power limitation" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 1108 FrontWiperStatus 0 "front wiper stopped" 1 "low speed active" 2 "high speed active" 3 "not used"; 
+VAL_ 1109 AccurateOdometer 0 "00h to 1Eh (available till 31km/h)"; 
+VAL_ 1109 EBDstateDisplayRequest 0 "No failure" 1 "Failure"; 
+VAL_ 1109 ABSstateDisplayRequest 0 "No failure" 1 "Failure" 2 "In ext diag session" 3 "To be calibrated"; 
+VAL_ 1119 BattWarnReq_Level_Hi_ECM_v2 0 "Unavailable" 1 "No alert" 2 "Alert" 3 "Not used"; 
+VAL_ 1119 BattWarnReq_Level_Lo_ECM 0 "No Request" 1 "Request"; 
+VAL_ 1136 EngineControlFailureLevel2 0 "no Engine Control Failure Level 2 create by stoping the engine" 1 "Engine Control Failure Level 2 create by stoping the engine"; 
+VAL_ 1136 VoltageRegulationStatus_V2 0 "Not initialized" 1 "Starting sequence" 2 "Nominal Mode" 3 "Producer power limitation" 4 "Producer communication fault is detected" 5 "Producer communication fault is confirmed" 6 "Producer fault is detected" 7 "Producer fault is confirmed" 8 "Undervoltage is detected" 9 "Undervoltage is confirmed" 10 "Overvoltage is detected" 11 "Overvoltage is confirmed" 12 "CAN fault is detected" 13 "CAN fault is confirmed" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1136 EngineControlFailureLevel1 0 "no Engine Control Failure Level 1" 1 "Engine Control Failure Level 1"; 
+VAL_ 1137 ShiftIndicator 0 "No display request (no freeshift function or not equipped)" 1 "UpShift display resques" 2 "DownShift display request " 3 "No Shift change display Request (by freeshift function"; 
+VAL_ 1137 RequestedSpeedDisplayRequest 254 "CC/SL off or awaiting for a speed selection" 255 "CC/SL failure"; 
+VAL_ 1137 CruiseControlStatus 0 "Cruise Control (CC) and Speed Limit (SL) OFF" 1 "SL active" 2 "SL on and (awaiting or suspended)" 3 "SL requested and in failure" 4 "CC active" 5 "CC ON and ( awaiting  or suspended)" 6 "CC requested and in failure" 7 "Vehicle not equipped with CC/SL / Not available"; 
+VAL_ 1138 EngIdleSpeedIncreaseStatus 0 "no Idle Speed Increase activation" 1 "Idle Speed Increase activation"; 
+VAL_ 1143 RESstatus 0 "Unavailable" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Normal engine start only" 4 "Reserved for safety" 5 "Reserved for safety" 6 "wait for RES / Presoak" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Customer Starting" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Remote Engine Start" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Vehicle without RES"; 
+VAL_ 1143 RearRightDoorState 0 "Unavailable Value" 1 "Rear Right door closed" 2 "Rear Right door open" 3 "Not Used"; 
+VAL_ 1143 KeyVehicle 0 "iKey vehicle" 1 "Unavailable" 2 "Not used" 3 "Key vehicle"; 
+VAL_ 1143 V_WakeUpType 0 "Full Wake-Up Mode" 1 "Selective Wake-Up Mode 1" 2 "Selective Wake-Up Mode 2" 3 "Selective Wake-Up Mode 3" 4 "Selective Wake-Up Mode 4" 5 "Selective Wake-Up Mode 5" 6 "Selective Wake-Up Mode 6" 7 "Unavailable"; 
+VAL_ 1143 V_WakeUpSleepCommand 0 "Go to Sleep" 1 "reserved" 2 "reserved" 3 "WakeUp"; 
+VAL_ 1143 RearFogLightStateDisplay 0 "rear fog light OFF" 1 "rear fog light ON"; 
+VAL_ 1143 DriverDoorState 0 "Unavailable Value" 1 "Driver door closed" 2 "Driver door open" 3 "Not Used"; 
+VAL_ 1143 PassengerDoorState 0 "Unavailable Value" 1 "Passenger door closed" 2 "Passenger door open" 3 "Not used"; 
+VAL_ 1143 RearLeftDoorState 0 "Unavailable Value" 1 "Rear left door closed" 2 "Rear left door open" 3 "Not Used"; 
+VAL_ 1144 TailGateButtonPushed 0 "Unvailable Value" 1 "No TailGate Button is Pushed" 2 "TailGate Button is Pushed" 3 "Not Used"; 
+VAL_ 1144 BCM_WakeUpSleepCommand 0 "Go to Sleep" 1 "reserved" 2 "reserved" 3 "WakeUp"; 
+VAL_ 1144 RearDefrostEngaged 0 "Rear Defrost not engaged" 1 "Rear Defrost engaged"; 
+VAL_ 1144 PositionLightsRequest 0 "position lights not requested" 1 "position lights requested"; 
+VAL_ 1144 FrontFogLightsRequest 0 "front fog lights not requested" 1 "front fog lights requested"; 
+VAL_ 1144 SmartKeylessInformationDisplay 0 "No Display Request" 1 "Brake Pedal and Start Requested" 2 "Declutch and start requested" 3 "Kazashi - Card not detected" 4 "Kazashi separated - Card not detected" 5 "Turn Wheel + Start" 6 "MT gear level on neutral position requested" 7 "AT gear lever on Park requested" 8 "AT gear lever on neutral position requested" 9 "Push" 10 "Engine Running - Card not detected" 11 "Confirm engine Stop on Card not detected" 12 "Confirm engine Stop at Vehicle Speed Unavailable" 13 "Not Used" 14 "Permanent Ignition Alert" 15 "Keylock alert" 16 "Confirm engine stop warning on disconnected 12V battery" 17 "Kazashi authentication succeed" 18 "Emergency engine stop" 19 "Do long press to start" 20 "Keep pedal pressed to start" 21 "Declutch" 22 "FOTA Activation Software" 23 "Not Used" 24 "Not Used" 25 "Not Used" 26 "Not Used" 27 "Not Used" 28 "Not Used" 29 "Not Used" 30 "Not Used" 31 "Not Used"; 
+VAL_ 1144 OriginOfVehOutsideLockedChangev2 0 "Unknown origin" 1 "By yale locker" 2 "By RKE" 3 "By Handfree (side doors or backdoor)" 4 "By WAC" 5 "By Approach Unlock" 6 "By Auto Relock Timeout" 7 "By Back-up lock (long press on CDL)" 8 "By Car Sharing" 9 "By ETA" 10 "By Authent" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1144 DriverDoorLockedStatus 0 "Driver Door Unlocked" 1 "Driver Door Locked"; 
+VAL_ 1144 DayTimeRunningLightRequest 0 "Day time running light not requested" 1 "Day time running light request"; 
+VAL_ 1144 HornRequest 0 "No Request" 1 "Horn OFF Request" 2 "Panic Horn Request" 3 "Lock Horn Request" 4 "Not used" 5 "Perimetric Alarm Horn Request" 6 "Silent Mode Deactivation Horn Request" 7 "Unavailable"; 
+VAL_ 1144 WarningLightsStatus 0 "Warning Lights OFF" 1 "Warning Lights ON"; 
+VAL_ 1144 VehicleOutsideLockedState 0 "Vehicle not locked from the outside by the customer" 1 "Vehicle Locked from the outside by the customer"; 
+VAL_ 1144 FrontFogLightsDisplay 0 "front fog lights display not requested" 1 "front fog lights display requested"; 
+VAL_ 1144 ShiftPaddleRequest 0 "No paddle request" 1 "Up paddle pressed" 2 "Down paddle pressed" 3 "Up and Down paddles pressed"; 
+VAL_ 1144 RearFogLightsRequest 0 "rear fog lights not requested" 1 "rear fog lights requested"; 
+VAL_ 1144 BrakeLampStatus 0 "Brake Lamp Off" 1 "Brake Lamp On"; 
+VAL_ 1145 SRU_Position 0 "Window position invalid" 1 "Window position 0 (closed)" 2 "Window sector 01" 3 "Window position 1" 4 "Window sector 12" 5 "Window position 2" 6 "Window sector 23" 7 "Window position 3" 8 "Window sector 34" 9 "Window position 4" 10 "Window sector 45" 11 "Window position 5" 12 "Window sector 56" 13 "Window position 6" 14 "Window sector 67" 15 "Window position 7"; 
+VAL_ 1145 WindowPosition_FR 0 "Window position invalid" 1 "Window fully closed (HW or SW block position)" 2 "Window Short Drop position" 3 "Window in intermediate position (upper than RCU position)" 4 "Window RCU Drop position" 5 "Window in intermediate position (default or lower than RCU position)" 6 "Window fully open (SW block position)" 7 "Window fully open (HW block position)"; 
+VAL_ 1145 WindowPosition_FL 0 "Window position invalid" 1 "Window fully closed (HW or SW block position)" 2 "Window Short Drop position" 3 "Window in intermediate position (upper than RCU position)" 4 "Window RCU Drop position" 5 "Window in intermediate position (default or lower than RCU position)" 6 "Window fully open (SW block position)" 7 "Window fully open (HW block position)"; 
+VAL_ 1145 ProbableCustomerFeedBackNeed 0 "Customer feedback probably not needed" 1 "Customer feedback needed"; 
+VAL_ 1145 WindowPosition_RR 0 "Window position invalid" 1 "Window fully closed (HW or SW block position)" 2 "Window Short Drop position" 3 "Window in intermediate position (upper than RCU position)" 4 "Window RCU Drop position" 5 "Window in intermediate position (default or lower than RCU position)" 6 "Window fully open (SW block position)" 7 "Window fully open (HW block position)"; 
+VAL_ 1145 WindowPosition_RL 0 "Window position invalid" 1 "Window fully closed (HW or SW block position)" 2 "Window Short Drop position" 3 "Window in intermediate position (upper than RCU position)" 4 "Window RCU Drop position" 5 "Window in intermediate position (default or lower than RCU position)" 6 "Window fully open (SW block position)" 7 "Window fully open (HW block position)"; 
+VAL_ 1145 BackDoorLockedStatus 0 "Back Door is Unlocked" 1 "Back Door is Locked"; 
+VAL_ 1145 AutoACC2Status_MM 0 "Multimedia is done" 1 "Multimedia can receive / send messages" 2 "Multimedia can detect manual operation" 3 "Multimedia can work for all functions"; 
+VAL_ 1145 RearRightDoorLockedStatus 0 "Rear Right Door is Unlocked" 1 "Rear Right Door is Locked"; 
+VAL_ 1145 RearLeftDoorLockedStatus 0 "Rear Left Door is Unlocked" 1 "Rear Left Door is Locked"; 
+VAL_ 1145 PassengerDoorLockedStatus 0 "Passenger Door is Unlocked" 1 "Passenger Door is Locked"; 
+VAL_ 1146 IgnitionSwitchPosition 0 "Out of Ignition position" 1 "Turned to Ignition or Starting position"; 
+VAL_ 1146 DriverSafetyBeltBuckleState 0 "SB Not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1146 ClutchSwitchMinimumTravel 0 "Not used" 1 "Clutch pedal not pressed" 2 "Clutch pedal pressed at minimum" 3 "Unavailable"; 
+VAL_ 1146 TailGateStatus 0 "Unvailable Value" 1 "TailGate is closed" 2 "TailGate is open" 3 "Not Used"; 
+VAL_ 1146 VehicleStates 0 "Sleeping" 1 "Not used" 2 "CutoffPending" 3 "AutoACC  - BatTempoLevel" 4 "Not used" 5 "IgnitionLevel" 6 "StartingInProgress" 7 "PowertrainRunning" 8 "AutoStart" 9 "EngineSystemStop" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1146 BrakeInfoStatus 0 "Not used" 1 "Brake pedal not pressed" 2 "Brake pedal pressed" 3 "Not used" 4 "Brake pedal confirmed pressed" 5 "Not used" 6 "Not used" 7 "unavailable"; 
+VAL_ 1146 DeliveryModeInformation_v2 0 "customer mode" 1 "delivery mode level 1" 2 "delivery mode level 2" 3 "Not used"; 
+VAL_ 1146 FlashingIndicatorCommandPosition 0 "No direction indicator request" 1 "Left Flashing Indicators command ON" 2 "Right Flashing Indicators command ON" 3 "Not used"; 
+VAL_ 1146 FlashingIndicatorStatus 0 "left and right flashing indicators OFF" 1 "left flashing indicator ON and right flashing indicator OFF" 2 "left flashing indicator OFF and right flashing indicator ON" 3 "left flashing indicator ON and right flashing indicator ON" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1146 GADE_v2 0 "Sleep or Crank fault, Disable DiagMuxDTC" 1 "AutoACC fault, Disable DiagMuxDTC" 2 "ALL fault, Disable DiagMuxDTC" 3 "ALL fault, Enable DiagMuxDTC" 4 "FOTA switch fault, Disable DiagMuxDTC" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1146 StopLampDiagnosis 0 "Not used" 1 "No failure" 2 "Failure" 3 "Unavailable"; 
+VAL_ 1146 TrailerPresence 0 "no trailer detected" 1 "trailer detected"; 
+VAL_ 1146 FrontWipingRequest 0 "front wiper in stop position" 1 "front wiper forced to stop" 2 "Not used" 3 "Not used" 4 "unavailable" 5 "Not used" 6 "low speed wiping requested" 7 "high speed wiping requested"; 
+VAL_ 1146 HighBeamPassingRequest 0 "no passing requested" 1 "High Beam passing requested"; 
+VAL_ 1146 ClutchSwitchMaximumTravel 0 "Not used" 1 "Clutch pedal not pressed at maximum" 2 "Clutch pedal pressed at maximum" 3 "Unavailable"; 
+VAL_ 1147 OilPressureWarning_ECM 0 "No Oil Pressure Warning" 1 "Oil Pressure Warning"; 
+VAL_ 1147 WarningWaterTemp 0 "no water temperature warning" 1 "water temperature warning"; 
+VAL_ 1147 MILLamp 0 "No test of readiness codes status and Readiness Codes completed and MIL lamp off request" 1 "No test of readiness codes status and Readiness Codes completed and MIL Lamp on request" 2 "No test of readiness codes status and Readiness Codes completed and MIL lamp flash request" 3 "No test of readiness codes status and Readiness Codes completed and MIL lamp auto-test" 4 "No test of readiness codes status and Readiness codes not completed and MIL lamp off request" 5 "No test of readiness codes status and Readiness codes not completed and MIL Lamp on request" 6 "No test of readiness codes status and Readiness codes not completed and MIL lamp flash request" 7 "No test of readiness codes status and Readiness codes not completed and MIL lamp auto-test" 8 "Test of readiness codes status and Readiness Codes completed and MIL lamp off request" 9 "Test of readiness codes status and Readiness Codes completed and MIL Lamp on request" 10 "Test of readiness codes status and Readiness Codes completed and MIL lamp flash request" 11 "Test of readiness codes status and Readiness Codes completed and MIL lamp auto-test" 12 "Test of readiness codes status and Readiness codes not completed and MIL lamp off request" 13 "Test of readiness codes status and Readiness codes not completed and MIL Lamp on request" 14 "Test of readiness codes status and Readiness codes not completed and MIL lamp flash request" 15 "Test of readiness codes status and Readiness codes not completed and MIL lamp auto-test"; 
+VAL_ 1147 ECM_OilPressureSwitchFaultDisp 0 "No oil pressure switch fault warning requested" 1 "Oil pressure switch fault warning requested"; 
+VAL_ 1160 DOP_RefuseToSleep 0 "reserved" 1 "DOP_RES refuse to sleep" 2 "DOP_RES ready to sleep" 3 "reserved"; 
+VAL_ 1164 Combo_ChargingComplete 0 "full charge isn't complete" 1 "full charge (100% SOC) is complete"; 
+VAL_ 1164 Combo_BulkChargingComplete 0 "bulk charge isn't complete" 1 "bulk charge (approx. 80% SOC) is complete"; 
+VAL_ 1164 Combo_EVErrorCode 0 "NO_ERROR" 1 "FAILED_RESSTemperatureInhibit " 2 "FAILED_EVShiftPosition " 3 "FAILED_ChargerConnectorLockFault " 4 "FAILED_EVRESSMalfunction " 5 "FAILED_ChargingCurrentdifferential " 6 "FAILED_ChargingVoltageOutOfRange" 7 "Reserved_A " 8 "Reserved_B" 9 "Reserved_C" 10 "FAILED_ChargingSystemIncompatibility" 11 "NoData" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1164 CPLC_RequestedEnergyTransferMode 0 "No request" 1 "AC single phase core" 2 "AC three phase core" 3 "DC core" 4 "DC combo core" 5 "DC unique" 6 "DC extended" 7 "Not used"; 
+VAL_ 1164 CPLC_ChargingSession 0 "No state" 1 "terminate the V2G Communication Session" 2 "pause the V2G Communication Session" 3 "Not used"; 
+VAL_ 1164 CPLC_ChargeProgress 0 "Stop" 1 "Start" 2 "Renegotiate" 3 "Not used" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1188 NFCframe_NFC_Inside_to_VKM 0 "Table Value609465"; 
+VAL_ 1210 Combo_EVchargeHLCRequest_v2 0 "No HLC Request" 1 "Hand Shake request" 2 "Charge parameter Discovery request" 3 "Cable Check request" 4 "Precharge request" 5 "Power delivery request" 6 "Current demand request" 7 "Metering receipt request" 8 "Welding detection request" 9 "Session stop request" 10 "Matching reset" 11 "Charging Status request" 12 "AC BPT" 13 "DC BPT" 14 "Handshake request_20" 15 "ACchargeLoopReq" 16 "ScheduleExchange request" 17 "Not used" 18 "Not used" 19 "Not used" 20 "Not used" 21 "Not used" 22 "Not used" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Not used"; 
+VAL_ 1218 ConnectionData_IVC_ID 0 "Table Value420477"; 
+VAL_ 1218 TransportContent_IVC_ID 0 "VIN" 1 "PhotoUploadPath" 2 "PhotoUploadID" 3 "Invalid value"; 
+VAL_ 1218 DataLength_IVC_ID 0 "0" 1 "1" 2 "2" 3 "3" 4 "4" 5 "5" 6 "6" 7 "7" 8 "8" 9 "9" 10 "10" 11 "11" 12 "12" 13 "13" 14 "14" 15 "15" 16 "16" 17 "17" 18 "18" 19 "19" 20 "20" 21 "21" 22 "22" 23 "23" 24 "24" 25 "25" 26 "26" 27 "27" 28 "28" 29 "29" 30 "30" 31 "31" 32 "32" 33 "Not used" 34 "Not used" 35 "Not used" 36 "Not used" 37 "Not used" 38 "Not used" 39 "Not used" 40 "Not used" 41 "Not used" 42 "Not used" 43 "Not used" 44 "Not used" 45 "Not used" 46 "Not used" 47 "Not used" 48 "Not used" 49 "Not used" 50 "Not used" 51 "Not used" 52 "Not used" 53 "Not used" 54 "Not used" 55 "Not used" 56 "Not used" 57 "Not used" 58 "Not used" 59 "Not used" 60 "Not used" 61 "Not used" 62 "Not used" 63 "Invalid"; 
+VAL_ 1218 Heavy_crash_state 0 "Unavailable" 1 "Heavy crash operation end" 2 "SOS manual push" 3 "Not Used"; 
+VAL_ 1218 DataIndex_IVC_ID 0 "0" 1 "1" 2 "2" 3 "3" 4 "4" 5 "5" 6 "Reserved" 7 "Reserved" 8 "Reserved" 9 "Reserved" 10 "Reserved" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Invalid"; 
+VAL_ 1233 HazardLampStatus 0 "HazardLamp OFF" 1 "HazardLamp ON"; 
+VAL_ 1247 GeneralRecordingStatus_v2 0 "turn on" 1 "turn off" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1247 WiFiStatus_v2 0 "turn on" 1 "turn off" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1247 UpdateStatus_Command_Response 0 "Success implementation" 1 "Execution failure" 2 "Reserved" 3 "Unavailable value"; 
+VAL_ 1247 RecordVideoQuality_HSL 0 "High" 1 "Standard" 2 "Long time" 3 "invalid value"; 
+VAL_ 1247 ComandResp_fileExport 0 "Stop export file" 1 "Export files" 2 "Reserved" 3 "Unavailable value"; 
+VAL_ 1247 DVR_CommandRespList_Passenger 0 "enter general video" 1 "stop recorded" 2 "enter emergency video" 3 "enter general video directory" 4 "enter emergency video directory" 5 "enter picture directory" 6 "format SD" 7 "factory reset" 8 "photograph" 9 "enter inner camera" 10 "deleted file" 11 "turn on video" 12 "play/pause" 13 "enter passenger monitor" 14 "play the previous file" 15 "play the next file" 16 "exit play" 17 "filesselected 1" 18 "filesselected 2" 19 "filesselected 3" 20 "filesselected 4" 21 "filesselected 5" 22 "filesselected 6" 23 "filesselected 7" 24 "filesselected 8" 25 "passenger monitor mute" 26 "select all" 27 "cancel" 28 "previous" 29 "next" 30 "Enable Updata" 31 "invalid value"; 
+VAL_ 1247 INcamWrongModeWarning 0 "INCAM shall change to RGB mode" 1 "INCAM shall change to IR mode" 2 "Not Used" 3 "Invalid value"; 
+VAL_ 1247 INcamModeStatus 0 "Auto Mode and work in IR" 1 "Auto Mode and work in RGB" 2 "Always Color Mode" 3 "Always IR Mode" 4 "Not Used" 5 "Not Used" 6 "Not Used" 7 "Invalid value"; 
+VAL_ 1247 DVR_EthernetStatus 0 "Network connected" 1 "Network connecting" 2 "Network connection failure" 3 "Network abnormal disconnected" 4 "EthernetPHY Initialization failure" 5 "Not Used" 6 "Not Used" 7 "Invalid value"; 
+VAL_ 1247 SuperpositionOSDShow 0 "turn off overlay display" 1 "turn on overlay display" 2 "Not used" 3 "Unavailable value"; 
+VAL_ 1247 RRCameraStatus 0 "RR CAM general recording" 1 "RR CAM emergency recording" 2 "RR CAM User taking video" 3 "RR CAM stop recording" 4 "RR CAM ERROR" 5 "RR CAM not installed" 6 "Invalid value" 7 "Unavailable value"; 
+VAL_ 1247 INCameraStatus 0 "IN CAM User taking video" 1 "IN CAM normal" 2 "IN CAM ERROR" 3 "IN CAM not installed" 4 "Not Used" 5 "Not Used" 6 "Not Used" 7 "Invalid value"; 
+VAL_ 1247 UsageCounterOfDVRRemote 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5 "6" 6 "Not Used" 7 "Unavailable value"; 
+VAL_ 1247 eMMCStatus 0 "Normal" 1 "Write protection" 2 "Failure" 3 "Unavailable value"; 
+VAL_ 1247 FRCameraStatus 0 "FR CAM general recording" 1 "FR CAM emergency recording" 2 "FR CAM User taking video" 3 "FR CAM stop recording" 4 "FR CAM ERROR" 5 "Power down" 6 "System failure" 7 "Unavailable value"; 
+VAL_ 1247 FilesExportingStatus 0 "Unavailable value" 1 "Some files under exporting"; 
+VAL_ 1247 UpgradeProgress 0 "Table Value430667"; 
+VAL_ 1247 Diary_mode_status 0 "OFF" 1 "ON" 2 "Invalid value" 3 "Not used"; 
+VAL_ 1252 DieselFilterWaterDetection 0 "no water detected in diesel" 1 "water detected in diesel"; 
+VAL_ 1253 EVSEscheduleStatus_v2 0 "No Schedule transmitted" 1 "Schedule #1 transmission in progress" 2 "Schedule #2 transmission in progress" 3 "Schedule #3 transmission in progress" 4 "Transmission is finished" 5 "Error" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1255 DVR_CamView_Change 0 "No change view from current status" 1 "Change view" 2 "Not used" 3 "Not used"; 
+VAL_ 1255 MMI_CommandList_Passenger 0 "enter general video" 1 "stop recorded" 2 "enter emergency video" 3 "enter general video directory" 4 "enter emergency video directory" 5 "enter picture directory" 6 "format SD" 7 "factory reset" 8 "photograph" 9 "enter inner camera" 10 "deleted file" 11 "turn on video" 12 "play/pause" 13 "enter passenger monitor" 14 "play the previous file" 15 "play the next file" 16 "exit play" 17 "filesselected 1" 18 "filesselected 2" 19 "filesselected 3" 20 "filesselected 4" 21 "filesselected 5" 22 "filesselected 6" 23 "filesselected 7" 24 "filesselected 8" 25 "passenger monitor mute" 26 "select all" 27 "cancel" 28 "previous" 29 "next" 30 "Enable Updata" 31 "invalid value"; 
+VAL_ 1255 SetINcamMode 0 "Auto Mode" 1 "Always Color Mode" 2 "Always IR Mode" 3 "invalid value"; 
+VAL_ 1255 EN_SuperpositionOSDShow 0 "turn off overlay display" 1 "turn on overlay display" 2 "Not used" 3 "Unavailable value"; 
+VAL_ 1255 WiFiInfoDisplayRequest 0 "Request to send SSID and Password" 1 "No request" 2 "Invalid value" 3 "Unavailable value"; 
+VAL_ 1255 CommandfileExport 0 "Stop export file" 1 "Export files" 2 "Reserved" 3 "Unavailable value"; 
+VAL_ 1255 Diary_mode_request 0 "OFF" 1 "ON" 2 "Invalid value" 3 "Not used"; 
+VAL_ 1296 TCU_DVR_Photo_Request 0 "no request" 1 "request"; 
+VAL_ 1296 Heavy_crash_activate 0 "Unavailable" 1 "Heavy crash activate"; 
+VAL_ 1314 Combo_DCExtendedConnectStatus_V2 0 "Unavailable" 1 "DC extended not detected" 2 "DC extended detected" 3 "Not used"; 
+VAL_ 1318 ESE_Soundvolume_Request 0 "No request" 1 "0" 2 "Low" 3 "High" 4 "1" 5 "2" 6 "3" 7 "4" 8 "5" 9 "6" 10 "7" 11 "8" 12 "9" 13 "10" 14 "11" 15 "12" 16 "13" 17 "14" 18 "Not used" 19 "Not used" 20 "Not used" 21 "Not used" 22 "Not used" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Reset request"; 
+VAL_ 1318 ESE_Soundtype_Request 0 "No Request" 1 "Neutral" 2 "Sound 1" 3 "Sound2" 4 "RSound1" 5 "RSound2" 6 "RSound3" 7 "RSound4" 8 "RSound5" 9 "RSound6" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Reset Request"; 
+VAL_ 1321 SetParkingMonitor 0 "turn off parking monitoring" 1 "turn on parking monitoring" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 SetRecordQuality 0 "1080P-30fps" 1 "720P-30fps" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 MuteRecordSet 0 "turn off recording" 1 "turn on recording" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 RecordTimeSet 0 "1min" 1 "3min" 2 "5min" 3 "invalid value"; 
+VAL_ 1321 SetCollideSensitivity 0 "low sensibility" 1 "medium sensibility" 2 "high sensibility" 3 "invalid value"; 
+VAL_ 1321 SetCollideCheck 0 "turn off collision detection" 1 "turn on collision detection" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 FilePlayNum 0 "Reserved" 1 "Play file 1" 2 "Play file 2" 3 "Play file 3" 4 "Play file 4" 5 "Play file 5" 6 "Play file 6" 7 "Play file 7" 8 "Play file 8" 9 "Play file 9" 10 "Reserved" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Invalid value"; 
+VAL_ 1321 EN_SuperpositionOthersShow 0 "turn off overlay display" 1 "turn on overlay display" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 EN_SuperpositionSpeedShow 0 "turn off overlay display" 1 "turn on overlay display" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 GPSClockStatus 0 "DA Clock" 1 "GPS Clock"; 
+VAL_ 1321 GatherPhoto 0 "screenshot completed, save to disk" 1 "screenshot completed, without saving" 2 "reserved" 3 "invalid value"; 
+VAL_ 1321 MMI_CommandList 0 "enter general video" 1 "stop recorded" 2 "enter emergency video" 3 "enter general video directory" 4 "enter emergency video directory" 5 "enter picture directory" 6 "format SD" 7 "factory reset" 8 "photograph" 9 "move file" 10 "deleted file" 11 "turn on video" 12 "play/pause" 13 "format eMMC (reserved)" 14 "play the previous file" 15 "play the next file" 16 "exit play" 17 "filesselected 1" 18 "filesselected 2" 19 "filesselected 3" 20 "filesselected 4" 21 "filesselected 5" 22 "filesselected 6" 23 "filesselected 7" 24 "filesselected 8" 25 "filesselected 9" 26 "select all" 27 "cancel" 28 "previous" 29 "next" 30 "Enable Update" 31 "invalid value"; 
+VAL_ 1321 TransportContent 0 "SSID" 1 "Password" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 GeneralRecordingStatus 0 "turn on" 1 "turn off"; 
+VAL_ 1330 SDCardStatus 0 "SD insert" 1 "SD pull out" 2 "SD failure" 3 "SD full" 4 "emergency video full" 5 "photo full" 6 "emergency video and photo full" 7 "Need format"; 
+VAL_ 1330 DVRWorkStatus 0 "general recording mode" 1 "stop recording mode" 2 "manually start emergency video mode" 3 "auto start emergency video mode" 4 "general video list mode" 5 "emergency video list mode" 6 "photo list mode" 7 "video file playing status" 8 "video file paused status" 9 "photo file playing status" 10 "video playing end" 11 "power off status" 12 "system failure" 13 "inside monitoring mode" 14 "file is exporting" 15 "invalid value"; 
+VAL_ 1330 LanguageStatus 0 "chinese" 1 "english" 2 "Not used" 3 "invalid value"; 
+VAL_ 1330 FolderStatus 0 "only one page" 1 "current is the first page" 2 "current is the last page" 3 "invalid value"; 
+VAL_ 1330 FileStatus 0 "no file" 1 "only one file" 2 "current is the first file" 3 "current is the last file" 4 "Not used" 5 "Not used" 6 "Not used" 7 "invalid value"; 
+VAL_ 1330 PhotoReady 0 "pictures are ready" 1 "No picture"; 
+VAL_ 1330 CollideCheckStatus 0 "turn off collision detection" 1 "turn on collision detection" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 ParkingMonitor 0 "turn off parking monitoring" 1 "turn on parking monitoring" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 CollideSensitivityStatus 0 "low sensibility" 1 "medium sensibility" 2 "high sensibility" 3 "invalid value"; 
+VAL_ 1330 MuteRecordStatus 0 "turn off recording" 1 "turn on recording" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 SuperpositionSpeedShow 0 "turn off overlay display" 1 "turn on overlay display" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 SuperpositionOthersShow 0 "turn off overlay display" 1 "turn on overlay display" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 RecordVideoQuality 0 "1080P-30fps" 1 "720P-30fps" 2 "reserved" 3 "invalid value"; 
+VAL_ 1330 RecordTime 0 "1min" 1 "3min" 2 "5min" 3 "invalid value"; 
+VAL_ 1330 WiFiStatus 0 "turn on" 1 "turn off"; 
+VAL_ 1330 DVR_FileSelectStatus 0 "File selected" 1 "File unselected"; 
+VAL_ 1330 DVR_Collision_Status 0 "Not collision" 1 "Collision"; 
+VAL_ 1330 AutoACC2_ON_Request_DVR 0 "No request" 1 "AutoACC2 requested"; 
+VAL_ 1330 NetworkStatus 0 "Connection Successful" 1 "Initialization failed" 2 "No available AP found" 3 "Authentication failed" 4 "Connection refused" 5 "Connection failed" 6 "SSID checksum error" 7 "Passwd checksum error" 8 "reserved" 9 "reserved" 10 "reserved" 11 "reserved" 12 "reserved" 13 "reserved" 14 "reserved" 15 "invalid value"; 
+VAL_ 1330 SelftimerState 0 "Unavailable" 1 "Timer1" 2 "Timer2" 3 "Timer3"; 
+VAL_ 1330 ContrastStateRRcam 0 "Unavailable" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1330 ContrastStateFRcam 0 "Unavailable" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1330 NetworkStatus_CameraAngle 0 "camera angle can be changed" 1 "camera right angle limitation" 2 "camera left angle limitation" 3 "invalid value"; 
+VAL_ 1330 BrightnessStateRRcam 0 "Unavailable" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1330 BrightnessStateINcam 0 "Unavailable" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1330 NetworkStatus_CameraView 0 "invalid value" 1 "FR camera is displayed" 2 "RR camera is displayed" 3 "INCAM is displayed"; 
+VAL_ 1330 ContrastStateINcam 0 "Unavailable" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1330 BrightnessState 0 "Unavailable" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1331 DVR_CommandResult 0 "Command reception success" 1 "Command reception Failed" 2 "Successful implementation" 3 "Execution failure" 4 "reserved" 5 "reserved" 6 "reserved" 7 "invalid value"; 
+VAL_ 1331 DVR_CommandRespList 0 "enter general video" 1 "stop recorded" 2 "enter emergency video" 3 "enter general video directory" 4 "enter emergency video directory" 5 "enter picture directory" 6 "format SD" 7 "factory reset" 8 "photograph" 9 "move file" 10 "deleted file" 11 "turn on video" 12 "play/pause" 13 "format eMMC (reserved)" 14 "play the previous file" 15 "play the next file" 16 "exit play" 17 "filesselected 1" 18 "filesselected 2" 19 "filesselected 3" 20 "filesselected 4" 21 "filesselected 5" 22 "filesselected 6" 23 "filesselected 7" 24 "filesselected 8" 25 "filesselected 9" 26 "select all" 27 "cancel" 28 "previous" 29 "next" 30 "Enable Update" 31 "invalid value"; 
+VAL_ 1331 DVRSystemVersion_Major 0 "Major version number is zero" 1 "Major version number is one" 2 "Major version number is two" 3 "invalid value"; 
+VAL_ 1331 WifiAuthenticationRequest 0 "Request DA to send SSID and Password" 1 "No request"; 
+VAL_ 1331 UpdateStatus 0 "Need to update software" 1 "MCU updating" 2 "DSP updating" 3 "update successful" 4 "update fail" 5 "reserved" 6 "reserved" 7 "invalid value"; 
+VAL_ 1331 DVRSystemVersion_MCU 0 "MCU version number is zero" 1 "MCU version number is one" 2 "MCU version number is two" 3 "MCU version number is three" 4 "MCU version number is four" 5 "MCU version number is five" 6 "MCU version number is six" 7 "MCU version number is seven" 8 "MCU version number is eight" 9 "MCU version number is nine" 10 "reserved" 11 "reserved" 12 "reserved" 13 "reserved" 14 "reserved" 15 "invalid value"; 
+VAL_ 1331 DVRSystemVersion_DSP 0 "DSP version number is zero" 1 "DSP version number is one" 2 "DSP version number is two" 3 "DSP version number is three" 4 "DSP version number is four" 5 "DSP version number is five" 6 "DSP version number is six" 7 "DSP version number is seven" 8 "DSP version number is eight" 9 "DSP version number is nine" 10 "reserved" 11 "reserved" 12 "reserved" 13 "reserved" 14 "reserved" 15 "invalid value"; 
+VAL_ 1331 DVR_CommandRespList_2 0 "Taking inner camera photo" 1 "Taking inner camera video" 2 "Fast forward 10 sec" 3 "Fast forward 20 sec" 4 "Fast rewind 10 sec" 5 "Fast rewind 20 sec" 6 "Play back progress 0%" 7 "Play back progress 10%" 8 "Play back progress 20%" 9 "Play back progress 30%" 10 "Play back progress 40%" 11 "Play back progress 50%" 12 "Play back progress 60%" 13 "Play back progress 70%" 14 "Play back progress 80%" 15 "Play back progress 90%" 16 "Play back progress 100%" 17 "Not Used" 18 "Not Used" 19 "Not Used" 20 "Not Used" 21 "Not Used" 22 "Not Used" 23 "Not Used" 24 "Not Used" 25 "Not Used" 26 "Not Used" 27 "Not Used" 28 "Not Used" 29 "Not Used" 30 "Not Used" 31 "Not Used"; 
+VAL_ 1331 DVR_RemoteCommandResult 0 "Successful implementation" 1 "Execution failure" 2 "reserved" 3 "invalid value"; 
+VAL_ 1332 AIRBAGMalfunction 0 "no AIRBAG system malfunction" 1 "AIRBAG system malfunction"; 
+VAL_ 1332 PassengerAlertState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened or passenger absent" 3 "Unavailable"; 
+VAL_ 1332 PassengerAIRBAG_Inhibition 0 "Passenger AIRBAG not inhibited" 1 "Passenger AIRBAG inhibited"; 
+VAL_ 1332 CrashDetected_v2 0 "Reserved for safety" 1 "No crash detected" 2 "Crash detected" 3 "Reserved for safety"; 
+VAL_ 1332 RolloverDetectionMalfunction 0 "Normal rollover detection functional " 1 "Malfunction for rollover detection"; 
+VAL_ 1332 PassengerSafetyBeltBuckleState 0 "SB Not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 SecondRowLeftSafetyBeltState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 SecondRowCenterSafetyBeltState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 ThirdRowCenterSafetyBeltState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 SecondRowRightSafetyBeltState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 ThirdRowRightSafetyBeltState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 ThirdRowLeftSafetyBeltState 0 "SB not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1332 PassengerAIRBAG_Inhibition_v2 0 "No display" 1 "Passenger AIRBAG not inhibited" 2 "Passenger AIRBAG inhibited" 3 "Not used"; 
+VAL_ 1332 FirstRowCenterSafetyBeltState 0 "SB Not monitored" 1 "SB unfastened" 2 "SB fastened" 3 "Unavailable"; 
+VAL_ 1339 TimeWeekDay 0 "Monday" 1 "Tuesday" 2 "Wednesday" 3 "Thursday" 4 "Friday" 5 "Saturday" 6 "Sunday" 7 "Unavailable"; 
+VAL_ 1341 UPA_Obstacle_Zone_Front_Right 0 "No detection" 1 "Reserve" 2 "Detect level 2 (70~50cm)" 3 "Detect level 3 (50~30cm)" 4 "Detect level 4 (30~cm)" 5 "Detect level 5" 6 "Reserve" 7 "Unavailable"; 
+VAL_ 1341 UPA_Obstacle_Zone_Front_Left 0 "No detection" 1 "Reserve" 2 "Detect level 2 (70~50cm)" 3 "Detect level 3 (50~30cm)" 4 "Detect level 4 (30~cm)" 5 "Detect level 5" 6 "Reserve" 7 "Unavailable"; 
+VAL_ 1341 UPA_Obstacle_Zone_Rear_Right 0 "No detection" 1 "Detect level 1 (~70cm)" 2 "Detect level 2 (70~50cm)" 3 "Detect level 3 (50~30cm)" 4 "Detect level 4 (30~cm)" 5 "Detect level 5" 6 "Reserve" 7 "Unavailable"; 
+VAL_ 1341 UPA_Obstacle_Zone_Rear_Left 0 "No detection" 1 "Detect level 1 (~70cm)" 2 "Detect level 2 (70~50cm)" 3 "Detect level 3 (50~30cm)" 4 "Detect level 4 (30~cm)" 5 "Detect level 5" 6 "Reserve" 7 "Unavailable"; 
+VAL_ 1341 UPA_Obstacle_Zone_Rear_Center 0 "No detection" 1 "Detect level 1 (   ~70cm)" 2 "Detect level 2 (70~50cm)" 3 "Detect level 3 (50~30cm)" 4 "Detect level 4 (30~cm)" 5 "Detect level 5" 6 "Reserve" 7 "Unavailable"; 
+VAL_ 1341 UPA_Obstacle_Zone_Front_Center 0 "No detection" 1 "Detect level 1 (   ~70cm)" 2 "Detect level 2 (70~50cm)" 3 "Detect level 3 (50~30cm)" 4 "Detect level 4 (30~cm)" 5 "Detect level 5" 6 "Reserve" 7 "Unavailable"; 
+VAL_ 1349 PnCactivationRequest_IVC 0 "No request" 1 "Activation request" 2 "Desactivation request" 3 "Not Used"; 
+VAL_ 1367 PnCContCertifInstMng 0 "No request (Default value)" 1 "Install Contract Certificate #1" 2 "Install Contract Certificate #2" 3 "Install Contract Certificate #3" 4 "Install Contract Certificate #4" 5 "Install Contract Certificate #5" 6 "Install Contract Certificate #6" 7 "Install Contract Certificate #7" 8 "Install Contract Certificate #8" 9 "Install Contract Certificate #9" 10 "Install Contract Certificate #10" 11 "Uninstall Contract Certificate #1" 12 "Uninstall Contract Certificate #2" 13 "Uninstall Contract Certificate #3" 14 "Uninstall Contract Certificate #4" 15 "Uninstall Contract Certificate #5" 16 "Uninstall Contract Certificate #6" 17 "Uninstall Contract Certificate #7" 18 "Uninstall Contract Certificate #8" 19 "Uninstall Contract Certificate #9" 20 "Uninstall Contract Certificate #10" 21 "Not used" 22 "Not used" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Unavailable"; 
+VAL_ 1367 PnCProV2GCertifInstMng 0 "No request (Default value)" 1 "Install Provisioning Certificate" 2 "Install V2G Root #1 Certificate" 3 "Install V2G Root #2 Certificate" 4 "Install V2G Root #3 Certificate" 5 "Install V2G Root #4 Certificate" 6 "Install V2G Root #5 Certificate" 7 "Uninstall Provisioning Certificate" 8 "Uninstall V2G Root #1 Certificate" 9 "Uninstall V2G Root #2 Certificate" 10 "Uninstall V2G Root #3 Certificate" 11 "Uninstall V2G Root #4 Certificate" 12 "Uninstall V2G Root #5 Certificate" 13 "Not used" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1380 TripUnitConsumption 0 "L / 100 km and kWh/100km" 1 "Km / L and km/kWh" 2 "MPGus and M/kWh (MPGe)" 3 "MPGuk and M/kWh (MPGe)" 4 "KWh / 100 Km" 5 "KWh / 100 miles" 6 "MPGe (US)" 7 "MPGe (UK)"; 
+VAL_ 1380 TripUnitDistance 0 "Km" 1 "Miles" 2 "not used" 3 "not used"; 
+VAL_ 1381 BSWrad_AlertStatus 0 "No alert" 1 "Right alert" 2 "Left alert" 3 "Right and left alert"; 
+VAL_ 1381 CTA_AlertStatus 0 "No alert" 1 "Right alert" 2 "Left alert" 3 "Right and Left alert"; 
+VAL_ 1402 LDW_FailureDisplay 0 "No display" 1 "Temporary failure display" 2 "Permanent failure display" 3 "Not used"; 
+VAL_ 1402 EcallRequest 0 "No request" 1 "Request"; 
+VAL_ 1447 SR_CustomerRecordStatus 0 "No request" 1 "Customer Record In Progress" 2 "Customer Record Stopped" 3 "Customer Record End"; 
+VAL_ 1450 SR_AutomaticRecordStatus 0 "No request" 1 "Automatic Record In Progress" 2 "Automatic Record End" 3 "Not used"; 
+VAL_ 1458 EcoModePWTcancelReq 0 "No display request" 1 "Eco mode PWT alert" 2 "Eco mode PWT deactivated" 3 "Not used"; 
+VAL_ 1458 PnCHEVCauthorizationReq 0 "EIM session requested" 1 "PnC session requested" 2 "Not Used" 3 "Unavailable"; 
+VAL_ 1458 RST_Boost_Launch_Ctrl_Alert_MMI 0 "No display request" 1 "Launch Control unavailable - Powertrain limitation" 2 "Launch Control unavailable - Incorrect PWT mode" 3 "Launch Control available - Release brake" 4 "Launch Control available - Kick-down" 5 "Boost unavailable - Powertrain limitation" 6 "Boost unavailable - Incorrect PWT mode" 7 "Reserved" 8 "Reserved" 9 "Reserved" 10 "Reserved" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Reserved"; 
+VAL_ 1469 CockpitLanguageRequest 0 "No Language Request" 1 "Language 01h to FEh" 255 "Reset request"; 
+VAL_ 1472 MexModeState 0 "Unavailable" 1 "MEX MODE ECO" 2 "MEX MODE COMFORT" 3 "MEX MODE NORMAL" 4 "MEX MODE DYNAMIC" 5 "MEX MODE PERSONNAL" 6 "MEX MODE RACE" 7 "MEX MODE SNOW"; 
+VAL_ 1480 ChargeTimeDisplayAtDPrct 0 "No Display"; 
+VAL_ 1482 AEB_FCWactivationRequest2 0 "No request" 1 "AEB OFF / FCW OFF" 2 "AEB OFF / FCW ON" 3 "AEB ON / FCW OFF" 4 "AEB ON / FCW ON" 5 "Not used" 6 "Not used" 7 "Reset request"; 
+VAL_ 1485 RemoteFunctionService_BCM 0 "Table Value16365"; 
+VAL_ 1492 PnCchargeStationIdentMode 0 "External Identification Mean" 1 "Plug and Charge" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1492 Combo_EVSEchargeHLCState_v2 0 "No HLC communication is established" 1 "Communication & Service setting is established" 2 "Charge parameter Discovery response" 3 "Cable Check response" 4 "Precharge response" 5 "Power delivery response" 6 "Current demande response" 7 "Metering receipt response" 8 "Welding detection response" 9 "Session stop response with EVSE (Station charging)" 10 "Charging Status response" 11 "ACchargeLoop response" 12 "ScheduleExchange response" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1496 WCBS_Memory_Fault 0 "Unavailable" 1 "No memory Fault" 2 "Memory Fault" 3 "Not Used"; 
+VAL_ 1496 WCBS_Coil_Disconnection 0 "Unavailable" 1 "No coil disconnection" 2 "Coil disconnection" 3 "Not Used"; 
+VAL_ 1496 WCBS_ChargingStopReason 0 "Unavailable" 1 "RX_UNKNOWN" 2 "RX_CHARGE_COMPLETE" 3 "RX_INTERNAL_FAULT" 4 "RX_OVER_VOLT" 5 "RX_OVER_TEMP" 6 "RX_OVER_CURRENT" 7 "RX_BATTERY_FAILURE" 8 "RX_NO_RESPONSE" 9 "RX_RESTART_PWR_XFER" 10 "RX_NEG_FAILURE" 11 "TX_COILSELEQFAULTCOIL" 12 "TX_ANALOGPING_FAULT" 13 "TX_INCOMPATIBLE_PWR" 14 "TX_QFOD_ERROR" 15 "TX_OVER_TEMP_FAULT" 16 "TX_RCVPWR_TIMEOUT" 17 "TX_FOD_ERROR" 18 "TX_OVER_INCURR_LIMIT" 19 "TX_INPWREXCEED" 20 "TX_OVER_COILCURR_LIMIT" 21 "Not used" 22 "Not used" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Not used"; 
+VAL_ 1496 Smartphone_Manufacturer 0 "Unavailable" 1 "Samsung" 2 "LGE" 3 "Nokia" 4 "Motorola" 5 "Apple" 6 "Others" 7 "Not Used"; 
+VAL_ 1496 Smartphone_Charging_Standard 0 "Unavailable" 1 "WPC 1.0" 2 "WPC 1.1" 3 "WPC 1.2" 4 "WPC x.x" 5 "PMA" 6 "A4WP" 7 "Not Used"; 
+VAL_ 1496 InductiveChargerStatus 0 "Unavailable" 1 "Object detecting" 2 "Charging" 3 "Uncharging"; 
+VAL_ 1496 WCBS_HMI 0 "Unavailable" 1 "High temperature pop-up" 2 "Foreign Object Detected pop-up" 3 "not used" 4 "Charging on pictogram" 5 "No HMI" 6 "not used" 7 "Full charged pictogram"; 
+VAL_ 1499 RemoteFunctionService_HFM 0 "Table Value30439"; 
+VAL_ 1507 CPLC_RefuseToSleep 0 "Reserved" 1 "CPLC refuse to sleep" 2 "CPLC ready to sleep" 3 "reserved"; 
+VAL_ 1508 RESPreSoak_SmartphoneError 0 "No Error" 1 "RES not activated" 2 "Duration Error between 2 RES cycles" 3 "TCU authent Error" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 1508 AlarmState 0 "alarm off" 1 "alarm on"; 
+VAL_ 1508 LightSwitchStatus 0 "Off" 1 "Position lamps" 2 "Low beam" 3 "Auto"; 
+VAL_ 1511 WheelStateRL 0 "Pressure ok and no failure" 1 "Failure" 2 "Underinflation" 3 "Underinflation and failure" 4 "Puncture" 5 "Puncture and failure" 6 "Puncture and underinflation" 7 "Puncture and underinflation and failure"; 
+VAL_ 1511 WheelStateRR 0 "Pressure ok and no failure" 1 "Failure" 2 "Underinflation" 3 "Underinflation and failure" 4 "Puncture" 5 "Puncture and failure" 6 "Puncture and underinflation" 7 "Puncture and underinflation and failure"; 
+VAL_ 1511 WheelStateFL 0 "Pressure ok and no failure" 1 "Failure" 2 "Underinflation" 3 "Underinflation and failure" 4 "Puncture" 5 "Puncture and failure" 6 "Puncture and underinflation" 7 "Puncture and underinflation and failure"; 
+VAL_ 1511 WheelStateFR 0 "Pressure ok and no failure" 1 "Failure" 2 "Underinflation" 3 "Underinflation and failure" 4 "Puncture" 5 "Puncture and failure" 6 "Puncture and underinflation" 7 "Puncture and underinflation and failure"; 
+VAL_ 1519 CurrentUserState_v2 0 "Guest" 1 "User 1" 2 "User 2" 3 "User 3" 4 "User 4" 5 "User 5" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1537 ACC_StatusDisplay 0 "No display request" 1 "ACC waiting" 2 "ACC suspended" 3 "ACC activated"; 
+VAL_ 1537 ADAS_ModeDisplay 0 "Cruise Control mode" 1 "Adaptive Cruise Control mode" 2 "TJP mode" 3 "Unavailable"; 
+VAL_ 1537 ACC_TargetDistanceAlert 0 "No ACC warning" 1 "ACC approach warning" 2 "ACC collision warning" 3 "ACC cancel warning"; 
+VAL_ 1537 LCA_SteeringWheelDisplay 0 "Not active - Cancel" 1 "Not active - Temporary Cancel" 2 "Active" 3 "Not used"; 
+VAL_ 1537 LCA_ActivationState 0 "Activated" 1 "Deactivated"; 
+VAL_ 1537 LDP_StatusDisplay 0 "No display" 1 "Not operational" 2 "Operational" 3 "Not used"; 
+VAL_ 1537 LDP_AlertStatus 0 "No alert" 1 "Right alert" 2 "Left alert" 3 "Not used"; 
+VAL_ 1537 ContextSpeed_ActivationState 0 "Unavailable" 1 "AutoMode OFF" 2 "AutoMode ON" 3 "Prompt mode activated"; 
+VAL_ 1537 ContextRoad_ActivationState 0 "AutoMode OFF" 1 "AutoMode ON" 2 "Not Used" 3 "Unavailable"; 
+VAL_ 1538 LDW_AlertStatus 0 "No alert" 1 "Right alert" 2 "Left alert" 3 "Not used"; 
+VAL_ 1538 BSI_AlertStatus 0 "No alert" 1 "Right alert" 2 "Left alert" 3 "Right and left alert"; 
+VAL_ 1538 RAB_AlertStatus 0 "No alert" 1 "Alert 1" 2 "Alert 2" 3 "Not used"; 
+VAL_ 1538 WDA_DriverAttentionLevel 0 "No display" 1 "System OFF" 2 "Level 1" 3 "Level 2" 4 "Level 3" 5 "Level 4" 6 "Level 5" 7 "Level 6" 8 "Level 7" 9 "Level 8" 10 "Indicator check" 11 "Not used" 12 "Not used" 13 "Not used" 14 "System stand by" 15 "System malfunction"; 
+VAL_ 1543 GlasshatchStatus 0 "Unavailable Value" 1 "Glasshatch closed" 2 "Glasshatch open" 3 "Not Used"; 
+VAL_ 1544 DCcharge_CANconnectStatus 0 "Chademo CAN not detected" 1 "Chademo CAN detected" 2 "GBT CAN not detected" 3 "GBT CAN detected" 4 "Not Used" 5 "Not Used" 6 "Not Used" 7 "Unavailable"; 
+VAL_ 1544 DCchargeMode_EVSE 0 "No request" 1 "Handshake response from infrastructure (CHM)" 2 "Identification confirmation from infrastructure (CRM)" 3 "Max and min output values from infrastructure (CML)" 4 "Infrastructure  ready to charge (CRO)" 5 "Output state from infrastructure (CCS)" 6 "Charging stop request from infrastructure (CST)" 7 "Charging statistical data from infrastructure (CSD)" 8 "Charge error message detected by infrastructure (CEM)" 9 "Communication error Applicable" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1555 ANC_RefuseToSleep 0 "Reserved" 1 "ANC refuse to sleep" 2 "ANC ready to sleep" 3 "Reserved"; 
+VAL_ 1561 DCcharge_EVchargeAuthorization 0 "Prohibited" 1 "Charge Permitted"; 
+VAL_ 1561 HVB_OverCurrent 0 "Normal" 1 "Overcurrent"; 
+VAL_ 1561 DCcharge_ChargeModeRequest 0 "No request" 1 "Constant Voltage mode request" 2 "Constant Current mode request" 3 "Not Used"; 
+VAL_ 1562 DCcharge_EVtimeOutStatistics 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1562 HVinterlockAlert 0 "No Alert" 1 "High-voltage interlock opened alert"; 
+VAL_ 1562 HVFOTAConditionCheckStatus 0 "No request" 1 "Pending Conditions" 2 "Achieved Conditions" 3 "Error Detected"; 
+VAL_ 1564 HVB_OverVoltageAlert 0 "No Alert" 1 "Battery overvoltage alert"; 
+VAL_ 1564 HVB_UnderVoltageAlert 0 "No Alert" 1 "Battery undervoltage alert"; 
+VAL_ 1567 AUDIOamp_RefuseToSleep 0 "Reserved" 1 "AUDIOamp refuse to sleep" 2 "AUDIOamp ready to sleep" 3 "Reserved"; 
+VAL_ 1567 AudioAvailability_Amp 0 "audio available" 1 "audio unavailable"; 
+VAL_ 1570 RIsolFailureAlert 0 "No alert" 1 "Alert"; 
+VAL_ 1570 ModeEcoIncitationPrompt 0 "No Ecomode incitation request" 1 "Ecomode incitation request"; 
+VAL_ 1581 V2X_EVvehicleInfo 0 "No vehicle info" 1 "Vehicle info"; 
+VAL_ 1581 V2X_EVsecondBattery 0 "Not Present" 1 "Present"; 
+VAL_ 1581 HVB_VoltageAlert 0 "Normal" 1 "Too High" 2 "Too Low" 3 "Not Used"; 
+VAL_ 1581 V2X_EVdischargeAllowed 0 "No Compatible" 1 "Compatible"; 
+VAL_ 1581 V2X_EVfuelCell 0 "Not Present" 1 "Present"; 
+VAL_ 1581 DCcharge_EVtimeOutChargerParam 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1581 DCcharge_EVtimeOutChargerIdent 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1581 DCcharge_EVreadyStatus 0 "Vehicle (BMS) is not ready to charge" 1 "Vehicle (BMS) is completed charging" 2 "Invalid" 3 "Not Used"; 
+VAL_ 1581 HVB_SOCstatus 0 "Normal" 1 "Too high" 2 "Too low" 3 "Not Used"; 
+VAL_ 1581 DCcharge_EVtimeOutChargeEnd 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1581 DCcharge_EVtimeOutChargeState 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1581 DCcharge_EVtimeOutChargerPrep 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1581 DCcharge_EVtimeOutChargerSync 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Unavailable value"; 
+VAL_ 1581 V2X_HEVinterCombustionEngine 0 "Not Present" 1 "Present"; 
+VAL_ 1583 R_ANC_ModeStatus 0 "No Display" 1 "Mode1_Current seat mode all" 2 "Mode2_Current seat mode front" 3 "Mode3_Current seat mode rear" 4 "Mode4_Current seat mode front Left" 5 "Mode5_Current seat mode front Right" 6 "Not Used" 7 "Unavailable"; 
+VAL_ 1583 R_ANC_ActivationStatus 0 "No Display" 1 "R-ANC status activation" 2 "R-ANC status deactivation" 3 "Unavailable"; 
+VAL_ 1583 ANC_SeatFocusStatus 0 "Mode_seat1:ALL Mode" 1 "Mode_seat2:FR_LH Mode" 2 "Mode_seat3:FR_RH Mode" 3 "Mode_seat4:FR Mode" 4 "Mode_seat5:2nd_LH Mode" 5 "Mode_seat6:2nd_RH Mode" 6 "Mode_seat7: 2nd Mode" 7 "Mode_seat8:3rd_LH Mode" 8 "Mode_seat9:3rd_RH Mode" 9 "Mode_seat10:3rd_Mode" 10 "Not Used" 11 "Not Used" 12 "Not Used" 13 "Not Used" 14 "Not Used" 15 "Unavailable"; 
+VAL_ 1583 ANC_ModeVariationStatus 0 "Mode_status1 AUTO Mode" 1 "Mode_status2 MANUAL Mode" 2 "Mode_status3 Not used" 3 "Mode_status4 Unavailable"; 
+VAL_ 1583 ANC_ActivationStatus 0 "Mode_activation1 ANC ON" 1 "Mode_activation2 ANC OFF" 2 "Mode_activation3 Not used" 3 "Mode_activation4 Unavailable"; 
+VAL_ 1583 ASE_SoundActivationStatus 0 "No Display" 1 "ASE_Sound_status activation" 2 "ASE_Sound_status deactivation" 3 "Not used"; 
+VAL_ 1583 ASE_SoundvolumeState 0 "No Display" 1 "Low" 2 "Medium" 3 "High" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1601 RemoteFunctionService_DOP_TCU 0 "Table Value16369"; 
+VAL_ 1602 RemoteFunctionService_HFM_DOPRES 0 "Table Value16370"; 
+VAL_ 1608 DCcharge_TimeOutHVbattCharge 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Not Used"; 
+VAL_ 1608 V2X_EVSEdischarge 0 "Other" 1 "Charging" 2 "Discharging" 3 "Charging/Discharging"; 
+VAL_ 1608 DCcharge_TimeOutChargePrepa 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Not Used"; 
+VAL_ 1608 V2X_EVSEuserStopRequest 0 "No request" 1 "Stop Operation by User"; 
+VAL_ 1608 V2X_EVSEmanualRequest 0 "No request" 1 "Manual request by User"; 
+VAL_ 1608 V2X_EVSEdischargeAllowed 0 "No Compatible" 1 "Compatible"; 
+VAL_ 1608 DCcharge_VehicleIdentification 0 "Vehicle (BMS) cannot be identified" 1 "Vehicle (BMS) can be identified"; 
+VAL_ 1608 DCcharge_ReadyStatus 0 "Charger not complete charging preparation" 1 "Charger completes charging preparation" 2 "Unavailable" 3 "Not Used"; 
+VAL_ 1608 DCcharge_TimeOutVehicleID 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Not Used"; 
+VAL_ 1611 DCcharge_TimeOutChargeState 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Not Used"; 
+VAL_ 1611 DCcharge_TimeOutChargeEnd 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Not Used"; 
+VAL_ 1611 DCcharge_TimeOutChargeRequest 0 "Normal" 1 "Timeout" 2 "Untrusted state" 3 "Not Used"; 
+VAL_ 1611 DCcharge_ChargeAuthorization 0 "Pause - Stop Charge" 1 "Charge permit"; 
+VAL_ 1612 CHADEMO_OperatingCondition 0 "Standard" 1 "Specific"; 
+VAL_ 1612 CHADEMO_TerminalHighCurrentCtrl 0 "incompatible" 1 "compatible"; 
+VAL_ 1612 CHADEMO_TerminalDynamicCtrl 0 "incompatible" 1 "compatible"; 
+VAL_ 1612 CHADEMO_ReliabilityDesign 0 "Not applied" 1 "Applied"; 
+VAL_ 1612 CHADEMO_ChargerStatus 0 "standby" 1 "charging"; 
+VAL_ 1612 CHADEMO_ChargerError 0 "normal" 1 "error"; 
+VAL_ 1612 CHADEMO_OverTempProtectionInst 0 "Not installed" 1 "Installed"; 
+VAL_ 1612 CHADEMO_ConnectorCurrLimitFunctInst 0 "Not installed" 1 "Installed"; 
+VAL_ 1612 CHADEMO_ConnectorCoolingFunc 0 "Not operated" 1 "Operating"; 
+VAL_ 1612 CHADEMO_CableCurrLimitFunctInst 0 "Not installed" 1 "Installed"; 
+VAL_ 1612 CHADEMO_CableCoolingFuncStatus 0 "Not operated" 1 "Operating"; 
+VAL_ 1612 CHADEMO_EnergizingState 0 "disable" 1 "enable"; 
+VAL_ 1612 CHADEMO_BatteryCompatibility 0 "compatible" 1 "incompatible"; 
+VAL_ 1612 CHADEMO_ChargingSystError 0 "normal" 1 "error"; 
+VAL_ 1612 CHADEMO_ChargingStopControl 0 "operating" 1 "during stop control or stop condition"; 
+VAL_ 1612 CHADEMO_WeldingDetection 0 "Not compatible with EV contactor weling detection" 1 "Compatible with EV contactor weling detection"; 
+VAL_ 1614 R_ANC_ModeSwitchRequest 0 "No request" 1 "Mode1_Switching request all seat mode" 2 "Mode2_Switching request front seat mode" 3 "Mode3_Switching request rear seat mode" 4 "Mode4_Switching request front Left seat mode" 5 "Mode5_Switching request front Right seat mode" 6 "Not Used" 7 "Unavailable"; 
+VAL_ 1614 R_ANC_ActivationRequest 0 "No R-ANC request" 1 "R-ANC activation request" 2 "R-ANC deactivation request" 3 "Unavailable"; 
+VAL_ 1614 PairingMode 0 "Not Activated" 1 "Activated"; 
+VAL_ 1624 V2G_OEMRootCert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 CertificateInstallationStatus 0 "No display (default value)" 1 "Reception in progress" 2 "Transfer successful" 3 "Certificate consistent" 4 "Operation successful (installation/uninstallation)" 5 "Transfer error: bloc sequence not valid" 6 "Transfer error: resegmenting error" 7 "Certificate error: not valid (expired)" 8 "Certificate error: signature verification error" 9 "Certificate error: private key decryption error" 10 "Certificate error: certificate not matching private/public key" 11 "OCSP response expired" 12 "Revocation failed" 13 "Not Used" 14 "Operation failed (installation/uninstallation)" 15 "Not Used"; 
+VAL_ 1624 PLCReceptionAvailability 0 "Default value" 1 "Ready to receive" 2 "Not ready to receive" 3 "Not Used"; 
+VAL_ 1624 PnC_OEMProvCert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 PnC_LegOEMRootCert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 PnC_OEMRootCert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 V2G_VehicleCert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 CPLC_BCM_Communication 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Disabled"; 
+VAL_ 1624 CPLC_InternalFailure 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Disabled"; 
+VAL_ 1624 CPLC_PWS_RangLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Disabled"; 
+VAL_ 1624 CPLC_PWS_RangHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Disabled"; 
+VAL_ 1624 PnC_MOSub2Cert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 PnC_MOSub1Cert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1624 CPLC_EVSE_Communication 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Disabled"; 
+VAL_ 1625 EVSESelectedProtocol 0 "15118-20" 1 "15118-2" 2 "DIN" 3 "Not Used"; 
+VAL_ 1625 PnC_Contract_Certificate_Status 0 "Not installed" 1 "installed" 2 "expired" 3 "errors"; 
+VAL_ 1625 HLC_AC_Connector 0 "single-phase" 1 "tri-phase"; 
+VAL_ 1633 V2G_EVSE_Service_AC_BPT_param_v2 0 "None" 1 "Schedule" 2 "Dynamic" 3 "ScheduleAndDynamic"; 
+VAL_ 1633 V2G_Vehicle_CertifStatus 0 "No Display" 1 "Vehicle Certificate Installed" 2 "Vehicle Certificate not Installed" 3 "Installation in Progress" 4 "Ready to receive" 5 "Signature Verification error" 6 "Resegmenting error" 7 "Transfer error" 8 "Vehicle Certificate expired" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable value"; 
+VAL_ 1633 HLC_AC_BPT_Active_Islanding 0 "activated" 1 "deactivated"; 
+VAL_ 1633 PnCCPLCActivationStatus 0 "Enable" 1 "Disable" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1633 V2G_EVSE_Service_DC_param_v2 0 "None" 1 "Schedule" 2 "Dynamic" 3 "ScheduleAndDynamic"; 
+VAL_ 1633 V2G_EVSE_Service_DC_BPT_param_v2 0 "None" 1 "Schedule" 2 "Dynamic" 3 "ScheduleAndDynamic"; 
+VAL_ 1633 V2G_EVSE_Service_AC_param_v2 0 "None" 1 "Schedule" 2 "Dynamic" 3 "ScheduleAndDynamic"; 
+VAL_ 1637 MultiDriveMode_ASC 0 "Mode1 (Normal)" 1 "Mode2 (Comfort)" 2 "Mode3 (Sport)" 3 "Mode4 (Off)" 4 "Mode5 (Eco)" 5 "Mode6 (Race)" 6 "Mode7" 7 "Unavailable"; 
+VAL_ 1637 MultiDriveMode_ANC 0 "Mode1 (Normal)" 1 "Mode2 (Comfort)" 2 "Mode3 (Sport)" 3 "Mode4 (Off)" 4 "Mode5 (Eco)" 5 "Mode6 (Race)" 6 "Mode7" 7 "Unavailable"; 
+VAL_ 1639 ChargingPlugStatus 0 "Not connected" 1 "Connected"; 
+VAL_ 1645 AEB_FCWactivationState2 0 "AEB OFF / FCW OFF" 1 "AEB OFF / FCW ON" 2 "Not used" 3 "AEB ON / FCW ON"; 
+VAL_ 1645 AEB_CyclistAlertRequest2 0 "No AEB cyclist alert" 1 "AEB cyclist alert"; 
+VAL_ 1645 AEB_PedestrianAlertRequest2 0 "No AEB PEDESTRIAN alert" 1 "AEB PEDESTRIAN alert"; 
+VAL_ 1645 AEB_VehicleAlertRequest2 0 "No AEB vehicle alert" 1 "AEB vehicle Approach alert" 2 "AEB vehicle Collision alert" 3 "AEB vehicle Alert reminder"; 
+VAL_ 1645 AEB_FailureDisplay2 0 "No display" 1 "Temporary Failure Display" 2 "Permanent Failure Display" 3 "Not used"; 
+VAL_ 1645 AEB_StatusDisplay2_v2 0 "No display" 1 "AEB Off" 2 "operation" 3 "Not operation" 4 "Temporary failure" 5 "Permanent failure" 6 "Initial" 7 "Not Used"; 
+VAL_ 1650 ConnectionData_DVR_WiFi 0 "Table Value414235"; 
+VAL_ 1650 DVR_Incident_state 0 "Unavailable" 1 "Incident Recording start" 2 "Incident Recording end" 3 "Not used"; 
+VAL_ 1650 DataLength_DVR_WiFi 0 "0" 1 "1" 2 "2" 3 "3" 4 "4" 5 "5" 6 "6" 7 "7" 8 "8" 9 "9" 10 "10" 11 "11" 12 "12" 13 "13" 14 "14" 15 "15" 16 "16" 17 "17" 18 "18" 19 "19" 20 "20" 21 "21" 22 "22" 23 "23" 24 "24" 25 "25" 26 "26" 27 "27" 28 "28" 29 "29" 30 "30" 31 "31" 32 "32" 33 "Not used" 34 "Not used" 35 "Not used" 36 "Not used" 37 "Not used" 38 "Not used" 39 "Not used" 40 "Not used" 41 "Not used" 42 "Not used" 43 "Not used" 44 "Not used" 45 "Not used" 46 "Not used" 47 "Not used" 48 "Not used" 49 "Not used" 50 "Not used" 51 "Not used" 52 "Not used" 53 "Not used" 54 "Not used" 55 "Not used" 56 "Not used" 57 "Not used" 58 "Not used" 59 "Not used" 60 "Not used" 61 "Not used" 62 "Not used" 63 "Invalid"; 
+VAL_ 1650 eMMCStatus_v2 0 "EMMC normal" 1 "EMMC onlyRead" 2 "EMMC error" 3 "Unavailable value"; 
+VAL_ 1650 TransportContent_DVR_WiFi 0 "SSID" 1 "Password" 2 "Reserved" 3 "Invalid value"; 
+VAL_ 1650 DataIndex_DVR_WiFi 0 "0" 1 "1" 2 "2" 3 "3" 4 "4" 5 "5" 6 "Reserved" 7 "Reserved" 8 "Reserved" 9 "Reserved" 10 "Reserved" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Invalid"; 
+VAL_ 1655 EVchargingProfileStatus 0 "No Schedule transmitted" 1 "Schedule #1 transmission in progress" 2 "Schedule #2 transmission in progress" 3 "Schedule #3 transmission in progress" 4 "Transmission is finished" 5 "Error" 6 "Not used" 7 "Not used"; 
+VAL_ 1666 ANC_ModeVariationRequest 0 "Mode_status1 AUTO Mode" 1 "Mode_status2 MANUAL Mode" 2 "Mode_status3 Not used" 3 "Mode_status4 Unavailable"; 
+VAL_ 1666 ANC_ActivationRequest 0 "Mode_activation1 ANC ON" 1 "Mode_activation2 ANC OFF" 2 "Mode_activation3 Not used" 3 "Mode_activation4 Unavailable"; 
+VAL_ 1666 ANC_SeatFocusRequest 0 "Mode_seat1:ALL Mode" 1 "Mode_seat2:FR_LH Mode" 2 "Mode_seat3:FR_RH Mode" 3 "Mode_seat4:FR Mode" 4 "Mode_seat5:2nd_LH Mode" 5 "Mode_seat6:2nd_RH Mode" 6 "Mode_seat7: 2nd Mode" 7 "Mode_seat8:3rd_LH Mode" 8 "Mode_seat9:3rd_RH Mode" 9 "Mode_seat10:3rd_Mode" 10 "Not Used" 11 "Not Used" 12 "Not Used" 13 "Not Used" 14 "Not Used" 15 "Unavailable"; 
+VAL_ 1673 RemoteFunctionService_DOP_RES 0 "Table Value16368"; 
+VAL_ 1695 VehicleID 0 "Table Value16392"; 
+VAL_ 1699 RightTurnIndicatorRequest_DSU 0 "no right turn indicator request" 1 "rignt turn indicator request"; 
+VAL_ 1699 LeftTurnIndicatorRequest_DSU 0 "no left turn indicator request" 1 "left turn indicator request"; 
+VAL_ 1699 HighBeamRequest_DSU 0 "high beam not requested" 1 "high beam requested"; 
+VAL_ 1699 LowBeamRequest_DSU 0 "low beam not requested" 1 "low beam requested"; 
+VAL_ 1699 PositionLightsRequest_DSU 0 "position lights not requested" 1 "position lights requested"; 
+VAL_ 1710 RemoteFunctionService_HFM_DOPTCU 0 "Table Value16371"; 
+VAL_ 1742 AEB_CancelReason_v2 0 "No display" 1 "VDC desactivated by driver (Canceled by)" 2 "VDC in regulation (Canceled by)" 3 "FrCam Blocked" 4 "FrCam High tempearture" 5 "FrCam Permanent Failure" 6 "Radar blocked" 7 "Radar Permanent Failure" 8 "Front side radar blocked" 9 "Front side radar permanent failure" 10 "Trailer Presence" 11 "Race mode" 12 "Bad weather" 13 "Accel Pedal high temp" 14 "ADAS ECU Temporary failure" 15 "ADAS ECU Permanent failure"; 
+VAL_ 1753 Combo_EVSEPowerLimitAchieved 0 "EVSE hasn't reached its power limit" 1 "EVSE has reached its power limit"; 
+VAL_ 1753 Combo_EVSECurrentLimitAchieved 0 "EVSE hasn't reached its current limit" 1 "EVSE has reached its current limit"; 
+VAL_ 1753 CPLC_ACconnectStatus 0 "AC extended not detected" 1 "AC single phase core HLC charging communication ready" 2 "AC three phase core HLC charging communication ready" 3 "Not used" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1753 Combo_EVSEVoltageLimitAchieved 0 "EVSE hasn't reached its voltage limit" 1 "EVSE has reached its voltage limit"; 
+VAL_ 1753 V2X_EVSEnominalFrequency 0 "50 Hz" 1 "60 Hz"; 
+VAL_ 1753 CPLC_CommunicationStatus 0 "No HLC communication is established" 1 "HLC communication is initializing" 2 "HLC communication is ready to charge" 3 "HLC communication is stopped (gestion pauses,opt)" 4 "HLC communication error" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1753 CPLC_FaultType 0 "No Fault" 1 "Contract NOK" 2 "Energy Transfer mode type not supported" 3 "PLC comm failure HLCcommstatus" 4 "EVSE comm Failure" 5 "EVSE Not Ready" 6 "EVSE Shutdown" 7 "EVSE Utility Interrupt Event" 8 "EVSE Isolation Monitoring Active" 9 "EVSE Emergency Shutdown" 10 "EVSE Malfunction Protocol with EVSE (Station charging)" 11 "EVSE_Renegociate" 12 "EVSE Pause" 13 "Certificate Error" 14 "Not used" 15 "Not used"; 
+VAL_ 1754 PnC_ContractRevocation_Status 0 "Not Revoked" 1 "Revoked"; 
+VAL_ 1754 PnC_V2GRootCert_Status 0 "Not Installed" 1 "Installed" 2 "Expired" 3 "Errors"; 
+VAL_ 1754 Combo_DCExtendedConnectStatus 0 "Unavailable" 1 "DC extended not detected" 2 "DC extended detected" 3 "Not used"; 
+VAL_ 1755 HVB_HighTempAlert 0 "No Overheat alert" 1 "Overheat alert"; 
+VAL_ 1755 GBT27930_EVmode 0 "No request" 1 "Handshake response from EV (BHM)" 2 "Identification information from EV (BRM)" 3 "Battery charging parameters from EV (BCP)" 4 "EV ready to charge (BRO)" 5 "Charge loop data 1 from EV (BCS+BCL)" 6 "Charge loop data 2 from EV (BCS+BCL+BSM)" 7 "Charge stop request from EV (BST)" 8 "Charge statistical data from EV (BSD)" 9 "Charge error message detected by EV (BEM)" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1755 DCcharge_CANcomActivation 0 "DC Charge CAN deactivation" 1 "DC Charge CAN activation" 2 "V2H CAN frame activation" 3 "Not Used"; 
+VAL_ 1755 DCcharge_EVSEwakeUpInhibition 0 "Wake Up EVSE transmission forbidden" 1 "Wake Up EVSE transmission authorized"; 
+VAL_ 1768 DVR_CameraView_Change 0 "No Change view from current status" 1 "Change view to FR" 2 "Change view to RR" 3 "Change view to INCAM"; 
+VAL_ 1768 DVR_Adjustment_Rotation 0 "0 deg" 1 "CCW plus 0_5deg" 2 "CW plus 0_5deg" 3 "Not used"; 
+VAL_ 1768 ContrastRequestINcam 0 "No request" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Reset request" 7 "Not Used"; 
+VAL_ 1768 ContrastRequestFRcam 0 "No request" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Reset request" 7 "Not Used"; 
+VAL_ 1768 MMI_CommandList_2 0 "Taking inner camera photo" 1 "Taking inner camera video" 2 "Fast forward 10 sec" 3 "Fast forward 20 sec" 4 "Fast rewind 10 sec" 5 "Fast rewind 20 sec" 6 "Play back progress 0%" 7 "Play back progress 10%" 8 "Play back progress 20%" 9 "Play back progress 30%" 10 "Play back progress 40%" 11 "Play back progress 50%" 12 "Play back progress 60%" 13 "Play back progress 70%" 14 "Play back progress 80%" 15 "Play back progress 90%" 16 "Play back progress 100%" 17 "Not Used" 18 "Not Used" 19 "Not Used" 20 "Not Used" 21 "Not Used" 22 "Not Used" 23 "Not Used" 24 "Not Used" 25 "Not Used" 26 "Not Used" 27 "Not Used" 28 "Not Used" 29 "Not Used" 30 "Not Used" 31 "Not Used"; 
+VAL_ 1768 ContrastRequestRRcam 0 "No request" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Reset request" 7 "Not Used"; 
+VAL_ 1768 BrightnessRequest 0 "No request" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Reset request" 7 "Not Used"; 
+VAL_ 1768 SelftimerRequest 0 "No request" 1 "Timer1" 2 "Timer2" 3 "Timer3" 4 "Reset request" 5 "Not Used" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1768 SetRecordQuality_HSL 0 "High" 1 "Standard" 2 "Long time" 3 "invalid value"; 
+VAL_ 1768 BrightnessRequestRRcam 0 "No request" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Reset request" 7 "Not Used"; 
+VAL_ 1768 BrightnessRequestINcam 0 "No request" 1 "Level1" 2 "Level2" 3 "Level3" 4 "Level4" 5 "Level5" 6 "Reset request" 7 "Not Used"; 
+VAL_ 1768 WiFiSetting_v2 0 "turn on" 1 "turn off" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1768 GetSSIDandPassword 0 "Unavailable value" 1 "Get SSID+Password"; 
+VAL_ 1768 GeneralRecordingSetting_v2 0 "turn on" 1 "turn off" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1775 PnC_IVC_Transfer_Status_V2 0 "Default value" 1 "Transfer in progress" 2 "Transfer completed" 3 "Ready to transfer" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1776 ASE_SoundvolumeRequest 0 "No request" 1 "Low" 2 "Medium" 3 "High" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Reset request"; 
+VAL_ 1776 ASE_SoundActivationRequest 0 "No ASE_Sound_request" 1 "ASE_Sound_activation request" 2 "ASE_Sound_deactivation request" 3 "Reset request"; 
+VAL_ 1790 CPLC_ToggleStatus 0 "Toggle Sequence on going" 1 "Toggle Sequence Performed" 2 "Toggle Sequence Failed" 3 "Unavailable"; 
+VAL_ 1862 DTOOL_to_DOP_TCU 0 "Table Value27361"; 
+VAL_ 2563507968 SIGMA_CDM 0 "Table Value16461"; 
+VAL_ 2563507968 SIGMA_DTCCDM 0 "Table Value26862"; 
+VAL_ 2563508007 SIGMA_eHBox 0 "Table Value430561"; 
+VAL_ 2563508007 SIGMA_DTCeHBox 0 "Table Value430559"; 
+VAL_ 2563508009 SIGMA_PSD_R 0 "Table Value153060"; 
+VAL_ 2563508009 SIGMA_DTCPSD_R 0 "Table Value153056"; 
+VAL_ 2563508019 SIGMA_PBD 0 "Table Value16399"; 
+VAL_ 2563508019 SIGMA_DTCPBD 0 "Table Value26865"; 
+VAL_ 2563508021 SIGMA_RADAR 0 "Table Value16466"; 
+VAL_ 2563508021 SIGMA_DTCRADAR 0 "Table Value26884"; 
+VAL_ 2563508022 SIGMA_PSCU 0 "Table Value16465"; 
+VAL_ 2563508022 SIGMA_DTCPSCU 0 "Table Value26866"; 
+VAL_ 2563508030 SIGMA_SRad_RL 0 "Table Value16470"; 
+VAL_ 2563508030 SIGMA_DTCSRad_RL 0 "Table Value26868"; 
+VAL_ 2563508035 SIGMA_eRDC_L 0 "Table Value252236"; 
+VAL_ 2563508035 SIGMA_DTCeRDC_L 0 "Table Value252232"; 
+VAL_ 2563508037 SIGMA_eRDC_R 0 "Table Value252238"; 
+VAL_ 2563508037 SIGMA_DTCeRDC_R 0 "Table Value252233"; 
+VAL_ 2563508042 SIGMA_ANC 0 "Table Value16458"; 
+VAL_ 2563508042 SIGMA_DTCANC 0 "Table Value26859"; 
+VAL_ 2563508064 SIGMA_VDC 0 "Table Value16380"; 
+VAL_ 2563508064 SIGMA_DTCVDC 0 "Table Value26886"; 
+VAL_ 2563508066 SIGMA_EPS 0 "Table Value16377"; 
+VAL_ 2563508066 SIGMA_DTCEPS 0 "Table Value26879"; 
+VAL_ 2563508067 SIGMA_METER 0 "Table Value16379"; 
+VAL_ 2563508067 SIGMA_DTCMETER 0 "Table Value26883"; 
+VAL_ 2563508068 SIGMA_HVAC 0 "Table Value28686"; 
+VAL_ 2563508068 SIGMA_DTCHVAC 0 "Table Value28682"; 
+VAL_ 2563508069 SIGMA_BCM 0 "Table Value16381"; 
+VAL_ 2563508069 SIGMA_DTCBCM 0 "Table Value26877"; 
+VAL_ 2563508071 SIGMA_IVI 0 "Table Value16383"; 
+VAL_ 2563508071 SIGMA_DTCIVI 0 "Table Value26882"; 
+VAL_ 2563508072 SIGMA_4WD 0 "Table Value28679"; 
+VAL_ 2563508072 SIGMA_DTC4WD 0 "Table Value28678"; 
+VAL_ 2563508077 SIGMA_USM 0 "Table Value16384"; 
+VAL_ 2563508077 SIGMA_DTCUSM 0 "Table Value26885"; 
+VAL_ 2563508078 SIGMA_SONAR 0 "Table Value28703"; 
+VAL_ 2563508078 SIGMA_DTCSONAR 0 "Table Value28702"; 
+VAL_ 2563508079 SIGMA_DSMU 0 "Table Value16462"; 
+VAL_ 2563508079 SIGMA_DTCDSMU 0 "Table Value26863"; 
+VAL_ 2563508082 SIGMA_ACU 0 "Table Value16374"; 
+VAL_ 2563508082 SIGMA_DTCACU 0 "Table Value26874"; 
+VAL_ 2563508089 SIGMA_PSD_L 0 "Table Value153059"; 
+VAL_ 2563508089 SIGMA_DTCPSD_L 0 "Table Value153054"; 
+VAL_ 2563508093 SIGMA_ADAS 0 "Table Value16457"; 
+VAL_ 2563508093 SIGMA_DTCADAS 0 "Table Value26875"; 
+VAL_ 2563508099 SIGMA_A_IVC 0 "Table Value16456"; 
+VAL_ 2563508099 SIGMA_DTCA_IVC 0 "Table Value26858"; 
+VAL_ 2563508108 SIGMA_INV_ME 0 "Table Value27356"; 
+VAL_ 2563508108 SIGMA_DTCINV_ME 0 "Table Value27351"; 
+VAL_ 2563508115 SIGMA_OBC_AC 0 "Table Value28687"; 
+VAL_ 2563508115 SIGMA_DTCOBC_AC 0 "Table Value28683"; 
+VAL_ 2563508122 SIGMA_HEVC 0 "Table Value27338"; 
+VAL_ 2563508122 SIGMA_DTCHEVC 0 "Table Value27347"; 
+VAL_ 2563508130 SIGMA_AUDIOamp 0 "Table Value16459"; 
+VAL_ 2563508130 SIGMA_DTCAUDIOamp 0 "Table Value26860"; 
+VAL_ 2563508133 SIGMA_HNS 0 "Table Value27353"; 
+VAL_ 2563508133 SIGMA_DTCHNS 0 "Table Value27348"; 
+VAL_ 2563508139 SIGMA_VKM 0 "Table Value252239"; 
+VAL_ 2563508139 SIGMA_DTCVKM 0 "Table Value252234"; 
+VAL_ 2563508153 SIGMA_HFM 0 "Table Value16382"; 
+VAL_ 2563508153 SIGMA_DTCHFM 0 "Table Value26881"; 
+VAL_ 2563508154 SIGMA_AVM 0 "Table Value27338"; 
+VAL_ 2563508154 SIGMA_DTCAVM 0 "Table Value27343"; 
+VAL_ 2563508157 SIGMA_SCU 0 "Table Value28688"; 
+VAL_ 2563508157 SIGMA_DTCSCU 0 "Table Value28684"; 
+VAL_ 2563508164 SIGMA_eShifter 0 "Table Value153058"; 
+VAL_ 2563508164 SIGMA_DTCeShifter 0 "Table Value153055"; 
+VAL_ 2563508181 SIGMA_SRad_RR 0 "Table Value16471"; 
+VAL_ 2563508181 SIGMA_DTCSRad_RR 0 "Table Value26871"; 
+VAL_ 2563508189 SIGMA_FrCamera 0 "Table Value16378"; 
+VAL_ 2563508189 SIGMA_DTCFrCamera 0 "Table Value26880"; 
+VAL_ 2563508200 SIGMA_ECM 0 "Table Value16376"; 
+VAL_ 2563508200 SIGMA_DTCECM 0 "Table Value26878"; 
+VAL_ 2563508201 SIGMA_ATCU 0 "Table Value16375"; 
+VAL_ 2563508201 SIGMA_DTCATCU 0 "Table Value26876"; 
+VAL_ 2563508205 SIGMA_BMS_HV 0 "Table Value27340"; 
+VAL_ 2563508205 SIGMA_DTCBMS_HV 0 "Table Value27344"; 
+VAL_ 2563508207 SIGMA_INV_HSG 0 "Table Value27355"; 
+VAL_ 2563508207 SIGMA_DTCINV_HSG 0 "Table Value27350"; 
+VAL_ 2563567883 SIGMA_BMS_12V 0 "Table Value16460"; 
+VAL_ 2563567883 SIGMA_DTCBMS_12V 0 "Table Value26861"; 
+VAL_ 2563567951 SIGMA_EPS_sub 0 "Table Value28685"; 
+VAL_ 2563567951 SIGMA_DTCEPS_sub 0 "Table Value28681"; 
+VAL_ 2563567958 SIGMA_eShiftAct 0 "Table Value153057"; 
+VAL_ 2563567958 SIGMA_DTCeShiftAct 0 "Table Value153053"; 
+VAL_ 2563567968 SIGMA_HUD 0 "Table Value27354"; 
+VAL_ 2563567968 SIGMA_DTCHUD 0 "Table Value27349"; 
+VAL_ 2563568024 SIGMA_HPCU 0 "Table Value55692"; 
+VAL_ 2563568024 SIGMA_DTCHPCU 0 "Table Value55693"; 
+VAL_ 2563568093 SIGMA_DCDC_HV 0 "Table Value28677"; 
+VAL_ 2563568093 SIGMA_DTCDCDC_HV 0 "Table Value28680"; 
+VAL_ 2563568098 SIGMA_EBA 0 "Table Value16463"; 
+VAL_ 2563568098 SIGMA_DTCEBA 0 "Table Value26864"; 
+VAL_ 2563568101 SIGMA_INV_RE 0 "Table Value27357"; 
+VAL_ 2563568101 SIGMA_DTCINV_RE 0 "Table Value27352"; 
+VAL_ 2563568130 SIGMA_AirSUSP 0 "Table Value359670"; 
+VAL_ 2563568130 SIGMA_DTCAirSUSP 0 "Table Value359671"; 
+VAL_ 2563568148 SIGMA_BSG 0 "Table Value27341"; 
+VAL_ 2563568148 SIGMA_DTCBSG 0 "Table Value27345"; 
+VAL_ 2563568163 SIGMA_SRad_FL 0 "Table Value16468"; 
+VAL_ 2563568163 SIGMA_DTCSRad_FL 0 "Table Value26869"; 
+VAL_ 2563568164 SIGMA_SRad_FR 0 "Table Value16469"; 
+VAL_ 2563568164 SIGMA_DTCSRad_FR 0 "Table Value26870"; 
+VAL_ 2563568201 SIGMA_STBW 0 "Table Value161590"; 
+VAL_ 2563568201 SIGMA_DTCSTBW 0 "Table Value161588"; 
+VAL_ 2563568233 SIGMA_DMC 0 "Table Value27342"; 
+VAL_ 2563568233 SIGMA_DTCDMC 0 "Table Value27346"; 
+VAL_ 2563568267 SIGMA_RSCU3R 0 "Table Value407697"; 
+VAL_ 2563568267 SIGMA_DTCRSCU3R 0 "Table Value407696"; 
+VAL_ 2563568288 SIGMA_BLM_RPK 0 "Table Value55679"; 
+VAL_ 2563568288 SIGMA_DTCBLM_RPK 0 "Table Value55690"; 
+VAL_ 2563568290 SIGMA_SCCM 0 "Table Value16467"; 
+VAL_ 2563568290 SIGMA_DTCSCCM 0 "Table Value26867"; 
+VAL_ 2563568300 SIGMA_RSCU2R 0 "Table Value359675"; 
+VAL_ 2563568300 SIGMA_DTCRSCU2R 0 "Table Value359672"; 
+VAL_ 2564478962 DTOOL_to_CSCM 0 "Table Value27360"; 
+VAL_ 2564485847 CSCM_to_DTOOL 0 "Table Value27358"; 
+VAL_ 2609102848 CGW_WakeUp_Signal 0 "Table Value16477"; 
+VAL_ 2609102853 DVR_WakeUp_Signal 0 "Table Value347205"; 
+VAL_ 2609102867 CSCM_WakeUp_Signal 0 "Table Value28696"; 
+VAL_ 2615052018 FTOOLS_CGWtoAUDIOamp 0 "Table Value415757"; 
+VAL_ 2615056370 FTOOLS_CGWtoCPLC 0 "Table Value157929"; 
+VAL_ 2615079558 FTOOLS_AUDIOamptoCGW 0 "Table Value415758"; 
+VAL_ 2615082647 FTOOLS_CPLCtoCGW 0 "Table Value157930"; 
+
+
+
+

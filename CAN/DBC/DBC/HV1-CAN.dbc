@@ -1,0 +1,2173 @@
+VERSION ""
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS2_HV BMS_HV H2FCE HEVC INV_HSG INV_HSG_ME INV_ME INV_RE INV_REL INV_RER PCM
+
+
+BO_ 0 ECM_A114: 8 HEVC
+  SG_ Maintenance_Mode_Status : 25|2@0+ (1,0) [0|0] "" H2FCE
+
+BO_ 32 ACU_A102: 8 HEVC
+  SG_ AirbagCrashOrder_v3 : 5|6@0+ (1,0) [0|0] "" H2FCE,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ Clock_ACU_A102 : 7|2@0+ (1,0) [0|3] "" H2FCE
+
+BO_ 81 BMS_RN108: 8 BMS_HV
+  SG_ CRC_BMS_RN108 : 7|8@0+ (1,0) [0|255] "" BMS2_HV,HEVC,INV_ME,INV_RE,INV_REL,INV_RER,PCM
+  SG_ HVBatInstantCurrent_v3 : 11|15@0+ (0.125,-1200) [-1200|1200] "A" HEVC,INV_RE,PCM
+  SG_ Clock_BMS_RN108 : 15|4@0+ (1,0) [0|15] "" BMS2_HV,HEVC,INV_ME,INV_RE,INV_REL,INV_RER,PCM
+  SG_ BMS_HVNetworkVoltage_v2 : 28|13@0+ (0.1,0) [0|500] "V" BMS2_HV,H2FCE,HEVC,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER,PCM
+  SG_ HVIsolationImpedance : 47|14@0+ (100,0) [0|1000000] "Ohm" HEVC
+  SG_ BMS_InterlockServicePlug_v2 : 49|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 92 HEVC_RN118: 8 PCM
+  SG_ CRC_HEVC_RN118 : 7|8@0+ (1,0) [0|255] "" INV_HSG,INV_ME
+  SG_ HSG_TorqueRequest_v2 : 11|13@0+ (0.1,-300) [-300|500] "Nm" INV_HSG
+  SG_ Clock_HEVC_RN118 : 15|4@0+ (1,0) [0|15] "" INV_HSG,INV_ME
+  SG_ ME_SafetyMinTorque_v2 : 30|10@0+ (0.5,-300) [-300|0] "Nm" INV_ME
+  SG_ HSG_SafetyMinTorque_v2 : 36|10@0+ (0.5,-300) [-300|0] "Nm" INV_HSG
+  SG_ ME_ControlMode : 42|3@0+ (1,0) [0|0] "" INV_HSG,INV_ME
+  SG_ HSG_SafetyMaxTorque_v2 : 55|10@0+ (0.5,0) [0|500] "Nm" INV_HSG
+  SG_ HSG_ControlMode : 61|3@0+ (1,0) [0|0] "" INV_HSG,INV_ME
+
+BO_ 96 INV_RE_A105: 8 INV_RE
+  SG_ CRC_INV_RE_A105 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ RE_ElecMachineTorque_HV : 11|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ Clock_INV_RE_A105 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ RE_ElecMachineSpeed_HV : 28|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC
+  SG_ RE_CondenserChargeStatus : 29|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_PreChargeControlStatus : 30|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_ReStartPreparationStatus : 31|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_ElecMachineMaxMotorTorque_HV : 32|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ RE_ElecMachineMaxGenTorque_HV : 53|10@0+ (0.5,0) [0|500] "Nm" HEVC
+  SG_ RE_DeactivationStatus_HV : 59|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 102 INV_HSG_A105: 6 INV_HSG
+  SG_ CRC_INV_HSG_A105 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ HSG_ElecMachineTorque : 11|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ Clock_INV_HSG_A105 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ HSG_ElecMachineMaxMotorTorque_v3 : 16|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ HSG_ElecMachineMaxGenTorque_v3 : 37|10@0+ (0.5,0) [0|500] "Nm" HEVC
+  SG_ HSG_PreChargeControlStatus : 42|1@0+ (1,0) [0|0] "" PCM
+  SG_ HSG_ReStartPreparationStatus : 43|1@0+ (1,0) [0|0] "" PCM
+
+BO_ 113 DCDC_RN102: 5 HEVC
+  SG_ DCDCHVNetworkVoltage_V2 : 11|13@0+ (0.1,0) [0|500] "V" INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+
+BO_ 121 HECM_RN101: 7 HEVC
+  SG_ ICE_EngineRPM : 23|16@0+ (0.25,0) [0|16383] "Tr/min" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 126 HEVC_RN104: 8 HEVC
+  SG_ VehicleSpeed_HV : 7|16@0+ (0.01,0) [0|655.34] "km/h" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ ICE_RawSensor : 23|10@0+ (0.125,0) [0|125] "%" BMS_HV,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+
+BO_ 127 HEVC_RN105: 8 PCM
+  SG_ CRC_HEVC_RN105 : 7|8@0+ (1,0) [0|255] "" INV_HSG,INV_ME,INV_RE
+  SG_ B_PEBDischarge_sch_req : 11|2@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+  SG_ Clock_HEVC_RN105 : 15|4@0+ (1,0) [0|15] "" INV_HSG,INV_ME,INV_RE
+  SG_ ME_TorqueRequest_v2 : 23|13@0+ (0.1,-300) [-300|500] "Nm" INV_HSG,INV_ME
+  SG_ RE_TorqueRequest_HV : 26|13@0+ (0.1,-300) [-300|500] "Nm" INV_RE
+  SG_ RE_SafetyMaxTorque_HV : 45|10@0+ (0.5,0) [0|500] "Nm" INV_RE
+  SG_ RE_SafetyMinTorque_HV : 51|10@0+ (0.5,-300) [-300|0] "Nm" INV_RE
+
+BO_ 128 HEVC_RN106: 8 HEVC
+  SG_ ME_SpeedRequest : 7|12@0+ (10,-20000) [-20000|20000] "rpm" INV_ME
+  SG_ HSG_SpeedRequest : 11|12@0+ (10,-20000) [-20000|20000] "rpm" INV_HSG
+  SG_ ME_CurativeAntiJerkGain : 31|8@0+ (0.005,0) [0|1] "" INV_ME
+  SG_ ME_CurativeAntiJerkTime : 39|8@0+ (0.005,0) [0|1] "s" INV_ME
+  SG_ HSG_CurativeAntiJerkGain : 47|8@0+ (0.005,0) [0|1] "wu" INV_HSG
+  SG_ HSG_CurativeAntiJerkTime : 55|8@0+ (0.005,0) [0|1] "s" INV_HSG
+  SG_ HSG_CurativeAntiJerkActivation : 61|1@0+ (1,0) [0|0] "" INV_HSG
+  SG_ ME_CurativeAntiJerkActivation : 62|1@0+ (1,0) [0|0] "" INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ PowerRelayShutoffPreNotice_HV : 63|1@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+
+BO_ 131 HEVC_RN112: 8 HEVC
+  SG_ CRC_HEVC_RN112 : 7|8@0+ (1,0) [0|255] "" BMS2_HV,BMS_HV,INV_HSG,INV_ME
+  SG_ OperatingTypeRequest : 11|3@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV
+  SG_ Clock_HEVC_RN112 : 15|4@0+ (1,0) [0|15] "" BMS2_HV,BMS_HV,INV_HSG,INV_ME
+  SG_ MaxHSGgeneratorPowerForGearshift : 23|9@0+ (0.25,-100) [-100|0] "kW" INV_HSG
+  SG_ MaxMEgeneratorPowerForGearshift : 30|9@0+ (0.25,-100) [-100|0] "kW" INV_ME
+  SG_ MaxMEmotorPowerforGearshift : 37|9@0+ (0.25,0) [0|100] "kW" INV_ME
+  SG_ MaxHSGmotorPowerForGearShift : 44|9@0+ (0.25,0) [0|100] "kW" INV_HSG
+  SG_ ME_SafetyMaxTorque_v2 : 51|10@0+ (0.5,0) [0|500] "Nm" INV_ME
+
+BO_ 132 HEVC_RN117: 8 HEVC
+  SG_ CRC_HEVC_RN117 : 7|8@0+ (1,0) [0|255] "" INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ ME_DeactivationRequest : 11|4@0+ (1,0) [0|0] "" INV_ME
+  SG_ Clock_HEVC_RN117 : 15|4@0+ (1,0) [0|15] "" INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ RE_DeactivationRequest_HV : 19|4@0+ (1,0) [0|0] "" INV_RE,INV_REL,INV_RER
+  SG_ HSG_DeactivationRequest : 23|4@0+ (1,0) [0|0] "" INV_HSG
+  SG_ HSGVoltageRegulationReq : 31|12@0+ (0.1,100) [100|500] "V" INV_HSG
+  SG_ ICE_MeanEffectiveTorque_Low : 55|8@0+ (2,-100) [-100|300] "Nm" INV_HSG
+  SG_ GearboxLinesStates : 63|6@0+ (1,0) [0|0] "" INV_HSG,INV_ME
+
+BO_ 133 INV_HSG_RN101: 5 INV_HSG
+  SG_ CRC_INV_HSG_RN101 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ HSG_ElecMachineSpeed : 11|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC
+  SG_ Clock_INV_HSG_RN101 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ HSG_ElecMachineAccel : 29|9@0+ (200,-50000) [-50000|50000] "rpm/s" HEVC
+  SG_ HSG_DeactivationStatus : 31|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 134 INV_ME_RN102: 8 INV_ME
+  SG_ CRC_INV_ME_RN102 : 7|8@0+ (1,0) [0|255] "" BMS_HV,HEVC,INV_HSG,PCM
+  SG_ ElecMachineSpeed_HV : 11|12@0+ (10,-20000) [-20000|20000] "rpm" BMS_HV,HEVC,INV_HSG,PCM
+  SG_ Clock_INV_ME_RN102 : 15|4@0+ (1,0) [0|15] "" BMS_HV,HEVC,INV_HSG,PCM
+  SG_ InverterHVNetworkVoltage : 31|13@0+ (0.1,0) [0|500] "V" BMS_HV,HEVC,INV_HSG
+  SG_ ME_ElecMachineAccel : 34|9@0+ (100,-25000) [-25000|25000] "rpm/s" HEVC
+  SG_ ME_InterlockMotor_v2 : 41|2@0+ (1,0) [0|0] "" PCM
+  SG_ ElecMachineSpeed_HV_v2 : 55|16@0+ (1,-20000) [-20000|20000] "rpm" HEVC
+
+BO_ 143 INV_RE_N101: 4 INV_RE
+  SG_ CRC_INV_RE_N101 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ RE_ElecMachineSpeed_HV_v2 : 11|16@0+ (1,-20000) [-20000|20000] "rpm" HEVC
+  SG_ Clock_INV_RE_N101 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+
+BO_ 152 INV_RE_A102: 7 INV_RE
+  SG_ RE_InverterHVNetworkVoltage_HV : 7|13@0+ (0.1,0) [0|500] "V" BMS_HV,HEVC
+  SG_ RE_ElecPowertrainMngtState_HV : 10|3@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_ElecMachineMaxPower_HV : 21|10@0+ (0.25,0) [0|255] "kW" HEVC
+  SG_ RE_ElecMachineWorkingMode_HV : 23|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_InverterCurrent_HV : 27|12@0+ (0.5,-550) [-550|550] "A" HEVC
+  SG_ CRC_INV_RE_A102 : 47|8@0+ (1,0) [0|255] "" BMS_HV,HEVC,PCM
+  SG_ Clock_INV_RE_A102 : 55|4@0+ (1,0) [0|15] "" BMS_HV,HEVC,PCM
+
+BO_ 290 HEVC_RN133: 7 HEVC
+  SG_ ME_UpperTorqueLimit : 7|9@0+ (2.5,-640) [-640|637.5] "Nm" INV_ME
+  SG_ HSG_UpperTorqueLimit : 14|7@0+ (2.5,0) [0|317.5] "Nm" INV_HSG
+  SG_ ME_LowerTorqueLimit : 23|9@0+ (2.5,-640) [-640|637.5] "Nm" INV_ME
+  SG_ HSG_LowerTorqueLimit : 30|7@0+ (2.5,-317.5) [-317.5|0] "Nm" INV_HSG
+  SG_ RE_UpperTorqueLimit : 39|9@0+ (2.5,-640) [-640|637.5] "Nm" INV_RE
+  SG_ RE_LowerTorqueLimit : 46|9@0+ (2.5,-640) [-640|637.5] "Nm" INV_RE
+  SG_ LowSpd_SlowRespoReq_VBRTCntl_HV : 50|1@0+ (1,0) [0|0] "" INV_ME,INV_RE
+  SG_ RequestForPreparingHVPowerSupply : 51|1@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+  SG_ GearLeverPosition_HV_v2 : 53|2@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+
+BO_ 304 HEVC_RN128: 6 HEVC
+  SG_ CRC_HEVC_RN128 : 7|8@0+ (1,0) [0|255] "" INV_REL,INV_RER
+  SG_ RER_SafetyMaxTorque_HV : 11|10@0+ (0.5,0) [0|500] "Nm" INV_RER
+  SG_ Clock_HEVC_RN128 : 15|4@0+ (1,0) [0|15] "" INV_REL,INV_RER
+  SG_ RER_SafetyMinTorque_HV : 17|10@0+ (0.5,-300) [-300|0] "Nm" INV_RER
+  SG_ RER_TorqueRequest_HV : 39|13@0+ (0.1,-300) [-300|500] "Nm" INV_REL,INV_RER
+
+BO_ 312 INV_RER_RN102: 8 INV_RER
+  SG_ RER_InverterHVNetworkVoltage_HV : 7|13@0+ (0.1,0) [0|500] "V" HEVC,INV_REL
+  SG_ RER_ElecPowertrainMngtState_HV : 10|3@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_ElecMachineMaxPower_HV : 25|10@0+ (0.25,0) [0|255] "kW" HEVC
+  SG_ RER_ElecMachineWorkingMode_HV : 27|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_ElecMachineMaxMotorTorque_HV : 47|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ RER_ElecMachineMaxGenTorque_HV : 52|10@0+ (0.5,0) [0|500] "Nm" HEVC
+  SG_ RER_VerlogStatus : 58|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 313 INV_RER_RN101: 7 INV_RER
+  SG_ CRC_INV_RER_RN101 : 7|8@0+ (1,0) [0|255] "" HEVC,INV_REL
+  SG_ RER_ElecMachineSpeed_HV : 11|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC,INV_REL
+  SG_ Clock_INV_RER_RN101 : 15|4@0+ (1,0) [0|15] "" HEVC,INV_REL
+  SG_ RER_ElecMachineTorque_HV : 31|11@0+ (0.5,-300) [-300|500] "Nm" HEVC,INV_REL
+  SG_ RER_DeactivationStatus_HV : 36|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_Dual_InverterCurrent_HV : 47|12@0+ (0.5,-550) [-550|1350] "A" HEVC,INV_REL
+
+BO_ 326 BMS_RN101: 8 BMS_HV
+  SG_ CRC_BMS_RN101 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ HVPowerConnection : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_InterlockHVconnector_v2 : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_BMS_RN101 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ AvailablePowerShortTerm_ENG : 23|8@0+ (0.25,0) [0|63.5] "kW" PCM
+  SG_ BMS_Discharge_Power_Status : 29|2@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_Charge_Power_Status : 31|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HV_DCinletVoltage : 39|14@0+ (0.1,0) [0|1000] "V" HEVC
+  SG_ HVBatInstantCurrent_v4 : 55|15@0+ (0.125,-2000) [-2000|2000] "A" H2FCE,HEVC
+
+BO_ 338 INV_HSG_A104: 3 INV_HSG
+  SG_ HSG_InverterCurrent_v2 : 7|12@0+ (0.5,-550) [-550|550] "A" HEVC
+  SG_ HSG_ControlModeStatus : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_ElecMachineWorkingMode : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_ElecMachineMaxPower_v2 : 23|7@0+ (0.25,0) [0|25] "kW" HEVC
+
+BO_ 339 INV_ME_RN105: 4 INV_ME
+  SG_ ME_InverterCurrent : 7|12@0+ (0.5,-550) [-550|550] "A" HEVC
+  SG_ ME_InterlockHVaccessories : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_ControlModeStatus : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ElecMachineMaxPower_v3 : 23|10@0+ (0.25,0) [0|255] "kW" HEVC
+  SG_ ME_ReStartPreparationStatus : 24|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_PreChargeControlStatus : 25|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_CondenserChargeStatus : 26|1@0+ (1,0) [0|0] "" HEVC
+  SG_ PEBActiveDischarge : 27|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ElecMAchineWorkingMode : 29|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 356 INV_ME_N101: 7 INV_ME
+  SG_ CRC_INV_ME_N101 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ ME_DeactivationStatus_TVC : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_INV_ME_N101 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ ME_ElecMachineTrq_HV_TVC : 23|12@0+ (0.5,-800) [-800|800] "Nm" HEVC
+  SG_ ME_ElecMachineMaxGenTrq_TVC : 39|10@0+ (0.5,0) [0|500] "Nm" HEVC,PCM
+  SG_ ME_ElecMachineMaxMotorTrq_v2_TVC : 45|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+
+BO_ 358 INV_RE_N103: 8 INV_RE
+  SG_ CRC_INV_RE_N103 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ RE_ElecMachineTrq_HV_TVC : 11|12@0+ (0.5,-800) [-800|800] "Nm" HEVC
+  SG_ Clock_INV_RE_N103 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ RE_ElecMachineSpeed_HV_TVC : 28|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC
+  SG_ RE_CondenserChargeStatus_TVC : 29|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_PreChargeControlStatus_TVC : 30|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_ReStartPreparationStatus_TVC : 31|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_ElecMachineMaxMotorTrq_HV_TVC : 32|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ RE_ElecMachineMaxGenTrq_HV_TVC : 53|10@0+ (0.5,0) [0|500] "Nm" HEVC
+  SG_ RE_DeactivationStatus_HV_TVC : 59|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 360 HEVC_RN138: 8 HEVC
+  SG_ CRC_HEVC_RN138 : 7|8@0+ (1,0) [0|255] "" INV_HSG,INV_ME,INV_RE
+  SG_ ME_TorqueRequest_v2_TVC : 8|13@0+ (0.1,-300) [-300|500] "Nm" INV_HSG,INV_ME
+  SG_ B_PEBDischarge_sch_req_TVC : 11|2@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+  SG_ Clock_HEVC_RN138 : 15|4@0+ (1,0) [0|15] "" INV_HSG,INV_ME,INV_RE
+  SG_ RE_TorqueRequest_HV_TVC : 27|14@0+ (0.1,-800) [-800|800] "Nm" INV_RE
+  SG_ RE_SafetyMaxTorque_HV_TVC : 45|10@0+ (0.5,0) [0|500] "Nm" INV_RE
+  SG_ RE_SafetyMinTorque_HV_TVC : 51|10@0+ (0.5,-300) [-300|0] "Nm" INV_RE
+
+BO_ 395 HEVC_RN136: 7 HEVC
+  SG_ CRC_HEVC_RN136 : 7|8@0+ (1,0) [0|255] "" INV_ME,INV_RE
+  SG_ FrTargetSpeed : 11|12@0+ (10,-20000) [-20000|20000] "rpm" INV_ME
+  SG_ Clock_HEVC_RN136 : 15|4@0+ (1,0) [0|15] "" INV_ME,INV_RE
+  SG_ RrTargetSpeed : 31|12@0+ (10,-20000) [-20000|20000] "rpm" INV_RE
+  SG_ RrSlipControlFlag : 34|1@0+ (1,0) [0|0] "" INV_RE
+  SG_ FrSlipControlFlag : 35|1@0+ (1,0) [0|0] "" INV_ME
+  SG_ ME_TorqueRequest_v3 : 47|14@0+ (0.1,-800) [-800|800] "Nm" INV_ME
+
+BO_ 444 HEVC_RN134: 5 HEVC
+  SG_ RE_CurativeAntiJerkGain : 7|8@0+ (0.005,0) [0|1] "-" INV_RE
+  SG_ RE_CurativeAntiJerkTime : 15|8@0+ (0.005,0) [0|1] "s" INV_RE
+  SG_ RE_CurativeAntiJerkActivation : 34|1@0+ (1,0) [0|0] "" INV_RE
+
+BO_ 463 INV_ME_RN106: 7 INV_ME
+  SG_ CRC_INV_ME_RN106 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ ME_DeactivationStatus : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_INV_ME_RN106 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ ME_ElecMachineTorque_HV : 23|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ ME_ElecMachineMaxGenTorque : 39|10@0+ (0.5,0) [0|500] "Nm" HEVC
+  SG_ ME_ElecMachineMaxMotorTorque_v2 : 45|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+
+BO_ 562 VERLOG_D_AnswerFrame: 8 HEVC
+  SG_ KPL_D : 0|1@0+ (1,0) [0|0] "" INV_HSG
+  SG_ Preset_D : 1|1@0+ (1,0) [0|0] "" INV_HSG
+  SG_ ICU_Mode_D : 3|2@0+ (1,0) [0|0] "" INV_HSG
+  SG_ Clearing_Key_D : 4|1@0+ (1,0) [0|0] "" INV_HSG
+  SG_ KPH_D : 5|1@0+ (1,0) [0|0] "" INV_HSG
+  SG_ ICU_PayLoad_D : 15|56@0+ (1,0) [0|0] "" INV_HSG
+
+BO_ 566 VERLOG_D_ChallengeFrame: 8 INV_HSG
+  SG_ TPU_Mode_D : 1|2@0+ (1,0) [0|0] "" HEVC
+  SG_ VerlogStatus_D : 2|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ SREM_D : 3|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ Version_D : 5|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ TPU_Payload_D : 15|56@0+ (1,0) [0|0] "" HEVC
+
+BO_ 598 BMS2_RN101: 8 BMS2_HV
+  SG_ CRC_BMS2_RN101 : 7|8@0+ (1,0) [0|255] "" BMS_HV,HEVC,PCM
+  SG_ HVPowerConnection_RCY : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS2_RefusetoSleep : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_BMS2_RN101 : 15|4@0+ (1,0) [0|15] "" BMS_HV,HEVC,PCM
+  SG_ LBCPRUNAnswer_RCY : 23|8@0+ (1,0) [0|0] "" PCM
+  SG_ HVIsolationImpedance_RCY : 31|14@0+ (100,0) [0|1000000] "Ohm" HEVC
+  SG_ BMS2_FaultType : 33|3@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS2_HotSpotTemp2 : 42|10@0+ (1,-40) [-40|500] "°C" BMS_HV,HEVC
+  SG_ OperatingTypeStatus_RCY : 46|4@0+ (1,0) [0|0] "" HEVC
+  SG_ RISOLConvStatus : 48|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 724 HEVC_RN129: 6 HEVC
+  SG_ CRC_HEVC_RN129 : 7|8@0+ (1,0) [0|255] "" INV_REL,INV_RER
+  SG_ REL_SafetyMaxTorque_HV : 11|10@0+ (0.5,0) [0|500] "Nm" INV_REL
+  SG_ Clock_HEVC_RN129 : 15|4@0+ (1,0) [0|15] "" INV_REL,INV_RER
+  SG_ REL_SafetyMinTorque_HV : 17|10@0+ (0.5,-300) [-300|0] "Nm" INV_REL
+  SG_ REL_TorqueRequest_HV : 39|13@0+ (0.1,-300) [-300|500] "Nm" INV_REL,INV_RER
+
+BO_ 729 INV_REL_RN102: 8 INV_REL
+  SG_ REL_InverterHVNetworkVoltage_HV : 7|13@0+ (0.1,0) [0|500] "V" HEVC,INV_RER
+  SG_ REL_ElecPowertrainMngtState_HV : 10|3@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_ElecMachineMaxPower_HV : 25|10@0+ (0.25,0) [0|255] "kW" HEVC
+  SG_ REL_ElecMachineWorkingMode_HV : 27|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_ElecMachineMaxMotorTorque_HV : 47|11@0+ (0.5,-300) [-300|500] "Nm" HEVC
+  SG_ REL_ElecMachineMaxGenTorque_HV : 52|10@0+ (0.5,0) [0|500] "Nm" HEVC
+  SG_ REL_VerlogStatus : 58|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 731 INV_REL_RN101: 5 INV_REL
+  SG_ CRC_INV_REL_RN101 : 7|8@0+ (1,0) [0|255] "" HEVC,INV_RER
+  SG_ REL_ElecMachineSpeed_HV : 11|12@0+ (10,-20000) [-20000|20000] "rpm" HEVC,INV_RER
+  SG_ Clock_INV_REL_RN101 : 15|4@0+ (1,0) [0|15] "" HEVC,INV_RER
+  SG_ REL_ElecMachineTorque_HV : 31|11@0+ (0.5,-300) [-300|500] "Nm" HEVC,INV_RER
+  SG_ REL_DeactivationStatus_HV : 36|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 733 BMS_RN116: 3 BMS_HV
+  SG_ CellHighestVoltage_v2 : 7|9@0+ (0.01,1) [1|5] "V" HEVC,INV_ME
+  SG_ CellLowestVoltage_v2 : 14|9@0+ (0.01,1) [1|5] "V" HEVC,INV_ME
+
+BO_ 742 INV_REL_RN103: 5 INV_REL
+  SG_ REL_InverterTemp_HV : 7|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ REL_InverterFaultType_HV : 10|3@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_ElecMachineTemp_HV : 23|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ REL_InterlockMotor_HV : 25|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_ActiveDischarge : 26|1@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_RefuseToSleep : 39|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 894 INV_ME_RN3: 8 INV_ME
+  SG_ ElecMachineTemp : 4|13@0+ (0.02,0) [0|100] "%" HEVC,PCM
+  SG_ ME_RefuseToSleep : 7|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_CHG_InterlockState : 18|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_Access_InterlockState : 20|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_InverterFaultType_HV : 23|3@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_InterlockMotor : 31|2@0+ (1,0) [0|0] "" HEVC
+  SG_ InverterTemp : 36|13@0+ (0.02,0) [0|100] "%" HEVC,PCM
+  SG_ ElecPowerTrainMngtState : 39|3@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_MajorElecFailureDisplay : 51|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_ElecMotorFailureDisplay : 52|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_ElecSysFailureDisplay : 53|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_VerlogStatus : 55|2@0+ (1,0) [0|0] "" HEVC
+  SG_ PEBWaterTemp : 63|8@0+ (1,-40) [-40|214] "°C" HEVC,INV_HSG,INV_REL,INV_RER,PCM
+
+BO_ 900 INV_ME_RN4: 1 INV_ME
+  SG_ ME_MILLamp : 7|2@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 903 BMS2_RN2: 1 BMS2_HV
+  SG_ BMS2_ChargeFailureDisplay : 5|1@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS2_MajorElecFailureDisplay : 6|1@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS2_ElecSysFailureDisplay : 7|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 938 BMS_RN113: 4 BMS_HV
+  SG_ AvailablePower_v5 : 7|11@0+ (0.25,0) [0|400] "kW" HEVC
+  SG_ DepositionProtectionCurrent : 10|12@0+ (0.25,0) [0|1000] "A" HEVC
+  SG_ BMS_PEBDischarge_sch_req : 12|2@0+ (1,0) [0|0] "" INV_ME,INV_RE
+
+BO_ 987 H2FCE_R101: 6 H2FCE
+  SG_ CRC_H2FCE_R101 : 7|8@0+ (1,0) [0|255] "" HEVC
+  SG_ H2RefuelingRequest : 8|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_State : 11|3@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_H2FCE_R101 : 15|4@0+ (1,0) [0|15] "" HEVC
+  SG_ FC_NetPower : 23|10@0+ (0.1,-20) [-20|80] "kW" HEVC
+  SG_ FC_ConnectionReady : 24|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_FaultType : 27|3@0+ (1,0) [0|0] "" HEVC
+  SG_ FCOffButton_State_HV : 29|2@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_FeatureRequest : 32|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_EngineFanSpeedRequestPWM : 39|7@0+ (1,0) [0|100] "%" HEVC
+  SG_ FreezeDataXEV_H2FCE : 43|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_RefuseToSleep : 45|2@0+ (1,0) [0|0] "" HEVC
+  SG_ V2LButton_State_HV : 47|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1039 HEVC_RN137: 3 HEVC
+  SG_ DAxisDischarge_PlugStatus_HV : 0|1@0+ (1,0) [0|0] "" INV_ME,INV_RE
+  SG_ DAxisDischarge_DrivingModeReq_HV : 20|2@0+ (1,0) [0|0] "" INV_ME,INV_RE
+  SG_ DAxisDischarge_PluginModeReq_HV : 23|3@0+ (1,0) [0|0] "" INV_ME,INV_RE
+
+BO_ 1040 BMS2_RN102: 3 BMS2_HV
+  SG_ CRC_BMS2_RN102 : 7|8@0+ (1,0) [0|255] "" HEVC
+  SG_ HeatingPadCurrent2 : 11|9@0+ (0.1,0) [0|50] "A" HEVC
+  SG_ Clock_BMS2_RN102 : 15|4@0+ (1,0) [0|15] "" HEVC
+  SG_ HeatingPadOverheat2 : 18|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1044 INV_ME_RN109: 3 INV_ME
+  SG_ CRC_INV_ME_RN109 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ INV_ME_ActiveDischargeFailure : 8|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ME_InverterFaultType_HV_v2 : 11|3@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_INV_ME_RN109 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ ME_DAxisDischarge_WorkingMode_HV : 23|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1060 HECM_RN104: 3 HEVC
+  SG_ ICE_EngineCoolantTemp : 11|8@0+ (1,-40) [-40|214] "°C" BMS_HV,INV_HSG,INV_ME
+
+BO_ 1061 HECM_RN105: 8 HEVC
+  SG_ ICE_AtmoPressure : 7|10@0+ (0.1,10) [10|110] "kPa" BMS_HV
+
+BO_ 1062 HECM_RN106: 8 HEVC
+  SG_ ICE_OBDWarmUpCycleDet : 48|1@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ ICE_OBDPrmtDelCdn : 49|1@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ ICE_OBD_Ready_On : 52|1@0+ (1,0) [0|0] "" BMS_HV,INV_RE
+
+BO_ 1063 HECM_RN107: 8 HEVC
+  SG_ ICE_EngineCalculatedLoad : 37|9@0+ (0.39,0) [0|100] "%" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 1072 HEVC_RN107: 8 HEVC
+  SG_ HSG_InverterActivation : 26|3@0+ (1,0) [0|0] "" INV_HSG
+  SG_ ME_InverterActivation_v2 : 29|3@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+  SG_ HVBatteryBlowerRequest_v2 : 39|7@0+ (1,0) [0|100] "%" BMS_HV
+  SG_ RESstatus_HV : 43|4@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE
+  SG_ HEVC_WakeUpSleepCommand : 47|2@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ IgnitionSupplyConfirmation_HV : 50|1@0+ (1,0) [0|0] "" BMS_HV,INV_RE,INV_REL,INV_RER
+  SG_ ETS_SleepMode : 55|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ GADE_HV_v2 : 60|3@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+
+BO_ 1073 HEVC_RN108: 8 PCM
+  SG_ ExternalTemp_HV : 7|8@0+ (1,-40) [-40|214] "°C" BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ ETSCoolantFlow : 23|7@0+ (0.2,0) [0|20] "l/min" INV_ME,INV_RE
+  SG_ DistanceTotalizer_HV : 24|28@0+ (0.01,0) [0|2600000] "km" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ BrakeInfoStatus_HV : 27|3@0+ (1,0) [0|0] "" INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+
+BO_ 1074 HEVC_RN113: 8 HEVC
+  SG_ Total_boost_time_HEVC_to_BMS : 7|18@0+ (1,0) [0|262143] "s" BMS_HV
+  SG_ BatteryVoltage12V_HV : 31|8@0+ (0.06,6) [6|18] "V" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE
+  SG_ OBDWarmUpCycleDet_HV : 37|1@0+ (1,0) [0|0] "" BMS_HV,H2FCE,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ OBDPrmtDelCdn_HV : 38|1@0+ (1,0) [0|0] "" BMS_HV,H2FCE,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ RER_CoolantFlow_HV : 40|7@0+ (0.2,0) [0|20] "L/min" INV_RER
+  SG_ CHGcontrolPilotState : 44|3@0+ (1,0) [0|0] "" BMS_HV
+  SG_ PowerRelayState : 47|3@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ OBD_Ready_On_HV : 49|1@0+ (1,0) [0|0] "" BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ REL_CoolantFlow_HV : 63|7@0+ (0.2,0) [0|20] "L/min" INV_REL
+
+BO_ 1075 HEVC_RN115: 7 HEVC
+  SG_ CRC_HEVC_RN115 : 7|8@0+ (1,0) [0|255] "" BMS2_HV,BMS_HV
+  SG_ Clock_HEVC_RN115 : 15|4@0+ (1,0) [0|15] "" BMS2_HV,BMS_HV
+  SG_ LBCPRUNKey : 23|8@0+ (1,0) [0|0] "" BMS_HV
+  SG_ LBCPRUNKey_RCY : 31|8@0+ (1,0) [0|0] "" BMS2_HV
+  SG_ RE_CoolantFlow_HV : 39|7@0+ (0.2,0) [0|20] "l/min" INV_RE
+  SG_ QuickRisolCheckRequest : 44|1@0+ (1,0) [0|0] "" BMS2_HV
+  SG_ RE_InverterActivation_HV : 47|3@0+ (1,0) [0|0] "" INV_RE,INV_REL,INV_RER
+  SG_ OperatingTypeRequest_V2 : 55|4@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV,H2FCE
+
+BO_ 1078 INV_HSG_RN102: 8 INV_HSG
+  SG_ HSG_InterlockMotor : 1|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_InterlockHVConnector : 3|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_VerlogStatus : 5|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_MILLamp : 7|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ HSG_ElecMachineTemp : 15|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ HSG_ElecPowerTrainMngtState : 18|3@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_InverterTemp : 31|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ HSG_InverterFault_Type : 34|3@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_RefusetoSleep : 47|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CRC_INV_HSG_RN102 : 55|8@0+ (1,0) [0|255] "" PCM
+  SG_ Clock_INV_HSG_RN102 : 63|4@0+ (1,0) [0|15] "" PCM
+
+BO_ 1083 HEVC_H2FCE_R102: 6 HEVC
+  SG_ FC_HeatLoopWaterTemp_HV : 7|11@0+ (0.1,-40) [-40|100] "°C" H2FCE
+  SG_ EPTCpower_HV : 23|6@0+ (250,0) [0|10000] "W" H2FCE
+  SG_ HeatLoopWaterPumpRequest_HV : 31|7@0+ (1,0) [0|100] "%" H2FCE
+  SG_ VehicleAutonomyZEVdisplay_HV : 39|10@0+ (1,0) [0|1022] "-" H2FCE
+  SG_ FAN_FailureDetected : 45|2@0+ (1,0) [0|0] "" H2FCE
+
+BO_ 1084 HEVC_RN131: 6 PCM
+  SG_ AcceleratorPedalPositionD_HV : 7|8@0+ (0.392156862745098,0) [0|100] "%" BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ IgnSupplyWireConfirmation : 36|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ EngineCoolantTempRaw_HV : 47|8@0+ (1,-40) [-40|215] "°C" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 1091 HEVC_H2FCE_R101: 6 HEVC
+  SG_ CRC_HEVC_H2FCE_R101 : 7|8@0+ (1,0) [0|255] "" H2FCE
+  SG_ Clock_HEVC_H2FCE_R101 : 15|4@0+ (1,0) [0|15] "" H2FCE
+  SG_ FC_MaxBatChargePower : 23|10@0+ (0.1,0) [0|100] "kW" H2FCE
+  SG_ H2RefuellingCondition : 26|1@0+ (1,0) [0|0] "" H2FCE
+  SG_ Meter_ADACresetRequest_HV : 27|1@0+ (1,0) [0|0] "" H2FCE
+  SG_ FC_HVNetworkReady : 28|1@0+ (1,0) [0|0] "" H2FCE
+  SG_ FC_FeatureAuthorisation : 29|1@0+ (1,0) [0|0] "" H2FCE
+  SG_ FC_MaxBatDischargePower : 39|8@0+ (0.1,0) [0|20] "kW" H2FCE
+  SG_ SlopeEstimation_v2_HV : 47|8@0+ (0.2,-15) [-15|15] "degrees" H2FCE
+
+BO_ 1094 VERLOG_ECM_AnswerFrame: 8 HEVC
+  SG_ KPL : 0|1@0+ (1,0) [0|0] "" INV_RER
+  SG_ Preset : 1|1@0+ (1,0) [0|0] "" INV_RER
+  SG_ ICU_Mode : 3|2@0+ (1,0) [0|0] "" INV_RER
+  SG_ Clearing_Key : 4|1@0+ (1,0) [0|0] "" INV_RER
+  SG_ KPH : 5|1@0+ (1,0) [0|0] "" INV_RER
+  SG_ ICU_PayLoad : 15|56@0+ (1,0) [0|0] "" INV_RER
+
+BO_ 1096 VERLOG_ECM_ChallengeFrame: 8 INV_RER
+  SG_ TPU_Mode : 1|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ VerlogStatus : 2|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ SREM : 3|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ Version : 5|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ TPU_Payload : 15|56@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 1107 USM_A101: 8 PCM
+  SG_ BatteryVoltage : 31|8@0+ (0.06,6) [6|18] "V" INV_RE
+
+BO_ 1111 BMS_RN102: 8 BMS_HV
+  SG_ CRC_BMS_RN102 : 7|8@0+ (1,0) [0|255] "" H2FCE,HEVC,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER,PCM
+  SG_ Clock_BMS_RN102 : 11|4@0+ (1,0) [0|15] "" H2FCE,HEVC,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER,PCM
+  SG_ BMS_RefusetoSleep : 13|2@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_InterlockHVChargerFuseLid : 15|2@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_InterlockHVBattPTC : 18|2@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_FaultType : 21|3@0+ (1,0) [0|0] "" H2FCE,HEVC,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER,PCM
+  SG_ BMS_InterlockHVChargerConnector : 23|2@0+ (1,0) [0|0] "" HEVC
+  SG_ DC_Inlet_Voltage_NEG_POS_BMS : 25|14@0+ (0.1,0) [0|1300] "V" HEVC
+  SG_ BMS_LatentFault_WarningReq : 27|2@0+ (1,0) [0|0] "" HEVC
+  SG_ OperatingTypeStatus_V2 : 31|4@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1112 BMS_RN103: 8 BMS_HV
+  SG_ CRC_BMS_RN103 : 7|8@0+ (1,0) [0|255] "" BMS2_HV,HEVC,PCM
+  SG_ OperatingTypeStatus : 11|4@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_BMS_RN103 : 15|4@0+ (1,0) [0|15] "" BMS2_HV,HEVC,PCM
+  SG_ BMS_HotSpotTemp1 : 23|10@0+ (1,-40) [-40|500] "°C" BMS2_HV,HEVC
+  SG_ LBCPRUNAnswer : 29|8@0+ (1,0) [0|0] "" PCM
+  SG_ GeneratedPower_v3 : 37|10@0+ (0.25,0) [0|255] "kW" HEVC
+  SG_ HVBatteryTempMax : 43|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ ChargingPower_v2 : 52|12@0+ (0.1,0) [0|400] "kW" HEVC
+  SG_ FastChargeRelayStatus : 56|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1113 BMS_RN104: 7 BMS_HV
+  SG_ AvailablePowerShortTerm : 7|9@0+ (0.25,0) [0|100] "kW" HEVC
+  SG_ UserSOC_HV : 23|13@0+ (0.02,0) [0|100] "%" H2FCE,HEVC,INV_RE,PCM
+  SG_ AvailableEnergy_v2 : 26|11@0+ (0.05,0) [0|100] "kWh" HEVC,PCM
+  SG_ HVBatteryTempMin : 40|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVBatteryTemp : 47|7@0+ (1,-40) [-40|80] "°C" H2FCE,HEVC,PCM
+
+BO_ 1114 BMS_RN105: 8 BMS_HV
+  SG_ CellLowestVoltage : 5|9@0+ (0.01,1) [1|5] "V" HEVC
+  SG_ EndOfChargeRequest : 7|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVBatteryCoolingLoopTemp : 12|8@0+ (1,-40) [-40|214] "°C" HEVC,PCM
+  SG_ CellHighestVoltage : 20|9@0+ (0.01,1) [1|5] "V" HEVC
+  SG_ GeneratedPowerShortTerm : 27|9@0+ (0.25,0) [0|100] "kW" HEVC
+  SG_ HVBatHealth_v2 : 34|8@0+ (1,0) [0|254] "%" HEVC
+  SG_ BMS_Capacity_Empty : 40|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HeatingGrid_BatDeratingStatus : 41|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HeatingGrid_BatModulationStatus : 42|1@0+ (1,0) [0|0] "" HEVC
+  SG_ AvailablePowerShortTerm_v2 : 55|10@0+ (0.25,0) [0|255] "kW" HEVC
+
+BO_ 1125 VERLOG_INV_ME_AnswerFrame: 8 HEVC
+  SG_ KPL_B : 0|1@0+ (1,0) [0|0] "" INV_ME
+  SG_ Preset_B : 1|1@0+ (1,0) [0|0] "" INV_ME
+  SG_ ICU_Mode_B : 3|2@0+ (1,0) [0|0] "" INV_ME
+  SG_ Clearing_Key_B : 4|1@0+ (1,0) [0|0] "" INV_ME
+  SG_ KPH_B : 5|1@0+ (1,0) [0|0] "" INV_ME
+  SG_ ICU_PayLoad_B : 15|56@0+ (1,0) [0|0] "" INV_ME
+
+BO_ 1126 VERLOG_INV_ME_ChallengeFrame: 8 INV_ME
+  SG_ TPU_Mode_B : 1|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ VerlogStatus_B : 2|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ SREM_B : 3|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ Version_B : 5|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ TPU_Payload_B : 15|56@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 1127 VERLOG_INV_HSG_AnswerFrame: 8 HEVC
+  SG_ KPL_C : 0|1@0+ (1,0) [0|0] "" INV_RE,INV_REL
+  SG_ Preset_C : 1|1@0+ (1,0) [0|0] "" INV_RE,INV_REL
+  SG_ ICU_Mode_C : 3|2@0+ (1,0) [0|0] "" INV_RE,INV_REL
+  SG_ Clearing_Key_C : 4|1@0+ (1,0) [0|0] "" INV_RE,INV_REL
+  SG_ KPH_C : 5|1@0+ (1,0) [0|0] "" INV_RE,INV_REL
+  SG_ ICU_PayLoad_C : 15|56@0+ (1,0) [0|0] "" INV_RE,INV_REL
+
+BO_ 1128 VERLOG_INV_HSG_ChallengeFrame: 8 INV_RE
+  SG_ TPU_Mode_C : 1|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ VerlogStatus_C : 2|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ SREM_C : 3|1@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ Version_C : 5|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ TPU_Payload_C : 15|56@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 1142 INV_RE_A103: 8 INV_RE
+  SG_ RE_ElecMachineTemp_HV : 2|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ RE_ActiveDischarge : 3|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_InterlockMotor_HV : 5|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_VerlogStatus : 7|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_InverterTemp_HV : 21|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ RE_ElecSysFailureDisplay : 24|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_SpeedDeratingRequest : 32|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_MajorElecFailureDisplay : 33|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_ElecMotorFailureDisplay : 34|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_RefuseToSleep : 36|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_InverterFaultType_HV : 39|3@0+ (1,0) [0|0] "" HEVC
+  SG_ INV_RE_ActiveDischargeFailure : 40|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_MILLamp : 42|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_InverterFaultType_HV_v2 : 45|3@0+ (1,0) [0|0] "" HEVC
+  SG_ INV_RE_PowerLimitation_Reason : 47|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CRC_INV_RE_A103 : 55|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ Clock_INV_RE_A103 : 63|4@0+ (1,0) [0|15] "" HEVC,PCM
+
+BO_ 1146 BCM_A113: 8 HEVC
+  SG_ CRC_BCM_A113 : 7|8@0+ (1,0) [0|255] "" INV_REL,INV_RER
+  SG_ Clock_BCM_A113 : 15|4@0+ (1,0) [0|15] "" INV_REL,INV_RER
+  SG_ BrakeInfoStatus : 26|3@0+ (1,0) [0|0] "" INV_REL,INV_RER
+
+BO_ 1169 BMS_RN115: 6 BMS_HV
+  SG_ CRC_BMS_RN115 : 7|8@0+ (1,0) [0|255] "" HEVC
+  SG_ HeatingPadCurrent : 11|9@0+ (0.1,0) [0|50] "A" HEVC
+  SG_ Clock_BMS_RN115 : 15|4@0+ (1,0) [0|15] "" HEVC
+  SG_ AvailableEnergy_v3 : 17|11@0+ (0.1,0) [0|200] "kWh" HEVC
+  SG_ HeatingPadOverheat : 18|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVB_MaxCapacity_v3 : 38|11@0+ (0.1,0) [0|200] "kWh" HEVC
+
+BO_ 1184 INV_ME_RN107: 1 INV_ME
+  SG_ INV_ME_PowerLimitation_Reason : 7|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1198 BMS_CANHS_R_08: 8 BMS_HV
+  SG_ HVB_TempMaxPerfLimitHot_Threshold : 15|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HVB_TempMaxAfterChg_Threshold : 31|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HVB_TempMaxBegCooling_Threshold : 39|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HVB_TempMinBegHeating_Threshold : 47|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HVB_TempMaxStopCooling_Threshold : 55|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HVB_TempMaxStopHeating_Threshold : 63|7@0+ (1,-40) [-40|80] "°C" HEVC
+
+BO_ 1199 BMS_CANHS_R_09: 8 BMS_HV
+  SG_ ClosedCircuit_CellMaxVoltage_Threshold : 0|9@0+ (0.01,1) [1|5] "V" HEVC,PCM
+  SG_ HVB_TempMinStopCooling_Threshold : 7|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ ClosedCircuit_CellMinVoltage_Threshold : 23|9@0+ (0.01,1) [1|5] "V" HEVC
+  SG_ HVB_MaxCapacity_v2 : 37|11@0+ (0.05,0) [0|100] "kWh" HEVC
+  SG_ NextMissionHVbatAvailablePower : 42|11@0+ (0.1,0) [0|150] "kW" HEVC
+  SG_ HVB_TempMinStopHeating_Threshold : 63|7@0+ (1,-40) [-40|80] "°C" HEVC
+
+BO_ 1201 INV_RE_R103: 7 INV_RE
+  SG_ HCTPhaseVPlau : 1|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseURangeLow : 3|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseURangeHi : 5|2@0+ (1,0) [0|0] "" HEVC
+  SG_ EEPROMMalfunction : 7|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseVSCG : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseVSCBat : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseVRangeLow : 13|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseVRangeHi : 15|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseWSCBat : 17|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseWRangeLow : 19|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseWRangeHi : 21|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseWPlau : 23|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorCurHi : 25|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotor3PhMalfunct : 27|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTsens3plaus : 29|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseWSCG : 31|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorPosSens2 : 33|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorPosSens1 : 35|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorOverspeed : 37|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorDemagn : 39|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorPosSens6 : 41|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorPosSens5 : 43|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorPosSens4 : 45|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REMotorPosSens3 : 47|2@0+ (1,0) [0|0] "" HEVC
+  SG_ INVRELossCanCom_BMS : 55|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1215 INV_RER_RN103: 5 INV_RER
+  SG_ RER_ElecMachineTemp_HV : 7|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ RER_InverterFaultType_HV : 10|3@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_InverterTemp_HV : 23|13@0+ (0.02,0) [0|100] "%" HEVC
+  SG_ RER_InterlockMotor_HV : 25|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_ActiveDischarge : 26|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_RefuseToSleep : 39|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1217 INV_RER_RN104: 2 INV_RER
+  SG_ RER_PEBWaterTemp_HV : 7|8@0+ (1,-40) [-40|214] "°C" HEVC
+  SG_ FreezeDataXEV_INV_RER : 10|1@0+ (1,0) [0|0] "" HEVC
+  SG_ INVRER_MILLamp : 12|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_MajorElecFailureDisplay : 13|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_ElecSysFailureDisplay : 14|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RER_ElecMotorFailureDisplay : 15|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1222 INV_RE_R102: 8 INV_RE
+  SG_ IGBTSens45Plaus : 1|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTSens34Plaus : 3|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTSens23Plaus : 5|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTSens12Plaus : 7|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens1SCG : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens2SCBat : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens1SCBat : 13|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTSens56Plaus : 15|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens1RangLow : 17|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens2RangHi : 19|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens1RangHi : 21|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens2SCG : 23|2@0+ (1,0) [0|0] "" HEVC
+  SG_ DCCapSCG : 25|2@0+ (1,0) [0|0] "" HEVC
+  SG_ DCCapSCBat : 27|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSensPlaus : 29|2@0+ (1,0) [0|0] "" HEVC
+  SG_ CoilSens2RangLow : 31|2@0+ (1,0) [0|0] "" HEVC
+  SG_ PCBTempSensSCG : 33|2@0+ (1,0) [0|0] "" HEVC
+  SG_ PCBTempSensSCBat : 35|2@0+ (1,0) [0|0] "" HEVC
+  SG_ DCCapRangeLow : 37|2@0+ (1,0) [0|0] "" HEVC
+  SG_ DCCapRangeHi : 39|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVSensSCBat : 41|2@0+ (1,0) [0|0] "" HEVC
+  SG_ PCBTempSensRangeLow : 43|2@0+ (1,0) [0|0] "" HEVC
+  SG_ PCBTempSensRangeHi : 45|2@0+ (1,0) [0|0] "" HEVC
+  SG_ PCBTempSensPlau : 47|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVSensRangeLow : 49|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVSensRangeHi : 51|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVSensPlau : 53|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVSensSCG : 55|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTGate : 57|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseUPlau : 59|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseUSCG : 61|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HCTPhaseUSCBat : 63|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1228 HEVC_RN127: 4 HEVC
+  SG_ HeatingElecPowerRequest : 23|10@0+ (10,0) [0|10000] "W" INV_ME
+
+BO_ 1229 INV_RER_RN105: 2 INV_RER
+  SG_ RER_RotorTemp : 7|8@0+ (1,-40) [-40|215] "°C" HEVC
+  SG_ RER_StatorTemp : 15|8@0+ (1,-40) [-40|215] "°C" HEVC
+
+BO_ 1238 INV_RE_R104: 4 INV_RE
+  SG_ INV_RE_CVN : 7|32@0+ (1,0) [0|4.294967295E9] "" HEVC
+
+BO_ 1242 INV_RE_R105: 8 INV_RE
+  SG_ INV_RE_CalID1 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" HEVC
+
+BO_ 1243 INV_RE_R101: 8 INV_RE
+  SG_ IGBT4RangeHi : 1|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT3RangeHi : 3|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT2RangeHi : 5|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT1RangeHi : 7|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT2RangeLow : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT1RangeLow : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT6RangeHi : 13|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT5RangeHi : 15|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT6RangeLow : 17|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT5RangeLow : 19|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT4RangeLow : 21|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBT3RangeLow : 23|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens4OC : 25|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens3OC : 27|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens2OC : 29|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens1OC : 31|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens2SC : 33|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens1SC : 35|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens6OC : 37|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens5OC : 39|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens6SC : 41|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens5SC : 43|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens4SC : 45|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens3SC : 47|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens4Plausibility : 49|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens3Plausibility : 51|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens2Plausibility : 53|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens1Plausibility : 55|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ADModuleMalfunction : 57|2@0+ (1,0) [0|0] "" HEVC
+  SG_ MicroCompMalfunction : 59|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens6Plausibility : 61|2@0+ (1,0) [0|0] "" HEVC
+  SG_ IGBTsens5Plausibility : 63|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1244 INV_RE_R106: 8 INV_RE
+  SG_ INV_RE_CalID2 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" HEVC
+
+BO_ 1249 INV_REL_RN104: 2 INV_REL
+  SG_ REL_PEBWaterTemp_HV : 7|8@0+ (1,-40) [-40|214] "°C" HEVC,INV_RER
+  SG_ FreezeDataXEV_INV_REL : 10|1@0+ (1,0) [0|0] "" HEVC
+  SG_ INVREL_MILLamp : 12|2@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_MajorElecFailureDisplay : 13|1@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_ElecSysFailureDisplay : 14|1@0+ (1,0) [0|0] "" HEVC
+  SG_ REL_ElecMotorFailureDisplay : 15|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1259 BMS_A104: 4 BMS_HV
+  SG_ HVB_ProbeTemp21 : 7|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp22 : 15|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp23 : 23|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp24 : 31|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+
+BO_ 1298 INV_RE_N102: 2 INV_RE
+  SG_ RE_PEBWaterTemp : 7|8@0+ (1,-40) [-40|214] "°C" HEVC
+  SG_ RE_DAxisDischarge_WorkingMode_HV : 15|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1314 CPLC_R104: 2 HEVC
+  SG_ CRC_CPLC_R104 : 7|8@0+ (1,0) [0|255] "" BMS_HV
+  SG_ Combo_DCExtendedConnectStatus_V2 : 11|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ Clock_CPLC_R104 : 15|4@0+ (1,0) [0|15] "" BMS_HV
+
+BO_ 1315 BCM_A8: 3 HEVC
+  SG_ AbsoluteTimeSince1rstIgnition : 7|24@0+ (1,0) [0|1.677E7] "min" BMS_HV,INV_REL,INV_RER
+
+BO_ 1374 BMS_R3: 2 BMS_HV
+  SG_ HVB_Cell116Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC
+
+BO_ 1394 BMS_RN118: 8 BMS_HV
+  SG_ OBECM_ChargedEnergy_Lifetime_HV : 7|32@0+ (0.1,0) [0|4.294967295E8] "kWh" HEVC
+  SG_ OBECM_TotalDistance_Lifetime_HV : 39|32@0+ (0.1,0) [0|4.294967295E8] "km" HEVC
+
+BO_ 1396 BMS_RN119: 7 BMS_HV
+  SG_ HVbatTotalEnergyThroughput : 7|23@0+ (0.1,0) [0|800000] "KWh" HEVC
+  SG_ AbsTimePack_HV : 31|15@0+ (1000,0) [0|1.6777215E7] "min" HEVC
+  SG_ NextMissionHVbatAvailableEnergy : 32|11@0+ (0.05,0) [0|100] "kWh" HEVC
+
+BO_ 1417 H2FCE_R102: 4 H2FCE
+  SG_ FC_DCDCCoolantTemperature : 7|8@0+ (1,-40) [-40|214] "°C" HEVC
+  SG_ FC_DCDCInternalTemperature : 15|8@0+ (0.393,0) [0|100] "%" HEVC
+  SG_ Compressor_InternalTemperature : 18|8@0+ (0.393,0) [0|100] "%" HEVC
+  SG_ FC_DischargePriorityRequest : 19|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_ChargePriorityRequest : 20|1@0+ (1,0) [0|0] "" HEVC
+  SG_ CabinHeatingValveFeedback : 21|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FC_MILLamp : 23|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1430 HEVC_RN124: 8 HEVC
+  SG_ OBECMfreeze_HEVC : 59|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ OBECM_Reset_HEVC : 61|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ DriveCycle_HV : 63|1@0+ (1,0) [0|0] "" BMS_HV,H2FCE,INV_ME,INV_RE,INV_REL,INV_RER
+
+BO_ 1441 BMS_A28: 8 BMS_HV
+  SG_ HVB_Cell91Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell92Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell93Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell94Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell95Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1445 BMS_RN112: 8 BMS_HV
+  SG_ HVBatWhPerUSOC_V3 : 7|18@0+ (0.01,0) [0|1600] "(W.h)/ %" HEVC
+  SG_ HVBatterySOC_HV : 21|7@0+ (1,0) [0|100] "%" HEVC,PCM
+  SG_ HVB_MaxTempProbe_HV : 30|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HeatingGridCurrentConsumption : 42|9@0+ (0.1,0) [0|50] "A" HEVC
+  SG_ BMS_Output_Power_Limit_Reason : 63|3@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1446 BMS_R1: 8 BMS_HV
+  SG_ HVB_Cell106Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell107Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell108Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell109Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell110Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC
+
+BO_ 1452 BMS_A26: 8 BMS_HV
+  SG_ HVB_Cell81Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell82Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell83Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell84Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell85Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1453 BMS_A27: 8 BMS_HV
+  SG_ HVB_Cell86Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell87Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell88Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell89Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell90Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1460 BMS_A25: 8 BMS_HV
+  SG_ HVB_Cell76Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell77Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell78Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell79Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell80Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1461 BMS_A24: 8 BMS_HV
+  SG_ HVB_Cell71Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell72Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell73Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell74Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell75Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1463 BMS_A23: 8 BMS_HV
+  SG_ HVB_Cell66Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell67Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell68Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell69Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell70Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1475 BMS_R2: 8 BMS_HV
+  SG_ HVB_Cell111Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell112Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell113Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell114Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC
+  SG_ HVB_Cell115Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC
+
+BO_ 1477 HEVC_H2FCE_R103: 6 HEVC
+  SG_ DateYear_HV : 7|10@0+ (1,2000) [2000|3000] "year" H2FCE
+  SG_ TimeMinute_HV : 13|6@0+ (1,0) [0|59] "min" H2FCE
+  SG_ DateMonth_HV : 23|4@0+ (1,0) [0|12] "month" H2FCE
+  SG_ DateDay_HV : 31|5@0+ (1,0) [0|31] "day" H2FCE
+  SG_ TimeHour_HV : 39|5@0+ (1,0) [0|23] "h" H2FCE
+  SG_ TimeSeconde_HV : 47|6@0+ (1,0) [0|59] "second" H2FCE
+
+BO_ 1481 BMS_A22: 8 BMS_HV
+  SG_ HVB_Cell61Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell62Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell63Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell64Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell65Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1483 BMS_A21: 8 BMS_HV
+  SG_ HVB_Cell56Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell57Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell58Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell59Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell60Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1484 BMS_A20: 8 BMS_HV
+  SG_ HVB_Cell51Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell52Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell53Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell54Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell55Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1494 BMS_A19: 8 BMS_HV
+  SG_ HVB_Cell46Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell47Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell48Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell49Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell50Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1495 BMS_A18: 8 BMS_HV
+  SG_ HVB_Cell41Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell42Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell43Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell44Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell45Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1497 BMS_A17: 8 BMS_HV
+  SG_ HVB_Cell36Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell37Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell38Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell39Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell40Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1500 BMS_A30: 8 BMS_HV
+  SG_ HVB_ProbeTemp01 : 7|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp02 : 15|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp03 : 23|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp04 : 31|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp05 : 39|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp06 : 47|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp07 : 55|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp08 : 63|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+
+BO_ 1504 BMS_A101: 8 BMS_HV
+  SG_ HVB_Cell96Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell97Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell98Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell99Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell100Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1514 BMS_A16: 8 BMS_HV
+  SG_ HVB_Cell31Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell32Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell33Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell34Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell35Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1515 BMS_A102: 8 BMS_HV
+  SG_ CumulatedEnergyCharged : 7|8@0+ (0.5,0) [0|100] "kWh" HEVC
+  SG_ CumulatedEnergyDisharged : 15|14@0+ (0.01,0) [0|100] "GWh" HEVC
+  SG_ AccumulatedCurrentCharge : 17|9@0+ (1,0) [0|500] "Ah" HEVC
+  SG_ HVBatHealth_v4 : 24|12@0+ (0.1,0) [0|254] "%" HEVC
+  SG_ HVBatHealth_Algo_V2 : 44|10@0+ (0.1,0) [0|100] "%" HEVC
+  SG_ HVBatHealth_Model_V2 : 50|10@0+ (0.1,0) [0|100] "%" HEVC
+
+BO_ 1517 BMS_A15: 8 BMS_HV
+  SG_ HVB_Cell26Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell27Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell28Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell29Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell30Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1520 BMS_A14: 8 BMS_HV
+  SG_ HVB_Cell21Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell22Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell23Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell24Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell25Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1521 BMS_A13: 8 BMS_HV
+  SG_ HVB_Cell16Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell17Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell18Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell19Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell20Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1522 BMS_A12: 8 BMS_HV
+  SG_ HVB_Cell11Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell12Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell13Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell14Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell15Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1524 BMS_A11: 8 BMS_HV
+  SG_ HVB_Cell06Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell07Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell08Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell09Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell10Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1525 HEVC_RN132: 8 HEVC
+  SG_ HeatingGridCurrentRequest : 7|9@0+ (0.1,0) [0|50] "A" BMS2_HV,BMS_HV
+  SG_ HeatingGridCurrentMax : 14|9@0+ (0.1,0) [0|50] "A" BMS_HV
+  SG_ ME_EOPPowerOffTempo : 16|1@0+ (1,0) [0|0] "" INV_ME
+  SG_ ME_PwtThermalControlRequest : 19|3@0+ (1,0) [0|0] "" INV_ME
+  SG_ HVBatteryCoolingType_HV : 21|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ VehicleSoakTime_HV : 31|10@0+ (1,0) [0|1022] "min" H2FCE,INV_HSG,INV_ME,INV_RE
+  SG_ HVbatChargeIncrease_BatTempThres : 37|10@0+ (0.1,0) [0|100] "degC" BMS_HV
+  SG_ DischargeEnergyLast1sec_V2X_HV : 42|15@0+ (1,0) [0|22100] "W" BMS_HV
+  SG_ HVbatChargeIncreaseRequest : 43|1@0+ (1,0) [0|0] "" BMS_HV
+
+BO_ 1527 BMS_A10: 8 BMS_HV
+  SG_ HVB_Cell01Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell02Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell03Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell04Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell05Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1532 BMS_A103: 8 BMS_HV
+  SG_ HVB_Cell101Voltage : 7|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell102Voltage : 11|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell103Voltage : 31|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell104Voltage : 35|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+  SG_ HVB_Cell105Voltage : 55|12@0+ (0.001,2) [2|4.6] "V" HEVC,PCM
+
+BO_ 1544 CSCM_A106: 5 HEVC
+  SG_ DCcharge_CANconnectStatus : 19|3@0+ (1,0) [0|0] "" BMS_HV
+  SG_ CRC_CSCM_A106 : 31|8@0+ (1,0) [0|255] "" BMS_HV
+  SG_ Clock_CSCM_A106 : 39|4@0+ (1,0) [0|15] "" BMS_HV
+
+BO_ 1545 BMS_RN106: 6 BMS_HV
+  SG_ BMS_TiAlert_v2 : 2|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVB_HighTempAlert_HV : 4|1@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_ChargeFailureDisplay : 5|1@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_MajorElecFailureDisplay : 6|1@0+ (1,0) [0|0] "" HEVC
+  SG_ BMS_ElecSysFailureDisplay : 7|1@0+ (1,0) [0|0] "" HEVC
+  SG_ CboxTempSensor_HV : 15|8@0+ (1,-40) [-40|210] "°C" HEVC
+  SG_ HVbatTempAvgCharge_GTREVE : 20|8@0+ (1,-40) [-40|214] "°C" HEVC
+  SG_ HVBatChargeIncreaseCancel_BMS : 21|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVBatChargeIncreaseState_BMS : 23|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HVbatTempAvgPSA_GTREVE : 28|8@0+ (1,-40) [-40|214] "°C" HEVC
+  SG_ HVbatTempAvgVhOff_GTREVE : 36|8@0+ (1,-40) [-40|214] "°C" HEVC
+
+BO_ 1550 HECM_RN108: 3 HEVC
+  SG_ ICE_IgnCycleCount_v2 : 21|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ ICE_DriveCycle : 22|1@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 1554 BMS_RN107: 8 BMS_HV
+  SG_ HVBatSerialNumber : 7|32@0+ (1,0) [0|4294967294] "" HEVC
+  SG_ BMS_MILLamp : 33|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ HVBatWhPerUSOC_V2 : 47|17@0+ (0.01,0) [0|800] "(W.h)/ %" HEVC
+
+BO_ 1566 INV_REL_RN105: 2 INV_REL
+  SG_ REL_RotorTemp : 7|8@0+ (1,-40) [-40|215] "°C" HEVC
+  SG_ REL_StatorTemp : 15|8@0+ (1,-40) [-40|215] "°C" HEVC
+
+BO_ 1576 HECM_RN10: 4 HEVC
+  SG_ IUPR_EvapDenom_HV : 27|2@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME
+  SG_ IUPR_ColdStartDenom_HV : 29|2@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME
+  SG_ IUPR_GeneralDenom_HV : 31|2@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 1589 H2FCE_RN101: 8 H2FCE
+  SG_ CRC_H2FCE_RN101 : 7|8@0+ (1,0) [0|255] "" HEVC
+  SG_ H2DeratingFCTemp_HV : 9|2@0+ (1,0) [0|0] "" HEVC
+  SG_ H2LeakDetection_HV : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_H2FCE_RN101 : 15|4@0+ (1,0) [0|15] "" HEVC
+  SG_ H2ChargeAutonomyDisplay_HV : 23|11@0+ (1,0) [0|2047] "KM" HEVC
+  SG_ H2LidOpened_HV : 24|1@0+ (1,0) [0|0] "" HEVC
+  SG_ H2EndOfRefueling_HV : 25|1@0+ (1,0) [0|0] "" HEVC
+  SG_ H2LowLevelAlert_HV : 26|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FCFailure_HV : 28|2@0+ (1,0) [0|0] "" HEVC
+  SG_ RefuelingInProgress_HV : 32|1@0+ (1,0) [0|0] "" HEVC
+  SG_ H2EnergyStorageLevel_HV : 39|7@0+ (1,0) [0|100] "%" HEVC
+  SG_ H2AutonomyZEVdisplay_HV : 43|10@0+ (1,0) [0|1022] "-" HEVC
+  SG_ FCAvailabilityState_HV : 45|2@0+ (1,0) [0|0] "" HEVC
+  SG_ FCAvailability_HV : 47|2@0+ (1,0) [0|0] "" HEVC
+  SG_ H2_Consumption_kg100km_HV : 49|10@0+ (0.01,0) [0|10] "Kg/100Km" HEVC
+
+BO_ 1591 INV_HSG_RN103: 1 INV_HSG
+  SG_ HSG_InterlockFuseLid : 4|2@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_MajorElecFailureDisplay : 5|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_ElecMotorFailureDisplay : 6|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HSG_ElecSysFailureDisplay : 7|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1605 BMS_RN110: 8 BMS_HV
+  SG_ HVB_ProbeTemp10 : 0|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp09 : 7|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp11 : 9|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp12 : 18|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp13 : 27|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp14 : 36|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp15 : 45|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp16 : 54|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp17 : 63|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+
+BO_ 1606 BMS_RN111: 8 BMS_HV
+  SG_ HVB_MinTempProbe_HV : 1|7@0+ (1,-40) [-40|80] "°C" HEVC
+  SG_ HVB_OverChargingAlert_HV : 3|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVB_CellUnderVoltageAlert_HV : 4|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVB_CellOverVoltageAlert_HV : 5|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVB_UnderVoltageAlert_HV : 6|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVB_OverVoltageAlert_HV : 7|1@0+ (1,0) [0|0] "" HEVC
+  SG_ CumulatedCapacityBalanced_HV : 16|9@0+ (1,0) [0|500] "Ah" HEVC
+  SG_ BusbarUnscrewingAlert_HV : 17|1@0+ (1,0) [0|0] "" HEVC
+  SG_ CumulatedBalancingTime_HV : 39|15@0+ (1,0) [0|32000] "h" HEVC
+  SG_ HVB_MaxCapacity_Ah_HEVC_HV : 55|13@0+ (0.1,0) [0|500] "Ah" HEVC
+  SG_ OBECMfreeze_BMSHV : 57|1@0+ (1,0) [0|0] "" HEVC
+  SG_ OBECM_Reset_BMS : 58|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1607 BMS_RN114: 8 BMS_HV
+  SG_ HVB_ProbeTemp19 : 0|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp18 : 7|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTemp20 : 9|7@0+ (1,-40) [-40|80] "°C" HEVC,PCM
+  SG_ HVB_ProbeTempHotSpot1 : 18|9@0+ (1,-40) [-40|450] "°C" HEVC,PCM
+  SG_ HVB_ProbeTempHotSpot2 : 25|9@0+ (1,-40) [-40|450] "°C" HEVC,PCM
+  SG_ UsableBatteryEnergy : 47|11@0+ (0.1,0) [0|200] "KWh" HEVC,PCM
+  SG_ StateOfCertifiedEnergy_HV : 63|7@0+ (1,0) [0|100] "%" HEVC
+
+BO_ 1619 INV_ME_RN103: 1 INV_ME
+  SG_ ME_OilTemperature_v2 : 7|8@0+ (1,-40) [-40|150] "°C" HEVC
+
+BO_ 1642 HEVC_RN111: 8 PCM
+  SG_ VehicleID_HV : 7|32@0+ (1,0) [0|0] "" BMS_HV
+  SG_ AbsoluteTimeSince1rstIgn_HV : 39|24@0+ (1,0) [0|1.677E7] "min" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ VehicleStates_HV : 59|4@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ BatteryManagementMode : 63|2@0+ (1,0) [0|0] "" BMS_HV
+
+BO_ 1643 HEVC_RN116: 6 HEVC
+  SG_ CRC_HEVC_RN116 : 7|8@0+ (1,0) [0|255] "" BMS_HV,INV_RE,INV_REL,INV_RER
+  SG_ RE_DischargeRequest : 9|2@0+ (1,0) [0|0] "" INV_RE,INV_REL,INV_RER
+  SG_ Clock_HEVC_RN116 : 15|4@0+ (1,0) [0|15] "" BMS_HV,INV_RE,INV_REL,INV_RER
+  SG_ AC_CabinFanSpeedStatus_PWM_HV : 23|7@0+ (1,0) [0|100] "%" BMS_HV
+  SG_ AC_CabinTemperature_HV : 31|7@0+ (1,-50) [-50|70] "°C" BMS_HV
+  SG_ SleepingDuration : 35|10@0+ (1,0) [0|960] "min" BMS_HV,INV_REL,INV_RER
+
+BO_ 1676 H2FCE_R103: 2 H2FCE
+  SG_ CumulatedAutonomyDisplay_HV : 7|11@0+ (1,0) [0|2047] "KM" HEVC
+
+BO_ 1689 HEVC_RN126: 6 HEVC
+  SG_ OBECM_OverFlowProcess_HEVC : 0|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ HVbatteryWaterPumpRequest_HV : 7|7@0+ (1.25,0) [0|150] "l/min" BMS_HV
+  SG_ CertifiedEnergyConsumption_HV : 14|16@0+ (0.1,0) [0|6553.5] "Wh/km" BMS_HV
+  SG_ OBECM_RecentParameterReset_HEVC : 15|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ OBD_Charging_State : 33|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ ChargingPlugStatus_HV : 35|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ ResetDataXEVRecent_HEVC : 45|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ ResetDataXEVLifeTime_HEVC : 46|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ FreezeDataXEV_HEVC : 47|1@0+ (1,0) [0|0] "" BMS_HV
+
+BO_ 1717 INV_ME_RN101: 8 INV_ME
+  SG_ ME_StatorTemp : 20|8@0+ (1,-40) [-40|215] "°C" HEVC
+  SG_ ME_RotorTemp : 28|8@0+ (1,-40) [-40|215] "°C" HEVC
+  SG_ ME_OilPumpSpeed : 55|13@0+ (1,0) [0|8190] "rpm" HEVC
+  SG_ FreezeDataXEV_INV_ME : 57|1@0+ (1,0) [0|0] "" HEVC
+  SG_ OBECMfreeze_INVME : 58|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1718 INV_RE_A104: 8 INV_RE
+  SG_ RE_OilTemperature_v2 : 15|8@0+ (1,-40) [-40|150] "°C" HEVC
+  SG_ OBECMfreeze_INVRE : 40|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RE_RotorTemp : 55|8@0+ (1,-40) [-40|215] "°C" HEVC
+  SG_ RE_StatorTemp : 63|8@0+ (1,-40) [-40|215] "°C" HEVC
+
+BO_ 1726 BMS_RN9: 8 BMS_HV
+  SG_ BMS_CellHighestVoltageID : 7|8@0+ (1,0) [0|255] "" HEVC
+  SG_ BMS_CellLowestVoltageID : 15|8@0+ (1,0) [0|255] "" HEVC
+  SG_ BMS_MaxTempProbeID : 23|8@0+ (1,0) [0|255] "" HEVC
+  SG_ BMS_MinTempProbeID : 31|8@0+ (1,0) [0|255] "" HEVC
+  SG_ Total_boost_time_BMS_to_HEVC : 39|18@0+ (1,0) [0|262143] "s" HEVC
+  SG_ HVBatResistiveStateOfHealth : 63|8@0+ (1,100) [100|354] "%" HEVC
+
+BO_ 1751 BMS_RN117: 7 BMS_HV
+  SG_ OBECM_OverFlowProcess_BMS : 0|1@0+ (1,0) [0|0] "" HEVC
+  SG_ OBECM_RecentParameterReset_BMS : 8|1@0+ (1,0) [0|0] "" HEVC
+  SG_ HVBatHealth_v3 : 23|8@0+ (0.4,0) [0|100] "%" HEVC
+  SG_ ReservedHVBatteryCapacity_HV : 31|10@0+ (0.1,0) [0|100] "kWh" HEVC
+  SG_ SOC_Accuracy_Status_HV : 34|2@0+ (1,0) [0|0] "" HEVC
+  SG_ ResetDataXEVRecent_BMS : 35|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ResetDataXEVLifeTime_BMS : 36|1@0+ (1,0) [0|0] "" HEVC
+  SG_ FreezeDataXEV_BMS : 37|1@0+ (1,0) [0|0] "" HEVC
+  SG_ StateOfCertifiedEnergy_HV_v2 : 47|8@0+ (0.4,0) [0|100] "%" HEVC
+  SG_ StateOfCertifiedRange_HV : 55|8@0+ (0.4,0) [0|100] "%" HEVC
+
+BO_ 1754 CPLC_A104: 8 PCM
+  SG_ CRC_CPLC_A104 : 7|8@0+ (1,0) [0|255] "" BMS_HV
+  SG_ Clock_CPLC_A104 : 15|4@0+ (1,0) [0|15] "" BMS_HV
+  SG_ Combo_DCExtendedConnectStatus : 49|2@0+ (1,0) [0|0] "" BMS_HV
+
+BO_ 1757 HEVC_RN114: 8 HEVC
+  SG_ NextMissionTempEstimation : 7|7@0+ (1,-50) [-50|70] "°C" BMS_HV
+  SG_ HVFOTAConditionCheckStatus_HV : 15|2@0+ (1,0) [0|0] "" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+  SG_ TractionBatteryCoolingLimited_HV : 24|1@0+ (1,0) [0|0] "" BMS_HV
+  SG_ CRC_HEVC_RN114 : 39|8@0+ (1,0) [0|255] "" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE
+  SG_ V2X_EVSEdischarge_HV : 41|2@0+ (1,0) [0|0] "" BMS_HV
+  SG_ Clock_HEVC_RN114 : 47|4@0+ (1,0) [0|15] "" BMS2_HV,BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE
+  SG_ RIsolMeasurementActivation : 48|1@0+ (1,0) [0|0] "" BMS2_HV
+
+BO_ 2549874699 BMS_RN120: 8 BMS_HV
+  SG_ TotalDischargeEnergy_V2X_HV : 7|32@0+ (0.1,0) [0|4.294967295E8] "kWh" HEVC
+  SG_ TotalDisCHGEnergy_NonTraction_HV : 39|32@0+ (0.1,0) [0|4.294967295E8] "kWh" HEVC
+
+BO_ 2549874700 BMS_RN121: 7 BMS_HV
+  SG_ EVEGTR_TotalDistance_HV : 7|32@0+ (0.1,0) [0|4.294967295E8] "km" HEVC
+  SG_ HVB_AveTemp_CHG_HV : 39|8@0+ (1,-40) [-40|215] "?" HEVC
+  SG_ HVB_AveTemp_Driving_HV : 47|8@0+ (1,-40) [-40|215] "?" HEVC
+  SG_ HVB_AveTemp_NonUsage_HV : 55|8@0+ (1,-40) [-40|215] "?" HEVC
+
+BO_ 2563507968 SIGMA_CDMTriggerFrame: 7 HEVC
+  SG_ SIGMA_CDM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCCDM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508007 SIGMA_eHBoxTriggerFrame: 7 PCM
+  SG_ SIGMA_eHBox : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCeHBox : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508009 SIGMA_PSD_RTriggerFrame: 7 HEVC
+  SG_ SIGMA_PSD_R : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCPSD_R : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508019 SIGMA_PBDTriggerFrame: 7 HEVC
+  SG_ SIGMA_PBD : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCPBD : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508021 SIGMA_RADARTriggerFrame: 7 HEVC
+  SG_ SIGMA_RADAR : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCRADAR : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508022 SIGMA_PSCUTriggerFrame: 7 HEVC
+  SG_ SIGMA_PSCU : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCPSCU : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508030 SIGMA_SRad_RLTriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_RL : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSRad_RL : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508035 SIGMA_eRDC_LTriggerFrame: 7 HEVC
+  SG_ SIGMA_eRDC_L : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCeRDC_L : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508037 SIGMA_eRDC_RTriggerFrame: 7 HEVC
+  SG_ SIGMA_eRDC_R : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCeRDC_R : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508042 SIGMA_ANCTriggerFrame: 7 HEVC
+  SG_ SIGMA_ANC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCANC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508064 SIGMA_VDCTriggerFrame: 7 HEVC
+  SG_ SIGMA_VDC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCVDC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508066 SIGMA_EPSTriggerFrame: 7 PCM
+  SG_ SIGMA_EPS : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCEPS : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508067 SIGMA_METERTriggerFrame: 7 HEVC
+  SG_ SIGMA_METER : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCMETER : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508068 SIGMA_HVACTriggerFrame: 7 HEVC
+  SG_ SIGMA_HVAC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHVAC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508069 SIGMA_BCMTriggerFrame: 7 HEVC
+  SG_ SIGMA_BCM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCBCM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508071 SIGMA_IVITriggerFrame: 7 HEVC
+  SG_ SIGMA_IVI : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCIVI : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508072 SIGMA_4WDTriggerFrame: 7 HEVC
+  SG_ SIGMA_4WD : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTC4WD : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508077 SIGMA_USMTriggerFrame: 7 HEVC
+  SG_ SIGMA_USM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCUSM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508078 SIGMA_SONARTriggerFrame: 7 HEVC
+  SG_ SIGMA_SONAR : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSONAR : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508079 SIGMA_DSMUTriggerFrame: 7 PCM
+  SG_ SIGMA_DSMU : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCDSMU : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508082 SIGMA_ACUTriggerFrame: 7 HEVC
+  SG_ SIGMA_ACU : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCACU : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508089 SIGMA_PSD_LTriggerFrame: 7 PCM
+  SG_ SIGMA_PSD_L : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCPSD_L : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508093 SIGMA_ADASTriggerFrame: 7 HEVC
+  SG_ SIGMA_ADAS : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCADAS : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508099 SIGMA_A_IVCTriggerFrame: 7 HEVC
+  SG_ SIGMA_A_IVC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCA_IVC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508108 SIGMA_INV_METriggerFrame: 7 INV_ME
+  SG_ SIGMA_INV_ME : 4|29@0+ (1,0) [0|0] "" BMS_HV,HEVC,INV_HSG,INV_RE,PCM
+  SG_ SIGMA_DTCINV_ME : 39|24@0+ (1,0) [0|0] "" BMS_HV,HEVC,INV_HSG,INV_RE,PCM
+
+BO_ 2563508115 SIGMA_OBC_ACTriggerFrame: 7 HEVC
+  SG_ SIGMA_OBC_AC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCOBC_AC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508122 SIGMA_HEVCTriggerFrame: 7 HEVC
+  SG_ SIGMA_HEVC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHEVC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508130 SIGMA_AUDIOampTriggerFrame: 7 HEVC
+  SG_ SIGMA_AUDIOamp : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCAUDIOamp : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508133 SIGMA_HNSTriggerFrame: 7 HEVC
+  SG_ SIGMA_HNS : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHNS : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508139 SIGMA_VKMTriggerFrame: 7 HEVC
+  SG_ SIGMA_VKM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCVKM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508153 SIGMA_HFMTriggerFrame: 7 HEVC
+  SG_ SIGMA_HFM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHFM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508154 SIGMA_AVMTriggerFrame: 7 HEVC
+  SG_ SIGMA_AVM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCAVM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508157 SIGMA_SCUTriggerFrame: 7 HEVC
+  SG_ SIGMA_SCU : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSCU : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508164 SIGMA_eShifterTriggerFrame: 7 HEVC
+  SG_ SIGMA_eShifter : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCeShifter : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508181 SIGMA_SRad_RRTriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_RR : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSRad_RR : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508189 SIGMA_FrCameraTriggerFrame: 7 HEVC
+  SG_ SIGMA_FrCamera : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCFrCamera : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508200 SIGMA_HECMTriggerFrame: 7 HEVC
+  SG_ SIGMA_HECM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHECM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508201 SIGMA_ATCUTriggerFrame: 7 HEVC
+  SG_ SIGMA_ATCU : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCATCU : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563508205 SIGMA_BMS_HVTriggerFrame: 7 BMS_HV
+  SG_ SIGMA_BMS_HV : 4|29@0+ (1,0) [0|0] "" HEVC,INV_HSG,INV_ME,INV_RE,PCM
+  SG_ SIGMA_DTCBMS_HV : 39|24@0+ (1,0) [0|0] "" HEVC,INV_HSG,INV_ME,INV_RE,PCM
+
+BO_ 2563508207 SIGMA_INV_HSGTriggerFrame: 7 INV_HSG
+  SG_ SIGMA_INV_HSG : 4|29@0+ (1,0) [0|0] "" BMS_HV,HEVC,INV_ME,INV_RE,PCM
+  SG_ SIGMA_DTCINV_HSG : 39|24@0+ (1,0) [0|0] "" BMS_HV,HEVC,INV_ME,INV_RE,PCM
+
+BO_ 2563567883 SIGMA_BMS_12VTriggerFrame: 7 HEVC
+  SG_ SIGMA_BMS_12V : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCBMS_12V : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563567951 SIGMA_EPS_subTriggerFrame: 7 HEVC
+  SG_ SIGMA_EPS_sub : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCEPS_sub : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563567958 SIGMA_eShiftActTriggerFrame: 7 HEVC
+  SG_ SIGMA_eShiftAct : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCeShiftAct : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563567968 SIGMA_HUDTriggerFrame: 7 HEVC
+  SG_ SIGMA_HUD : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHUD : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568024 SIGMA_HPCUTriggerFrame: 7 HEVC
+  SG_ SIGMA_HPCU : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCHPCU : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568093 SIGMA_DCDC_HVTriggerFrame: 7 HEVC
+  SG_ SIGMA_DCDC_HV : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCDCDC_HV : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568098 SIGMA_EBATriggerFrame: 7 HEVC
+  SG_ SIGMA_EBA : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCEBA : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568101 SIGMA_INV_RETriggerFrame: 7 INV_RE
+  SG_ SIGMA_INV_RE : 4|29@0+ (1,0) [0|0] "" BMS_HV,HEVC,INV_HSG,INV_ME,PCM
+  SG_ SIGMA_DTCINV_RE : 39|24@0+ (1,0) [0|0] "" BMS_HV,HEVC,INV_HSG,INV_ME,PCM
+
+BO_ 2563568130 SIGMA_AirSUSPTriggerFrame: 7 HEVC
+  SG_ SIGMA_AirSUSP : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCAirSUSP : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568148 SIGMA_BSGTriggerFrame: 7 HEVC
+  SG_ SIGMA_BSG : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCBSG : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568163 SIGMA_SRad_FL_TriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_FL : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSRad_FL : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568164 SIGMA_SRad_FRTriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_FR : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSRad_FR : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568201 SIGMA_STBWTriggerFrame: 7 HEVC
+  SG_ SIGMA_STBW : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSTBW : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568233 SIGMA_DMCTriggerFrame: 7 PCM
+  SG_ SIGMA_DMC : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCDMC : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568267 SIGMA_RSCU3RTriggerFrame: 7 HEVC
+  SG_ SIGMA_RSCU3R : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCRSCU3R : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568288 SIGMA_BLM_RPKTriggerFrame: 7 HEVC
+  SG_ SIGMA_BLM_RPK : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCBLM_RPK : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568290 SIGMA_SCCMTriggerFrame: 7 HEVC
+  SG_ SIGMA_SCCM : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCSCCM : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563568300 SIGMA_RSCU2RTriggerFrame: 7 HEVC
+  SG_ SIGMA_RSCU2R : 4|29@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+  SG_ SIGMA_DTCRSCU2R : 39|24@0+ (1,0) [0|0] "" BMS_HV,INV_HSG,INV_ME,INV_RE
+
+BO_ 2563639180 SIGMA_INV_ME_ReadMeReq_Frame: 8 INV_ME
+  SG_ SIGMA_INV_ME_ReadMeReqRDIAG : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2563639279 SIGMA_INV_HSG_ReadMeReq_Frame: 8 INV_HSG
+  SG_ SIGMA_INV_HSG_ReadMeReqRDIAG : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2563699173 SIGMA_INV_RE_ReadMeReq_Frame: 8 INV_RE
+  SG_ SIGMA_INV_RE_ReadMeReqRDIAG : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564431345 DTOOL_to_H2FCE: 8 HEVC
+  SG_ DTOOL_to_H2FCE : 7|64@0+ (1,0) [0|0] "" H2FCE
+
+BO_ 2564479985 DTOOL_to_BMSextd: 8 HEVC
+  SG_ DTOOL_to_BMSextd : 7|64@0+ (1,0) [0|0] "" BMS_HV
+
+BO_ 2564480241 DTOOL_to_BMS2extd: 8 HEVC
+  SG_ DTOOL_to_BMS2extd : 7|64@0+ (1,0) [0|0] "" BMS2_HV
+
+BO_ 2564481009 DTOOL_to_INV_MEextd: 8 HEVC
+  SG_ DTOOL_to_INV_MEextd : 7|64@0+ (1,0) [0|0] "" INV_ME
+
+BO_ 2564482033 DTOOL_to_INV_HSGextd: 8 HEVC
+  SG_ DTOOL_to_INV_HSGextd : 7|64@0+ (1,0) [0|0] "" INV_HSG
+
+BO_ 2564482545 DTOOL_to_INV_RE: 8 HEVC
+  SG_ DTOOL_to_INV_RE : 7|64@0+ (1,0) [0|0] "" INV_RE
+
+BO_ 2564483569 DTOOL_to_INV_REL: 8 HEVC
+  SG_ DTOOL_to_INV_REL : 7|64@0+ (1,0) [0|0] "" INV_REL
+
+BO_ 2564483825 DTOOL_to_INV_RER: 8 HEVC
+  SG_ DTOOL_to_INV_RER : 7|64@0+ (1,0) [0|0] "" INV_RER
+
+BO_ 2564485405 H2FCE_to_DTOOL: 8 H2FCE
+  SG_ H2FCE_to_DTOOL : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485595 BMS_to_DTOOLextd: 8 BMS_HV
+  SG_ BMS_to_DTOOLextd : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485596 BMS2_to_DTOOLextd: 8 BMS2_HV
+  SG_ BMS2_to_DTOOLextd : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485599 INV_ME_to_DTOOLextd: 8 INV_ME
+  SG_ INV_ME_to_DTOOLextd : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485603 INV_HSG_to_DTOOLextd: 8 INV_HSG
+  SG_ INV_HSG_to_DTOOLextd : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485605 INV_RE_to_DTOOL: 8 INV_RE
+  SG_ INV_RE_to_DTOOL : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485609 INV_REL_to_DTOOL: 8 INV_REL
+  SG_ INV_REL_to_DTOOL : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564485610 INV_RER_to_DTOOL: 8 INV_RER
+  SG_ INV_RER_to_DTOOL : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2564502513 DTOOL_to_ALLUCEOBDExtd: 8 HEVC
+  SG_ DTOOL_to_ALLUCEOBD : 7|64@0+ (1,0) [0|0] "" BMS_HV,H2FCE,INV_HSG,INV_ME,INV_RE,INV_REL,INV_RER
+
+BO_ 2609102860 HEVC_WakeUpFrame_extd: 2 HEVC
+  SG_ HEVC_WakeUp_Signal : 7|16@0+ (1,0) [0|0] "" H2FCE,INV_ME
+
+BO_ 2615025137 FTOOLS_CGWtoH2FCE: 8 PCM
+  SG_ FTOOLS_CGWtoH2FCE : 7|64@0+ (1,0) [0|0] "" H2FCE
+
+BO_ 2615073777 FTOOLS_CGWtoBMS: 8 HEVC
+  SG_ FTOOLS_CGWtoBMS : 7|64@0+ (1,0) [0|0] "" BMS_HV
+
+BO_ 2615074033 FTOOLS_CGWtoBMS2: 8 HEVC
+  SG_ FTOOLS_CGWtoBMS2 : 7|64@0+ (1,0) [0|0] "" BMS2_HV
+
+BO_ 2615074801 FTOOLS_CGWtoME: 8 HEVC
+  SG_ FTOOLS_CGWtoME : 7|64@0+ (1,0) [0|0] "" INV_ME
+
+BO_ 2615075825 FTOOLS_CGWtoHSG: 8 HEVC
+  SG_ FTOOLS_CGWtoHSG : 7|64@0+ (1,0) [0|0] "" INV_HSG
+
+BO_ 2615076337 FTOOLS_CGWtoRE: 8 HEVC
+  SG_ FTOOLS_CGWtoRE : 7|64@0+ (1,0) [0|0] "" INV_RE
+
+BO_ 2615077361 FTOOLS_CGWtoREL: 8 HEVC
+  SG_ FTOOLS_CGWtoREL : 7|64@0+ (1,0) [0|0] "" INV_REL
+
+BO_ 2615077617 FTOOLS_CGWtoRER: 8 HEVC
+  SG_ FTOOLS_CGWtoRER : 7|64@0+ (1,0) [0|0] "" INV_RER
+
+BO_ 2615079197 FTOOLS_H2FCEtoCGW: 8 H2FCE
+  SG_ FTOOLS_H2FCEtoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079387 FTOOLS_BMStoCGW: 8 BMS_HV
+  SG_ FTOOLS_BMStoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079388 FTOOLS_BMS2toCGW: 8 BMS2_HV
+  SG_ FTOOLS_BMS2toCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079391 FTOOLS_MEtoCGW: 8 INV_ME
+  SG_ FTOOLS_MEtoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079395 FTOOLS_HSGtoCGW: 8 INV_HSG
+  SG_ FTOOLS_HSGtoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079397 FTOOLS_REtoCGW: 8 INV_RE
+  SG_ FTOOLS_REtoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079401 FTOOLS_RELtoCGW: 8 INV_REL
+  SG_ FTOOLS_RELtoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_ 2615079402 FTOOLS_RERtoCGW: 8 INV_RER
+  SG_ FTOOLS_RERtoCGW : 7|64@0+ (1,0) [0|0] "" HEVC,PCM
+
+BO_TX_BU_ 0 : HEVC,PCM;
+BO_TX_BU_ 32 : HEVC,PCM;
+BO_TX_BU_ 92 : HEVC,PCM;
+BO_TX_BU_ 113 : HEVC,PCM;
+BO_TX_BU_ 121 : HEVC,PCM;
+BO_TX_BU_ 126 : HEVC,PCM;
+BO_TX_BU_ 127 : HEVC,PCM;
+BO_TX_BU_ 128 : HEVC,PCM;
+BO_TX_BU_ 131 : HEVC,PCM;
+BO_TX_BU_ 290 : HEVC,PCM;
+BO_TX_BU_ 360 : HEVC,PCM;
+BO_TX_BU_ 395 : HEVC,PCM;
+BO_TX_BU_ 562 : HEVC,PCM;
+BO_TX_BU_ 1060 : HEVC,PCM;
+BO_TX_BU_ 1061 : HEVC,PCM;
+BO_TX_BU_ 1062 : HEVC,PCM;
+BO_TX_BU_ 1063 : HEVC,PCM;
+BO_TX_BU_ 1072 : HEVC,PCM;
+BO_TX_BU_ 1073 : HEVC,PCM;
+BO_TX_BU_ 1074 : HEVC,PCM;
+BO_TX_BU_ 1075 : HEVC,PCM;
+BO_TX_BU_ 1084 : HEVC,PCM;
+BO_TX_BU_ 1094 : HEVC,PCM;
+BO_TX_BU_ 1107 : HEVC,PCM;
+BO_TX_BU_ 1125 : HEVC,PCM;
+BO_TX_BU_ 1127 : HEVC,PCM;
+BO_TX_BU_ 1128 : INV_RE,INV_REL;
+BO_TX_BU_ 1146 : HEVC,PCM;
+BO_TX_BU_ 1314 : HEVC,PCM;
+BO_TX_BU_ 1315 : HEVC,PCM;
+BO_TX_BU_ 1544 : HEVC,PCM;
+BO_TX_BU_ 1550 : HEVC,PCM;
+BO_TX_BU_ 1576 : HEVC,PCM;
+BO_TX_BU_ 1642 : HEVC,PCM;
+BO_TX_BU_ 1754 : HEVC,PCM;
+BO_TX_BU_ 1757 : HEVC,PCM;
+BO_TX_BU_ 2563507968 : HEVC,PCM;
+BO_TX_BU_ 2563508007 : HEVC,PCM;
+BO_TX_BU_ 2563508009 : HEVC,PCM;
+BO_TX_BU_ 2563508019 : HEVC,PCM;
+BO_TX_BU_ 2563508021 : HEVC,PCM;
+BO_TX_BU_ 2563508022 : HEVC,PCM;
+BO_TX_BU_ 2563508030 : HEVC,PCM;
+BO_TX_BU_ 2563508035 : HEVC,PCM;
+BO_TX_BU_ 2563508037 : HEVC,PCM;
+BO_TX_BU_ 2563508042 : HEVC,PCM;
+BO_TX_BU_ 2563508064 : HEVC,PCM;
+BO_TX_BU_ 2563508066 : HEVC,PCM;
+BO_TX_BU_ 2563508067 : HEVC,PCM;
+BO_TX_BU_ 2563508068 : HEVC,PCM;
+BO_TX_BU_ 2563508069 : HEVC,PCM;
+BO_TX_BU_ 2563508071 : HEVC,PCM;
+BO_TX_BU_ 2563508072 : HEVC,PCM;
+BO_TX_BU_ 2563508077 : HEVC,PCM;
+BO_TX_BU_ 2563508078 : HEVC,PCM;
+BO_TX_BU_ 2563508079 : HEVC,PCM;
+BO_TX_BU_ 2563508082 : HEVC,PCM;
+BO_TX_BU_ 2563508089 : HEVC,PCM;
+BO_TX_BU_ 2563508093 : HEVC,PCM;
+BO_TX_BU_ 2563508099 : HEVC,PCM;
+BO_TX_BU_ 2563508115 : HEVC,PCM;
+BO_TX_BU_ 2563508130 : HEVC,PCM;
+BO_TX_BU_ 2563508133 : HEVC,PCM;
+BO_TX_BU_ 2563508139 : HEVC,PCM;
+BO_TX_BU_ 2563508153 : HEVC,PCM;
+BO_TX_BU_ 2563508154 : HEVC,PCM;
+BO_TX_BU_ 2563508157 : HEVC,PCM;
+BO_TX_BU_ 2563508164 : HEVC,PCM;
+BO_TX_BU_ 2563508181 : HEVC,PCM;
+BO_TX_BU_ 2563508189 : HEVC,PCM;
+BO_TX_BU_ 2563508201 : HEVC,PCM;
+BO_TX_BU_ 2563567883 : HEVC,PCM;
+BO_TX_BU_ 2563567951 : HEVC,PCM;
+BO_TX_BU_ 2563567958 : HEVC,PCM;
+BO_TX_BU_ 2563567968 : HEVC,PCM;
+BO_TX_BU_ 2563568024 : HEVC,PCM;
+BO_TX_BU_ 2563568093 : HEVC,PCM;
+BO_TX_BU_ 2563568098 : HEVC,PCM;
+BO_TX_BU_ 2563568130 : HEVC,PCM;
+BO_TX_BU_ 2563568148 : HEVC,PCM;
+BO_TX_BU_ 2563568163 : HEVC,PCM;
+BO_TX_BU_ 2563568164 : HEVC,PCM;
+BO_TX_BU_ 2563568201 : HEVC,PCM;
+BO_TX_BU_ 2563568233 : HEVC,PCM;
+BO_TX_BU_ 2563568267 : HEVC,PCM;
+BO_TX_BU_ 2563568288 : HEVC,PCM;
+BO_TX_BU_ 2563568290 : HEVC,PCM;
+BO_TX_BU_ 2563568300 : HEVC,PCM;
+BO_TX_BU_ 2564431345 : HEVC,PCM;
+BO_TX_BU_ 2564479985 : HEVC,PCM;
+BO_TX_BU_ 2564480241 : HEVC,PCM;
+BO_TX_BU_ 2564481009 : HEVC,PCM;
+BO_TX_BU_ 2564482033 : HEVC,PCM;
+BO_TX_BU_ 2564482545 : HEVC,PCM;
+BO_TX_BU_ 2564483569 : HEVC,PCM;
+BO_TX_BU_ 2564483825 : HEVC,PCM;
+BO_TX_BU_ 2564502513 : HEVC,PCM;
+BO_TX_BU_ 2615025137 : HEVC,PCM;
+BO_TX_BU_ 2615073777 : HEVC,PCM;
+BO_TX_BU_ 2615074033 : HEVC,PCM;
+BO_TX_BU_ 2615074801 : HEVC,PCM;
+BO_TX_BU_ 2615075825 : HEVC,PCM;
+BO_TX_BU_ 2615076337 : HEVC,PCM;
+BO_TX_BU_ 2615077361 : HEVC,PCM;
+BO_TX_BU_ 2615077617 : HEVC,PCM;
+
+
+
+
+
+
+
+
+VAL_ 0 Maintenance_Mode_Status 0 "not used" 1 "no request" 2 "request" 3 "unavailable"; 
+VAL_ 32 AirbagCrashOrder_v3 0 "Crash not detected" 15 "Medium crash" 31 "Violent crash" 47 "Rear crash"; 
+VAL_ 81 BMS_InterlockServicePlug_v2 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 92 ME_ControlMode 0 "not used" 1 "torque mode" 2 "Reserved for Safety" 3 "Reserved for Safety" 4 "speed mode" 5 "Reserved for Safety" 6 "Reserved for Safety" 7 "voltage mode"; 
+VAL_ 92 HSG_ControlMode 0 "not used" 1 "torque mode" 2 "Reserved for Safety" 3 "Reserved for Safety" 4 "speed mode" 5 "Reserved for Safety" 6 "Reserved for Safety" 7 "voltage mode"; 
+VAL_ 96 RE_CondenserChargeStatus 0 "RE Condenser Charge not Complete" 1 "RE Condenser Charge Complete"; 
+VAL_ 96 RE_PreChargeControlStatus 0 "RE PreCharge NOK" 1 "RE PreCharge OK"; 
+VAL_ 96 RE_ReStartPreparationStatus 0 "RE ReStart NOK" 1 "RE ReStart OK"; 
+VAL_ 96 RE_DeactivationStatus_HV 0 "Normal" 1 "Voltage mode activated" 2 "Zero torque regulation activated" 3 "RE stopped"; 
+VAL_ 102 HSG_PreChargeControlStatus 0 "HSG PreCharge NOK" 1 "HSG PreCharge OK"; 
+VAL_ 102 HSG_ReStartPreparationStatus 0 "HSG ReStart NOK" 1 "HSG ReStart OK"; 
+VAL_ 127 B_PEBDischarge_sch_req 0 "Not used" 1 "Discharge not requested" 2 "Discharge requested" 3 "Unavailable value"; 
+VAL_ 128 HSG_CurativeAntiJerkActivation 0 "No Curative AntiJerkMode" 1 "Curative AntiJerkMode"; 
+VAL_ 128 ME_CurativeAntiJerkActivation 0 "No Curative AntiJerk Mode" 1 "Curative AntiJerk Mode"; 
+VAL_ 128 PowerRelayShutoffPreNotice_HV 0 "Not notifying" 1 "Notifying"; 
+VAL_ 131 OperatingTypeRequest 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "Driving" 4 "External charge (battery outside vehicle)" 5 "DC charging without RISOL" 6 "DC charging with RISOL" 7 "Not used"; 
+VAL_ 132 ME_DeactivationRequest 0 "Normal" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Torque interruption request / voltage mode allowed" 4 "Reserved for safety" 5 "Torque interruption request / zero-torque regulation all" 6 "Reserved for safety" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Reserved for safety" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Torque interruption request / immediate shut-off" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Reserved for safety"; 
+VAL_ 132 RE_DeactivationRequest_HV 0 "Normal" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Torque interruption request / voltage mode allowed" 4 "Reserved for safety" 5 "Torque interruption request / zero-torque regulation all" 6 "Reserved for safety" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Reserved for safety" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Torque interruption request / immediate shut-off" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Reserved for safety"; 
+VAL_ 132 HSG_DeactivationRequest 0 "Normal" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Torque interruption request / voltage mode allowed" 4 "Reserved for safety" 5 "Torque interruption request / zero-torque regulation all" 6 "Reserved for safety" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Reserved for safety" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Torque interruption request / immediate shut-off" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Reserved for safety"; 
+VAL_ 132 GearboxLinesStates 0 "Status0" 1 "Status1" 2 "Status2" 3 "Status3" 4 "Status4" 5 "Status5" 6 "Status6" 7 "Status7" 8 "Status8" 9 "Status9" 10 "Status10" 11 "Status11" 12 "Status12" 13 "Status13" 14 "Status14" 15 "Status15" 16 "Status16" 17 "Status17" 18 "Status18" 19 "Status19" 20 "Status20" 21 "Status21" 22 "Status22" 23 "Status23" 24 "Status24" 25 "Status25" 26 "Status26" 27 "Status27" 28 "Status28" 29 "Status29" 30 "Status30" 31 "Status31" 32 "Status32" 33 "Status33" 34 "Status34" 35 "Status35" 36 "Status36" 37 "Status37" 38 "Status38" 39 "Status39" 40 "Unavailable" 41 "Not used" 42 "Not used" 43 "Not used" 44 "Not used" 45 "Not used" 46 "Not used" 47 "Not used" 48 "Not used" 49 "Not used" 50 "Not used" 51 "Not used" 52 "Not used" 53 "Not used" 54 "Not used" 55 "Not used" 56 "Not used" 57 "Not used" 58 "Not used" 59 "Not used" 60 "Not used" 61 "Not used" 62 "Not used" 63 "Not used"; 
+VAL_ 133 HSG_DeactivationStatus 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "Electrical Machine stopped"; 
+VAL_ 134 ME_InterlockMotor_v2 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 152 RE_ElecPowertrainMngtState_HV 0 "Power Off" 1 "Power on Low Efficiency" 2 "Stand By" 3 "Not used" 4 "Power On" 5 "Mode Tension" 6 "Preparing to sleep" 7 "Unavailable Value"; 
+VAL_ 152 RE_ElecMachineWorkingMode_HV 0 "Unavailable Value" 1 "Motor Mode" 2 "Generator Mode" 3 "Not used"; 
+VAL_ 290 LowSpd_SlowRespoReq_VBRTCntl_HV 0 "No LowSpd SlowRespo Mode" 1 "LowSpd SlowRespo Mode"; 
+VAL_ 290 RequestForPreparingHVPowerSupply 0 "Not Request For Preparing High Voltage Power Supply" 1 "Request For Preparing High Voltage Power Supply"; 
+VAL_ 290 GearLeverPosition_HV_v2 0 "Parking - P" 1 "Neutral - N" 2 "Others" 3 "Not available"; 
+VAL_ 312 RER_ElecPowertrainMngtState_HV 0 "Power off" 1 "Power on Low Efficiency" 2 "Stand By" 3 "Not used" 4 "Power On" 5 "Mode Tension" 6 "Preparing to sleep" 7 "Unavailable Value"; 
+VAL_ 312 RER_ElecMachineWorkingMode_HV 0 "Unavailable Value" 1 "Motor mode" 2 "Generator mode" 3 "Not Used"; 
+VAL_ 312 RER_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "not used"; 
+VAL_ 313 RER_DeactivationStatus_HV 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "RER stopped"; 
+VAL_ 326 HVPowerConnection 0 "Not used" 1 "Closing of Power Contacts Allowed" 2 "Closing of Power Contacts Not Allowed" 3 "Unavailable Value"; 
+VAL_ 326 BMS_InterlockHVconnector_v2 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 326 BMS_Discharge_Power_Status 0 "Not used" 1 "Normal limit POUT" 2 "High rate limit POUT" 3 "Immediate limit POUT"; 
+VAL_ 326 BMS_Charge_Power_Status 0 "Not used" 1 "Normal limit PIN" 2 "High rate limit PIN" 3 "Immediate limit PIN"; 
+VAL_ 338 HSG_ControlModeStatus 0 "Torque mode" 1 "Speed Control mode" 2 "Voltage Control mode" 3 "Unavailable"; 
+VAL_ 338 HSG_ElecMachineWorkingMode 0 "Unvailable Value" 1 "Motor Mode" 2 "Generator Mode" 3 "Not used"; 
+VAL_ 339 ME_InterlockHVaccessories 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 339 ME_ControlModeStatus 0 "Torque mode" 1 "Speed Control mode" 2 "Voltage Control mode" 3 "Unavailable"; 
+VAL_ 339 ME_ReStartPreparationStatus 0 "ME ReStart NOK" 1 "ME ReStart OK"; 
+VAL_ 339 ME_PreChargeControlStatus 0 "ME PreCharge NOK" 1 "ME PreCharge OK"; 
+VAL_ 339 ME_CondenserChargeStatus 0 "ME Condenser Charge not Complete" 1 "ME Condenser Charge Complete"; 
+VAL_ 339 PEBActiveDischarge 0 "Active Discharge Not In Progress" 1 "Active Discharge In Progress"; 
+VAL_ 339 ElecMAchineWorkingMode 0 "Unvailable Value" 1 "Motor Mode" 2 "Generator Mode" 3 "Not used"; 
+VAL_ 356 ME_DeactivationStatus_TVC 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "ME stopped"; 
+VAL_ 358 RE_CondenserChargeStatus_TVC 0 "RE Condenser Charge not Complete" 1 "RE Condenser Charge Complete"; 
+VAL_ 358 RE_PreChargeControlStatus_TVC 0 "RE PreCharge NOK" 1 "RE PreCharge OK"; 
+VAL_ 358 RE_ReStartPreparationStatus_TVC 0 "RE ReStart NOK" 1 "RE ReStart OK"; 
+VAL_ 358 RE_DeactivationStatus_HV_TVC 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "RE stopped"; 
+VAL_ 360 B_PEBDischarge_sch_req_TVC 0 "Not used" 1 "Discharge not requested" 2 "Discharge requested" 3 "Unavailable value"; 
+VAL_ 395 RrSlipControlFlag 0 "slip control function off" 1 "slip control function on"; 
+VAL_ 395 FrSlipControlFlag 0 "slip control function off" 1 "slip control function on"; 
+VAL_ 444 RE_CurativeAntiJerkActivation 0 "No Curative AntiJerk Mode" 1 "Curative AntiJerk Mode"; 
+VAL_ 463 ME_DeactivationStatus 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "ME stopped"; 
+VAL_ 562 KPL_D 0 "KPL false" 1 "KPL true"; 
+VAL_ 562 Preset_D 0 "Upstream conditions not authenticated" 1 "Upstream conditions authenticated"; 
+VAL_ 562 ICU_Mode_D 0 "Idle" 1 "Response 2" 2 "Challenge" 3 "SKey"; 
+VAL_ 562 Clearing_Key_D 0 "CSK false" 1 "CSK request"; 
+VAL_ 562 KPH_D 0 "KPH false" 1 "KPH true"; 
+VAL_ 562 ICU_PayLoad_D 0 "Table Value430656"; 
+VAL_ 566 TPU_Mode_D 0 "Idle" 1 "Response 1" 2 "SKey Request" 3 "Start Message"; 
+VAL_ 566 VerlogStatus_D 0 "VerlogStatus UnProtected" 1 "VerlogStatus Protected"; 
+VAL_ 566 SREM_D 0 "Normal request" 1 "Dev Request"; 
+VAL_ 566 Version_D 0 "Version 5" 1 "Version 6" 2 "Version 7" 3 "Not Used"; 
+VAL_ 566 TPU_Payload_D 0 "Table Value430666"; 
+VAL_ 598 HVPowerConnection_RCY 0 "Not used" 1 "Closing of Power Contacts Allowed" 2 "Closing of Power Contacts Not Allowed" 3 "Unavailable Value"; 
+VAL_ 598 BMS2_RefusetoSleep 0 "reserved" 1 "LBC refuse to sleep" 2 "LBC ready to sleep" 3 "reserved"; 
+VAL_ 598 LBCPRUNAnswer_RCY 85 "Answer to Key Value 1" 170 "Answer to Key Value 2"; 
+VAL_ 598 BMS2_FaultType 0 "No failure" 1 "Reserved for safety" 2 "Reserved for safety" 3 "High Voltage battery level 1 failure" 4 "Reserved for safety" 5 "Safety mode 1 flag" 6 "High Voltage battery level 2 failure" 7 "Reserved for safety"; 
+VAL_ 598 OperatingTypeStatus_RCY 0 "No Request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "External charge (battery outside vehicle)" 4 "Transitory" 5 "Driving" 6 "Init" 7 "DC Charging without RISOL" 8 "risolCheckMode" 9 "DC Charging with RISOL" 10 "FOTA on going wait for HV relays opening" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Reserved"; 
+VAL_ 598 RISOLConvStatus 0 "Computation not converged" 1 "RISOL Computation converged"; 
+VAL_ 729 REL_ElecPowertrainMngtState_HV 0 "Power off" 1 "Power on Low Efficiency" 2 "Stand By" 3 "Not used" 4 "Power On" 5 "Mode Tension" 6 "Preparing to sleep" 7 "Unavailable Value"; 
+VAL_ 729 REL_ElecMachineWorkingMode_HV 0 "Unavailable Value" 1 "Motor mode" 2 "Generator mode" 3 "Not Used"; 
+VAL_ 729 REL_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "not used"; 
+VAL_ 731 REL_DeactivationStatus_HV 0 "Normal" 1 "Voltage mode activated" 2 "Zero-torque regulation activated" 3 "REL stopped"; 
+VAL_ 742 REL_InverterFaultType_HV 0 "No FaultType" 1 "Fault Type 1" 2 "Fault Type 2" 3 "Safety reserved" 4 "Fault Type 3" 5 "Fault Type 4" 6 "Fault Type 5" 7 "Fault Type 6"; 
+VAL_ 742 REL_InterlockMotor_HV 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 742 REL_ActiveDischarge 0 "Active Discharge Not In Progress" 1 "Active Discharge In Progress"; 
+VAL_ 742 REL_RefuseToSleep 0 "Reserved" 1 "REL refuse to sleep" 2 "REL ready to sleep" 3 "Reserved"; 
+VAL_ 894 ME_RefuseToSleep 0 "reserved" 1 "PEB refuse to sleep" 2 "PEB ready to sleep" 3 "reserved"; 
+VAL_ 894 ME_CHG_InterlockState 0 "Not Used" 1 "Interlock Opened" 2 "Interlock Close" 3 "Unvailable Value"; 
+VAL_ 894 ME_Access_InterlockState 0 "Not Used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 894 ME_InverterFaultType_HV 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Fault type 6"; 
+VAL_ 894 ME_InterlockMotor 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 894 ElecPowerTrainMngtState 0 "Power Off" 1 "Power on Low Efficiency" 2 "Stand By" 3 "Not used" 4 "Power On" 5 "Mode Tension" 6 "Preparing to sleep" 7 "Unvailable Value"; 
+VAL_ 894 ME_MajorElecFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 894 ME_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 894 ME_ElecSysFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 894 ME_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "Not used"; 
+VAL_ 900 ME_MILLamp 0 "MIL lamp off request" 1 "MIL Lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 903 BMS2_ChargeFailureDisplay 0 "No Alert" 1 "Battery Charge Impossible Alert"; 
+VAL_ 903 BMS2_MajorElecFailureDisplay 0 "No Alert" 1 "Electrical Fault Danger Alert "; 
+VAL_ 903 BMS2_ElecSysFailureDisplay 0 "No Alert" 1 "Check Electrical System Alert"; 
+VAL_ 938 BMS_PEBDischarge_sch_req 0 "Not used" 1 "Discharge not requested" 2 "Discharge requested" 3 "Unavailable value"; 
+VAL_ 987 H2RefuelingRequest 0 "No Request" 1 "Request"; 
+VAL_ 987 FC_State 0 "Reserved" 1 "Standby" 2 "Start" 3 "Run" 4 "Ready" 5 "Post Run" 6 "Shutdown" 7 "FOTA"; 
+VAL_ 987 FC_ConnectionReady 0 "Not Ready" 1 "Ready"; 
+VAL_ 987 FC_FaultType 0 "No Fault Type" 1 "Fault Type 1" 2 "Fault Type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Fault type 6"; 
+VAL_ 987 FCOffButton_State_HV 0 "No Display" 1 "Fuel Cell OFF" 2 "Fuel Cell ON" 3 "Not Used"; 
+VAL_ 987 FC_FeatureRequest 0 "Not Requested" 1 "Requested"; 
+VAL_ 987 FreezeDataXEV_H2FCE 0 "No request" 1 "InfoType calculation frozen"; 
+VAL_ 987 FC_RefuseToSleep 0 "Reserved" 1 "H2FCE refuse to sleep" 2 "H2FCE ready to sleep" 3 "Reserved"; 
+VAL_ 987 V2LButton_State_HV 0 "No Display" 1 "V2L Button OFF" 2 "V2L Button ON" 3 "Not Used"; 
+VAL_ 1039 DAxisDischarge_PlugStatus_HV 0 "Not plug-in charge" 1 "Plug-in charge"; 
+VAL_ 1039 DAxisDischarge_DrivingModeReq_HV 0 "DAxis Discharge NG" 1 "DAxis Discharge OK" 2 "Not used" 3 "Not used"; 
+VAL_ 1039 DAxisDischarge_PluginModeReq_HV 0 "eDrive allowed power_0" 1 "eDrive allowed power_1" 2 "eDrive allowed power_2" 3 "eDrive allowed power_3" 4 "eDrive allowed power_4" 5 "eDrive allowed power_5" 6 "eDrive allowed power_6" 7 "eDrive allowed power_full"; 
+VAL_ 1040 HeatingPadOverheat2 0 "no alert" 1 "heating pad overheat safety alert"; 
+VAL_ 1044 INV_ME_ActiveDischargeFailure 0 "No failure of active discharge function" 1 "Failure of active discharge function"; 
+VAL_ 1044 ME_InverterFaultType_HV_v2 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Fault type 6"; 
+VAL_ 1044 ME_DAxisDischarge_WorkingMode_HV 0 "DAxis Discharge notworking" 1 "DAxis Discharge working" 2 "Not used" 3 "Not used"; 
+VAL_ 1062 ICE_OBDWarmUpCycleDet 0 "Warm Up Cycle is not completed" 1 "Warm Up Cycle is completed"; 
+VAL_ 1062 ICE_OBDPrmtDelCdn 0 "OBD PDTC Delete Condition not deteted" 1 "OBD PDTC Delete Condition deteted"; 
+VAL_ 1062 ICE_OBD_Ready_On 0 "HEV system is in the state of Not-Ready-mode." 1 "HEV system is in the state of Ready-mode."; 
+VAL_ 1072 HSG_InverterActivation 0 "Not used" 1 "Inverter Off" 2 "Inverter On" 3 "Inverter On + preflux" 4 "Voltage Mode" 5 "Prepare to Sleep" 6 "Not Used" 7 "Unavailable value"; 
+VAL_ 1072 ME_InverterActivation_v2 0 "Not used" 1 "Inverter Off" 2 "Inverter On" 3 "Inverter ON + préflux" 4 "Voltage Mode" 5 "Prepare to Sleep" 6 "Inverter on Low Efficiency" 7 "Unavailable value"; 
+VAL_ 1072 RESstatus_HV 0 "Unavailable" 1 "Reserved for safety" 2 "Reserved for safety" 3 "Normal engine start only" 4 "Reserved for safety" 5 "Reserved for safety" 6 "wait for RES / Presoak" 7 "Reserved for safety" 8 "Reserved for safety" 9 "Customer Starting" 10 "Reserved for safety" 11 "Reserved for safety" 12 "Remote Engine Start" 13 "Reserved for safety" 14 "Reserved for safety" 15 "Vehicle without RES"; 
+VAL_ 1072 HEVC_WakeUpSleepCommand 0 "Go to Sleep" 1 "reserved" 2 "reserved" 3 "WakeUp"; 
+VAL_ 1072 IgnitionSupplyConfirmation_HV 0 "no primary ignition supply" 1 "primary ignition supply on"; 
+VAL_ 1072 ETS_SleepMode 0 "Normal Sleeping" 1 "14V Battery Management" 2 "Quick Drop" 3 "Unavailable Value"; 
+VAL_ 1072 GADE_HV_v2 0 "Sleep or Crank fault, Disable DiagMuxDTC" 1 "AutoACC fault, Disable DiagMuxDTC" 2 "ALL fault, Disable DiagMuxDTC" 3 "ALL fault, Enable DiagMuxDTC" 4 "FOTA switch fault, Disable DiagMuxDTC" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1073 BrakeInfoStatus_HV 0 "Not used" 1 "Brake pedal not pressed" 2 "Brake pedal pressed" 3 "Not used" 4 "Brake pedal confirmed pressed" 5 "Not used" 6 "Not used" 7 "unavailable"; 
+VAL_ 1074 OBDWarmUpCycleDet_HV 0 "Warm Up Cycle is not completed" 1 "Warm Up Cycle is completed"; 
+VAL_ 1074 OBDPrmtDelCdn_HV 0 "OBD PDTC Delete Condition not detected" 1 "OBD PDTC Delete Condition detected"; 
+VAL_ 1074 CHGcontrolPilotState 0 "Reserved" 1 "State B" 2 "State C" 3 "State D - Reserved" 4 "State E/F" 5 "Not used" 6 "Reserved" 7 "Unavailable"; 
+VAL_ 1074 PowerRelayState 0 "Precharge" 1 "Closed" 2 "Opened" 3 "TransitoryState" 4 "Risol Relay P Check" 5 "Risol Relay N Check" 6 "not used" 7 "not used"; 
+VAL_ 1074 OBD_Ready_On_HV 0 "HEV system is in the state of Not-Ready-mode" 1 "HEV system is in the state of Ready-mode"; 
+VAL_ 1075 LBCPRUNKey 93 "Key Value 1" 178 "Key Value 2"; 
+VAL_ 1075 LBCPRUNKey_RCY 93 "Key Value 1" 178 "Key Value 2"; 
+VAL_ 1075 QuickRisolCheckRequest 0 "No Request" 1 "Quick Risol Check Request"; 
+VAL_ 1075 RE_InverterActivation_HV 0 "Not used" 1 "Inverter Off" 2 "Inverter On" 3 "Inverter ON + preflux" 4 "Voltage Mode" 5 "Prepare to Sleep" 6 "Inverter on Low Efficiency" 7 "Unavailable value"; 
+VAL_ 1075 OperatingTypeRequest_V2 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "Driving" 4 "External charge (battery outside vehicle)" 5 "DC Charging without RISOL" 6 "DC Charging with RISOL" 7 "V2G" 8 "V2L" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1078 HSG_InterlockMotor 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1078 HSG_InterlockHVConnector 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1078 HSG_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "not used"; 
+VAL_ 1078 HSG_MILLamp 0 "MIL lamp off request" 1 "MIL Lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 1078 HSG_ElecPowerTrainMngtState 0 "Power Off" 1 "Not used" 2 "Stand By" 3 "Not used" 4 "Power On" 5 "Voltage Mode" 6 "Preparing to Sleep" 7 "Unvailable Value"; 
+VAL_ 1078 HSG_InverterFault_Type 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Reserved"; 
+VAL_ 1078 HSG_RefusetoSleep 0 "reserved" 1 "HSG refuse to sleep" 2 "HSG ready to sleep" 3 "reserved"; 
+VAL_ 1083 FAN_FailureDetected 0 "reserved" 1 "no failure" 2 "failure" 3 "unavailable"; 
+VAL_ 1084 IgnSupplyWireConfirmation 0 "IGN OFF" 1 "IGN ON" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1091 H2RefuellingCondition 0 "Not Ready" 1 "Ready"; 
+VAL_ 1091 Meter_ADACresetRequest_HV 0 "Reset Meter not requested" 1 "Reset Meter requested"; 
+VAL_ 1091 FC_HVNetworkReady 0 "Not Ready" 1 "Ready"; 
+VAL_ 1091 FC_FeatureAuthorisation 0 "Not Authorized" 1 "Authorized"; 
+VAL_ 1094 KPL 0 "KPL false" 1 "KPL true"; 
+VAL_ 1094 Preset 0 "Upstream conditions not authenticated" 1 "Upstream conditions authenticated"; 
+VAL_ 1094 ICU_Mode 0 "Idle" 1 "Response 2" 2 "Challenge" 3 "SKey"; 
+VAL_ 1094 Clearing_Key 0 "CSK false" 1 "CSK request"; 
+VAL_ 1094 KPH 0 "KPH false" 1 "KPH true"; 
+VAL_ 1094 ICU_PayLoad 0 "Table Value125998"; 
+VAL_ 1096 TPU_Mode 0 "Idle" 1 "Response 1" 2 "SKey Request" 3 "Start Message"; 
+VAL_ 1096 VerlogStatus 0 "VerlogStatus UnProtected" 1 "VerlogStatus Protected"; 
+VAL_ 1096 SREM 0 "Normal request" 1 "Dev Request"; 
+VAL_ 1096 Version 0 "Version 5" 1 "Version 6" 2 "Version 7" 3 "Not Used"; 
+VAL_ 1096 TPU_Payload 0 "Table Value159547"; 
+VAL_ 1111 BMS_RefusetoSleep 0 "reserved" 1 "LBC refuse to sleep" 2 "LBC ready to sleep" 3 "reserved"; 
+VAL_ 1111 BMS_InterlockHVChargerFuseLid 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1111 BMS_InterlockHVBattPTC 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1111 BMS_FaultType 0 "No failure" 1 "Reserved for safety" 2 "Reserved for safety" 3 "High Voltage battery level 1 failure" 4 "Reserved for safety" 5 "Safety mode 1 flag" 6 "High Voltage battery level 2 failure" 7 "Reserved for safety"; 
+VAL_ 1111 BMS_InterlockHVChargerConnector 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1111 BMS_LatentFault_WarningReq 0 "No request" 1 "Warning request by latent fault" 2 "Not Used" 3 "Incredible value"; 
+VAL_ 1111 OperatingTypeStatus_V2 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "External charge (battery outside vehicle)" 4 "Transitory" 5 "Driving" 6 "Init" 7 "DC Charging without RISOL" 8 "RIsolCheckMode" 9 "DC Charging with RISOL" 10 "V2G" 11 "V2L" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not used"; 
+VAL_ 1112 OperatingTypeStatus 0 "No request" 1 "Isolated charge" 2 "Non-isolated charge" 3 "External charge (battery outside vehicle)" 4 "Transitory" 5 "Driving" 6 "Init" 7 "DC Charging without RISOL" 8 "risolCheckMode" 9 "DC Charging with RISOL" 10 "FOTA on going wait for HV relays opening" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Reserved"; 
+VAL_ 1112 LBCPRUNAnswer 85 "Answer to Key Value 1" 170 "Answer to Key Value 2"; 
+VAL_ 1112 FastChargeRelayStatus 0 "No Failure" 1 "Failure detected"; 
+VAL_ 1114 EndOfChargeRequest 0 "Not used" 1 "End of Charge Not Requested" 2 "End of Charge Requested" 3 "Unavailable Value"; 
+VAL_ 1114 BMS_Capacity_Empty 0 "Not Batt Empty" 1 "Batt Empty"; 
+VAL_ 1114 HeatingGrid_BatDeratingStatus 0 "No Derating" 1 "Derating"; 
+VAL_ 1114 HeatingGrid_BatModulationStatus 0 "No Modulation" 1 "Modulation"; 
+VAL_ 1125 KPL_B 0 "KPL false" 1 "KPL true"; 
+VAL_ 1125 Preset_B 0 "Upstream conditions not authenticated" 1 "Upstream conditions authenticated"; 
+VAL_ 1125 ICU_Mode_B 0 "Idle" 1 "Response 2" 2 "Challenge" 3 "SKey"; 
+VAL_ 1125 Clearing_Key_B 0 "CSK false" 1 "CSK request"; 
+VAL_ 1125 KPH_B 0 "KPH false" 1 "KPH true"; 
+VAL_ 1125 ICU_PayLoad_B 0 "Table Value125996"; 
+VAL_ 1126 TPU_Mode_B 0 "Idle" 1 "Response 1" 2 "SKey Request" 3 "Start Message"; 
+VAL_ 1126 VerlogStatus_B 0 "VerlogStatus UnProtected" 1 "VerlogStatus Protected"; 
+VAL_ 1126 SREM_B 0 "Normal request" 1 "Dev Request"; 
+VAL_ 1126 Version_B 0 "Version 5" 1 "Version 6" 2 "Version 7" 3 "Not Used"; 
+VAL_ 1126 TPU_Payload_B 0 "Table Value159545"; 
+VAL_ 1127 KPL_C 0 "KPL false" 1 "KPL true"; 
+VAL_ 1127 Preset_C 0 "Upstream conditions not authenticated" 1 "Upstream conditions authenticated"; 
+VAL_ 1127 ICU_Mode_C 0 "Idle" 1 "Response 2" 2 "Challenge" 3 "SKey"; 
+VAL_ 1127 Clearing_Key_C 0 "CSK false" 1 "CSK request"; 
+VAL_ 1127 KPH_C 0 "KPH false" 1 "KPH true"; 
+VAL_ 1127 ICU_PayLoad_C 0 "Table Value125997"; 
+VAL_ 1128 TPU_Mode_C 0 "Idle" 1 "Response 1" 2 "SKey Request" 3 "Start Message"; 
+VAL_ 1128 VerlogStatus_C 0 "VerlogStatus UnProtected" 1 "VerlogStatus Protected"; 
+VAL_ 1128 SREM_C 0 "Normal request" 1 "Dev Request"; 
+VAL_ 1128 Version_C 0 "Version 5" 1 "Version 6" 2 "Version 7" 3 "Not Used"; 
+VAL_ 1128 TPU_Payload_C 0 "Table Value159546"; 
+VAL_ 1142 RE_ActiveDischarge 0 "Active Discharge Not In Progress" 1 "Active Discharge In Progress"; 
+VAL_ 1142 RE_InterlockMotor_HV 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1142 RE_VerlogStatus 0 "Unavailable" 1 "Vehicle unprotected by VERLOG or by RES" 2 "Vehicle protected" 3 "not used"; 
+VAL_ 1142 RE_ElecSysFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1142 RE_SpeedDeratingRequest 0 "No SpeedLimitation" 1 "SpeedLimitation"; 
+VAL_ 1142 RE_MajorElecFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1142 RE_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1142 RE_RefuseToSleep 0 "reserved" 1 "Rear Inverter refuse to sleep" 2 "Rear Inverter ready to sleep" 3 "reserved"; 
+VAL_ 1142 RE_InverterFaultType_HV 0 "No Fault Type" 1 "Fault Type 1" 2 "Fault Type 2" 3 "Safety Reserved" 4 "Fault Type 3" 5 "Fault Type 4" 6 "Fault Type 5" 7 "Fault Type 6"; 
+VAL_ 1142 INV_RE_ActiveDischargeFailure 0 "No failure of active discharge function" 1 "Failure of active discharge function"; 
+VAL_ 1142 RE_MILLamp 0 "MIL lamp off request" 1 "MIL lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 1142 RE_InverterFaultType_HV_v2 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Fault type 6"; 
+VAL_ 1142 INV_RE_PowerLimitation_Reason 0 "INV_RE Power Limitation No Request" 1 "INV_RE High Temperature" 2 "Low Voltage" 3 "INV_RE cannot Recover"; 
+VAL_ 1146 BrakeInfoStatus 0 "Not used" 1 "Brake pedal not pressed" 2 "Brake pedal pressed" 3 "Not used" 4 "Brake pedal confirmed pressed" 5 "Not used" 6 "Not used" 7 "unavailable"; 
+VAL_ 1169 HeatingPadOverheat 0 "no alert" 1 "heating pad overheat safety alert"; 
+VAL_ 1184 INV_ME_PowerLimitation_Reason 0 "INV_ME Power Limitation No Request" 1 "INV_ME High Temperature" 2 "Low Voltage" 3 "INV_ME cannot Recover"; 
+VAL_ 1201 HCTPhaseVPlau 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseURangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseURangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 EEPROMMalfunction 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseVSCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseVSCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseVRangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseVRangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseWSCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseWRangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseWRangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseWPlau 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorCurHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotor3PhMalfunct 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTsens3plaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 HCTPhaseWSCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorPosSens2 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorPosSens1 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorOverspeed 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorDemagn 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorPosSens6 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorPosSens5 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorPosSens4 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 REMotorPosSens3 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1201 INVRELossCanCom_BMS 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Disabled"; 
+VAL_ 1215 RER_InverterFaultType_HV 0 "No FaultType" 1 "Fault Type 1" 2 "Fault Type 2" 3 "Safety reserved" 4 "Fault Type 3" 5 "Fault Type 4" 6 "Fault Type 5" 7 "Fault Type 6"; 
+VAL_ 1215 RER_InterlockMotor_HV 0 "Not used" 1 "Interlock Opened" 2 "Interlock Closed" 3 "Unavailable"; 
+VAL_ 1215 RER_ActiveDischarge 0 "Active Discharge Not In Progress" 1 "Active Discharge In Progress"; 
+VAL_ 1215 RER_RefuseToSleep 0 "reserved" 1 "RER refuse to sleep" 2 "RER ready to sleep" 3 "reserved"; 
+VAL_ 1217 FreezeDataXEV_INV_RER 0 "No request" 1 "InfoType calculation frozen"; 
+VAL_ 1217 INVRER_MILLamp 0 "MIL lamp off request" 1 "MIL lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 1217 RER_MajorElecFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1217 RER_ElecSysFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1217 RER_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1222 IGBTSens45Plaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 IGBTSens34Plaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 IGBTSens23Plaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 IGBTSens12Plaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens1SCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens2SCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens1SCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 IGBTSens56Plaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens1RangLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens2RangHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens1RangHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens2SCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 DCCapSCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 DCCapSCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSensPlaus 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 CoilSens2RangLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 PCBTempSensSCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 PCBTempSensSCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 DCCapRangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 DCCapRangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HVSensSCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 PCBTempSensRangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 PCBTempSensRangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 PCBTempSensPlau 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HVSensRangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HVSensRangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HVSensPlau 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HVSensSCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 IGBTGate 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HCTPhaseUPlau 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HCTPhaseUSCG 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1222 HCTPhaseUSCBat 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT4RangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT3RangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT2RangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT1RangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT2RangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT1RangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT6RangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT5RangeHi 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT6RangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT5RangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT4RangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBT3RangeLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens4OC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens3OC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens2OC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens1OC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens2SC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens1SC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens6OC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens5OC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens6SC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens5SC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens4SC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens3SC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens4Plausibility 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens3Plausibility 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens2Plausibility 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens1Plausibility 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 ADModuleMalfunction 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 MicroCompMalfunction 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens6Plausibility 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1243 IGBTsens5Plausibility 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Unavailable"; 
+VAL_ 1249 FreezeDataXEV_INV_REL 0 "No request" 1 "InfoType calculation frozen"; 
+VAL_ 1249 INVREL_MILLamp 0 "MIL lamp off request" 1 "MIL lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 1249 REL_MajorElecFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1249 REL_ElecSysFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1249 REL_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1298 RE_DAxisDischarge_WorkingMode_HV 0 "DAxis Discharge notworking" 1 "DAxis Discharge working" 2 "not used" 3 "not used"; 
+VAL_ 1314 Combo_DCExtendedConnectStatus_V2 0 "Unavailable" 1 "DC extended not detected" 2 "DC extended detected" 3 "Not used"; 
+VAL_ 1417 FC_DischargePriorityRequest 0 "No Request" 1 "Request"; 
+VAL_ 1417 FC_ChargePriorityRequest 0 "No Request" 1 "Request"; 
+VAL_ 1417 CabinHeatingValveFeedback 0 "Closed" 1 "Opened"; 
+VAL_ 1417 FC_MILLamp 0 "MIL lamp off request" 1 "MIL lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 1430 OBECMfreeze_HEVC 0 "No request" 1 "OBECM calculation frozen"; 
+VAL_ 1430 OBECM_Reset_HEVC 0 "No request" 1 "OBD OBECM reset"; 
+VAL_ 1430 DriveCycle_HV 0 "No Request" 1 "General Denominator Count Request"; 
+VAL_ 1445 BMS_Output_Power_Limit_Reason 0 "Normal" 1 "Capacity Drop" 2 "BMS Malfunction" 3 "High Temperature" 4 "Low Temperature" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 1525 ME_EOPPowerOffTempo 0 "Default value" 1 "Delay before EOP relay opening"; 
+VAL_ 1525 ME_PwtThermalControlRequest 0 "Normal" 1 "Maximize powertrain thermal exchanges" 2 "Maximize powertrain thermal exchanges + generate losses" 3 "Improve powertrain thermal exchanges" 4 "Improve powertrain thermal exchanges + generate losses" 5 "Not Used" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1525 HVBatteryCoolingType_HV 0 "no battery cooling" 1 "battery cooling" 2 "battery cooling in severe condition" 3 "not used"; 
+VAL_ 1525 HVbatChargeIncreaseRequest 0 "No request" 1 "Charge increase request"; 
+VAL_ 1544 DCcharge_CANconnectStatus 0 "Chademo CAN not detected" 1 "Chademo CAN detected" 2 "GBT CAN not detected" 3 "GBT CAN detected" 4 "Not Used" 5 "Not Used" 6 "Not Used" 7 "Unavailable"; 
+VAL_ 1545 BMS_TiAlert_v2 0 "No TI Alert" 1 "TI suspected" 2 "TI confirmed" 3 "Not Used"; 
+VAL_ 1545 HVB_HighTempAlert_HV 0 "No Overheat alert" 1 "Overheat alert"; 
+VAL_ 1545 BMS_ChargeFailureDisplay 0 "No Alert" 1 "Battery Charge Impossible Alert "; 
+VAL_ 1545 BMS_MajorElecFailureDisplay 0 "No Alert" 1 "Electrical Fault Danger Alert"; 
+VAL_ 1545 BMS_ElecSysFailureDisplay 0 "No alert" 1 "Check Electrical System Alert"; 
+VAL_ 1545 HVBatChargeIncreaseCancel_BMS 0 "Not cancelled" 1 "Cancelled"; 
+VAL_ 1545 HVBatChargeIncreaseState_BMS 0 "No message" 1 "Message01" 2 "Message02" 3 "Message03"; 
+VAL_ 1550 ICE_IgnCycleCount_v2 0 "No Request" 1 "Ignition Cycle count request"; 
+VAL_ 1550 ICE_DriveCycle 0 "No Request" 1 "General Denominator Count Request"; 
+VAL_ 1554 BMS_MILLamp 0 "MIL lamp off request" 1 "MIL Lamp on request" 2 "MIL lamp flash request" 3 "MIL lamp auto-test"; 
+VAL_ 1576 IUPR_EvapDenom_HV 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used"; 
+VAL_ 1576 IUPR_ColdStartDenom_HV 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used"; 
+VAL_ 1576 IUPR_GeneralDenom_HV 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used"; 
+VAL_ 1589 H2DeratingFCTemp_HV 0 "No Display" 1 "Temperature of Fuel cell too high" 2 "Temperature of Fuel cell too low" 3 "Not Used"; 
+VAL_ 1589 H2LeakDetection_HV 0 "No Display" 1 "Light H2 Leak" 2 "Heavy H2 Leak" 3 "Not Used"; 
+VAL_ 1589 H2LidOpened_HV 0 "No Display" 1 "Lid Opened Display"; 
+VAL_ 1589 H2EndOfRefueling_HV 0 "No Display" 1 "End of Refueling Display"; 
+VAL_ 1589 H2LowLevelAlert_HV 0 "No Display" 1 "Alert Display"; 
+VAL_ 1589 FCFailure_HV 0 "No Display" 1 "Defect fuel cell" 2 "System Failure H2" 3 "Not Used"; 
+VAL_ 1589 RefuelingInProgress_HV 0 "No Display" 1 "Refueling In Progress"; 
+VAL_ 1589 FCAvailabilityState_HV 0 "No Display" 1 "Fuel Cell Activated" 2 "Fuel Cell Not Activated" 3 "Not Used"; 
+VAL_ 1589 FCAvailability_HV 0 "No Display" 1 "Fuel Cell Activated" 2 "Fuel Cell Not Activated" 3 "Not Used"; 
+VAL_ 1591 HSG_InterlockFuseLid 0 "Not Used" 1 "Interlock Open" 2 "Interlock Closed" 3 "Unavailable Value"; 
+VAL_ 1591 HSG_MajorElecFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1591 HSG_ElecMotorFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1591 HSG_ElecSysFailureDisplay 0 "No Alert" 1 "Alert"; 
+VAL_ 1606 HVB_OverChargingAlert_HV 0 "No alert" 1 "Battery over-charging alert"; 
+VAL_ 1606 HVB_CellUnderVoltageAlert_HV 0 "No alert" 1 "Cell undervoltage alert"; 
+VAL_ 1606 HVB_CellOverVoltageAlert_HV 0 "Normal" 1 "Cell overvoltage alert"; 
+VAL_ 1606 HVB_UnderVoltageAlert_HV 0 "No alert" 1 "Battery undervoltage alert"; 
+VAL_ 1606 HVB_OverVoltageAlert_HV 0 "No alert" 1 "Battery overvoltage alert"; 
+VAL_ 1606 BusbarUnscrewingAlert_HV 0 "No busbar unscrewing alert" 1 "Busbar unscrewing alert"; 
+VAL_ 1606 OBECMfreeze_BMSHV 0 "No request" 1 "OBECM calculation frozen"; 
+VAL_ 1606 OBECM_Reset_BMS 0 "No request" 1 "OBD OBECM reset"; 
+VAL_ 1642 VehicleID_HV 0 "Table Value30596"; 
+VAL_ 1642 VehicleStates_HV 0 "Sleeping" 1 "Not used" 2 "CutoffPending" 3 "AutoACC  - BatTempoLevel" 4 "Not used" 5 "IgnitionLevel" 6 "StartingInProgress" 7 "PowertrainRunning" 8 "AutoStart" 9 "EngineSystemStop" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1642 BatteryManagementMode 0 "Charge sustaining" 1 "Charge depleting" 2 "Other mode (charge or asleep)" 3 "Unavailable value"; 
+VAL_ 1643 RE_DischargeRequest 0 "Not used" 1 "Discharge not requested" 2 "Discharge requested" 3 "Unavailable value"; 
+VAL_ 1689 OBECM_OverFlowProcess_HEVC 0 "No request" 1 "OBECM  overflow process request"; 
+VAL_ 1689 OBECM_RecentParameterReset_HEVC 0 "No request" 1 "OBECM Recent Parameter reset"; 
+VAL_ 1689 OBD_Charging_State 0 "Charge Sustaining / Not PHEV" 1 "Charge Depleting" 2 "Charge Increasing (E-Save Mode Activated)" 3 "Not PSA (Propulsion System Active)"; 
+VAL_ 1689 ChargingPlugStatus_HV 0 "Unavailable" 1 "Charging plug is not connected" 2 "Charging plug is connected" 3 "Not Used"; 
+VAL_ 1689 ResetDataXEVRecent_HEVC 0 "No request" 1 "InfoType Recent Parameter reset"; 
+VAL_ 1689 ResetDataXEVLifeTime_HEVC 0 "No request" 1 "InfoType Lifetime Parameter reset"; 
+VAL_ 1689 FreezeDataXEV_HEVC 0 "No request" 1 "InfoType calculation frozen"; 
+VAL_ 1717 FreezeDataXEV_INV_ME 0 "No request" 1 "InfoType calculation frozen"; 
+VAL_ 1717 OBECMfreeze_INVME 0 "No request" 1 "OBECM calculation frozen"; 
+VAL_ 1718 OBECMfreeze_INVRE 0 "No request" 1 "OBECM calculation frozen"; 
+VAL_ 1751 OBECM_OverFlowProcess_BMS 0 "No request" 1 "OBECM  overflow process request"; 
+VAL_ 1751 OBECM_RecentParameterReset_BMS 0 "No request" 1 "OBECM Recent Parameter reset"; 
+VAL_ 1751 SOC_Accuracy_Status_HV 0 "Not degraded" 1 "Degraded" 2 "Heavily degraded" 3 "Unavailable"; 
+VAL_ 1751 ResetDataXEVRecent_BMS 0 "No request" 1 "InfoType Recent Parameter reset"; 
+VAL_ 1751 ResetDataXEVLifeTime_BMS 0 "No request" 1 "InfoType Lifetime Parameter reset"; 
+VAL_ 1751 FreezeDataXEV_BMS 0 "No request" 1 "InfoType calculation frozen"; 
+VAL_ 1754 Combo_DCExtendedConnectStatus 0 "Unavailable" 1 "DC extended not detected" 2 "DC extended detected" 3 "Not used"; 
+VAL_ 1757 HVFOTAConditionCheckStatus_HV 0 "No request" 1 "Pending Conditions" 2 "Achieved Conditions" 3 "Error Detected"; 
+VAL_ 1757 TractionBatteryCoolingLimited_HV 0 "Not limited" 1 "Traction battery cooling limited"; 
+VAL_ 1757 V2X_EVSEdischarge_HV 0 "Other" 1 "Charging" 2 "Discharging" 3 "Charging or Discharging"; 
+VAL_ 1757 RIsolMeasurementActivation 0 "Not Activated" 1 "Activated"; 
+VAL_ 2563507968 SIGMA_CDM 0 "Table Value16461"; 
+VAL_ 2563507968 SIGMA_DTCCDM 0 "Table Value26862"; 
+VAL_ 2563508007 SIGMA_eHBox 0 "Table Value430561"; 
+VAL_ 2563508007 SIGMA_DTCeHBox 0 "Table Value430559"; 
+VAL_ 2563508009 SIGMA_PSD_R 0 "Table Value153060"; 
+VAL_ 2563508009 SIGMA_DTCPSD_R 0 "Table Value153056"; 
+VAL_ 2563508019 SIGMA_PBD 0 "Table Value16399"; 
+VAL_ 2563508019 SIGMA_DTCPBD 0 "Table Value26865"; 
+VAL_ 2563508021 SIGMA_RADAR 0 "Table Value16466"; 
+VAL_ 2563508021 SIGMA_DTCRADAR 0 "Table Value26884"; 
+VAL_ 2563508022 SIGMA_PSCU 0 "Table Value16465"; 
+VAL_ 2563508022 SIGMA_DTCPSCU 0 "Table Value26866"; 
+VAL_ 2563508030 SIGMA_SRad_RL 0 "Table Value16470"; 
+VAL_ 2563508030 SIGMA_DTCSRad_RL 0 "Table Value26868"; 
+VAL_ 2563508035 SIGMA_eRDC_L 0 "Table Value252236"; 
+VAL_ 2563508035 SIGMA_DTCeRDC_L 0 "Table Value252232"; 
+VAL_ 2563508037 SIGMA_eRDC_R 0 "Table Value252238"; 
+VAL_ 2563508037 SIGMA_DTCeRDC_R 0 "Table Value252233"; 
+VAL_ 2563508042 SIGMA_ANC 0 "Table Value16458"; 
+VAL_ 2563508042 SIGMA_DTCANC 0 "Table Value26859"; 
+VAL_ 2563508064 SIGMA_VDC 0 "Table Value16380"; 
+VAL_ 2563508064 SIGMA_DTCVDC 0 "Table Value26886"; 
+VAL_ 2563508066 SIGMA_EPS 0 "Table Value16377"; 
+VAL_ 2563508066 SIGMA_DTCEPS 0 "Table Value26879"; 
+VAL_ 2563508067 SIGMA_METER 0 "Table Value16379"; 
+VAL_ 2563508067 SIGMA_DTCMETER 0 "Table Value26883"; 
+VAL_ 2563508068 SIGMA_HVAC 0 "Table Value28686"; 
+VAL_ 2563508068 SIGMA_DTCHVAC 0 "Table Value28682"; 
+VAL_ 2563508069 SIGMA_BCM 0 "Table Value16381"; 
+VAL_ 2563508069 SIGMA_DTCBCM 0 "Table Value26877"; 
+VAL_ 2563508071 SIGMA_IVI 0 "Table Value16383"; 
+VAL_ 2563508071 SIGMA_DTCIVI 0 "Table Value26882"; 
+VAL_ 2563508072 SIGMA_4WD 0 "Table Value28679"; 
+VAL_ 2563508072 SIGMA_DTC4WD 0 "Table Value28678"; 
+VAL_ 2563508077 SIGMA_USM 0 "Table Value16384"; 
+VAL_ 2563508077 SIGMA_DTCUSM 0 "Table Value26885"; 
+VAL_ 2563508078 SIGMA_SONAR 0 "Table Value28703"; 
+VAL_ 2563508078 SIGMA_DTCSONAR 0 "Table Value28702"; 
+VAL_ 2563508079 SIGMA_DSMU 0 "Table Value16462"; 
+VAL_ 2563508079 SIGMA_DTCDSMU 0 "Table Value26863"; 
+VAL_ 2563508082 SIGMA_ACU 0 "Table Value16374"; 
+VAL_ 2563508082 SIGMA_DTCACU 0 "Table Value26874"; 
+VAL_ 2563508089 SIGMA_PSD_L 0 "Table Value153059"; 
+VAL_ 2563508089 SIGMA_DTCPSD_L 0 "Table Value153054"; 
+VAL_ 2563508093 SIGMA_ADAS 0 "Table Value16457"; 
+VAL_ 2563508093 SIGMA_DTCADAS 0 "Table Value26875"; 
+VAL_ 2563508099 SIGMA_A_IVC 0 "Table Value16456"; 
+VAL_ 2563508099 SIGMA_DTCA_IVC 0 "Table Value26858"; 
+VAL_ 2563508108 SIGMA_INV_ME 0 "Table Value27356"; 
+VAL_ 2563508108 SIGMA_DTCINV_ME 0 "Table Value27351"; 
+VAL_ 2563508115 SIGMA_OBC_AC 0 "Table Value28687"; 
+VAL_ 2563508115 SIGMA_DTCOBC_AC 0 "Table Value28683"; 
+VAL_ 2563508122 SIGMA_HEVC 0 "Table Value27338"; 
+VAL_ 2563508122 SIGMA_DTCHEVC 0 "Table Value27347"; 
+VAL_ 2563508130 SIGMA_AUDIOamp 0 "Table Value16459"; 
+VAL_ 2563508130 SIGMA_DTCAUDIOamp 0 "Table Value26860"; 
+VAL_ 2563508133 SIGMA_HNS 0 "Table Value27353"; 
+VAL_ 2563508133 SIGMA_DTCHNS 0 "Table Value27348"; 
+VAL_ 2563508139 SIGMA_VKM 0 "Table Value252239"; 
+VAL_ 2563508139 SIGMA_DTCVKM 0 "Table Value252234"; 
+VAL_ 2563508153 SIGMA_HFM 0 "Table Value16382"; 
+VAL_ 2563508153 SIGMA_DTCHFM 0 "Table Value26881"; 
+VAL_ 2563508154 SIGMA_AVM 0 "Table Value27338"; 
+VAL_ 2563508154 SIGMA_DTCAVM 0 "Table Value27343"; 
+VAL_ 2563508157 SIGMA_SCU 0 "Table Value28688"; 
+VAL_ 2563508157 SIGMA_DTCSCU 0 "Table Value28684"; 
+VAL_ 2563508164 SIGMA_eShifter 0 "Table Value153058"; 
+VAL_ 2563508164 SIGMA_DTCeShifter 0 "Table Value153055"; 
+VAL_ 2563508181 SIGMA_SRad_RR 0 "Table Value16471"; 
+VAL_ 2563508181 SIGMA_DTCSRad_RR 0 "Table Value26871"; 
+VAL_ 2563508189 SIGMA_FrCamera 0 "Table Value16378"; 
+VAL_ 2563508189 SIGMA_DTCFrCamera 0 "Table Value26880"; 
+VAL_ 2563508200 SIGMA_HECM 0 "Table Value55691"; 
+VAL_ 2563508200 SIGMA_DTCHECM 0 "Table Value55694"; 
+VAL_ 2563508201 SIGMA_ATCU 0 "Table Value16375"; 
+VAL_ 2563508201 SIGMA_DTCATCU 0 "Table Value26876"; 
+VAL_ 2563508205 SIGMA_BMS_HV 0 "Table Value27340"; 
+VAL_ 2563508205 SIGMA_DTCBMS_HV 0 "Table Value27344"; 
+VAL_ 2563508207 SIGMA_INV_HSG 0 "Table Value27355"; 
+VAL_ 2563508207 SIGMA_DTCINV_HSG 0 "Table Value27350"; 
+VAL_ 2563567883 SIGMA_BMS_12V 0 "Table Value16460"; 
+VAL_ 2563567883 SIGMA_DTCBMS_12V 0 "Table Value26861"; 
+VAL_ 2563567951 SIGMA_EPS_sub 0 "Table Value28685"; 
+VAL_ 2563567951 SIGMA_DTCEPS_sub 0 "Table Value28681"; 
+VAL_ 2563567958 SIGMA_eShiftAct 0 "Table Value153057"; 
+VAL_ 2563567958 SIGMA_DTCeShiftAct 0 "Table Value153053"; 
+VAL_ 2563567968 SIGMA_HUD 0 "Table Value27354"; 
+VAL_ 2563567968 SIGMA_DTCHUD 0 "Table Value27349"; 
+VAL_ 2563568024 SIGMA_HPCU 0 "Table Value55692"; 
+VAL_ 2563568024 SIGMA_DTCHPCU 0 "Table Value55693"; 
+VAL_ 2563568093 SIGMA_DCDC_HV 0 "Table Value28677"; 
+VAL_ 2563568093 SIGMA_DTCDCDC_HV 0 "Table Value28680"; 
+VAL_ 2563568098 SIGMA_EBA 0 "Table Value16463"; 
+VAL_ 2563568098 SIGMA_DTCEBA 0 "Table Value26864"; 
+VAL_ 2563568101 SIGMA_INV_RE 0 "Table Value27357"; 
+VAL_ 2563568101 SIGMA_DTCINV_RE 0 "Table Value27352"; 
+VAL_ 2563568130 SIGMA_AirSUSP 0 "Table Value359670"; 
+VAL_ 2563568130 SIGMA_DTCAirSUSP 0 "Table Value359671"; 
+VAL_ 2563568148 SIGMA_BSG 0 "Table Value27341"; 
+VAL_ 2563568148 SIGMA_DTCBSG 0 "Table Value27345"; 
+VAL_ 2563568163 SIGMA_SRad_FL 0 "Table Value16468"; 
+VAL_ 2563568163 SIGMA_DTCSRad_FL 0 "Table Value26869"; 
+VAL_ 2563568164 SIGMA_SRad_FR 0 "Table Value16469"; 
+VAL_ 2563568164 SIGMA_DTCSRad_FR 0 "Table Value26870"; 
+VAL_ 2563568201 SIGMA_STBW 0 "Table Value161590"; 
+VAL_ 2563568201 SIGMA_DTCSTBW 0 "Table Value161588"; 
+VAL_ 2563568233 SIGMA_DMC 0 "Table Value27342"; 
+VAL_ 2563568233 SIGMA_DTCDMC 0 "Table Value27346"; 
+VAL_ 2563568267 SIGMA_RSCU3R 0 "Table Value407697"; 
+VAL_ 2563568267 SIGMA_DTCRSCU3R 0 "Table Value407696"; 
+VAL_ 2563568288 SIGMA_BLM_RPK 0 "Table Value55679"; 
+VAL_ 2563568288 SIGMA_DTCBLM_RPK 0 "Table Value55690"; 
+VAL_ 2563568290 SIGMA_SCCM 0 "Table Value16467"; 
+VAL_ 2563568290 SIGMA_DTCSCCM 0 "Table Value26867"; 
+VAL_ 2563568300 SIGMA_RSCU2R 0 "Table Value359675"; 
+VAL_ 2563568300 SIGMA_DTCRSCU2R 0 "Table Value359672"; 
+VAL_ 2563639180 SIGMA_INV_ME_ReadMeReqRDIAG 0 "Table Value430660"; 
+VAL_ 2563639279 SIGMA_INV_HSG_ReadMeReqRDIAG 0 "Table Value430659"; 
+VAL_ 2563699173 SIGMA_INV_RE_ReadMeReqRDIAG 0 "Table Value430661"; 
+VAL_ 2609102860 HEVC_WakeUp_Signal 0 "Table Value16484"; 
+VAL_ 2615025137 FTOOLS_CGWtoH2FCE 0 "Table Value219085"; 
+VAL_ 2615073777 FTOOLS_CGWtoBMS 0 "Table Value16355"; 
+VAL_ 2615074033 FTOOLS_CGWtoBMS2 0 "Table Value16353"; 
+VAL_ 2615074801 FTOOLS_CGWtoME 0 "Table Value30453"; 
+VAL_ 2615075825 FTOOLS_CGWtoHSG 0 "Table Value30450"; 
+VAL_ 2615076337 FTOOLS_CGWtoRE 0 "Table Value30455"; 
+VAL_ 2615077361 FTOOLS_CGWtoREL 0 "Table Value409281"; 
+VAL_ 2615077617 FTOOLS_CGWtoRER 0 "Table Value409282"; 
+VAL_ 2615079197 FTOOLS_H2FCEtoCGW 0 "Table Value219087"; 
+VAL_ 2615079387 FTOOLS_BMStoCGW 0 "Table Value16354"; 
+VAL_ 2615079388 FTOOLS_BMS2toCGW 0 "Table Value16352"; 
+VAL_ 2615079391 FTOOLS_MEtoCGW 0 "Table Value30467"; 
+VAL_ 2615079395 FTOOLS_HSGtoCGW 0 "Table Value30464"; 
+VAL_ 2615079397 FTOOLS_REtoCGW 0 "Table Value30469"; 
+VAL_ 2615079401 FTOOLS_RELtoCGW 0 "Table Value409283"; 
+VAL_ 2615079402 FTOOLS_RERtoCGW 0 "Table Value409284"; 
+
+
+
+

@@ -1,0 +1,1352 @@
+VERSION ""
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ATCU BSG CDM ECM HEVC PCM SCU eShiftAct eShifter
+
+
+BO_ 83 CDM_A120: 4 CDM
+  SG_ BMC_WheelTorqueOffsetRequest : 7|8@0+ (1,-128) [-128|127] "Nm" HEVC
+  SG_ CRC_CDM_A120 : 15|8@0+ (1,0) [0|255] "" HEVC
+  SG_ ATV_YawRateRequest : 18|11@0+ (0.1,-100) [-100|100] "°/s" HEVC
+  SG_ ATV_YawRateOrder : 19|1@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_CDM_A120 : 23|4@0+ (1,0) [0|15] "" HEVC
+
+BO_ 100 VDC_A121: 6 CDM
+  SG_ Rr_BrakeWheelTorque : 7|13@0+ (2,0) [0|10000] "Nm" HEVC
+  SG_ Fr_BrakeWheelTorque : 10|13@0+ (2,0) [0|10000] "Nm" HEVC
+  SG_ Clock_VDC_A121 : 35|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ CRC_VDC_A121 : 47|8@0+ (1,0) [0|255] "" HEVC,PCM
+
+BO_ 114 EBA_A101: 7 CDM
+  SG_ BrakePedalPosition : 23|12@0+ (0.03125,0) [0|100] "%" HEVC
+  SG_ ExternalBrakeRequestPriority : 51|1@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+
+BO_ 118 ECM_A118: 7 ECM
+  SG_ CRC_ECM_A118 : 7|8@0+ (1,0) [0|255] "" BSG
+  SG_ BSG_BlindZoneRequest : 8|1@0+ (1,0) [0|0] "" BSG
+  SG_ BSG_ModeRequest : 11|3@0+ (1,0) [0|0] "" BSG
+  SG_ Clock_ECM_A118 : 15|4@0+ (1,0) [0|15] "" BSG
+  SG_ BSG_TorqueRequest : 23|11@0+ (0.1,-70) [-70|130] "Nm" BSG
+  SG_ BSG_RampNumberRequest : 35|4@0+ (1,0) [0|0] "" BSG
+  SG_ BSG_VoltageRegulation : 47|8@0+ (0.025,10.6) [10.6|16] "V" BSG
+
+BO_ 119 ECM_A119: 6 ECM
+  SG_ VirtualAcceleratorAngle_ForTM : 7|8@0+ (0.392157,0) [0|100] "%" ATCU
+  SG_ EngineTorque_WithoutTMReq : 15|12@0+ (0.5,-400) [-400|1647] "Nm" ATCU
+  SG_ RawEngineTorque_WithoutTMReq : 19|12@0+ (0.5,-400) [-400|1647] "Nm" ATCU
+  SG_ Clock_ECM_A119 : 35|4@0+ (1,0) [0|15] "" ATCU
+  SG_ EmissionN_IdleRequest : 38|1@0+ (1,0) [0|0] "" ATCU
+  SG_ N_IdleInstructionSignal : 39|1@0+ (1,0) [0|0] "" ATCU
+  SG_ CRC_ECM_A119 : 47|8@0+ (1,0) [0|255] "" ATCU
+
+BO_ 124 HEVC_A115: 8 PCM
+  SG_ CRC_HEVC_A115 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ ElecMachineSpeed : 11|12@0+ (10,-20000) [-20000|20000] "rpm" CDM
+  SG_ Clock_HEVC_A115 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ ElecBrakeWheelTorqueApplied : 31|13@0+ (1,0) [0|8190] "Nm" CDM
+  SG_ ElecBrakeWheelMaxPotentialTorque : 32|13@0+ (1,0) [0|8190] "Nm" CDM
+  SG_ ElecBrakeTorqueActuatorStatus : 34|2@0+ (1,0) [0|0] "" CDM
+  SG_ RE_ElecMachineSpeed : 51|12@0+ (10,-16390) [-16390|16390] "rpm" ATCU,CDM
+
+BO_ 159 ADAS_A4: 5 CDM
+  SG_ CRC_ADAS_A4 : 7|8@0+ (1,0) [0|255] "" ATCU,ECM,HEVC,PCM
+  SG_ AEB_BrakeWheelTorqueOrder2 : 11|3@0+ (1,0) [0|0] "" ATCU,ECM,HEVC,PCM
+  SG_ Clock_ADAS_A4 : 15|4@0+ (1,0) [0|15] "" ATCU,ECM,HEVC,PCM
+
+BO_ 163 VDC_A2: 8 CDM
+  SG_ CRC_VDC_A2 : 7|8@0+ (1,0) [0|255] "" ATCU,ECM,HEVC,PCM
+  SG_ ESC_TorqueControlType : 11|3@0+ (1,0) [0|0] "" ATCU,ECM,HEVC
+  SG_ Clock_VDC_A2 : 15|4@0+ (1,0) [0|15] "" ATCU,ECM,HEVC,PCM
+  SG_ MSRWheelTorqueRequest_v2 : 23|15@0+ (2,-20000) [-20000|20000] "Nm" ECM,HEVC
+  SG_ ASRDynamicWheelTorqueRequest_v2 : 39|15@0+ (2,-20000) [-20000|20000] "Nm" ECM,HEVC
+  SG_ ASRStaticWheelTorqueRequest_v2 : 55|15@0+ (2,-20000) [-20000|20000] "Nm" ECM,HEVC
+
+BO_ 165 VDC_A119: 6 CDM
+  SG_ CRC_VDC_A119 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ Rr_ElecBrakeWheelTorqueReq : 11|13@0+ (1,0) [0|8190] "Nm" HEVC
+  SG_ Clock_VDC_A119 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ Rr_RegenBrakeInRegulation : 47|2@0+ (1,0) [0|0] "" HEVC
+
+BO_ 232 ATCU_A115: 2 ATCU
+  SG_ FastAnticipatedTorqueRequest : 7|10@0+ (1,-200) [-200|823] "Nm" ECM
+
+BO_ 260 ATCU_A112: 7 PCM
+  SG_ CRC_ATCU_A112 : 7|8@0+ (1,0) [0|255] "" ECM,SCU,eShiftAct
+  SG_ TransmRangeEngaged_TargetForPWT : 11|4@0+ (1,0) [0|0] "" ECM
+  SG_ Clock_ATCU_A112 : 15|4@0+ (1,0) [0|15] "" ECM,SCU,eShiftAct
+  SG_ SCU_GearboxPositionTarget : 19|4@0+ (1,0) [0|0] "" SCU,eShiftAct
+  SG_ GearLeverPositionExtended_v2 : 23|4@0+ (1,0) [0|0] "" SCU,eShiftAct,eShifter
+  SG_ LimitTorqueRequest_4Line : 27|12@0+ (0.5,-400) [-400|1647] "Nm" ECM
+  SG_ TransmRangeEngaged_CurrentForPWT : 31|4@0+ (1,0) [0|0] "" ECM
+  SG_ SlowTorqueRequest_4Line : 47|12@0+ (0.5,-400) [-400|1647] "Nm" ECM
+  SG_ ShBW_GearboxPositionCurrent : 51|4@0+ (1,0) [0|0] "" SCU,eShiftAct
+
+BO_ 263 ATCU_A104: 8 ATCU
+  SG_ CRC_ATCU_A104 : 7|8@0+ (1,0) [0|255] "" ECM
+  SG_ Clock_ATCU_A104 : 11|4@0+ (1,0) [0|15] "" ECM
+  SG_ AT_TorqueControlType : 14|3@0+ (1,0) [0|0] "" ECM
+  SG_ AT_Minimum_IdleSpeedRequest : 23|8@0+ (8,0) [0|2032] "rpm" ECM
+  SG_ AT_TorqueLosses : 31|8@0+ (0.5,0) [0|127] "Nm" ECM
+  SG_ FastTorqueRequest : 39|12@0+ (0.5,-400) [-400|1647] "Nm" ECM
+  SG_ Limit_SlowTorqueRequest : 43|12@0+ (0.5,-400) [-400|1647] "Nm" ECM
+  SG_ AT_StartStopRequest : 59|3@0+ (1,0) [0|0] "" ECM
+  SG_ AT_StartStopFailureFlag : 60|1@0+ (1,0) [0|0] "" ECM
+  SG_ TargetIdleSpeedRate : 63|3@0+ (1,0) [0|0] "" ECM
+
+BO_ 286 ATCU_A107: 3 PCM
+  SG_ TargetCVTRatioExtended : 7|17@0+ (0.000039,0) [0|5.1199] "" CDM,ECM
+  SG_ TorqueConverterState : 22|2@0+ (1,0) [0|0] "" CDM,ECM
+
+BO_ 303 ATCU_A108: 7 PCM
+  SG_ CRC_ATCU_A108 : 7|8@0+ (1,0) [0|255] "" CDM,ECM
+  SG_ APA_GearShiftPerformanceStatus : 11|2@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_ATCU_A108 : 15|4@0+ (1,0) [0|15] "" CDM,ECM
+  SG_ InputShaftRevolution : 16|16@0+ (1,0) [0|65534] "rpm" CDM,ECM
+  SG_ GearLeverPosition_v2 : 20|4@0+ (1,0) [0|0] "" CDM,ECM
+  SG_ AT_StartingAuthorization : 23|3@0+ (1,0) [0|0] "" CDM,ECM
+  SG_ OutputShaftRevolution : 32|16@0+ (1,0) [0|65534] "rpm" CDM,ECM
+
+BO_ 317 CDM_A121: 7 CDM
+  SG_ CRC_CDM_A121 : 7|8@0+ (1,0) [0|255] "" ECM,HEVC,PCM
+  SG_ Rr_WheelTorqueProposal_VMC : 11|15@0+ (2,-20000) [-20000|20000] "Nm" HEVC
+  SG_ Clock_CDM_A121 : 15|4@0+ (1,0) [0|15] "" ECM,HEVC,PCM
+  SG_ Fr_WheelTorqueProposal_VMC : 28|15@0+ (2,-20000) [-20000|20000] "Nm" HEVC
+  SG_ FrRr_RelativeTargetSpeed_VMC : 45|12@0+ (10,-20000) [-20000|20000] "rpm" ECM,HEVC
+  SG_ FrRr_RelativeControlSlipFlag : 49|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 329 HEVC_A165: 2 HEVC
+  SG_ ElecBrakeWheelMaxAvailableTorque : 7|13@0+ (1,0) [0|8190] "Nm" CDM
+
+BO_ 330 VDC_A120: 7 CDM
+  SG_ Rr_MSR_WheelTorqueRequest : 5|15@0+ (2,-20000) [-20000|20000] "Nm" ECM,HEVC
+  SG_ Rr_ESC_TorqueControlType : 7|2@0+ (1,0) [0|0] "" ECM,HEVC
+  SG_ TargetBrakingWheelTorque : 21|11@0+ (3,0) [0|5110] "Nm" ECM,HEVC
+  SG_ RSA_AccelStartAssistinhibit : 22|1@0+ (1,0) [0|0] "" HEVC
+  SG_ Rr_ASR_WheelTorqueRequest : 26|15@0+ (2,-20000) [-20000|20000] "Nm" ECM,HEVC
+  SG_ Clock_VDC_A120 : 43|4@0+ (1,0) [0|15] "" ECM,HEVC,PCM
+  SG_ CRC_VDC_A120 : 55|8@0+ (1,0) [0|255] "" ECM,HEVC,PCM
+
+BO_ 344 ATCU_A111: 8 ATCU
+  SG_ CRC_ATCU_A111 : 7|8@0+ (1,0) [0|255] "" ECM
+  SG_ StaticCreepingTorque : 11|14@0+ (2,-10000) [-10000|10000] "Nm" ECM
+  SG_ Clock_ATCU_A111 : 15|4@0+ (1,0) [0|15] "" ECM
+  SG_ TorqueConverterClutchGain : 29|15@0+ (0.001,-15) [-15|15] "wu" ECM
+  SG_ TotalGearRatio : 46|13@0+ (0.001,0) [0|6] "wu" ECM
+  SG_ TransmissionFriction : 49|8@0+ (0.5,0) [0|127] "Nm" ECM
+
+BO_ 365 ECM_R106: 2 ECM
+  SG_ BSG_EstimatedTorque_48V : 7|8@0+ (0.5,-50) [-50|77] "Nm" ATCU
+  SG_ Rear_GearShiftInProgress : 15|2@0+ (1,0) [0|0] "" ATCU
+
+BO_ 431 VDC_A118: 8 CDM
+  SG_ CRC_VDC_A118 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ RegenBrakeMalfunction_VDC : 8|1@0+ (1,0) [0|0] "" HEVC
+  SG_ RegenBrakeInRegulation : 11|2@0+ (1,0) [0|0] "" HEVC
+  SG_ Clock_VDC_A118 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ FourWheelReferenceSpeed : 23|16@0+ (0.01,0) [0|655.34] "km/h" ATCU,HEVC
+  SG_ ElecBrakeWheelTorqueRequest : 47|13@0+ (1,0) [0|8190] "Nm" HEVC
+
+BO_ 511 CDM_A111: 7 CDM
+  SG_ CRC_CDM_A111 : 7|8@0+ (1,0) [0|255] "" ECM,HEVC,PCM
+  SG_ CCSLBrakingPerformanceStatus : 11|2@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+  SG_ Clock_CDM_A111 : 15|4@0+ (1,0) [0|15] "" ECM,HEVC,PCM
+  SG_ BMC_EngineTorqueRequest : 23|10@0+ (0.1,-50) [-50|52.3] "Nm" ECM
+  SG_ VMC_WheelTorque_MaxLimitRequest : 29|15@0+ (2,-20000) [-20000|40000] "Nm" ECM,HEVC
+  SG_ FrRr_RelativeTargetSpeed_VMC_v2 : 43|12@0+ (1,-2000) [-2000|2000] "rpm" ECM,HEVC
+  SG_ BMC_EngineTorqueOrder : 44|1@0+ (1,0) [0|0] "" ECM,HEVC
+  SG_ YMCRequestFlag : 45|1@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+  SG_ VMC_WheelTorque_MaxLimitOrder : 46|1@0+ (1,0) [0|0] "" ECM,HEVC
+
+BO_ 515 BSG_A101: 7 BSG
+  SG_ CRC_BSG_A101 : 7|8@0+ (1,0) [0|255] "" ECM
+  SG_ BSG_DiagFlagAlternatorMode : 8|1@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_DiagFlagRecrankingMode : 9|1@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_DiagFlagTorqueAssistMode : 10|1@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_UndervoltageFlag : 11|1@0+ (1,0) [0|0] "" ECM
+  SG_ Clock_BSG_A101 : 15|4@0+ (1,0) [0|15] "" ECM
+  SG_ BSG_Load : 21|7@0+ (1,0) [0|100] "%" ECM
+  SG_ BSG_DiagFlagTemperature : 23|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_DC_Current : 35|9@0+ (1,-500) [-500|0] "A" ECM
+  SG_ BSG_SafetyBarrierLostFlag : 36|1@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_EstimatedMechPower : 42|10@0+ (10,-10000) [-10000|0] "W" ECM
+
+BO_ 534 EPS_A101: 4 CDM
+  SG_ EPS_TorqueOnFlag : 20|1@0+ (1,0) [0|0] "" ECM
+  SG_ EPS_BatterySupplyCurrent : 31|8@0+ (1,0) [0|254] "A" ECM
+
+BO_ 544 CDM_A114: 3 CDM
+  SG_ CRC_CDM_A114 : 7|8@0+ (1,0) [0|255] "" HEVC,PCM
+  SG_ ACCBrakeLeadtimeControl : 8|1@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+  SG_ Clock_CDM_A114 : 15|4@0+ (1,0) [0|15] "" HEVC,PCM
+
+BO_ 547 VDC_A110: 8 CDM
+  SG_ CRC_VDC_A110 : 7|8@0+ (1,0) [0|255] "" HEVC
+  SG_ Clock_VDC_A110 : 15|4@0+ (1,0) [0|15] "" HEVC
+  SG_ E_LSD_TorqueRequest : 39|8@0+ (10,0) [0|2540] "Nm" HEVC
+
+BO_ 548 VDC_A112: 7 CDM
+  SG_ BrakeWheelTorqueEstimation : 7|16@0+ (1,0) [0|65534] "Nm" HEVC
+  SG_ Forced_2WD_mode : 43|1@0+ (1,0) [0|0] "" ECM,HEVC
+
+BO_ 576 CDM_A117: 7 CDM
+  SG_ ADA_CornerDecelEngineBrakeTarget : 7|10@0+ (0.00010,0) [0|0.1022] "G" ATCU
+  SG_ ADA_DecelEngineBrakeTarget : 13|10@0+ (0.00010,0) [0|0.1022] "G" ATCU
+  SG_ Global_PWTcoastLimitTorqueReq : 17|10@0+ (2.5,0) [0|2555] "Nm" HEVC
+  SG_ CDM_FaultType : 18|1@0+ (1,0) [0|0] "" HEVC
+  SG_ CruiseControlInhibitRequest : 19|1@0+ (1,0) [0|0] "" ECM,HEVC
+  SG_ Clock_CDM_A117 : 45|4@0+ (1,0) [0|15] "" HEVC,PCM
+  SG_ Slope_Estimation_Permit : 46|1@0+ (1,0) [0|0] "" HEVC
+  SG_ CRC_CDM_A117 : 55|8@0+ (1,0) [0|255] "" HEVC,PCM
+
+BO_ 650 VDC_A9: 8 CDM
+  SG_ VehicleSpeed : 39|16@0+ (0.01,0) [0|655.34] "km/h" BSG
+  SG_ VehicleSpeedClock : 51|4@0+ (1,0) [0|15] "" BSG
+  SG_ VehicleSpeedCRC : 63|8@0+ (1,0) [0|255] "" BSG
+
+BO_ 736 ATCU_N101: 5 ATCU
+  SG_ CRC_ATCU_N101 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ Limit_SlowTorqueRequest_AWD : 11|12@0+ (0.5,-400) [-400|1647] "Nm" CDM
+  SG_ Clock_ATCU_N101 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ TorqueConverterClutchGain_AWD : 31|15@0+ (0.001,-15) [-15|15] "-" CDM
+  SG_ AWD_WarningRequest : 32|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 763 ATCU_A11: 5 ATCU
+  SG_ ATCVT_OilPumpPressure : 7|8@0+ (0.025,0) [0|6.35] "MPa" ECM
+  SG_ PTD_PrimRevHighGearLimitation : 15|13@0+ (1,0) [0|8190] "rpm" ECM
+
+BO_ 790 HEVC_A142: 7 HEVC
+  SG_ CRC_HEVC_A142 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ Rr_MaxWheelTorque : 11|14@0+ (2,0) [0|20000] "Nm" CDM
+  SG_ Clock_HEVC_A142 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ Rr_MinWheelTorque : 29|14@0+ (2,-20000) [-20000|0] "Nm" CDM
+  SG_ Fr_MaxWheelTorque : 47|14@0+ (2,0) [0|20000] "Nm" CDM
+
+BO_ 830 HEVC_A143: 7 HEVC
+  SG_ CRC_HEVC_A143 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ Clock_HEVC_A143 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ Fr_MinWheelTorque : 47|14@0+ (2,-20000) [-20000|0] "Nm" CDM
+
+BO_ 939 EBA_A2: 4 CDM
+  SG_ EBA_MILlamp : 17|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 943 FWD_M101: 3 CDM
+  SG_ CRC_FWD_M101 : 7|8@0+ (1,0) [0|255] "" ATCU
+  SG_ ETS_ATInterlockRequest : 11|1@0+ (1,0) [0|0] "" ATCU
+  SG_ Clock_FWD_M101 : 15|4@0+ (1,0) [0|15] "" ATCU
+
+BO_ 1005 SCU_A101: 8 SCU
+  SG_ Clock_SCU_A101 : 7|4@0+ (1,0) [0|15] "" ATCU,HEVC,PCM
+  SG_ SCU_Button1 : 11|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_ParkStatus : 13|2@0+ (1,0) [0|0] "" HEVC
+  SG_ SCU_SystemFailureType : 20|3@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_LeverPosition5 : 27|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_LeverPosition4 : 28|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_LeverPosition3 : 29|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_LeverPosition2 : 30|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_LeverPosition1 : 31|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_PositionCurrent : 39|4@0+ (1,0) [0|0] "" ATCU
+  SG_ CRC_SCU_A101 : 55|8@0+ (1,0) [0|255] "" ATCU,HEVC,PCM
+  SG_ SCU_ShifterMalfunctionStatus : 59|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ SCU_ActuatorMovementState : 60|1@0+ (1,0) [0|0] "" ATCU
+  SG_ SCU_RangeShiftInhibit : 63|3@0+ (1,0) [0|0] "" ATCU,HEVC
+
+BO_ 1077 ESHIFTER_A101: 5 eShifter
+  SG_ CRC_ESHIFTER_A101 : 7|8@0+ (1,0) [0|255] "" ATCU,HEVC,PCM
+  SG_ eShifter_Button2 : 9|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Button1 : 11|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Clock_ESHIFTER_A101 : 15|4@0+ (1,0) [0|15] "" ATCU,HEVC,PCM
+  SG_ eShifter_Button1Failure : 17|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Multiplewarningrequest : 19|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Button4 : 21|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Button3 : 23|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Button4Failure : 27|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Button3Failure : 29|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_Button2Failure : 31|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShifter_SystemFailureType : 39|3@0+ (1,0) [0|0] "" ATCU,HEVC
+
+BO_ 1081 VDC_A114: 7 CDM
+  SG_ SlopeEstimation : 7|8@0+ (0.2,-15) [-15|15] "°" HEVC
+  SG_ DistanceTotalizer : 15|28@0+ (0.01,0) [0|2600000] "km" ATCU,BSG,ECM,HEVC,PCM,SCU,eShiftAct,eShifter
+  SG_ VDC_Deactivated : 33|1@0+ (1,0) [0|0] "" ATCU,ECM,HEVC
+
+BO_ 1091 ESHIFTACT_A101: 4 eShiftAct
+  SG_ CRC_ESHIFTACT_A101 : 7|8@0+ (1,0) [0|255] "" ATCU,HEVC,PCM
+  SG_ eShiftAct_Position : 11|4@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Clock_ESHIFTACT_A101 : 15|4@0+ (1,0) [0|15] "" ATCU,HEVC,PCM
+  SG_ eParkOutAntiScanningStatus : 16|1@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ eParkOutAuthorizationStatus : 17|1@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ eParkOutPairingStatus : 18|1@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ eShiftAct_MovementState : 20|2@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShiftAct_failure : 23|3@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ eShiftAct_RangeShiftInhibit : 31|3@0+ (1,0) [0|0] "" ATCU,HEVC
+
+BO_ 1099 ATCU_A109: 8 HEVC
+  SG_ AT_DowngradedMode : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_BrakeAvailability : 10|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_AnticipatedTorqueDownRequest : 11|1@0+ (1,0) [0|0] "" ECM
+  SG_ RST_LaunchControlReadyMMI : 13|2@0+ (1,0) [0|0] "" CDM,ECM
+  SG_ ATCVT_TowingMode : 14|1@0+ (1,0) [0|0] "" CDM
+  SG_ DriverActionOnGearCommand : 15|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_LoadAvailability : 17|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_DriverRequestWithoutBrake : 18|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_DriverRequest : 22|4@0+ (1,0) [0|0] "" CDM
+  SG_ AT_DriveAvailability_v2 : 23|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_PressBrakePedalRequest : 24|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_ParkAvailability : 26|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_NeutralAvailability : 28|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_ManualAvailability : 30|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_GearShiftRefused : 31|1@0+ (1,0) [0|0] "" CDM
+  SG_ ATCVT_CheckWarning : 32|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_TipDownAvailability : 34|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_SailingRequest : 37|3@0+ (1,0) [0|0] "" ECM
+  SG_ AT_ReverseAvailability : 39|2@0+ (1,0) [0|0] "" CDM
+  SG_ ATCVT_RangeIndicationExtended : 44|6@0+ (1,0) [0|0] "" CDM
+  SG_ ATCVT_HiTempWarning : 45|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_TipUpAvailability : 47|2@0+ (1,0) [0|0] "" CDM
+  SG_ ATCVTFail : 48|1@0+ (1,0) [0|0] "" CDM,ECM
+  SG_ DriverLeverRequestInterpreted : 59|3@0+ (1,0) [0|0] "" CDM
+  SG_ AccelReqImpossible : 60|1@0+ (1,0) [0|0] "" CDM
+  SG_ NeutralHoldModeMessage : 63|3@0+ (1,0) [0|0] "" CDM
+
+BO_ 1100 ATCU_A110: 6 PCM
+  SG_ CRC_ATCU_A110 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ ADA_AuthorizationStatus : 9|1@0+ (1,0) [0|0] "" CDM
+  SG_ RST_LaunchControlReady : 11|2@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_ATCU_A110 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ IdleStopHSAReleaseDelayRequest : 16|1@0+ (1,0) [0|0] "" ECM
+  SG_ ATwithPark_OpenDoorWarning : 17|1@0+ (1,0) [0|0] "" CDM
+  SG_ ATwithoutPark_OpenDoorWarning : 18|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_ParkPositionCommandState : 20|2@0+ (1,0) [0|0] "" CDM
+  SG_ AT_Parkfailure : 21|1@0+ (1,0) [0|0] "" CDM
+  SG_ AT_Level2FailureDisplayRequest : 23|2@0+ (1,0) [0|0] "" CDM,eShifter
+  SG_ TransmRangeEngaged_Current : 24|4@0+ (1,0) [0|0] "" CDM
+  SG_ ShifterPosition : 27|3@0+ (1,0) [0|0] "" CDM
+  SG_ ShifterParkButtonStatus : 28|1@0+ (1,0) [0|0] "" CDM
+  SG_ ShifterFailure : 29|1@0+ (1,0) [0|0] "" CDM
+  SG_ ParkStatus : 31|2@0+ (1,0) [0|0] "" CDM
+  SG_ TransmRangeEngaged_Target : 36|4@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_ATInterlockControlStatus : 45|2@0+ (1,0) [0|0] "" CDM
+  SG_ ShBW_WarningMessage : 47|2@0+ (1,0) [0|0] "" CDM
+
+BO_ 1104 METER_A103: 8 HEVC
+  SG_ WelcomeSequenceStatus : 34|2@0+ (1,0) [0|0] "" eShifter
+
+BO_ 1105 METER_A104: 8 HEVC
+  SG_ DayNightForBacklights : 23|2@0+ (1,0) [0|0] "" eShifter
+  SG_ NightRheostatedLightMaxPercent : 31|8@0+ (0.4,0) [0|100] "%" eShifter
+
+BO_ 1107 USM_A101: 8 ECM
+  SG_ CRC_USM_A101 : 7|8@0+ (1,0) [0|255] "" BSG,eShiftAct
+  SG_ Clock_USM_A101 : 15|4@0+ (1,0) [0|15] "" BSG,eShiftAct
+  SG_ IgnitionSupplyConfirmation : 20|1@0+ (1,0) [0|0] "" SCU,eShiftAct,eShifter
+  SG_ BatteryVoltage : 31|8@0+ (0.06,6) [6|18] "V" BSG,SCU,eShiftAct,eShifter
+  SG_ USM_ReferenceVoltage_raw : 40|9@0+ (0.025,6) [6|16] "V" BSG
+
+BO_ 1109 VDC_A113: 8 CDM
+  SG_ CRC_VDC_A113 : 7|8@0+ (1,0) [0|255] "" ATCU,ECM,HEVC,PCM
+  SG_ Clock_VDC_A113 : 15|4@0+ (1,0) [0|15] "" ATCU,ECM,HEVC,PCM
+  SG_ BrakeVacuumStatus : 18|2@0+ (1,0) [0|0] "" ECM
+  SG_ VehicleSpeedSign : 25|2@0+ (1,0) [0|0] "" ATCU,ECM,HEVC
+  SG_ HSA_ActivationState : 36|2@0+ (1,0) [0|0] "" ATCU,ECM,HEVC
+  SG_ HBBMalfunction : 37|1@0+ (1,0) [0|0] "" ECM
+  SG_ TPW_HighSensitivityStatus : 40|1@0+ (1,0) [0|0] "" ECM
+  SG_ SSA_EngineStopAutoForbidden : 44|2@0+ (1,0) [0|0] "" ECM
+  SG_ Maintenance_Mode_Status_VDC : 46|2@0+ (1,0) [0|0] "" HEVC,PCM
+  SG_ LowPWTregenBrakeTorqueRequest : 47|1@0+ (1,0) [0|0] "" ECM,HEVC
+  SG_ VDC_MILlamp : 48|1@0+ (1,0) [0|0] "" HEVC
+  SG_ VDC_ShiftMapChangeRequest : 52|2@0+ (1,0) [0|0] "" ATCU
+  SG_ HDC_Status : 63|2@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+
+BO_ 1116 CDM_A116: 8 CDM
+  SG_ VMC_BrakeWheelTorqueOrder : 29|1@0+ (1,0) [0|0] "" ATCU,ECM,HEVC
+
+BO_ 1145 BCM_A112: 8 ECM
+  SG_ ProbableCustomerFeedBackNeed : 41|1@0+ (1,0) [0|0] "" eShifter
+
+BO_ 1146 BCM_A113: 8 CDM
+  SG_ CRC_BCM_A113 : 7|8@0+ (1,0) [0|255] "" SCU
+  SG_ Clock_BCM_A113 : 15|4@0+ (1,0) [0|15] "" SCU
+  SG_ VehicleStates : 23|4@0+ (1,0) [0|0] "" SCU,eShiftAct,eShifter
+  SG_ BrakeInfoStatus : 26|3@0+ (1,0) [0|0] "" SCU
+  SG_ GADE_v2 : 39|3@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 1173 VDC_R15: 5 CDM
+  SG_ LongitudinalTilt : 23|6@0+ (1,-20) [-20|20] "%" ECM,HEVC
+  SG_ SlopeEstimation_v3 : 39|7@0+ (1,-36) [-36|36] "°" ECM
+
+BO_ 1203 FRCAMERA_A110: 5 CDM
+  SG_ OSPSpeedLimit : 15|8@0+ (1,5) [5|200] "Kmh/Mph" ECM,HEVC
+
+BO_ 1207 ATCU_A105: 2 ATCU
+  SG_ EngineCoolantValveRequest : 1|2@0+ (1,0) [0|0] "" ECM
+  SG_ ATCU_TowingStatus : 10|1@0+ (1,0) [0|0] "" ECM
+  SG_ LinearModeUpShiftFlag : 11|1@0+ (1,0) [0|0] "" ECM
+  SG_ CurrentShiftMode : 14|3@0+ (1,0) [0|0] "" ECM
+  SG_ ATCU_IgnitionStatus : 15|1@0+ (1,0) [0|0] "" SCU
+
+BO_ 1315 BCM_A8: 3 HEVC
+  SG_ AbsoluteTimeSince1rstIgnition : 7|24@0+ (1,0) [0|1.677E7] "min" eShiftAct
+
+BO_ 1338 SCU_A5: 8 SCU
+  SG_ SCU_CalID2 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1357 SCU_N101: 7 SCU
+  SG_ SCU_OBD_ShifterSwitchOpen : 1|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShiftSelectFailure : 3|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShiftStuckInNeutral : 5|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShiftPositionUnknown : 7|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShifterSwitchTwoFailure : 9|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShifterSwitchShortToPowr : 11|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShifterSwitchShortToGnd : 13|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShifterSwitchOutOfRange : 15|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ParkSwitchShortToGround : 17|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ParkSwitchFailure : 19|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_InitialComFailure : 21|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShifterSwitchAllOff : 23|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ROMFailure : 25|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_RAMFailure : 27|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_MPUFailure : 29|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ParkSwitchShortToPower : 31|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_EncoderFailure : 33|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_ShifterPowerSupplyFail : 35|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_MemoryFailure : 37|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_MainRelayFailure : 39|2@0+ (1,0) [0|0] "" ATCU,PCM
+  SG_ SCU_OBD_Mot_B_CircuitLowFailure : 41|2@0+ (1,0) [0|0] "" ATCU
+  SG_ SCU_OBD_Mot_B_CircuitHighFailure : 43|2@0+ (1,0) [0|0] "" ATCU
+  SG_ SCU_OBD_Mot_A_CircuitLowFailure : 45|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_Mot_A_CircuitHighFailure : 47|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_LostComFailure : 53|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ SCU_OBD_MotorPowerSupplyFail : 55|2@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+
+BO_ 1376 HEVC_A145: 5 HEVC
+  SG_ RE_InverterFaultType : 11|3@0+ (1,0) [0|0] "" CDM
+  SG_ ME_InverterFaultType : 23|3@0+ (1,0) [0|0] "" CDM
+
+BO_ 1383 SCU_A3: 8 SCU
+  SG_ SCU_CVN : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1385 SCU_A4: 8 SCU
+  SG_ SCU_CalID1 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1502 CDM_A107: 3 CDM
+  SG_ MultiDriveMode_AT : 3|4@0+ (1,0) [0|0] "" ATCU
+  SG_ MultiDriveMode_ECM_v2 : 7|4@0+ (1,0) [0|0] "" ECM,HEVC
+  SG_ MultiDriveMode_Regeneration : 21|4@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1561 HEVC_A131: 8 HEVC
+  SG_ HVB_RatedVoltage : 7|14@0+ (0.1,0) [0|1500] "V" CDM
+  SG_ HVB_MaxCapacity_HEVC_v2 : 9|16@0+ (0.1,0) [0|6553.5] "kWh" CDM
+  SG_ DCcharge_EVpresentVoltage : 25|14@0+ (0.1,0) [0|1500] "V" CDM
+  SG_ DCcharge_EVchargeAuthorization : 40|1@0+ (1,0) [0|0] "" CDM
+  SG_ HVB_OverCurrent : 41|1@0+ (1,0) [0|0] "" CDM
+  SG_ DCcharge_ChargeModeRequest : 43|2@0+ (1,0) [0|0] "" CDM
+  SG_ DCcharge_MaxTemperature : 55|8@0+ (1,-50) [-50|200] "°C" CDM
+  SG_ HEVC_FaultType : 63|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 1563 HEVC_A134: 3 PCM
+  SG_ IUPR_EvapDenom : 3|2@0+ (1,0) [0|0] "" CDM
+  SG_ IUPR_ColdStartDenom : 5|2@0+ (1,0) [0|0] "" CDM
+  SG_ IUPR_GeneralDenom : 7|2@0+ (1,0) [0|0] "" CDM
+  SG_ IgnCycleCount_v2 : 22|1@0+ (1,0) [0|0] "" CDM
+  SG_ DriveCycle : 23|1@0+ (1,0) [0|0] "" ATCU,CDM
+
+BO_ 1574 ESHIFTER_N101: 4 eShifter
+  SG_ Shifter_OBD_FlowFail_Success : 0|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_FlowFail_Fault : 1|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_OneFail_Success : 2|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_OneFail_Fault : 3|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_Rational1_Success : 4|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_Rational1_Fault : 5|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_StuckIntON_Success : 6|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_StuckIntON_Fault : 7|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_ROMFail_Success : 8|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_ROMFail_Fault : 9|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_RAMFail_Success : 10|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_RAMFail_Fault : 11|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_OutOfRange_P_Success : 12|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_OutOfRange_P_Fault : 13|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_OutOfRange_M_Success : 14|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_OutOfRange_M_Fault : 15|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_SwitchOpen_Success : 16|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_SwitchOpen_Fault : 17|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_Rational2_Success : 18|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_Rational2_Fault : 19|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_StuckIntmid_Success : 20|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_StuckIntmid_Fault : 21|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_ShortToGnd_Success : 22|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_ShortToGnd_Fault : 23|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_PowrRegFail_Success : 28|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_PowrRegFail_Fault : 29|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_TwoFail_Success : 30|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ Shifter_OBD_TwoFail_Fault : 31|1@0+ (1,0) [0|0] "" ATCU,HEVC
+
+BO_ 1597 ESHIFTER_A102: 8 eShifter
+  SG_ Shifter_CVN : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1598 ESHIFTER_A103: 8 eShifter
+  SG_ Shifter_CalID1 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1600 ESHIFTER_A104: 8 eShifter
+  SG_ Shifter_CalID2 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1664 ESHIFTACT_N101: 7 eShiftAct
+  SG_ ShiftAct_OBD_LostComFail_S : 0|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_LostComFail_F : 1|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_InitlComFail_S : 2|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_InitlComFail_F : 3|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_InconsistShiftPos_S : 4|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_InconsistShiftPos_F : 5|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_EncoderFail_S : 6|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_EncoderFail_F : 7|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_Mot_A_CirLowFail_S : 8|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_Mot_A_CirLowFail_F : 9|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_Mot_A_CirHiFail_S : 10|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_Mot_A_CirHiFail_F : 11|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MemoryFail_S : 12|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MemoryFail_F : 13|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MainRelayFail_S : 14|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MainRelayFail_F : 15|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MPUFail_1_S : 16|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MPUFail_1_F : 17|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MotPowSupplyFail_S : 18|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MotPowSupplyFail_F : 19|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_Mot_B_CirLowFail_S : 20|1@0+ (1,0) [0|0] "" ATCU
+  SG_ ShiftAct_OBD_Mot_B_CirLowFail_F : 21|1@0+ (1,0) [0|0] "" ATCU
+  SG_ ShiftAct_OBD_Mot_B_CirHiFail_S : 22|1@0+ (1,0) [0|0] "" ATCU
+  SG_ ShiftAct_OBD_Mot_B_CirHiFail_F : 23|1@0+ (1,0) [0|0] "" ATCU
+  SG_ ShiftAct_OBD_ShiftPosUnknown_S : 24|1@0+ (1,0) [0|0] "" ATCU
+  SG_ ShiftAct_OBD_ShiftPosUnknown_F : 25|1@0+ (1,0) [0|0] "" ATCU
+  SG_ ShiftAct_OBD_ROMFail_S : 26|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_ROMFail_F : 27|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_RAMFail_S : 28|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_RAMFail_F : 29|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MPUFail_2_S : 30|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_MPUFail_2_F : 31|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_AnglSen_LoFail_S : 32|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_AnglSen_LoFail_F : 33|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_AnglSen_HiFail_S : 34|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_AnglSen_HiFail_F : 35|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_ShiftStuckInN_S : 36|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_ShiftStuckInN_F : 37|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_ShiftSelFail_S : 38|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_ShiftSelFail_F : 39|1@0+ (1,0) [0|0] "" ATCU,HEVC
+  SG_ ShiftAct_OBD_SpdSen_Rational_S : 40|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_SpdSen_Rational_F : 41|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_SpdSen_LoFail_S : 42|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_SpdSen_LoFail_F : 43|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_SpdSen_HiFail_S : 44|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_SpdSen_HiFail_F : 45|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_AnglSen_rational_S : 46|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_AnglSen_rational_F : 47|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_TempSen_Rational_S : 50|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_TempSen_Rational_F : 51|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_TempSen_LoFail_S : 52|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_TempSen_LoFail_F : 53|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_TempSen_HiFail_S : 54|1@0+ (1,0) [0|0] "" HEVC
+  SG_ ShiftAct_OBD_TempSen_HiFail_F : 55|1@0+ (1,0) [0|0] "" HEVC
+
+BO_ 1674 ParkOut_SCU_Frame: 1 SCU
+  SG_ ParkOutPairingStatus : 5|1@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ ParkOutAuthorizationStatus : 6|1@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+  SG_ ParkOutAntiScanningStatus : 7|1@0+ (1,0) [0|0] "" ATCU,HEVC,PCM
+
+BO_ 1680 ParkOut_HFM_Frame: 3 PCM
+  SG_ ParkOutCode : 7|16@0+ (1,0) [0|65535] "" SCU,eShiftAct
+  SG_ ParkOutCommand : 23|2@0+ (1,0) [0|0] "" SCU,eShiftAct
+
+BO_ 1700 BSG_A102: 2 BSG
+  SG_ BSG_CommunicationErrorWithVDC : 1|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_CommunicationErrorWithUSM : 3|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_CommunicationErrorWithECM : 5|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_BFTMeasurementLineFailure : 7|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_UndervoltageOrLoadDump : 11|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_SystemVoltageLow : 13|2@0+ (1,0) [0|0] "" ECM
+  SG_ BSG_InternalFailure : 15|2@0+ (1,0) [0|0] "" ECM
+
+BO_ 1712 BSG_A103: 8 BSG
+  SG_ BSG_CalID1 : 7|64@0+ (1,0) [0|1.84467440737095E19] "-" ECM
+
+BO_ 1734 BSG_A104: 8 BSG
+  SG_ BSG_CalID2 : 7|64@0+ (1,0) [0|1.84467440737095E19] "-" ECM
+
+BO_ 1739 BSG_A105: 4 BSG
+  SG_ BSG_CVN : 7|32@0+ (1,0) [0|4.294967295E9] "-" ECM
+
+BO_ 1744 ESHIFTACT_A102: 8 eShiftAct
+  SG_ ShiftAct_CalID2 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1777 ESHIFTACT_A103: 8 eShiftAct
+  SG_ ShiftAct_CalID1 : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1785 ESHIFTACT_A104: 8 eShiftAct
+  SG_ ShiftAct_CVN : 7|64@0+ (1,0) [0|1.84467440737095E19] "" ATCU,HEVC
+
+BO_ 1949 DTOOL_to_SCU: 8 HEVC
+  SG_ DTOOL_to_SCU : 7|64@0+ (1,0) [0|0] "" SCU
+
+BO_ 1981 SCU_to_DTOOL: 8 SCU
+  SG_ SCU_to_DTOOL : 7|64@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+
+BO_ 1988 eShifter_to_DTOOL: 8 eShifter
+  SG_ eShifter_to_DTOOL : 7|64@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+
+BO_ 1989 DTOOL_to_eShifter: 8 PCM
+  SG_ DTOOL_to_eShifter : 7|64@0+ (1,0) [0|0] "" eShifter
+
+BO_ 2563507968 SIGMA_CDMTriggerFrame: 7 HEVC
+  SG_ SIGMA_CDM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCCDM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508007 SIGMA_eHBoxTriggerFrame: 7 PCM
+  SG_ SIGMA_eHBox : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCeHBox : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508009 SIGMA_PSD_RTriggerFrame: 7 ECM
+  SG_ SIGMA_PSD_R : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCPSD_R : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508019 SIGMA_PBDTriggerFrame: 7 HEVC
+  SG_ SIGMA_PBD : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCPBD : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508021 SIGMA_RADARTriggerFrame: 7 HEVC
+  SG_ SIGMA_RADAR : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCRADAR : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508022 SIGMA_PSCUTriggerFrame: 7 ECM
+  SG_ SIGMA_PSCU : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCPSCU : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508030 SIGMA_SRad_RLTriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_RL : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSRad_RL : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508035 SIGMA_eRDC_LTriggerFrame: 7 HEVC
+  SG_ SIGMA_eRDC_L : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCeRDC_L : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508037 SIGMA_eRDC_RTriggerFrame: 7 HEVC
+  SG_ SIGMA_eRDC_R : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCeRDC_R : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508042 SIGMA_ANCTriggerFrame: 7 HEVC
+  SG_ SIGMA_ANC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCANC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508064 SIGMA_VDCTriggerFrame: 7 HEVC
+  SG_ SIGMA_VDC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCVDC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508066 SIGMA_EPSTriggerFrame: 7 HEVC
+  SG_ SIGMA_EPS : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCEPS : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508067 SIGMA_METERTriggerFrame: 7 HEVC
+  SG_ SIGMA_METER : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCMETER : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508068 SIGMA_HVACTriggerFrame: 7 HEVC
+  SG_ SIGMA_HVAC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCHVAC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508069 SIGMA_BCMTriggerFrame: 7 HEVC
+  SG_ SIGMA_BCM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCBCM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508071 SIGMA_IVITriggerFrame: 7 HEVC
+  SG_ SIGMA_IVI : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCIVI : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508072 SIGMA_4WDTriggerFrame: 7 HEVC
+  SG_ SIGMA_4WD : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTC4WD : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508077 SIGMA_USMTriggerFrame: 7 HEVC
+  SG_ SIGMA_USM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCUSM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508078 SIGMA_SONARTriggerFrame: 7 HEVC
+  SG_ SIGMA_SONAR : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSONAR : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508079 SIGMA_DSMUTriggerFrame: 7 ECM
+  SG_ SIGMA_DSMU : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCDSMU : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508082 SIGMA_ACUTriggerFrame: 7 HEVC
+  SG_ SIGMA_ACU : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCACU : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508089 SIGMA_PSD_LTriggerFrame: 7 HEVC
+  SG_ SIGMA_PSD_L : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCPSD_L : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508093 SIGMA_ADASTriggerFrame: 7 HEVC
+  SG_ SIGMA_ADAS : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCADAS : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508099 SIGMA_A_IVCTriggerFrame: 7 HEVC
+  SG_ SIGMA_A_IVC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCA_IVC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508108 SIGMA_INV_METriggerFrame: 7 HEVC
+  SG_ SIGMA_INV_ME : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCINV_ME : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508115 SIGMA_OBC_ACTriggerFrame: 7 HEVC
+  SG_ SIGMA_OBC_AC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCOBC_AC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508122 SIGMA_HEVCTriggerFrame: 7 HEVC
+  SG_ SIGMA_HEVC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCHEVC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508130 SIGMA_AUDIOampTriggerFrame: 7 HEVC
+  SG_ SIGMA_AUDIOamp : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCAUDIOamp : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508133 SIGMA_HNSTriggerFrame: 7 HEVC
+  SG_ SIGMA_HNS : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCHNS : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508139 SIGMA_VKMTriggerFrame: 7 HEVC
+  SG_ SIGMA_VKM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCVKM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508153 SIGMA_HFMTriggerFrame: 7 HEVC
+  SG_ SIGMA_HFM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCHFM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508154 SIGMA_AVMTriggerFrame: 7 HEVC
+  SG_ SIGMA_AVM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCAVM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508157 SIGMA_SCUTriggerFrame: 7 SCU
+  SG_ SIGMA_SCU : 4|29@0+ (1,0) [0|0] "" BSG,ECM,HEVC,PCM,eShiftAct,eShifter
+  SG_ SIGMA_DTCSCU : 39|24@0+ (1,0) [0|0] "" BSG,ECM,HEVC,PCM,eShiftAct,eShifter
+
+BO_ 2563508164 SIGMA_eShifterTriggerFrame: 7 eShifter
+  SG_ SIGMA_eShifter : 4|29@0+ (1,0) [0|0] "" BSG,ECM,HEVC,PCM,SCU,eShiftAct
+  SG_ SIGMA_DTCeShifter : 39|24@0+ (1,0) [0|0] "" BSG,ECM,HEVC,PCM,SCU,eShiftAct
+
+BO_ 2563508181 SIGMA_SRad_RRTriggerFrame: 7 ECM
+  SG_ SIGMA_SRad_RR : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSRad_RR : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508189 SIGMA_FrCameraTriggerFrame: 7 HEVC
+  SG_ SIGMA_FrCamera : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCFrCamera : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508200 SIGMA_ECMTriggerFrame: 7 ECM
+  SG_ SIGMA_ECM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCECM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508201 SIGMA_ATCUTriggerFrame: 7 HEVC
+  SG_ SIGMA_ATCU : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCATCU : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508205 SIGMA_BMS_HVTriggerFrame: 7 PCM
+  SG_ SIGMA_BMS_HV : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCBMS_HV : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563508207 SIGMA_INV_HSGTriggerFrame: 7 HEVC
+  SG_ SIGMA_INV_HSG : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCINV_HSG : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563567883 SIGMA_BMS_12VTriggerFrame: 7 HEVC
+  SG_ SIGMA_BMS_12V : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCBMS_12V : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563567951 SIGMA_EPS_subTriggerFrame: 7 HEVC
+  SG_ SIGMA_EPS_sub : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCEPS_sub : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563567958 SIGMA_eShiftActTriggerFrame: 7 eShiftAct
+  SG_ SIGMA_eShiftAct : 4|29@0+ (1,0) [0|0] "" BSG,ECM,HEVC,PCM,SCU,eShifter
+  SG_ SIGMA_DTCeShiftAct : 39|24@0+ (1,0) [0|0] "" BSG,ECM,HEVC,PCM,SCU,eShifter
+
+BO_ 2563567968 SIGMA_HUDTriggerFrame: 7 HEVC
+  SG_ SIGMA_HUD : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCHUD : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568024 SIGMA_HPCUTriggerFrame: 7 HEVC
+  SG_ SIGMA_HPCU : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCHPCU : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568093 SIGMA_DCDC_HVTriggerFrame: 7 PCM
+  SG_ SIGMA_DCDC_HV : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCDCDC_HV : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568098 SIGMA_EBATriggerFrame: 7 HEVC
+  SG_ SIGMA_EBA : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCEBA : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568101 SIGMA_INV_RETriggerFrame: 7 HEVC
+  SG_ SIGMA_INV_RE : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCINV_RE : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568130 SIGMA_AirSUSPTriggerFrame: 7 HEVC
+  SG_ SIGMA_AirSUSP : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCAirSUSP : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568148 SIGMA_BSGTriggerFrame: 7 BSG
+  SG_ SIGMA_BSG : 4|29@0+ (1,0) [0|0] "" ECM,HEVC,PCM,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCBSG : 39|24@0+ (1,0) [0|0] "" ECM,HEVC,PCM,SCU,eShiftAct,eShifter
+
+BO_ 2563568163 SIGMA_SRad_FL_TriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_FL : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSRad_FL : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568164 SIGMA_SRad_FRTriggerFrame: 7 HEVC
+  SG_ SIGMA_SRad_FR : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSRad_FR : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568201 SIGMA_STBWTriggerFrame: 7 HEVC
+  SG_ SIGMA_STBW : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSTBW : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568233 SIGMA_DMCTriggerFrame: 7 HEVC
+  SG_ SIGMA_DMC : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCDMC : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568267 SIGMA_RSCU3RTriggerFrame: 7 HEVC
+  SG_ SIGMA_RSCU3R : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCRSCU3R : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568288 SIGMA_BLM_RPKTriggerFrame: 7 HEVC
+  SG_ SIGMA_BLM_RPK : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCBLM_RPK : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568290 SIGMA_SCCMTriggerFrame: 7 HEVC
+  SG_ SIGMA_SCCM : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCSCCM : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2563568300 SIGMA_RSCU2RTriggerFrame: 7 HEVC
+  SG_ SIGMA_RSCU2R : 4|29@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+  SG_ SIGMA_DTCRSCU2R : 39|24@0+ (1,0) [0|0] "" BSG,SCU,eShiftAct,eShifter
+
+BO_ 2564429042 DTOOL_to_BSGextd: 8 HEVC
+  SG_ DTOOL_to_BSGextd : 7|64@0+ (1,0) [0|0] "" BSG
+
+BO_ 2564445937 DTOOL_to_eShiftAct: 8 HEVC
+  SG_ DTOOL_to_eShiftAct : 7|64@0+ (1,0) [0|0] "" eShiftAct
+
+BO_ 2564485462 eShiftAct_to_DTOOL: 8 eShiftAct
+  SG_ eShiftAct_to_DTOOL : 7|64@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+
+BO_ 2564485652 BSGextd_to_DTOOL: 8 BSG
+  SG_ BSGextd_to_DTOOL : 7|64@0+ (1,0) [0|0] "" ECM,HEVC,PCM
+
+BO_TX_BU_ 124 : ECM,HEVC,PCM;
+BO_TX_BU_ 260 : ATCU,HEVC,PCM;
+BO_TX_BU_ 286 : ATCU,HEVC,PCM;
+BO_TX_BU_ 303 : ATCU,HEVC,PCM;
+BO_TX_BU_ 790 : ECM,HEVC;
+BO_TX_BU_ 1099 : ATCU,HEVC,PCM;
+BO_TX_BU_ 1100 : ATCU,HEVC,PCM;
+BO_TX_BU_ 1104 : ECM,HEVC,PCM;
+BO_TX_BU_ 1105 : ECM,HEVC,PCM;
+BO_TX_BU_ 1107 : ECM,HEVC,PCM;
+BO_TX_BU_ 1145 : ECM,HEVC,PCM;
+BO_TX_BU_ 1315 : ECM,HEVC,PCM;
+BO_TX_BU_ 1376 : ECM,HEVC;
+BO_TX_BU_ 1563 : ECM,HEVC,PCM;
+BO_TX_BU_ 1680 : ECM,HEVC,PCM;
+BO_TX_BU_ 1949 : ECM,HEVC,PCM;
+BO_TX_BU_ 1989 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563507968 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508007 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508009 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508019 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508021 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508022 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508030 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508035 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508037 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508042 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508064 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508066 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508067 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508068 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508069 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508071 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508072 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508077 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508078 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508079 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508082 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508089 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508093 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508099 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508108 : HEVC,PCM;
+BO_TX_BU_ 2563508115 : HEVC,PCM;
+BO_TX_BU_ 2563508130 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508133 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508139 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508153 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508154 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508181 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508189 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508201 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563508205 : HEVC,PCM;
+BO_TX_BU_ 2563508207 : HEVC,PCM;
+BO_TX_BU_ 2563567883 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563567951 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563567968 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568024 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568093 : HEVC,PCM;
+BO_TX_BU_ 2563568098 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568101 : HEVC,PCM;
+BO_TX_BU_ 2563568130 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568163 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568164 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568201 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568233 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568267 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568288 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568290 : ECM,HEVC,PCM;
+BO_TX_BU_ 2563568300 : ECM,HEVC,PCM;
+BO_TX_BU_ 2564429042 : ECM,HEVC,PCM;
+BO_TX_BU_ 2564445937 : ECM,HEVC,PCM;
+
+
+
+
+
+
+
+
+VAL_ 83 ATV_YawRateOrder 0 "No VMC yaw rate order" 1 "VMC yaw rate order"; 
+VAL_ 114 ExternalBrakeRequestPriority 0 "Driver brake dominates" 1 "External brake dominates"; 
+VAL_ 118 BSG_BlindZoneRequest 0 "No blind zone" 1 "Blind zone"; 
+VAL_ 118 BSG_ModeRequest 0 "Neutral" 1 "Alternator" 2 "Recranking" 3 "Torque Assist" 4 "Reserved" 5 "Reserved" 6 "Reserved" 7 "Reserved"; 
+VAL_ 118 BSG_RampNumberRequest 0 "0 s" 1 "0.25 s" 2 "0.5 s" 3 "0.75 s" 4 "1 s" 5 "2 s" 6 "3 s" 7 "4 s" 8 "5 s" 9 "6 s" 10 "7 s" 11 "8 s" 12 "9 s" 13 "10 s" 14 "12 s" 15 "15 s"; 
+VAL_ 119 EmissionN_IdleRequest 0 "Fuel-economy request" 1 "Emission request"; 
+VAL_ 119 N_IdleInstructionSignal 0 "Not N_Idle instruction" 1 "N_Idle instruction"; 
+VAL_ 124 ElecBrakeTorqueActuatorStatus 0 "Unavailable" 1 "EVC Available as an actuator" 2 "EVC Not available as an actuator" 3 "CAN communication error from VDC"; 
+VAL_ 159 AEB_BrakeWheelTorqueOrder2 0 "No Brake Request" 1 "Brake Torque AEBS moderate" 2 "Brake Torque AEBS strong" 3 "Brake Torque AEBS city" 4 "Brake Torque AEBS Maximum" 5 "Not used" 6 "Not used" 7 "unavailable"; 
+VAL_ 163 ESC_TorqueControlType 0 "no torque request" 1 "Reserved" 2 "Reserved" 3 "Reserved" 4 "Reserved" 5 "ASR torque request (decrease torque request)" 6 "MSR torque request (increase torque request)" 7 "Reserved"; 
+VAL_ 165 Rr_RegenBrakeInRegulation 0 "Regen brake control not in regulation" 1 "Regen brake control in regulation" 2 "Not Used" 3 "Unavailable"; 
+VAL_ 260 TransmRangeEngaged_TargetForPWT 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 260 SCU_GearboxPositionTarget 0 "Parking - P" 1 "Reverse - R" 2 "Neutral - N" 3 "Drive - D" 4 "Manual mode - M" 5 "L" 6 "Ds" 7 "Not used" 8 "B (Brake)" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not available (init or lever switched failure)"; 
+VAL_ 260 GearLeverPositionExtended_v2 0 "P" 1 "intermediate P-R" 2 "R" 3 "Intermediate R-N" 4 "N" 5 "intermediate N-D" 6 "D" 7 "intermediate D-L" 8 "L" 9 "M" 10 "Ds" 11 "Brake" 12 "Not Used" 13 "Not Used" 14 "Not Used" 15 "Unavailable"; 
+VAL_ 260 TransmRangeEngaged_CurrentForPWT 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 260 ShBW_GearboxPositionCurrent 0 "P (Current range)" 1 "intermediate P-R" 2 "R (Current range)" 3 "Intermediate R-N" 4 "N (Current range)" 5 "intermediate N-D" 6 "D (Current range)" 7 "intermediate D-L" 8 "L (Current range)" 9 "M (Current range)" 10 "Ds (Current range)" 11 "Brake (Current range)" 12 "Not Used" 13 "Not Used" 14 "Not Used" 15 "Unavailable"; 
+VAL_ 263 AT_TorqueControlType 0 "torque limitation without transmission change" 1 "Not Used" 2 "Not Used" 3 "Not Used" 4 "Not Used" 5 "Upper torque value limitation" 6 "Lower torque value limitation" 7 "Full torque control"; 
+VAL_ 263 AT_Minimum_IdleSpeedRequest 255 "no request (system not ready)"; 
+VAL_ 263 AT_StartStopRequest 0 "No request" 1 "Inhibit engine stop" 2 "Engine start request" 3 "Inhibit engine start" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 263 AT_StartStopFailureFlag 0 "No start stop failure" 1 "Start stop failure"; 
+VAL_ 263 TargetIdleSpeedRate 0 "No Request" 1 "IdleUp Request No.1 (Vacant)" 2 "IdleUp Request No.2 (Vacant)" 3 "IdleUp for cold starting" 4 "IdleUp Request for brak e-off starting_N_idle OFF " 5 "IdleUp for up-hill creaping" 6 "IdleUp for brake-off" 7 "IdleUp for CVT ratio-low-change"; 
+VAL_ 286 TorqueConverterState 0 "unlocked converter" 1 "sliding converter" 2 "locked-up converter" 3 "unavailable"; 
+VAL_ 303 APA_GearShiftPerformanceStatus 0 "Temporary fail" 1 "Impossible to execute request" 2 "Fully operational" 3 "Failure"; 
+VAL_ 303 GearLeverPosition_v2 0 "Parking - P" 1 "Reverse - R" 2 "Neutral - N" 3 "Drive - D" 4 "Manual mode - M" 5 "L" 6 "Ds" 7 "Confirmed lever position (no switch signal)" 8 "B (Brake)" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not available (init or lever switched failure)"; 
+VAL_ 303 AT_StartingAuthorization 0 "Unavailable Value" 1 "Cranking not allowed" 2 "Reserved for Safety" 3 "Reserved for Safety" 4 "Cranking allowed" 5 "Reserved for Safety" 6 "Reserved for Safety" 7 "Cranking stop required"; 
+VAL_ 317 FrRr_RelativeControlSlipFlag 0 "No order slip servo of relative Fr_Rr" 1 "order slip servo of relative Fr_Rr"; 
+VAL_ 330 Rr_ESC_TorqueControlType 0 "No torque request" 1 "ASR torque request Decrease torque request" 2 "MSR torque request Increase torque request" 3 "Not used"; 
+VAL_ 330 RSA_AccelStartAssistinhibit 0 "Not inhibit" 1 "RSA/ASA inhibit"; 
+VAL_ 365 Rear_GearShiftInProgress 0 "start of gear shifting" 1 "end of gear shifting" 2 "Gear shift in progress" 3 "Unavailable"; 
+VAL_ 431 RegenBrakeMalfunction_VDC 0 "No failure" 1 "Failure detected"; 
+VAL_ 431 RegenBrakeInRegulation 0 "Not used" 1 "Regen brake control not in regulation" 2 "Regen brake control in regulation" 3 "Unavailable"; 
+VAL_ 511 CCSLBrakingPerformanceStatus 0 "CCSL braking fully operationnal" 1 "Impossible to execute CCSL request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 511 BMC_EngineTorqueOrder 0 "Body Motion Control no request" 1 "Body Motion Control request"; 
+VAL_ 511 YMCRequestFlag 0 "No request" 1 "Request"; 
+VAL_ 511 VMC_WheelTorque_MaxLimitOrder 0 "Not request" 1 "Request"; 
+VAL_ 515 BSG_DiagFlagAlternatorMode 0 "Alternator mode forbidden" 1 "Nominal Alternator mode"; 
+VAL_ 515 BSG_DiagFlagRecrankingMode 0 "Recranking mode forbidden" 1 "Nominal Recranking mode"; 
+VAL_ 515 BSG_DiagFlagTorqueAssistMode 0 "Torque assist mode forbidden" 1 "Nominal Torque assist mode"; 
+VAL_ 515 BSG_UndervoltageFlag 0 "No undervoltage detected" 1 "Undervoltage detected"; 
+VAL_ 515 BSG_DiagFlagTemperature 0 "Temperature is too high" 1 "Temperature is in derating range" 2 "Temperature is in nominal range" 3 "Not used"; 
+VAL_ 515 BSG_SafetyBarrierLostFlag 0 "No failure" 1 "Safety barrier lost"; 
+VAL_ 534 EPS_TorqueOnFlag 0 "StopAuto forbidden" 1 "StopAuto authorized"; 
+VAL_ 544 ACCBrakeLeadtimeControl 0 "VDC states not coherent" 1 "VDC states coherent"; 
+VAL_ 548 Forced_2WD_mode 0 "No 2WD request" 1 "2WD forced request"; 
+VAL_ 576 CDM_FaultType 0 "No failure" 1 "Failure"; 
+VAL_ 576 CruiseControlInhibitRequest 0 "No request" 1 "Request"; 
+VAL_ 576 Slope_Estimation_Permit 0 "Not autorised" 1 "Autorised"; 
+VAL_ 650 VehicleSpeedClock 0 "This counter is incremented when CAN buffers are updated"; 
+VAL_ 736 AWD_WarningRequest 0 "no request" 1 "AWD warning lamp request"; 
+VAL_ 939 EBA_MILlamp 0 "MIL lamp display not requested" 1 "MIL lamp display requested"; 
+VAL_ 943 ETS_ATInterlockRequest 0 "No Request" 1 "AT interlock request"; 
+VAL_ 1005 SCU_Button1 0 "No request" 1 "Button 1 requested"; 
+VAL_ 1005 SCU_ParkStatus 0 "Park not engaged" 1 "Park engaged" 2 "Intermediate position" 3 "Unavailable"; 
+VAL_ 1005 SCU_SystemFailureType 0 "No failure" 1 "Failure 1" 2 "Failure 2" 3 "Failure 3" 4 "Failure 4" 5 "Failure 5" 6 "Failure 6" 7 "Failure 7"; 
+VAL_ 1005 SCU_LeverPosition5 0 "No request" 1 "Lever position 5 requested"; 
+VAL_ 1005 SCU_LeverPosition4 0 "No request" 1 "Lever position 4 requested"; 
+VAL_ 1005 SCU_LeverPosition3 0 "No request" 1 "Lever position 3 requested"; 
+VAL_ 1005 SCU_LeverPosition2 0 "No request" 1 "Lever position 2 requested"; 
+VAL_ 1005 SCU_LeverPosition1 0 "No request" 1 "Lever position 1 requested"; 
+VAL_ 1005 SCU_PositionCurrent 0 "P" 1 "intermediate P-R" 2 "R" 3 "intermediate R-N" 4 "N" 5 "intermediate N-D" 6 "D" 7 "intermediate D-L" 8 "L" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1005 SCU_ShifterMalfunctionStatus 0 "No request" 1 "Tentative one shifter failure" 2 "Confirmed one shifter failure" 3 "Not used"; 
+VAL_ 1005 SCU_ActuatorMovementState 0 "Not in movement" 1 "In movement"; 
+VAL_ 1005 SCU_RangeShiftInhibit 0 "Normal" 1 "Inhibit 1" 2 "Inhibit 2" 3 "Inhibit 3" 4 "Inhibit 4" 5 "Inhibit 5" 6 "Inhibit 6" 7 "Inhibit 7"; 
+VAL_ 1077 eShifter_Button2 0 "No request" 1 "Button 2 requested" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Button1 0 "No request" 1 "Button 1 requested" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Button1Failure 0 "No failure" 1 "Button1Failure" 2 "not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Multiplewarningrequest 0 "No request" 1 "Multiple P" 2 "Multiple N" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Button4 0 "No request" 1 "Button 4 requested" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Button3 0 "No request" 1 "Button 3 requested" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Button4Failure 0 "No failure" 1 "Button4Failure" 2 "not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_Button3Failure 0 "No failure" 1 "Button3Failure" 2 "Not Used" 3 "Unavailablevalue"; 
+VAL_ 1077 eShifter_Button2Failure 0 "No failure" 1 "Button2Failure" 2 "not used" 3 "Unavailable"; 
+VAL_ 1077 eShifter_SystemFailureType 0 "No failure" 1 "Failure_1" 2 "Failure_2" 3 "Failure_3" 4 "Failure_4" 5 "Failure_5" 6 "Failure_6" 7 "Unavailable value"; 
+VAL_ 1081 VDC_Deactivated 0 "VDC available" 1 "VDC disable"; 
+VAL_ 1091 eShiftAct_Position 0 "P" 1 "intermediate P-R" 2 "R" 3 "Intermediate R-N" 4 "N" 5 "intermediate N-D" 6 "D" 7 "intermediate D-L" 8 "L" 9 "Not Used" 10 "Not Used" 11 "Not Used" 12 "Not Used" 13 "Not Used" 14 "Not Used" 15 "Unavailable"; 
+VAL_ 1091 eParkOutAntiScanningStatus 0 "Anti Scanning OFF" 1 "Anti Scanning ON"; 
+VAL_ 1091 eParkOutAuthorizationStatus 0 "Park-out Forbidden" 1 "Park-out Allowed"; 
+VAL_ 1091 eParkOutPairingStatus 0 "Blank" 1 "Coded"; 
+VAL_ 1091 eShiftAct_MovementState 0 "Not Used" 1 "Not in movement" 2 "In movement" 3 "Unavailable"; 
+VAL_ 1091 eShiftAct_failure 0 "No failure" 1 "Failure_1" 2 "Failure_2" 3 "Failure_3" 4 "Failure_4" 5 "Failure_5" 6 "Failure_6" 7 "Unavailable"; 
+VAL_ 1091 eShiftAct_RangeShiftInhibit 0 "Normal" 1 "inhibit 1" 2 "inhibit 2" 3 "Inhibit 3" 4 "Inhibit 4" 5 "Inhibit 5" 6 "inhibit 6" 7 "Unavailable"; 
+VAL_ 1099 AT_DowngradedMode 0 "Regular condition" 1 "Downgraded mode"; 
+VAL_ 1099 AT_BrakeAvailability 0 "Brake range not available" 1 "Brake range available" 2 "not used" 3 "Unavailable"; 
+VAL_ 1099 AT_AnticipatedTorqueDownRequest 0 "Anticipated Torque down NOT Requested" 1 "Anticipated Torque down  Requested"; 
+VAL_ 1099 RST_LaunchControlReadyMMI 0 "No display" 1 "Launch Control Not Active" 2 "Display Launch Control Active" 3 "reserved"; 
+VAL_ 1099 ATCVT_TowingMode 0 "Towing switch OFF or not existant" 1 "Towing switch ON"; 
+VAL_ 1099 DriverActionOnGearCommand 0 "gear commands not activated" 1 "gear commands activated"; 
+VAL_ 1099 AT_LoadAvailability 0 "Load range not available" 1 "Load range available" 2 "not used" 3 "Unavailable"; 
+VAL_ 1099 AT_DriverRequestWithoutBrake 0 "No driver request without brake pedal pressed" 1 "Driver request without brake pedal pressed"; 
+VAL_ 1099 AT_DriverRequest 0 "No request" 1 "P requested" 2 "R requested" 3 "N requested" 4 "D requested" 5 "M requested" 6 "+ requested" 7 "- requested" 8 "B requested" 9 "L requested" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable value"; 
+VAL_ 1099 AT_DriveAvailability_v2 0 "No display request" 1 "Display request"; 
+VAL_ 1099 AT_PressBrakePedalRequest 0 "No press brake pedal request" 1 "Push brake pedal requested (Shiftlock for Automatic gear or cranking with transmission range engaged for robotized gear)"; 
+VAL_ 1099 AT_ParkAvailability 0 "No display request" 1 "Display request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1099 AT_NeutralAvailability 0 "No display request" 1 "Display request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1099 AT_ManualAvailability 0 "No display request" 1 "Display request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1099 AT_GearShiftRefused 0 "gear shift accepted" 1 "gear shift refused"; 
+VAL_ 1099 ATCVT_CheckWarning 0 "No AT/CVT default warning" 1 "AT/CVT default warning"; 
+VAL_ 1099 AT_TipDownAvailability 0 "No display request" 1 "Display request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1099 AT_SailingRequest 0 "No request" 1 "Clutch close inhibit request" 2 "Clutch close request" 3 "Inhibit momentaneous sailing" 4 "Inhibit entry sailing in normal driving" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 1099 AT_ReverseAvailability 0 "No display request" 1 "Display request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1099 ATCVT_RangeIndicationExtended 0 "OFF" 1 "P range" 2 "R range" 3 "N range" 4 "D range" 5 "S range" 6 "L range" 7 "B range" 8 "1st range" 9 "2nd range" 10 "3rd range" 11 "4th range" 12 "5th range" 13 "6th range" 14 "7th range" 15 "8th range" 16 "9th range" 17 "10th range" 18 "Not used" 19 "Not used" 20 "M1st" 21 "M2nd" 22 "M3rd" 23 "M4th" 24 "M5th" 25 "M6th" 26 "M7th" 27 "M8th" 28 "M9th" 29 "M10th" 30 "Not used" 31 "Not used" 32 "Auto 1st" 33 "Auto 2nd" 34 "Auto 3rd" 35 "Auto 4th" 36 "Auto 5th" 37 "Auto 6th" 38 "Auto 7th" 39 "Auto 8th" 40 "Auto 9th" 41 "Auto 10th" 42 "Not used" 43 "Not used" 44 "Not used" 45 "Not used" 46 "Not used" 47 "Not used" 48 "Not used" 49 "Not used" 50 "Not used" 51 "Not used" 52 "Not used" 53 "Not used" 54 "Not used" 55 "Not used" 56 "Not used" 57 "Not used" 58 "Not used" 59 "Not used" 60 "Not used" 61 "Not used" 62 "Not used" 63 "Not used"; 
+VAL_ 1099 ATCVT_HiTempWarning 0 "No AT/CVT High temp warning" 1 "AT/CVT high temp warning"; 
+VAL_ 1099 AT_TipUpAvailability 0 "No display request" 1 "Display request" 2 "Not used" 3 "Unavailable"; 
+VAL_ 1099 ATCVTFail 0 "Not fail" 1 "Fail"; 
+VAL_ 1099 DriverLeverRequestInterpreted 0 "No request" 1 "Park Request" 2 "Reverse request" 3 "Neutral request" 4 "Drive Request" 5 "Manual request" 6 "Brake Request" 7 "Not Used"; 
+VAL_ 1099 AccelReqImpossible 0 "No alert" 1 "Alert"; 
+VAL_ 1099 NeutralHoldModeMessage 0 "No request" 1 "Neutral hold mode is ready" 2 "Neutral hold mode is in progress" 3 "Neutral hold message 3" 4 "Neutral hold message 4" 5 "Neutral hold message 5" 6 "Neutral hold message 6" 7 "Neutral hold message 7"; 
+VAL_ 1100 ADA_AuthorizationStatus 0 "ADA impossible" 1 "ADA possible"; 
+VAL_ 1100 RST_LaunchControlReady 0 "Launch Control Not Available" 1 "Launch Control Not Active" 2 "Launch Control Active" 3 "Launch Control Take-Off"; 
+VAL_ 1100 IdleStopHSAReleaseDelayRequest 0 "CVT don't request the HSA release delay" 1 "CVT request the HSA release delay"; 
+VAL_ 1100 ATwithPark_OpenDoorWarning 0 "No open door warning" 1 "AT_open door warning"; 
+VAL_ 1100 ATwithoutPark_OpenDoorWarning 0 "No open door warning" 1 "AT_open door warning"; 
+VAL_ 1100 AT_ParkPositionCommandState 0 "Not Used" 1 "AT park position command engaged" 2 "AT park position command not engaged" 3 "Unvailable Value"; 
+VAL_ 1100 AT_Parkfailure 0 "No park failure" 1 "Park Failure"; 
+VAL_ 1100 AT_Level2FailureDisplayRequest 0 "Unavailable" 1 "No warning" 2 "AT  major failure warning (Level 2)" 3 "Protection mode activated"; 
+VAL_ 1100 TransmRangeEngaged_Current 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 1100 ShifterPosition 0 "Home" 1 "Rear" 2 "Neutral" 3 "Drive" 4 "Manual +" 5 "Manual -" 6 "Not used" 7 "Not used"; 
+VAL_ 1100 ShifterParkButtonStatus 0 "Not pushed" 1 "Pushed"; 
+VAL_ 1100 ShifterFailure 0 "No failure" 1 "Failure"; 
+VAL_ 1100 ParkStatus 0 "Not used" 1 "Park not engaged" 2 "Park engaged" 3 "Unavailable"; 
+VAL_ 1100 TransmRangeEngaged_Target 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 1100 ETS_ATInterlockControlStatus 0 "Not active" 1 "Active" 2 "Ready" 3 "Fail"; 
+VAL_ 1100 ShBW_WarningMessage 0 "No request" 1 "Parking Brake request" 2 "Confirm Lever position" 3 "Not used"; 
+VAL_ 1104 WelcomeSequenceStatus 0 "Unavailable" 1 "Sequence not Started" 2 "Sequence in progress" 3 "Sequence Done"; 
+VAL_ 1105 DayNightForBacklights 0 "Day" 1 "Twilight" 2 "Night" 3 "Unavailable"; 
+VAL_ 1107 IgnitionSupplyConfirmation 0 "no primary ignition supply" 1 "primary ignition supply on"; 
+VAL_ 1109 BrakeVacuumStatus 0 "Sensor or Sensorless Strategy Unavailable" 1 "Vacuum level above minimum level" 2 "Vacuum level below minimum level" 3 "Unavailable"; 
+VAL_ 1109 VehicleSpeedSign 0 "nul vehicle speed" 1 "Positive vehicle speed (= Forward motion)" 2 "Negative vehicle speed (= reverse motion)" 3 "Unavailable"; 
+VAL_ 1109 HSA_ActivationState 0 "Unavailable" 1 "HSA  not activated" 2 "HSA  activated" 3 "not Used"; 
+VAL_ 1109 HBBMalfunction 0 "HBB Malfunction not detected" 1 "HBB Malfunction detected"; 
+VAL_ 1109 TPW_HighSensitivityStatus 0 "TPW High sensitivity not active " 1 "TPW High sensitivity active"; 
+VAL_ 1109 SSA_EngineStopAutoForbidden 0 "No request" 1 "Auto stop authorized" 2 "Auto stop forbidden" 3 "Not used"; 
+VAL_ 1109 Maintenance_Mode_Status_VDC 0 "No regulation (default)" 1 "In regulation" 2 "Prohibited temporaly" 3 "Prohibited"; 
+VAL_ 1109 LowPWTregenBrakeTorqueRequest 0 "Regen brake limitation not requested" 1 "Regen brake limitation requested"; 
+VAL_ 1109 VDC_MILlamp 0 "MIL lamp display not requested" 1 "MIL lamp display requested"; 
+VAL_ 1109 VDC_ShiftMapChangeRequest 0 "No request" 1 "Request to use TCS map in warm" 2 "Request to use TCS map in cold" 3 "Not used"; 
+VAL_ 1109 HDC_Status 0 "HDC OFF" 1 "HDC StandBy" 2 "HDC in control" 3 "Not Used"; 
+VAL_ 1116 VMC_BrakeWheelTorqueOrder 0 "Not brake request" 1 "Brake request"; 
+VAL_ 1145 ProbableCustomerFeedBackNeed 0 "Customer feedback probably not needed" 1 "Customer feedback needed"; 
+VAL_ 1146 VehicleStates 0 "Sleeping" 1 "Not used" 2 "CutoffPending" 3 "AutoACC  - BatTempoLevel" 4 "Not used" 5 "IgnitionLevel" 6 "StartingInProgress" 7 "PowertrainRunning" 8 "AutoStart" 9 "EngineSystemStop" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1146 BrakeInfoStatus 0 "Not used" 1 "Brake pedal not pressed" 2 "Brake pedal pressed" 3 "Not used" 4 "Brake pedal confirmed pressed" 5 "Not used" 6 "Not used" 7 "unavailable"; 
+VAL_ 1146 GADE_v2 0 "Sleep or Crank fault, Disable DiagMuxDTC" 1 "AutoACC fault, Disable DiagMuxDTC" 2 "ALL fault, Disable DiagMuxDTC" 3 "ALL fault, Enable DiagMuxDTC" 4 "FOTA switch fault, Disable DiagMuxDTC" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1207 EngineCoolantValveRequest 0 "Not used" 1 "No engine coolant valve requested" 2 "Engine coolant valve requested" 3 "Unavailable"; 
+VAL_ 1207 ATCU_TowingStatus 0 "AT Non-Towing State" 1 "AT Towing State"; 
+VAL_ 1207 LinearModeUpShiftFlag 0 "No linear step shift" 1 "Linear step shift"; 
+VAL_ 1207 CurrentShiftMode 0 "Normal shift mode" 1 "ABS shift mode" 2 "Manual shift mode" 3 "AutoPower shift mode" 4 "Linear shift mode" 5 "Start shift mode" 6 "Eco mode" 7 "Not used"; 
+VAL_ 1207 ATCU_IgnitionStatus 0 "Ignition OFF" 1 "Ignition ON"; 
+VAL_ 1357 SCU_OBD_ShifterSwitchOpen 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShiftSelectFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShiftStuckInNeutral 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShiftPositionUnknown 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShifterSwitchTwoFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShifterSwitchShortToPowr 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShifterSwitchShortToGnd 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShifterSwitchOutOfRange 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ParkSwitchShortToGround 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ParkSwitchFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_InitialComFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShifterSwitchAllOff 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ROMFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_RAMFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_MPUFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ParkSwitchShortToPower 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_EncoderFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_ShifterPowerSupplyFail 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_MemoryFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_MainRelayFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_Mot_B_CircuitLowFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_Mot_B_CircuitHighFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_Mot_A_CircuitLowFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_Mot_A_CircuitHighFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_LostComFailure 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1357 SCU_OBD_MotorPowerSupplyFail 0 "Diagnostic is not completed" 1 "Fail driving cycle" 2 "OK driving cycle" 3 "Fail driving cycle, fail is detected after OK is detected"; 
+VAL_ 1376 RE_InverterFaultType 0 "No Fault Type" 1 "Fault Type 1" 2 "Fault Type 2" 3 "Fault Type 3" 4 "Fault Type 4" 5 "Fault Type 5" 6 "Fault Type 6" 7 "Not Used"; 
+VAL_ 1376 ME_InverterFaultType 0 "No Fault type" 1 "Fault type 1" 2 "Fault type 2" 3 "Safety Reserved" 4 "Fault type 3" 5 "Fault type 4" 6 "Fault type 5" 7 "Fault type 6"; 
+VAL_ 1502 MultiDriveMode_AT 0 "Mode AT 1 (Normal)" 1 "Mode AT 2" 2 "Mode AT 3 (Sport)" 3 "Mode AT 4" 4 "Mode AT 5 (Eco)" 5 "Mode AT 6 (Race)" 6 "Mode AT 7 (Snow)" 7 "Mode AT 8" 8 "Mode AT 9" 9 "Mode AT 10" 10 "Mode AT 11" 11 "Mode AT 12" 12 "Mode AT 13" 13 "Mode AT 14" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1502 MultiDriveMode_ECM_v2 0 "Mode ECM 1 (Normal)" 1 "Mode ECM 2" 2 "Mode ECM 3 (Sport)" 3 "Mode ECM 4" 4 "Mode ECM 5 (Eco)" 5 "Mode ECM 6 (Race)" 6 "Mode ECM 7 (Snow)" 7 "Mode8" 8 "Mode9" 9 "Mode10" 10 "Mode11" 11 "Mode12" 12 "Mode13" 13 "Mode14" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1502 MultiDriveMode_Regeneration 0 "Mode 1" 1 "Mode 2" 2 "Mode 3" 3 "Mode 4" 4 "Mode 5" 5 "Mode 6" 6 "Mode 7" 7 "Mode 8" 8 "Mode 9" 9 "Mode 10" 10 "Mode 11" 11 "Mode 12" 12 "Mode 13" 13 "Mode 14" 14 "Not Used" 15 "Unavailable"; 
+VAL_ 1561 DCcharge_EVchargeAuthorization 0 "Prohibited" 1 "Charge Permitted"; 
+VAL_ 1561 HVB_OverCurrent 0 "Normal" 1 "Overcurrent"; 
+VAL_ 1561 DCcharge_ChargeModeRequest 0 "No request" 1 "Constant Voltage mode request" 2 "Constant Current mode request" 3 "Not Used"; 
+VAL_ 1561 HEVC_FaultType 0 "No failure" 1 "Failure"; 
+VAL_ 1563 IUPR_EvapDenom 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used"; 
+VAL_ 1563 IUPR_ColdStartDenom 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used"; 
+VAL_ 1563 IUPR_GeneralDenom 0 "no increase denominator" 1 "increase denominator" 2 "freeze denominator" 3 "Not used"; 
+VAL_ 1563 IgnCycleCount_v2 0 "No Request" 1 "Ignition Cycle count request"; 
+VAL_ 1563 DriveCycle 0 "No Request" 1 "General Denominator Count Request"; 
+VAL_ 1574 Shifter_OBD_FlowFail_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_FlowFail_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_OneFail_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_OneFail_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_Rational1_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_Rational1_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_StuckIntON_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_StuckIntON_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_ROMFail_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_ROMFail_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_RAMFail_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_RAMFail_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_OutOfRange_P_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_OutOfRange_P_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_OutOfRange_M_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_OutOfRange_M_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_SwitchOpen_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_SwitchOpen_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_Rational2_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_Rational2_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_StuckIntmid_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_StuckIntmid_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_ShortToGnd_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_ShortToGnd_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_PowrRegFail_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_PowrRegFail_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1574 Shifter_OBD_TwoFail_Success 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1574 Shifter_OBD_TwoFail_Fault 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_LostComFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_LostComFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_InitlComFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_InitlComFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_InconsistShiftPos_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_InconsistShiftPos_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_EncoderFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_EncoderFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_A_CirLowFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_A_CirLowFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_A_CirHiFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_A_CirHiFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MemoryFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MemoryFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MainRelayFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MainRelayFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MPUFail_1_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MPUFail_1_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MotPowSupplyFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MotPowSupplyFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_B_CirLowFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_B_CirLowFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_B_CirHiFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_Mot_B_CirHiFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ShiftPosUnknown_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ShiftPosUnknown_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ROMFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ROMFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_RAMFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_RAMFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MPUFail_2_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_MPUFail_2_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_AnglSen_LoFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_AnglSen_LoFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_AnglSen_HiFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_AnglSen_HiFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ShiftStuckInN_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ShiftStuckInN_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ShiftSelFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_ShiftSelFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_SpdSen_Rational_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_SpdSen_Rational_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_SpdSen_LoFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_SpdSen_LoFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_SpdSen_HiFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_SpdSen_HiFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_AnglSen_rational_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_AnglSen_rational_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_TempSen_Rational_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_TempSen_Rational_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_TempSen_LoFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_TempSen_LoFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1664 ShiftAct_OBD_TempSen_HiFail_S 0 "OK status is not detected" 1 "OK status is detected"; 
+VAL_ 1664 ShiftAct_OBD_TempSen_HiFail_F 0 "NG status is not detected" 1 "NG status is detected"; 
+VAL_ 1674 ParkOutPairingStatus 0 "Blank" 1 "Coded"; 
+VAL_ 1674 ParkOutAuthorizationStatus 0 "Park-out forbidden" 1 "Park-out authorized"; 
+VAL_ 1674 ParkOutAntiScanningStatus 0 "Anti Scanning OFF" 1 "Anti Scanning ON"; 
+VAL_ 1680 ParkOutCommand 0 "No request" 1 "Master Blanking request" 2 "Master Write code request" 3 "Master Park-out authorization request"; 
+VAL_ 1700 BSG_CommunicationErrorWithVDC 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1700 BSG_CommunicationErrorWithUSM 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1700 BSG_CommunicationErrorWithECM 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1700 BSG_BFTMeasurementLineFailure 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1700 BSG_UndervoltageOrLoadDump 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1700 BSG_SystemVoltageLow 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1700 BSG_InternalFailure 0 "Not tested" 1 "Tested OK" 2 "Tested NOK" 3 "Not used"; 
+VAL_ 1988 eShifter_to_DTOOL 0 "Table Value153063"; 
+VAL_ 1989 DTOOL_to_eShifter 0 "Table Value153062"; 
+VAL_ 2563507968 SIGMA_CDM 0 "Table Value16461"; 
+VAL_ 2563507968 SIGMA_DTCCDM 0 "Table Value26862"; 
+VAL_ 2563508007 SIGMA_eHBox 0 "Table Value430561"; 
+VAL_ 2563508007 SIGMA_DTCeHBox 0 "Table Value430559"; 
+VAL_ 2563508009 SIGMA_PSD_R 0 "Table Value153060"; 
+VAL_ 2563508009 SIGMA_DTCPSD_R 0 "Table Value153056"; 
+VAL_ 2563508019 SIGMA_PBD 0 "Table Value16399"; 
+VAL_ 2563508019 SIGMA_DTCPBD 0 "Table Value26865"; 
+VAL_ 2563508021 SIGMA_RADAR 0 "Table Value16466"; 
+VAL_ 2563508021 SIGMA_DTCRADAR 0 "Table Value26884"; 
+VAL_ 2563508022 SIGMA_PSCU 0 "Table Value16465"; 
+VAL_ 2563508022 SIGMA_DTCPSCU 0 "Table Value26866"; 
+VAL_ 2563508030 SIGMA_SRad_RL 0 "Table Value16470"; 
+VAL_ 2563508030 SIGMA_DTCSRad_RL 0 "Table Value26868"; 
+VAL_ 2563508035 SIGMA_eRDC_L 0 "Table Value252236"; 
+VAL_ 2563508035 SIGMA_DTCeRDC_L 0 "Table Value252232"; 
+VAL_ 2563508037 SIGMA_eRDC_R 0 "Table Value252238"; 
+VAL_ 2563508037 SIGMA_DTCeRDC_R 0 "Table Value252233"; 
+VAL_ 2563508042 SIGMA_ANC 0 "Table Value16458"; 
+VAL_ 2563508042 SIGMA_DTCANC 0 "Table Value26859"; 
+VAL_ 2563508064 SIGMA_VDC 0 "Table Value16380"; 
+VAL_ 2563508064 SIGMA_DTCVDC 0 "Table Value26886"; 
+VAL_ 2563508066 SIGMA_EPS 0 "Table Value16377"; 
+VAL_ 2563508066 SIGMA_DTCEPS 0 "Table Value26879"; 
+VAL_ 2563508067 SIGMA_METER 0 "Table Value16379"; 
+VAL_ 2563508067 SIGMA_DTCMETER 0 "Table Value26883"; 
+VAL_ 2563508068 SIGMA_HVAC 0 "Table Value28686"; 
+VAL_ 2563508068 SIGMA_DTCHVAC 0 "Table Value28682"; 
+VAL_ 2563508069 SIGMA_BCM 0 "Table Value16381"; 
+VAL_ 2563508069 SIGMA_DTCBCM 0 "Table Value26877"; 
+VAL_ 2563508071 SIGMA_IVI 0 "Table Value16383"; 
+VAL_ 2563508071 SIGMA_DTCIVI 0 "Table Value26882"; 
+VAL_ 2563508072 SIGMA_4WD 0 "Table Value28679"; 
+VAL_ 2563508072 SIGMA_DTC4WD 0 "Table Value28678"; 
+VAL_ 2563508077 SIGMA_USM 0 "Table Value16384"; 
+VAL_ 2563508077 SIGMA_DTCUSM 0 "Table Value26885"; 
+VAL_ 2563508078 SIGMA_SONAR 0 "Table Value28703"; 
+VAL_ 2563508078 SIGMA_DTCSONAR 0 "Table Value28702"; 
+VAL_ 2563508079 SIGMA_DSMU 0 "Table Value16462"; 
+VAL_ 2563508079 SIGMA_DTCDSMU 0 "Table Value26863"; 
+VAL_ 2563508082 SIGMA_ACU 0 "Table Value16374"; 
+VAL_ 2563508082 SIGMA_DTCACU 0 "Table Value26874"; 
+VAL_ 2563508089 SIGMA_PSD_L 0 "Table Value153059"; 
+VAL_ 2563508089 SIGMA_DTCPSD_L 0 "Table Value153054"; 
+VAL_ 2563508093 SIGMA_ADAS 0 "Table Value16457"; 
+VAL_ 2563508093 SIGMA_DTCADAS 0 "Table Value26875"; 
+VAL_ 2563508099 SIGMA_A_IVC 0 "Table Value16456"; 
+VAL_ 2563508099 SIGMA_DTCA_IVC 0 "Table Value26858"; 
+VAL_ 2563508108 SIGMA_INV_ME 0 "Table Value27356"; 
+VAL_ 2563508108 SIGMA_DTCINV_ME 0 "Table Value27351"; 
+VAL_ 2563508115 SIGMA_OBC_AC 0 "Table Value28687"; 
+VAL_ 2563508115 SIGMA_DTCOBC_AC 0 "Table Value28683"; 
+VAL_ 2563508122 SIGMA_HEVC 0 "Table Value27338"; 
+VAL_ 2563508122 SIGMA_DTCHEVC 0 "Table Value27347"; 
+VAL_ 2563508130 SIGMA_AUDIOamp 0 "Table Value16459"; 
+VAL_ 2563508130 SIGMA_DTCAUDIOamp 0 "Table Value26860"; 
+VAL_ 2563508133 SIGMA_HNS 0 "Table Value27353"; 
+VAL_ 2563508133 SIGMA_DTCHNS 0 "Table Value27348"; 
+VAL_ 2563508139 SIGMA_VKM 0 "Table Value252239"; 
+VAL_ 2563508139 SIGMA_DTCVKM 0 "Table Value252234"; 
+VAL_ 2563508153 SIGMA_HFM 0 "Table Value16382"; 
+VAL_ 2563508153 SIGMA_DTCHFM 0 "Table Value26881"; 
+VAL_ 2563508154 SIGMA_AVM 0 "Table Value27338"; 
+VAL_ 2563508154 SIGMA_DTCAVM 0 "Table Value27343"; 
+VAL_ 2563508157 SIGMA_SCU 0 "Table Value28688"; 
+VAL_ 2563508157 SIGMA_DTCSCU 0 "Table Value28684"; 
+VAL_ 2563508164 SIGMA_eShifter 0 "Table Value153058"; 
+VAL_ 2563508164 SIGMA_DTCeShifter 0 "Table Value153055"; 
+VAL_ 2563508181 SIGMA_SRad_RR 0 "Table Value16471"; 
+VAL_ 2563508181 SIGMA_DTCSRad_RR 0 "Table Value26871"; 
+VAL_ 2563508189 SIGMA_FrCamera 0 "Table Value16378"; 
+VAL_ 2563508189 SIGMA_DTCFrCamera 0 "Table Value26880"; 
+VAL_ 2563508200 SIGMA_ECM 0 "Table Value16376"; 
+VAL_ 2563508200 SIGMA_DTCECM 0 "Table Value26878"; 
+VAL_ 2563508201 SIGMA_ATCU 0 "Table Value16375"; 
+VAL_ 2563508201 SIGMA_DTCATCU 0 "Table Value26876"; 
+VAL_ 2563508205 SIGMA_BMS_HV 0 "Table Value27340"; 
+VAL_ 2563508205 SIGMA_DTCBMS_HV 0 "Table Value27344"; 
+VAL_ 2563508207 SIGMA_INV_HSG 0 "Table Value27355"; 
+VAL_ 2563508207 SIGMA_DTCINV_HSG 0 "Table Value27350"; 
+VAL_ 2563567883 SIGMA_BMS_12V 0 "Table Value16460"; 
+VAL_ 2563567883 SIGMA_DTCBMS_12V 0 "Table Value26861"; 
+VAL_ 2563567951 SIGMA_EPS_sub 0 "Table Value28685"; 
+VAL_ 2563567951 SIGMA_DTCEPS_sub 0 "Table Value28681"; 
+VAL_ 2563567958 SIGMA_eShiftAct 0 "Table Value153057"; 
+VAL_ 2563567958 SIGMA_DTCeShiftAct 0 "Table Value153053"; 
+VAL_ 2563567968 SIGMA_HUD 0 "Table Value27354"; 
+VAL_ 2563567968 SIGMA_DTCHUD 0 "Table Value27349"; 
+VAL_ 2563568024 SIGMA_HPCU 0 "Table Value55692"; 
+VAL_ 2563568024 SIGMA_DTCHPCU 0 "Table Value55693"; 
+VAL_ 2563568093 SIGMA_DCDC_HV 0 "Table Value28677"; 
+VAL_ 2563568093 SIGMA_DTCDCDC_HV 0 "Table Value28680"; 
+VAL_ 2563568098 SIGMA_EBA 0 "Table Value16463"; 
+VAL_ 2563568098 SIGMA_DTCEBA 0 "Table Value26864"; 
+VAL_ 2563568101 SIGMA_INV_RE 0 "Table Value27357"; 
+VAL_ 2563568101 SIGMA_DTCINV_RE 0 "Table Value27352"; 
+VAL_ 2563568130 SIGMA_AirSUSP 0 "Table Value359670"; 
+VAL_ 2563568130 SIGMA_DTCAirSUSP 0 "Table Value359671"; 
+VAL_ 2563568148 SIGMA_BSG 0 "Table Value27341"; 
+VAL_ 2563568148 SIGMA_DTCBSG 0 "Table Value27345"; 
+VAL_ 2563568163 SIGMA_SRad_FL 0 "Table Value16468"; 
+VAL_ 2563568163 SIGMA_DTCSRad_FL 0 "Table Value26869"; 
+VAL_ 2563568164 SIGMA_SRad_FR 0 "Table Value16469"; 
+VAL_ 2563568164 SIGMA_DTCSRad_FR 0 "Table Value26870"; 
+VAL_ 2563568201 SIGMA_STBW 0 "Table Value161590"; 
+VAL_ 2563568201 SIGMA_DTCSTBW 0 "Table Value161588"; 
+VAL_ 2563568233 SIGMA_DMC 0 "Table Value27342"; 
+VAL_ 2563568233 SIGMA_DTCDMC 0 "Table Value27346"; 
+VAL_ 2563568267 SIGMA_RSCU3R 0 "Table Value407697"; 
+VAL_ 2563568267 SIGMA_DTCRSCU3R 0 "Table Value407696"; 
+VAL_ 2563568288 SIGMA_BLM_RPK 0 "Table Value55679"; 
+VAL_ 2563568288 SIGMA_DTCBLM_RPK 0 "Table Value55690"; 
+VAL_ 2563568290 SIGMA_SCCM 0 "Table Value16467"; 
+VAL_ 2563568290 SIGMA_DTCSCCM 0 "Table Value26867"; 
+VAL_ 2563568300 SIGMA_RSCU2R 0 "Table Value359675"; 
+VAL_ 2563568300 SIGMA_DTCRSCU2R 0 "Table Value359672"; 
+VAL_ 2564445937 DTOOL_to_eShiftAct 0 "Table Value153061"; 
+
+
+
+

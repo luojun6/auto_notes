@@ -1,0 +1,667 @@
+VERSION ""
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CGW HUD METER
+
+
+BO_ 741 IVI_R107: 2 CGW
+  SG_ RadioModeDisplayStatus : 7|8@0+ (1,0) [0|254] "wu" METER
+  SG_ MediaReminderDisplayRequest : 10|2@0+ (1,0) [0|0] "" METER
+  SG_ BackToHomeDisplay : 11|1@0+ (1,0) [0|0] "" METER
+  SG_ ListDownIndicatorDisplay : 13|2@0+ (1,0) [0|0] "" METER
+  SG_ ListUpIndicatorDisplay : 15|2@0+ (1,0) [0|0] "" METER
+
+BO_ 920 OSP_Info: 8 CGW
+  SG_ NavigationAlertDisplayRequest : 7|3@0+ (1,0) [0|0] "" HUD,METER
+
+BO_ 1034 IVI_N108: 4 CGW
+  SG_ CIDLuminosity_MM : 31|8@0+ (0.4,0) [0|100] "%" METER
+
+BO_ 1217 METER_A115: 8 METER
+  SG_ Uniform_Symbol_099_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_098_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_097_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_096_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_103_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_102_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_101_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_100_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_107_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_106_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_105_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_104_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_111_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_110_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_109_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_108_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_115_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_114_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_113_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_112_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_119_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_118_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_117_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_116_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_123_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_122_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_121_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_120_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_127_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_126_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_125_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_124_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1222 METER_A116: 8 METER
+  SG_ Uniform_Symbol_131_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_130_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_129_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_128_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_135_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_134_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_133_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_132_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_139_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_138_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_137_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_136_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_143_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_142_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_141_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_140_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_147_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_146_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_145_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_144_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_151_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_150_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_149_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_148_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_155_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_154_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_153_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_152_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_159_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_158_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_157_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_156_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1229 METER_A117: 8 METER
+  SG_ Uniform_Symbol_163_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_162_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_161_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_160_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_167_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_166_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_165_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_164_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_171_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_170_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_169_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_168_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_175_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_174_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_173_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_172_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_179_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_178_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_177_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_176_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_183_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_182_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_181_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_180_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_187_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_186_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_185_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_184_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_191_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_190_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_189_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_188_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1237 METER_N102: 4 METER
+  SG_ CIDTouchControlAvailability_MM : 16|1@0+ (1,0) [0|0] "" CGW
+  SG_ MeterDisplayActivationStatus_MM : 18|2@0+ (1,0) [0|0] "" CGW
+  SG_ IlluminationControlStatus : 23|5@0+ (1,0) [0|0] "" CGW
+  SG_ IlluminationContStatusForCamera : 31|5@0+ (1,0) [0|0] "" CGW
+
+BO_ 1238 METER_A118: 8 METER
+  SG_ Uniform_Symbol_195_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_194_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_193_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_192_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_199_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_198_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_197_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_196_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_203_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_202_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_201_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_200_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_207_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_206_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_205_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_204_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_211_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_210_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_209_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_208_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_215_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_214_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_213_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_212_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_219_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_218_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_217_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_216_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_223_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_222_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_221_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_220_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1242 METER_A119: 8 METER
+  SG_ Multiform_symbol_001_displayed : 3|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_000_displayed : 7|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_003_displayed : 11|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_002_displayed : 15|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_005_displayed : 19|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_004_displayed : 23|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_007_displayed : 27|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_006_displayed : 31|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_009_displayed : 35|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_008_displayed : 39|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_011_displayed : 43|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_010_displayed : 47|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_013_displayed : 51|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_012_displayed : 55|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_015_displayed : 59|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_014_displayed : 63|4@0+ (1,0) [0|0] "" CGW
+
+BO_ 1243 METER_A120: 8 METER
+  SG_ Multiform_symbol_017_displayed : 3|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_016_displayed : 7|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_019_displayed : 11|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_018_displayed : 15|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_021_displayed : 19|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_020_displayed : 23|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_023_displayed : 27|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_022_displayed : 31|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_025_displayed : 35|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_024_displayed : 39|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_027_displayed : 43|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_026_displayed : 47|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_029_displayed : 51|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_028_displayed : 55|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_031_displayed : 59|4@0+ (1,0) [0|0] "" CGW
+  SG_ Multiform_symbol_030_displayed : 63|4@0+ (1,0) [0|0] "" CGW
+
+BO_ 1248 METER_R101: 3 METER
+  SG_ SteeringADACBackCommand : 0|1@0+ (1,0) [0|0] "" CGW
+  SG_ SteeringADACDownCommand : 1|1@0+ (1,0) [0|0] "" CGW
+  SG_ SteeringADACUpCommand : 2|1@0+ (1,0) [0|0] "" CGW
+  SG_ MultimediaFactorySettingReset : 3|1@0+ (1,0) [0|0] "" CGW
+  SG_ ClusterCurrentDisplayMode : 6|3@0+ (1,0) [0|0] "" CGW
+  SG_ ClusterCurrentDisplayAlert : 7|1@0+ (1,0) [0|0] "" CGW
+  SG_ SetTimeValue_ClockDisplay : 14|11@0+ (1,0) [0|1440] "min" CGW
+  SG_ SteeringADACOkCommand : 15|1@0+ (1,0) [0|0] "" CGW
+  SG_ SetTimeEvent_ClockDisplay : 19|1@0+ (1,0) [0|0] "" CGW
+
+BO_ 1304 IVI_A133: 2 CGW
+  SG_ MultimediaCutOffDisplay : 0|1@0+ (1,0) [0|0] "" METER
+  SG_ AudioVolumeDisplayAuthorization : 1|1@0+ (1,0) [0|0] "" METER
+  SG_ AudioVolumeDisplayStatus : 7|6@0+ (1,0) [0|40] "wu" METER
+  SG_ PhoneConnectionDisplayStatus : 13|4@0+ (1,0) [0|0] "" METER
+
+BO_ 1423 GW_SEND_WakeUpInfo: 4 CGW
+  SG_ MM_WakeUpSleepCommand : 31|2@0+ (1,0) [0|0] "" METER
+
+BO_ 1433 METER_R103: 4 METER
+  SG_ Current_Alert_ID_displayed : 7|32@0+ (1,0) [0|0] "" CGW
+
+BO_ 1445 METER_A112: 8 METER
+  SG_ Uniform_Symbol_003_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_002_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_001_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_000_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_007_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_006_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_005_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_004_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_011_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_010_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_009_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_008_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_015_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_014_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_013_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_012_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_019_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_018_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_017_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_016_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_023_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_022_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_021_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_020_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_027_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_026_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_025_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_024_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_031_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_030_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_029_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_028_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1515 METER_A114: 8 METER
+  SG_ Uniform_Symbol_067_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_066_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_065_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_064_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_071_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_070_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_069_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_068_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_075_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_074_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_073_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_072_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_079_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_078_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_077_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_076_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_083_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_082_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_081_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_080_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_087_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_086_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_085_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_084_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_091_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_090_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_089_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_088_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_095_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_094_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_093_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_092_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1525 METER_A113: 8 METER
+  SG_ Uniform_Symbol_035_displayed : 1|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_034_displayed : 3|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_033_displayed : 5|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_032_displayed : 7|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_039_displayed : 9|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_038_displayed : 11|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_037_displayed : 13|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_036_displayed : 15|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_043_displayed : 17|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_042_displayed : 19|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_041_displayed : 21|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_040_displayed : 23|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_047_displayed : 25|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_046_displayed : 27|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_045_displayed : 29|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_044_displayed : 31|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_051_displayed : 33|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_050_displayed : 35|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_049_displayed : 37|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_048_displayed : 39|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_055_displayed : 41|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_054_displayed : 43|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_053_displayed : 45|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_052_displayed : 47|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_059_displayed : 49|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_058_displayed : 51|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_057_displayed : 53|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_056_displayed : 55|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_063_displayed : 57|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_062_displayed : 59|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_061_displayed : 61|2@0+ (1,0) [0|0] "" CGW
+  SG_ Uniform_Symbol_060_displayed : 63|2@0+ (1,0) [0|0] "" CGW
+
+BO_ 1576 RADIO_to_CLUSTER: 8 CGW
+  SG_ RADIO_to_CLUSTER : 7|64@0+ (1,0) [0|0] "" METER
+
+BO_ 1602 METER_to_HUD2: 8 METER
+  SG_ METER_to_HUD2 : 7|64@0+ (1,0) [0|0] "" HUD
+
+BO_ 1617 RADIO_to_METER2: 8 CGW
+  SG_ RADIO_to_METER2 : 7|64@0+ (1,0) [0|0] "" METER
+
+BO_ 1704 CLUSTER_to_RADIO: 8 METER
+  SG_ CLUSTER_to_RADIO : 7|64@0+ (1,0) [0|0] "" CGW
+
+BO_ 1730 HUD2_to_METER: 8 HUD
+  SG_ HUD2_to_METER : 7|64@0+ (1,0) [0|0] "" METER
+
+BO_ 1745 METER2_to_RADIO: 8 METER
+  SG_ METER2_to_RADIO : 7|64@0+ (1,0) [0|0] "" CGW
+
+
+
+
+
+
+
+
+
+VAL_ 741 MediaReminderDisplayRequest 0 "No display" 1 "Audio reminder display" 2 "Phone reminder display" 3 "Not Used"; 
+VAL_ 741 BackToHomeDisplay 0 "No request" 1 "Back to Home request"; 
+VAL_ 741 ListDownIndicatorDisplay 0 "No display" 1 "Down display" 2 "End of list display" 3 "Not Used"; 
+VAL_ 741 ListUpIndicatorDisplay 0 "No display" 1 "Up display" 2 "End of list display" 3 "Not Used"; 
+VAL_ 920 NavigationAlertDisplayRequest 0 "No Display Request" 1 "Speed Trap Alert Display Request" 2 "Dangerous Area Display Request" 3 "IncomingDangerousAreaDisplay" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 1217 Uniform_Symbol_099_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_098_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_097_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_096_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_103_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_102_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_101_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_100_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_107_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_106_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_105_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_104_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_111_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_110_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_109_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_108_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_115_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_114_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_113_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_112_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_119_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_118_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_117_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_116_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_123_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_122_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_121_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_120_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_127_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_126_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_125_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1217 Uniform_Symbol_124_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_131_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_130_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_129_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_128_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_135_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_134_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_133_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_132_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_139_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_138_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_137_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_136_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_143_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_142_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_141_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_140_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_147_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_146_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_145_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_144_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_151_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_150_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_149_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_148_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_155_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_154_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_153_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_152_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_159_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_158_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_157_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1222 Uniform_Symbol_156_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_163_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_162_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_161_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_160_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_167_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_166_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_165_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_164_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_171_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_170_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_169_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_168_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_175_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_174_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_173_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_172_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_179_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_178_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_177_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_176_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_183_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_182_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_181_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_180_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_187_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_186_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_185_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_184_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_191_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_190_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_189_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1229 Uniform_Symbol_188_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1237 CIDTouchControlAvailability_MM 0 "CID touch not ready" 1 "CID touch ready"; 
+VAL_ 1237 MeterDisplayActivationStatus_MM 0 "OFF" 1 "Meter ON" 2 "IVI ON" 3 "Meter and IVI ON"; 
+VAL_ 1237 IlluminationControlStatus 0 "Unavailable" 1 "Step1" 2 "Step2" 3 "Step3" 4 "Step4" 5 "Step5" 6 "Step6" 7 "Step7" 8 "Step8" 9 "Step9" 10 "Step10" 11 "Step11" 12 "Step12" 13 "Step13" 14 "Step14" 15 "Step15" 16 "Step16" 17 "Step17" 18 "Step18" 19 "Step19" 20 "Step20" 21 "Step21" 22 "Step22" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Not used"; 
+VAL_ 1237 IlluminationContStatusForCamera 0 "Unavailable" 1 "Step1" 2 "Step2" 3 "Step3" 4 "Step4" 5 "Step5" 6 "Step6" 7 "Step7" 8 "Step8" 9 "Step9" 10 "Step10" 11 "Step11" 12 "Step12" 13 "Step13" 14 "Step14" 15 "Step15" 16 "Step16" 17 "Step17" 18 "Step18" 19 "Step19" 20 "Step20" 21 "Step21" 22 "Step22" 23 "Not used" 24 "Not used" 25 "Not used" 26 "Not used" 27 "Not used" 28 "Not used" 29 "Not used" 30 "Not used" 31 "Not used"; 
+VAL_ 1238 Uniform_Symbol_195_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_194_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_193_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_192_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_199_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_198_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_197_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_196_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_203_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_202_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_201_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_200_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_207_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_206_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_205_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_204_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_211_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_210_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_209_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_208_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_215_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_214_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_213_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_212_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_219_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_218_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_217_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_216_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_223_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_222_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_221_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1238 Uniform_Symbol_220_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1242 Multiform_symbol_001_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_000_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_003_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_002_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_005_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_004_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_007_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_006_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_009_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_008_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_011_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_010_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_013_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_012_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_015_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1242 Multiform_symbol_014_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_017_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_016_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_019_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_018_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_021_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_020_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_023_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_022_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_025_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_024_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_027_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_026_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_029_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_028_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_031_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1243 Multiform_symbol_030_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3" 4 "ActivateState4" 5 "ActivateState5" 6 "ActivateState6" 7 "ActivateState7" 8 "ActivateState8" 9 "ActivateState9" 10 "ActivateState10" 11 "ActivateState11" 12 "ActivateState12" 13 "ActivateState13" 14 "ActivateState14" 15 "ActivateState15"; 
+VAL_ 1248 SteeringADACBackCommand 0 "Button released" 1 "Button pressed"; 
+VAL_ 1248 SteeringADACDownCommand 0 "Button released" 1 "Button pressed"; 
+VAL_ 1248 SteeringADACUpCommand 0 "Button released" 1 "Button pressed"; 
+VAL_ 1248 MultimediaFactorySettingReset 0 "No Reset" 1 "Factory Reset Requested"; 
+VAL_ 1248 ClusterCurrentDisplayMode 0 "Home mode" 1 "Vehicle mode" 2 "Audio mode" 3 "Media mode" 4 "Phone mode" 5 "Vehicle setting mode" 6 "Audio setting mode" 7 "Phone setting mode"; 
+VAL_ 1248 ClusterCurrentDisplayAlert 0 "No Alert display" 1 "Alert Displayed on Meter"; 
+VAL_ 1248 SteeringADACOkCommand 0 "Button released" 1 "Button pressed"; 
+VAL_ 1248 SetTimeEvent_ClockDisplay 0 "Set current time not requested" 1 "Set current time requested"; 
+VAL_ 1304 MultimediaCutOffDisplay 0 "No display" 1 "MM cut off warning"; 
+VAL_ 1304 AudioVolumeDisplayAuthorization 0 "No display" 1 "Volume display"; 
+VAL_ 1304 PhoneConnectionDisplayStatus 0 "No display" 1 "Activation request" 2 "Scan" 3 "Wait" 4 "No bluetooth device" 5 "Ready to pair" 6 "Validation request" 7 "Maximum device number" 8 "Delete device request" 9 "Pairing in progress" 10 "Device connected" 11 "Accept PhoneBook" 12 "Pairing failure" 13 "Connection in progress" 14 "Device deleted" 15 "Not used"; 
+VAL_ 1423 MM_WakeUpSleepCommand 0 "Go to Sleep" 1 "reserved" 2 "reserved" 3 "WakeUp"; 
+VAL_ 1433 Current_Alert_ID_displayed 0 "Table Value430654"; 
+VAL_ 1445 Uniform_Symbol_003_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_002_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_001_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_000_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_007_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_006_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_005_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_004_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_011_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_010_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_009_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_008_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_015_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_014_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_013_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_012_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_019_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_018_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_017_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_016_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_023_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_022_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_021_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_020_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_027_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_026_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_025_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_024_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_031_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_030_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_029_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1445 Uniform_Symbol_028_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_067_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_066_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_065_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_064_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_071_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_070_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_069_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_068_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_075_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_074_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_073_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_072_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_079_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_078_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_077_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_076_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_083_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_082_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_081_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_080_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_087_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_086_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_085_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_084_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_091_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_090_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_089_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_088_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_095_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_094_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_093_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1515 Uniform_Symbol_092_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_035_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_034_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_033_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_032_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_039_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_038_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_037_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_036_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_043_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_042_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_041_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_040_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_047_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_046_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_045_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_044_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_051_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_050_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_049_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_048_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_055_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_054_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_053_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_052_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_059_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_058_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_057_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_056_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_063_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_062_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_061_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1525 Uniform_Symbol_060_displayed 0 "No Display" 1 "ActivateState1" 2 "ActivateState2" 3 "ActivateState3"; 
+VAL_ 1576 RADIO_to_CLUSTER 0 "Table Value161226"; 
+VAL_ 1602 METER_to_HUD2 0 "Table Value161225"; 
+VAL_ 1617 RADIO_to_METER2 0 "Table Value161227"; 
+VAL_ 1704 CLUSTER_to_RADIO 0 "Table Value161222"; 
+VAL_ 1730 HUD2_to_METER 0 "Table Value161223"; 
+VAL_ 1745 METER2_to_RADIO 0 "Table Value161224"; 
+
+
+
+

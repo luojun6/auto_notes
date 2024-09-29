@@ -1,0 +1,985 @@
+VERSION ""
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CDM EBA EDL EPS STBW SWA a4WD
+
+
+BO_ 116 ECM_A110: 8 CDM
+  SG_ CRC_ECM_A110 : 7|8@0+ (1,0) [0|255] "" EBA,EDL,a4WD
+  SG_ PowerTrainSetPoint : 11|10@0+ (0.125,0) [0|125] "%" EBA,a4WD
+  SG_ Clock_ECM_A110 : 15|4@0+ (1,0) [0|15] "" EBA,EDL,a4WD
+  SG_ RawSensor : 17|10@0+ (0.125,0) [0|125] "%" EBA,EDL,a4WD
+  SG_ RequestedWheelTorqueAfterProc : 41|15@0+ (2,-20000) [-20000|20000] "Nm" a4WD
+  SG_ TorqueRequestStatus : 43|2@0+ (1,0) [0|0] "" a4WD
+  SG_ ETS_TorqueAcknowledgment : 44|1@0+ (1,0) [0|0] "" a4WD
+  SG_ StopAutoPhase : 47|3@0+ (1,0) [0|0] "" EPS
+
+BO_ 117 ECM_A112: 8 CDM
+  SG_ CRC_ECM_A112 : 7|8@0+ (1,0) [0|255] "" EDL,a4WD
+  SG_ ECM_EstimatedPWTWheelTorque : 11|15@0+ (2,-20000) [-20000|20000] "Nm" EBA,EPS,a4WD
+  SG_ Clock_ECM_A112 : 15|4@0+ (1,0) [0|15] "" EDL,a4WD
+  SG_ PowerTrainStatus : 25|2@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ EngineRPM : 39|16@0+ (0.125,0) [0|8191.75] "rpm" EBA,EDL,a4WD
+  SG_ MeanEffectiveTorque : 55|12@0+ (0.5,-400) [-400|1647] "Nm" EDL,a4WD
+
+BO_ 120 EPS_A104: 7 EPS
+  SG_ LKA_SteeringStatus : 2|2@0+ (1,0) [0|0] "" CDM
+  SG_ LCA_SteeringStatus : 4|2@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_TuningModeSelected : 7|3@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_AssistanceTorqueRaw : 15|15@0+ (0.01,-100) [-100|100] "Nm" CDM
+  SG_ CRC_EPS_A104 : 31|8@0+ (1,0) [0|255] "" CDM
+  SG_ EPS_SteeringWheelRotationSpeed : 35|16@0+ (0.1,-2500) [-2500|2500] "°/s" CDM
+  SG_ Clock_EPS_A104 : 39|4@0+ (1,0) [0|15] "" CDM
+  SG_ AES_SteeringStatus : 51|2@0+ (1,0) [0|0] "" CDM
+
+BO_ 168 STRG_A1: 7 SWA
+  SG_ CRC_STRG_A1 : 7|8@0+ (1,0) [0|255] "" CDM,EPS,STBW,a4WD
+  SG_ Clock_STRG_A1 : 15|4@0+ (1,0) [0|15] "" CDM,EPS,STBW,a4WD
+  SG_ SteeringWheelAngleRaw : 22|15@0+ (0.1,-1080) [-1080|1080] "°" CDM,EPS,STBW,a4WD
+  SG_ SwaSensorFailCode : 36|5@0+ (1,1) [1|31] "" CDM
+  SG_ SwaSensorInternalStatus : 39|3@0+ (1,0) [0|0] "" CDM,EPS,STBW,a4WD
+  SG_ SteeringWheelRotationSpeed : 47|16@0+ (0.1,-3276.7) [-3276.7|3276.7] "°/s" CDM,EPS,STBW
+
+BO_ 171 VDC_A6: 8 CDM
+  SG_ CRC_VDC_A6 : 7|8@0+ (1,0) [0|255] "" EPS,STBW,a4WD
+  SG_ YawRateCorrected : 10|11@0+ (0.1,-100) [-100|100] "°/s" EPS,STBW,a4WD
+  SG_ Clock_VDC_A6 : 15|4@0+ (1,0) [0|15] "" EPS,STBW,a4WD
+  SG_ SteerRackPinionAngleCorrect : 39|15@0+ (0.1,-1080) [-1080|1080] "°" EPS,STBW,a4WD
+  SG_ YawRateRaw : 55|11@0+ (0.1,-100) [-100|100] "°/s" STBW,a4WD
+
+BO_ 180 VDC_A5: 8 CDM
+  SG_ CRC_VDC_A5 : 7|8@0+ (1,0) [0|255] "" STBW,a4WD
+  SG_ Clock_VDC_A5 : 15|4@0+ (1,0) [0|15] "" STBW,a4WD
+  SG_ LongitudinalAccelCorrected : 23|12@0+ (0.001,-2) [-2|2] "G" STBW,a4WD
+  SG_ LongitudinalAccelRaw : 27|12@0+ (0.001,-2) [-2|2] "G" STBW,a4WD
+  SG_ TransversalAccelCorrected : 47|12@0+ (0.001,-2) [-2|2] "G" EPS,STBW,a4WD
+  SG_ TransversalAccelRaw : 51|12@0+ (0.001,-2) [-2|2] "G" STBW,a4WD
+
+BO_ 272 ADAS_A113: 8 CDM
+  SG_ CRC_ADAS_A113 : 7|8@0+ (1,0) [0|255] "" EPS,STBW
+  SG_ Clock_ADAS_A113 : 15|4@0+ (1,0) [0|15] "" EPS,STBW
+  SG_ LKA_TuningModeRequested : 16|1@0+ (1,0) [0|0] "" EPS
+  SG_ LKA_SteeringTorqueRequestFlag : 24|1@0+ (1,0) [0|0] "" EPS,STBW
+  SG_ LKA_SteeringTorqueRequest : 39|15@0+ (0.01,-100) [-100|100] "Nm" EPS,STBW
+  SG_ LSS_SteeringSaturationPos : 55|8@0+ (0.2,0) [0|50] "N.m" EPS
+  SG_ LSS_SteeringSaturationNeg : 63|8@0+ (0.2,-50) [-50|0] "N.m" EPS
+
+BO_ 286 ATCU_A107: 3 CDM
+  SG_ TargetCVTRatioExtended : 7|17@0+ (0.000039,0) [0|5.1199] "" a4WD
+
+BO_ 303 ATCU_A108: 7 CDM
+  SG_ CRC_ATCU_A108 : 7|8@0+ (1,0) [0|255] "" a4WD
+  SG_ Clock_ATCU_A108 : 15|4@0+ (1,0) [0|15] "" a4WD
+  SG_ InputShaftRevolution : 16|16@0+ (1,0) [0|65534] "rpm" a4WD
+  SG_ GearLeverPosition_v2 : 20|4@0+ (1,0) [0|0] "" a4WD
+  SG_ OutputShaftRevolution : 32|16@0+ (1,0) [0|65534] "rpm" a4WD
+
+BO_ 321 EPS_A102: 8 EPS
+  SG_ CRC_EPS_A102 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ APA_DriverHandsOnWheel : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_StatusForAPA : 11|3@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_EPS_A102 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ EPS_AngleSensor : 23|18@0+ (0.01,-1310) [-1310|1310] "°" CDM
+  SG_ EPS_AssistanceTorque : 37|15@0+ (0.01,-100) [-100|100] "Nm" CDM
+  SG_ DriverSteeringWheelTorque : 54|11@0+ (0.01,-10) [-10|10] "Nm" CDM
+  SG_ EPS_SpeedConditionForAPA : 57|1@0+ (1,0) [0|0] "" CDM
+  SG_ LKA_DriverHandsOnWheel : 58|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 342 EPS_A111: 2 EPS
+  SG_ EPS_ADASTargetTorqueRaw : 7|11@0+ (0.1,-100) [-100|100] "Nm" CDM
+  SG_ EPS_ControlledByAES : 12|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 367 CDM_A101: 8 CDM
+  SG_ CRC_CDM_A101 : 7|8@0+ (1,0) [0|255] "" EPS,STBW
+  SG_ VMC_C_PointTorqueOrder : 8|1@0+ (1,0) [0|0] "" EPS
+  SG_ VMC_SteeringAngleOrder : 11|3@0+ (1,0) [0|0] "" EPS
+  SG_ Clock_CDM_A101 : 15|4@0+ (1,0) [0|15] "" EPS,STBW
+  SG_ VMC_SteeringGain_k2 : 23|7@0+ (0.008,0) [0|1] "" EPS
+  SG_ PathChangeRequest : 24|1@0+ (1,0) [0|0] "" EPS,STBW
+  SG_ VMC_SteeringGain_k1 : 31|7@0+ (0.008,0) [0|1] "" EPS
+  SG_ VMC_SteeringAngleRequest : 39|18@0+ (0.01,-1310) [-1310|1310] "°" EPS
+  SG_ VMC_C_PointTorqueRequest : 53|11@0+ (0.1,-100) [-100|100] "Nm" EPS
+  SG_ Global_ADmodeStatus : 58|3@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 368 STBW_A101: 3 STBW
+  SG_ SBW_PinionAngleRequest : 7|18@0+ (0.01,-1080) [-1080|1080] "°" CDM
+  SG_ SBW_TuningModeSelected : 21|3@0+ (1,0) [0|0] "" CDM
+
+BO_ 370 EPS_A106: 6 EPS
+  SG_ CRC_EPS_A106_2F : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ Clock_EPS_A106 : 11|4@0+ (1,0) [0|15] "" CDM
+  SG_ EPS_AngleSensor_ASD : 23|18@0+ (0.01,-1310) [-1310|1310] "°" CDM
+  SG_ DriverSteeringWheelTorque_ASD : 37|11@0+ (0.01,-10) [-10|10] "Nm" CDM
+
+BO_ 371 CDM_A124: 7 CDM
+  SG_ CRC_CDM_A124_2F : 7|8@0+ (1,0) [0|255] "" EPS,STBW
+  SG_ Clock_CDM_A124 : 11|4@0+ (1,0) [0|15] "" EPS,STBW
+  SG_ VMC_SteeringAngleOrder_ASD : 15|3@0+ (1,0) [0|0] "" EPS
+  SG_ VMC_SteeringAngleRequest_ASD : 23|18@0+ (0.01,-1310) [-1310|1310] "deg" EPS
+  SG_ VMC_SteeringGain_k1_ASD : 47|7@0+ (0.008,0) [0|1] "" EPS
+  SG_ VMC_SteeringGain_k2_ASD : 55|7@0+ (0.008,0) [0|1] "" EPS
+
+BO_ 377 ADAS_N105: 2 CDM
+  SG_ CRC_ADAS_N105 : 7|8@0+ (1,0) [0|255] "" EPS
+  SG_ SteeringSpeedLimitRequestLow : 11|1@0+ (1,0) [0|0] "" EPS
+  SG_ Clock_ADAS_N105 : 15|4@0+ (1,0) [0|15] "" EPS
+
+BO_ 380 STRG_A2: 7 EPS
+  SG_ CRC_STRG_A2 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ Clock_STRG_A2 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ SteeringWheelAngleRaw_EPS : 22|15@0+ (0.1,-1080) [-1080|1080] "°" CDM,a4WD
+  SG_ SwaSensorInternalStatus_EPS : 39|3@0+ (1,0) [0|0] "" CDM
+  SG_ SteeringWheelRotationSpeed_EPS : 47|16@0+ (0.1,-3276.7) [-3276.7|3276.7] "°/s" CDM,a4WD
+
+BO_ 436 VDC_A12: 8 CDM
+  SG_ CRC_VDC_A12 : 7|8@0+ (1,0) [0|255] "" EBA
+  SG_ TargetPressurePedalFeel : 11|10@0+ (0.025,0) [0|25] "MPa" EBA
+  SG_ Clock_VDC_A12 : 15|4@0+ (1,0) [0|15] "" EBA
+  SG_ VDC_VirtualPressure : 17|10@0+ (0.025,0) [0|25] "MPa" EBA
+  SG_ ExternalBrakeValueRequest : 39|16@0+ (0.007813,-252) [-252|252] "mL/s" EBA
+  SG_ DriverBrakingPressure_v2 : 55|10@0+ (0.03,-3) [-3|27.66] "MPa" EBA
+  SG_ ExternalBrakeRequestStatus : 59|2@0+ (1,0) [0|0] "" EBA
+  SG_ PedalFeelActuationStatus : 61|2@0+ (1,0) [0|0] "" EBA
+
+BO_ 462 EBA_N101: 7 EBA
+  SG_ CRC_EBA_N101 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ EBA_BrakePedalApplied_AD2 : 9|2@0+ (1,0) [0|0] "" CDM
+  SG_ ExternalBrakeStatus_AD2 : 11|2@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_EBA_N101 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ BrakePedalPosition_AD2 : 23|12@0+ (0.03125,0) [0|100] "%" CDM
+  SG_ BrakePedalPositionDistance_AD2 : 27|12@0+ (0.015625,-5) [-5|47] "mm" CDM
+  SG_ EBA_OutputRodActuPosition_AD2 : 47|12@0+ (0.015625,-5) [-5|47] "mm" CDM
+  SG_ ExternalBrakeRequestPriority_AD2 : 51|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 478 EPS_A108: 6 STBW
+  SG_ CRC_EPS_A108 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ LKA_DriverHandsOnWheel_RD2 : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ LCA_SteeringStatus_RD2 : 10|2@0+ (1,0) [0|0] "" CDM
+  SG_ LCA_DriverHandsOnWheel_RD2 : 11|1@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_EPS_A108 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ EPS_AssistanceTorqueRaw_RD2 : 21|15@0+ (0.01,-100) [-100|100] "N.m" CDM
+  SG_ LKA_SteeringStatus_RD2 : 23|2@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_AssistanceTorque_RD2 : 38|11@0+ (0.1,-100) [-100|100] "N.m" CDM
+
+BO_ 479 EPS_A107: 6 EPS
+  SG_ CRC_EPS_A107 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ DriverSteeringWheelTorque_RD2 : 11|11@0+ (0.01,-10) [-10|10] "Nm" CDM
+  SG_ Clock_EPS_A107 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ EPS_AngleSensor_RD2 : 16|18@0+ (0.01,-1310) [-1310|1310] "°" CDM
+
+BO_ 514 VDC_A4: 8 CDM
+  SG_ ABSinRegulation : 0|1@0+ (1,0) [0|0] "" EBA,EDL,a4WD
+  SG_ ASRinRegulation : 8|1@0+ (1,0) [0|0] "" EBA,EDL,a4WD
+  SG_ MSRinRegulation : 16|1@0+ (1,0) [0|0] "" a4WD
+  SG_ ESCMalfunction : 33|1@0+ (1,0) [0|0] "" EDL,a4WD
+  SG_ AYCinRegulation : 45|1@0+ (1,0) [0|0] "" EDL,a4WD
+  SG_ ASRMalfunction : 46|1@0+ (1,0) [0|0] "" a4WD
+  SG_ ABSMalfunction : 47|1@0+ (1,0) [0|0] "" EDL,a4WD
+  SG_ Clock_VDC_A4 : 51|4@0+ (1,0) [0|15] "" EDL,a4WD
+  SG_ CRC_VDC_A4 : 63|8@0+ (1,0) [0|255] "" EDL,a4WD
+
+BO_ 522 ECM_R105: 1 CDM
+  SG_ EngineTorque_Lowgrade_4WD : 7|8@0+ (2,-100) [-100|400] "Nm" a4WD
+
+BO_ 526 EBA_A102: 5 EBA
+  SG_ CRC_EBA_A102 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ EBA_DiagActive : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ RearPressureReductionStatus : 11|3@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_EBA_A102 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ EBA_CapacityPressureCompValue : 23|8@0+ (0.05,0) [0|12.5] "MPa" CDM
+  SG_ EBA_PressureRunOut : 31|8@0+ (0.1,0) [0|25] "MPa" CDM
+  SG_ HBCrequest : 39|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 534 EPS_A101: 4 EPS
+  SG_ CRC_EPS_A101 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ LCA_SteeringOverride : 10|1@0+ (1,0) [0|0] "" CDM
+  SG_ APA_AngleRequestValidity : 11|1@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_EPS_A101 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ EPSWarning : 19|2@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_TorqueOnFlag : 20|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_SpeedValid : 21|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_ControlledByLKA : 22|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_ControlledByLCA : 23|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_BatterySupplyCurrent : 31|8@0+ (1,0) [0|254] "A" CDM
+
+BO_ 545 FWD_A103: 4 a4WD
+  SG_ ETS_SlowWheelTorqueRequest : 7|15@0+ (2,-20000) [-20000|20000] "Nm" CDM
+  SG_ ETSMalfunction : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ OEMmodeConfirmation_4WD : 20|4@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_TorqueReductionReqCoupProt : 21|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_InternalOperationMode : 23|2@0+ (1,0) [0|0] "" CDM,EDL
+  SG_ AWDmode_switch_state : 31|3@0+ (1,0) [0|0] "" CDM
+
+BO_ 547 VDC_A110: 8 CDM
+  SG_ CRC_VDC_A110 : 7|8@0+ (1,0) [0|255] "" a4WD
+  SG_ Clock_VDC_A110 : 15|4@0+ (1,0) [0|15] "" a4WD
+  SG_ RequestedTransferedTorque_v2 : 53|12@0+ (1,0) [0|4000] "Nm" a4WD
+  SG_ VDC_4WDRequestMode : 55|2@0+ (1,0) [0|0] "" a4WD
+
+BO_ 548 VDC_A112: 7 CDM
+  SG_ RequestedTransferedTorque : 39|12@0+ (1,0) [0|4000] "Nm" a4WD
+
+BO_ 569 FWD_A101: 6 a4WD
+  SG_ ETS_WarningLamp : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ EstimatedFinalClutchTorque : 23|8@0+ (10,0) [0|2550] "Nm" CDM
+  SG_ TorqueDistributionRatio : 31|8@0+ (0.5,0) [0|100] "%" CDM
+  SG_ TorqueVectoringIndicateReq_RR : 34|3@0+ (1,0) [0|0] "" CDM
+  SG_ TorqueVectoringIndicateReq_RL : 37|3@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_WARN_MMD1 : 38|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_WARN_MMD2 : 39|1@0+ (1,0) [0|0] "" CDM
+  SG_ ActualModeStatus : 40|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_ShiftInProgressStatus : 41|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_ModeLamp_v2 : 44|3@0+ (1,0) [0|0] "" CDM
+
+BO_ 649 VDC_A3: 8 CDM
+  SG_ CRC_VDC_A3 : 7|8@0+ (1,0) [0|255] "" EBA,EPS,STBW,a4WD
+  SG_ Clock_VDC_A3 : 15|4@0+ (1,0) [0|15] "" EBA,EPS,STBW,a4WD
+  SG_ WheelSpeedRL : 23|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" EDL,EPS,STBW,a4WD
+  SG_ WheelSpeedRR : 39|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" EDL,EPS,STBW,a4WD
+  SG_ VehicleSpeedBody : 55|16@0+ (0.01,0) [0|655.34] "km/h" EBA,EDL,a4WD
+
+BO_ 650 VDC_A9: 8 CDM
+  SG_ WheelSpeedFR : 7|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" EDL,EPS,STBW,a4WD
+  SG_ WheelSpeedFL : 23|16@0+ (0.0416666667,0) [0|2730.583333] "rpm" EDL,EPS,STBW,a4WD
+  SG_ VehicleSpeed : 39|16@0+ (0.01,0) [0|655.34] "km/h" EBA,EDL,EPS,STBW,a4WD
+  SG_ VehicleSpeedClock : 51|4@0+ (1,0) [0|15] "" EBA,EDL,EPS,STBW,a4WD
+  SG_ VehicleSpeedCRC : 63|8@0+ (1,0) [0|255] "" EBA,EDL,EPS,STBW,a4WD
+
+BO_ 735 FWD_N101: 5 a4WD
+  SG_ CRC_FWD_N101 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ ATP_warning : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ AWD_ModeChangeJudgment : 9|1@0+ (1,0) [0|0] "" CDM
+  SG_ AWD_ModeChangeCancelReasonRER : 10|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_WarningLamp_v2 : 11|1@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_FWD_N101 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ ETS_SlowWheelTorqueRequest_v2 : 23|15@0+ (2,-20000) [-20000|20000] "Nm" CDM
+  SG_ AT_clutch_release_request : 24|1@0+ (1,0) [0|0] "" CDM
+  SG_ AWD_WarningRequest_TI : 33|1@0+ (1,0) [0|0] "" CDM
+  SG_ AWD_state_change_confirmation : 35|2@0+ (1,0) [0|0] "" CDM
+  SG_ AWD_ModeChangeCanelReason : 39|4@0+ (1,0) [0|0] "" CDM
+
+BO_ 736 ATCU_N101: 5 CDM
+  SG_ CRC_ATCU_N101 : 7|8@0+ (1,0) [0|255] "" a4WD
+  SG_ Limit_SlowTorqueRequest_AWD : 11|12@0+ (0.5,-400) [-400|1647] "Nm" a4WD
+  SG_ Clock_ATCU_N101 : 15|4@0+ (1,0) [0|15] "" a4WD
+  SG_ TorqueConverterClutchGain_AWD : 31|15@0+ (0.001,-15) [-15|15] "-" a4WD
+  SG_ AWD_WarningRequest : 32|1@0+ (1,0) [0|0] "" a4WD
+
+BO_ 747 EDL_A101: 2 EDL
+  SG_ DiffLockOperatingFlag : 0|1@0+ (1,0) [0|0] "" CDM
+  SG_ DiffLockControllerFailure : 1|1@0+ (1,0) [0|0] "" CDM
+  SG_ DiffLockChange_CancelReasonRER : 2|1@0+ (1,0) [0|0] "" CDM
+  SG_ DiffLock_IndicatorSignal : 4|2@0+ (1,0) [0|0] "" CDM
+  SG_ DiffLock_Change_CancelReason : 6|2@0+ (1,0) [0|0] "" CDM
+  SG_ DFR_HMI_TXT : 7|1@0+ (1,0) [0|0] "" CDM
+  SG_ DFR_HMI_MEMORY_TXT : 14|1@0+ (1,0) [0|0] "" CDM
+  SG_ DiffLockSwitching_EDL : 15|1@0+ (1,0) [0|0] "" CDM
+
+BO_ 760 EPS_A109: 2 EPS
+  SG_ CRC_EPS_A109 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ LCA_SteeringOverride_RD2 : 9|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_ControlledByLKA_RD2 : 10|1@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_ControlledByLCA_RD2 : 11|1@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_EPS_A109 : 15|4@0+ (1,0) [0|15] "" CDM
+
+BO_ 893 EPS_A103: 3 STBW
+  SG_ LDW_VibrationIntensityState : 2|2@0+ (1,0) [0|0] "" CDM
+  SG_ MinimumVoltagebySteer : 5|3@0+ (0.5,12) [12|15] "V" CDM
+  SG_ LCA_SteeringStatus2 : 7|2@0+ (1,0) [0|0] "" CDM
+  SG_ EPS_PullDriftFactor : 15|10@0+ (0.01,-3) [-3|3] "Nm" CDM
+  SG_ CDU_SteeringWheelTorqueLevel : 21|2@0+ (1,0) [0|0] "" CDM
+
+BO_ 943 FWD_M101: 3 a4WD
+  SG_ CRC_FWD_M101 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ ETS_RearDiffLockMalfunction : 8|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_RearDiffLockStatus : 10|2@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_ATInterlockRequest : 11|1@0+ (1,0) [0|0] "" CDM
+  SG_ Clock_FWD_M101 : 15|4@0+ (1,0) [0|15] "" CDM
+  SG_ ETS_ModeLamp_v3 : 20|3@0+ (1,0) [0|0] "" CDM
+  SG_ ETCModeCustomerRequest : 23|3@0+ (1,0) [0|0] "" CDM
+
+BO_ 975 EPS_A110: 3 EPS
+  SG_ CRC_EPS_A110 : 7|8@0+ (1,0) [0|255] "" CDM
+  SG_ EPS_PullDriftFactor_RD2 : 11|10@0+ (0.01,-3) [-3|3] "N.m" CDM
+  SG_ Clock_EPS_A110 : 15|4@0+ (1,0) [0|15] "" CDM
+
+BO_ 1081 VDC_A114: 7 CDM
+  SG_ DistanceTotalizer : 15|28@0+ (0.01,0) [0|2600000] "km" EDL,EPS,STBW,a4WD
+  SG_ VDC_Deactivated : 33|1@0+ (1,0) [0|0] "" EDL,a4WD
+  SG_ DiffLockSwitching_VDC : 45|1@0+ (1,0) [0|0] "" EDL
+
+BO_ 1100 ATCU_A110: 6 CDM
+  SG_ CRC_ATCU_A110 : 7|8@0+ (1,0) [0|255] "" a4WD
+  SG_ Clock_ATCU_A110 : 15|4@0+ (1,0) [0|15] "" a4WD
+  SG_ TransmRangeEngaged_Current : 24|4@0+ (1,0) [0|0] "" a4WD
+  SG_ TransmRangeEngaged_Target : 36|4@0+ (1,0) [0|0] "" a4WD
+  SG_ ETS_ATInterlockControlStatus : 45|2@0+ (1,0) [0|0] "" a4WD
+
+BO_ 1105 METER_A104: 8 CDM
+  SG_ ExternalTemperature : 37|9@0+ (0.25,-50) [-50|70] "°C" a4WD
+  SG_ ParkingBrakeStatus : 39|2@0+ (1,0) [0|0] "" a4WD
+
+BO_ 1107 USM_A101: 8 CDM
+  SG_ NeutralContact : 9|2@0+ (1,0) [0|0] "" a4WD
+  SG_ RearGearEngaged : 11|2@0+ (1,0) [0|0] "" STBW,a4WD
+  SG_ IgnitionSupplyConfirmation : 20|1@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ BatteryVoltage : 31|8@0+ (0.06,6) [6|18] "V" EDL,EPS,STBW,a4WD
+  SG_ EEM_StaticPowerLimitationRequest : 36|3@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 1109 VDC_A113: 8 CDM
+  SG_ VehicleSpeedSign : 25|2@0+ (1,0) [0|0] "" EPS,STBW
+  SG_ HBBMalfunction : 37|1@0+ (1,0) [0|0] "" EBA
+
+BO_ 1119 ECM_A108: 4 CDM
+  SG_ EngineCoolantTemp : 23|8@0+ (1,-40) [-40|214] "°C" a4WD
+
+BO_ 1140 ADAS_A116: 8 CDM
+  SG_ LDW_HapticalActionRequest : 59|1@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 1146 BCM_A113: 8 CDM
+  SG_ CRC_BCM_A113 : 7|8@0+ (1,0) [0|255] "" EBA
+  SG_ Clock_BCM_A113 : 15|4@0+ (1,0) [0|15] "" EBA
+  SG_ ClutchSwitchMinimumTravel : 17|2@0+ (1,0) [0|0] "" a4WD
+  SG_ VehicleStates : 23|4@0+ (1,0) [0|0] "" EBA,EPS,STBW
+  SG_ BrakeInfoStatus : 26|3@0+ (1,0) [0|0] "" a4WD
+  SG_ DeliveryModeInformation_v2 : 28|2@0+ (1,0) [0|0] "" EDL,EPS,STBW,a4WD
+  SG_ GADE_v2 : 39|3@0+ (1,0) [0|0] "" EBA,EDL,EPS,STBW,a4WD
+  SG_ ClutchSwitchMaximumTravel : 63|2@0+ (1,0) [0|0] "" a4WD
+
+BO_ 1165 BCM_R102: 4 CDM
+  SG_ CRC_BCM_R102 : 7|8@0+ (1,0) [0|255] "" a4WD
+  SG_ OEMmode : 11|4@0+ (1,0) [0|0] "" a4WD
+  SG_ Clock_BCM_R102 : 15|4@0+ (1,0) [0|15] "" a4WD
+
+BO_ 1290 FWD_M102: 2 a4WD
+  SG_ ETS_RearTireIndicatorStatus : 1|2@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_RearDiffLockIndicatorStatus : 3|2@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_ModeShiftStatusDisplayReq : 5|2@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_FrontTireIndicatorStatus : 7|2@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_HLShiftUnavailableDisplayReq : 10|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_LowRangeIndicatorStatus : 11|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_RearDiffLockCancelDisplayReq : 12|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_SpeedLimitCautionDisplayReq : 13|1@0+ (1,0) [0|0] "" CDM
+  SG_ ETS_TransferIndicatorStatus : 15|2@0+ (1,0) [0|0] "" CDM
+
+BO_ 1315 BCM_A8: 3 CDM
+  SG_ AbsoluteTimeSince1rstIgnition : 7|24@0+ (1,0) [0|1.677E7] "min" EPS,a4WD
+
+BO_ 1343 HEVC_A110: 4 CDM
+  SG_ EngineCoolantTempRaw : 31|8@0+ (1,-40) [-40|215] "°C" EBA
+
+BO_ 1362 DONGLE_BCM_A1: 2 CDM
+  SG_ DongleBCM2 : 5|10@0+ (1,0) [0|0] "" EPS,STBW
+  SG_ DongleBCM1 : 7|2@0+ (1,0) [0|0] "" EPS,STBW
+  SG_ DongleBCM3 : 11|2@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 1379 DONGLE_EPS_A1: 2 EPS
+  SG_ DongleEPS2 : 5|10@0+ (1,0) [0|0] "" CDM
+  SG_ DongleEPS1 : 7|2@0+ (1,0) [0|0] "" CDM
+  SG_ DongleEPS3 : 11|2@0+ (1,0) [0|0] "" CDM
+
+BO_ 1402 ADAS_A103: 8 CDM
+  SG_ LDW_RoadQualityEstimation : 36|1@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 1482 IVI_UserSetPref_A2: 8 CDM
+  SG_ LDW_VibrationIntensityReq2 : 20|3@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 1516 METER_UserSetPref_A2: 8 CDM
+  SG_ LDW_VibrationIntensityReq : 20|3@0+ (1,0) [0|0] "" EPS,STBW
+
+BO_ 1518 CDM_A103: 3 CDM
+  SG_ MultiDriveMode_EPS_v2 : 7|4@0+ (1,0) [0|0] "" EPS
+  SG_ MultiDriveMode_AWD : 12|4@0+ (1,0) [0|0] "" a4WD
+  SG_ AWD_state_change_response : 15|3@0+ (1,0) [0|0] "" a4WD
+
+BO_ 1539 ATCU_A106: 5 CDM
+  SG_ GearboxOilTemperature : 15|8@0+ (1,-40) [-40|214] "°C" a4WD
+
+BO_ 1661 IVI_N104: 8 CDM
+  SG_ DiffLock_SwitchSignal_IVI : 60|2@0+ (1,0) [0|0] "" EDL
+  SG_ AWD_SwitchSignal_IVI : 63|3@0+ (1,0) [0|0] "" a4WD
+
+BO_ 1765 SWA_ConfigFrame: 8 SWA
+  SG_ SWA_Config : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_ 1858 DTOOL_to_EPS: 8 CDM
+  SG_ DTOOL_to_EPS : 7|64@0+ (1,0) [0|0] "" EPS
+
+BO_ 1864 DTOOL_to_4WD: 8 CDM
+  SG_ DTOOL_to_4WD : 7|64@0+ (1,0) [0|0] "" a4WD
+
+BO_ 1890 EPS_to_DTOOL: 8 EPS
+  SG_ EPS_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_ 1896 FWD_to_DTOOL: 8 a4WD
+  SG_ FWD_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_ 1956 DTOOL_to_EDL: 8 CDM
+  SG_ DTOOL_to_EDL : 7|64@0+ (1,0) [0|0] "" EDL
+
+BO_ 1964 EDL_to_DTOOL: 8 EDL
+  SG_ EDL_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_ 1984 STRG_DiagnosisInfo_Frame: 4 CDM
+  SG_ STRG_DiagnosisInfo : 7|16@0+ (1,0) [0|65535] "-" STBW,SWA
+
+BO_ 2563507968 SIGMA_CDMTriggerFrame: 7 CDM
+  SG_ SIGMA_CDM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCCDM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508007 SIGMA_eHBoxTriggerFrame: 7 CDM
+  SG_ SIGMA_eHBox : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCeHBox : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508009 SIGMA_PSD_RTriggerFrame: 7 CDM
+  SG_ SIGMA_PSD_R : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCPSD_R : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508019 SIGMA_PBDTriggerFrame: 7 CDM
+  SG_ SIGMA_PBD : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCPBD : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508021 SIGMA_RADARTriggerFrame: 7 CDM
+  SG_ SIGMA_RADAR : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCRADAR : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508022 SIGMA_PSCUTriggerFrame: 7 CDM
+  SG_ SIGMA_PSCU : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCPSCU : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508030 SIGMA_SRad_RLTriggerFrame: 7 CDM
+  SG_ SIGMA_SRad_RL : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSRad_RL : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508035 SIGMA_eRDC_LTriggerFrame: 7 CDM
+  SG_ SIGMA_eRDC_L : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCeRDC_L : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508037 SIGMA_eRDC_RTriggerFrame: 7 CDM
+  SG_ SIGMA_eRDC_R : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCeRDC_R : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508042 SIGMA_ANCTriggerFrame: 7 CDM
+  SG_ SIGMA_ANC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCANC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508064 SIGMA_VDCTriggerFrame: 7 CDM
+  SG_ SIGMA_VDC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCVDC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508066 SIGMA_EPSTriggerFrame: 7 EPS
+  SG_ SIGMA_EPS : 4|29@0+ (1,0) [0|0] "" CDM,STBW,a4WD
+  SG_ SIGMA_DTCEPS : 39|24@0+ (1,0) [0|0] "" CDM,STBW,a4WD
+
+BO_ 2563508067 SIGMA_METERTriggerFrame: 7 CDM
+  SG_ SIGMA_METER : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCMETER : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508068 SIGMA_HVACTriggerFrame: 7 CDM
+  SG_ SIGMA_HVAC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCHVAC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508069 SIGMA_BCMTriggerFrame: 7 CDM
+  SG_ SIGMA_BCM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCBCM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508071 SIGMA_IVITriggerFrame: 7 CDM
+  SG_ SIGMA_IVI : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCIVI : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508072 SIGMA_4WDTriggerFrame: 7 a4WD
+  SG_ SIGMA_4WD : 4|29@0+ (1,0) [0|0] "" CDM,EPS,STBW
+  SG_ SIGMA_DTC4WD : 39|24@0+ (1,0) [0|0] "" CDM,EPS,STBW
+
+BO_ 2563508077 SIGMA_USMTriggerFrame: 7 CDM
+  SG_ SIGMA_USM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCUSM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508078 SIGMA_SONARTriggerFrame: 7 CDM
+  SG_ SIGMA_SONAR : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSONAR : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508079 SIGMA_DSMUTriggerFrame: 7 CDM
+  SG_ SIGMA_DSMU : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCDSMU : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508082 SIGMA_ACUTriggerFrame: 7 CDM
+  SG_ SIGMA_ACU : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCACU : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508089 SIGMA_PSD_LTriggerFrame: 7 CDM
+  SG_ SIGMA_PSD_L : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCPSD_L : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508093 SIGMA_ADASTriggerFrame: 7 CDM
+  SG_ SIGMA_ADAS : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCADAS : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508099 SIGMA_A_IVCTriggerFrame: 7 CDM
+  SG_ SIGMA_A_IVC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCA_IVC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508108 SIGMA_INV_METriggerFrame: 7 CDM
+  SG_ SIGMA_INV_ME : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCINV_ME : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508115 SIGMA_OBC_ACTriggerFrame: 7 CDM
+  SG_ SIGMA_OBC_AC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCOBC_AC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508122 SIGMA_HEVCTriggerFrame: 7 CDM
+  SG_ SIGMA_HEVC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCHEVC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508130 SIGMA_AUDIOampTriggerFrame: 7 CDM
+  SG_ SIGMA_AUDIOamp : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCAUDIOamp : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508133 SIGMA_HNSTriggerFrame: 7 CDM
+  SG_ SIGMA_HNS : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCHNS : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508139 SIGMA_VKMTriggerFrame: 7 CDM
+  SG_ SIGMA_VKM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCVKM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508153 SIGMA_HFMTriggerFrame: 7 CDM
+  SG_ SIGMA_HFM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCHFM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508154 SIGMA_AVMTriggerFrame: 7 CDM
+  SG_ SIGMA_AVM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCAVM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508157 SIGMA_SCUTriggerFrame: 7 CDM
+  SG_ SIGMA_SCU : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSCU : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508164 SIGMA_eShifterTriggerFrame: 7 CDM
+  SG_ SIGMA_eShifter : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCeShifter : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508181 SIGMA_SRad_RRTriggerFrame: 7 CDM
+  SG_ SIGMA_SRad_RR : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSRad_RR : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508189 SIGMA_FrCameraTriggerFrame: 7 CDM
+  SG_ SIGMA_FrCamera : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCFrCamera : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508200 SIGMA_ECMTriggerFrame: 7 CDM
+  SG_ SIGMA_ECM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCECM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508201 SIGMA_ATCUTriggerFrame: 7 CDM
+  SG_ SIGMA_ATCU : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCATCU : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508205 SIGMA_BMS_HVTriggerFrame: 7 CDM
+  SG_ SIGMA_BMS_HV : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCBMS_HV : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563508207 SIGMA_INV_HSGTriggerFrame: 7 CDM
+  SG_ SIGMA_INV_HSG : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCINV_HSG : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563567883 SIGMA_BMS_12VTriggerFrame: 7 CDM
+  SG_ SIGMA_BMS_12V : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCBMS_12V : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563567951 SIGMA_EPS_subTriggerFrame: 7 CDM
+  SG_ SIGMA_EPS_sub : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCEPS_sub : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563567958 SIGMA_eShiftActTriggerFrame: 7 CDM
+  SG_ SIGMA_eShiftAct : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCeShiftAct : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563567968 SIGMA_HUDTriggerFrame: 7 CDM
+  SG_ SIGMA_HUD : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCHUD : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568024 SIGMA_HPCUTriggerFrame: 7 CDM
+  SG_ SIGMA_HPCU : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCHPCU : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568093 SIGMA_DCDC_HVTriggerFrame: 7 CDM
+  SG_ SIGMA_DCDC_HV : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCDCDC_HV : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568098 SIGMA_EBATriggerFrame: 7 CDM
+  SG_ SIGMA_EBA : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCEBA : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568101 SIGMA_INV_RETriggerFrame: 7 CDM
+  SG_ SIGMA_INV_RE : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCINV_RE : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568130 SIGMA_AirSUSPTriggerFrame: 7 CDM
+  SG_ SIGMA_AirSUSP : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCAirSUSP : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568148 SIGMA_BSGTriggerFrame: 7 CDM
+  SG_ SIGMA_BSG : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCBSG : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568163 SIGMA_SRad_FL_TriggerFrame: 7 CDM
+  SG_ SIGMA_SRad_FL : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSRad_FL : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568164 SIGMA_SRad_FRTriggerFrame: 7 CDM
+  SG_ SIGMA_SRad_FR : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSRad_FR : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568201 SIGMA_STBWTriggerFrame: 7 STBW
+  SG_ SIGMA_STBW : 4|29@0+ (1,0) [0|0] "" CDM,EPS,a4WD
+  SG_ SIGMA_DTCSTBW : 39|24@0+ (1,0) [0|0] "" CDM,EPS,a4WD
+
+BO_ 2563568233 SIGMA_DMCTriggerFrame: 7 CDM
+  SG_ SIGMA_DMC : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCDMC : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568267 SIGMA_RSCU3RTriggerFrame: 7 CDM
+  SG_ SIGMA_RSCU3R : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCRSCU3R : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568288 SIGMA_BLM_RPKTriggerFrame: 7 CDM
+  SG_ SIGMA_BLM_RPK : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCBLM_RPK : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568290 SIGMA_SCCMTriggerFrame: 7 CDM
+  SG_ SIGMA_SCCM : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCSCCM : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2563568300 SIGMA_RSCU2RTriggerFrame: 7 CDM
+  SG_ SIGMA_RSCU2R : 4|29@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+  SG_ SIGMA_DTCRSCU2R : 39|24@0+ (1,0) [0|0] "" EPS,STBW,a4WD
+
+BO_ 2564442610 DTOOL_to_SBW: 8 CDM
+  SG_ DTOOL_to_SBW : 7|64@0+ (1,0) [0|0] "" STBW
+
+BO_ 2564485705 SBW_to_DTOOL: 8 STBW
+  SG_ SBW_to_DTOOL : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_ 2615018738 FTOOLS_CGWtoEPS: 8 CDM
+  SG_ FTOOLS_CGWtoEPS : 7|64@0+ (1,0) [0|0] "" EPS
+
+BO_ 2615036402 FTOOLS_CGWtoSTBW: 8 CDM
+  SG_ FTOOLS_CGWtoSTBW : 7|64@0+ (1,0) [0|0] "" STBW
+
+BO_ 2615079428 FTOOLS_EPStoCGW: 8 EPS
+  SG_ FTOOLS_EPStoCGW : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_ 2615079497 FTOOLS_STBWtoCGW: 8 STBW
+  SG_ FTOOLS_STBWtoCGW : 7|64@0+ (1,0) [0|0] "" CDM
+
+BO_TX_BU_ 120 : EPS,STBW;
+BO_TX_BU_ 321 : EPS,STBW;
+BO_TX_BU_ 370 : EPS,STBW;
+BO_TX_BU_ 478 : EPS,STBW;
+BO_TX_BU_ 479 : EPS,STBW;
+BO_TX_BU_ 534 : EPS,STBW;
+BO_TX_BU_ 760 : EPS,STBW;
+BO_TX_BU_ 893 : EPS,STBW;
+BO_TX_BU_ 1379 : EPS,STBW;
+
+
+
+
+
+
+
+
+VAL_ 116 TorqueRequestStatus 0 "normal" 1 "exact torque request can not be achieved (measure imprecision)" 2 "transcient state preventing torque request realization" 3 "torque request can not be achieved"; 
+VAL_ 116 ETS_TorqueAcknowledgment 0 "ETS_Torque invalid (Abnormal)" 1 "ETS_Torque valid (Normal)"; 
+VAL_ 116 StopAutoPhase 0 "NotInAutoPhase" 1 "StartAuto" 2 "StopAuto" 3 "Not Used" 4 "StopAutoOngoing" 5 "StartByInjectionOnly" 6 "ReflexStart" 7 "Unavailable"; 
+VAL_ 117 PowerTrainStatus 0 "Powertrain Stopped" 1 "Reserved" 2 "Powertrain Running" 3 "Powertrain Starting"; 
+VAL_ 120 LKA_SteeringStatus 0 "EPS not able to perform LKA" 1 "EPS not allowed to perform LKA" 2 "EPS able and allowed to perform LKA" 3 "Not used"; 
+VAL_ 120 LCA_SteeringStatus 0 "Not Ready" 1 "Ready" 2 "Temporary error" 3 "Error"; 
+VAL_ 120 EPS_TuningModeSelected 0 "Mode EPS 1 (Normal)" 1 "Mode EPS 2 (Light)" 2 "Mode EPS 3 (Tought)" 3 "Mode EPS 4" 4 "Mode EPS 5" 5 "Mode EPS 6" 6 "Mode EPS 7" 7 "Unavailable"; 
+VAL_ 120 AES_SteeringStatus 0 "EPS not ready to perform AES" 1 "EPS ready to perform AES" 2 "EPS in temporary error" 3 "EPS in permanent error"; 
+VAL_ 168 SwaSensorInternalStatus 0 "not calibrated, not indexed" 1 "not calibrated, indexed" 2 "fault" 3 "reserved" 4 "calibrated, not initialised" 5 "calibrated, initialised" 6 "reserved" 7 "reserved"; 
+VAL_ 272 LKA_TuningModeRequested 0 "LKA Tuning Mode NOT Requested" 1 "LKA Tuning Mode Requested"; 
+VAL_ 272 LKA_SteeringTorqueRequestFlag 0 "Not requested" 1 "Requested"; 
+VAL_ 303 GearLeverPosition_v2 0 "Parking - P" 1 "Reverse - R" 2 "Neutral - N" 3 "Drive - D" 4 "Manual mode - M" 5 "L" 6 "Ds" 7 "Confirmed lever position (no switch signal)" 8 "B (Brake)" 9 "Not used" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Not available (init or lever switched failure)"; 
+VAL_ 321 APA_DriverHandsOnWheel 0 "Driver has not his hand on wheel" 1 "Driver has his hand on wheel"; 
+VAL_ 321 EPS_StatusForAPA 0 "Not Ready" 1 "Ready" 2 "Controled" 3 "Temporary Fail" 4 "Fail" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 321 EPS_SpeedConditionForAPA 0 "Not Valid" 1 "Valid"; 
+VAL_ 321 LKA_DriverHandsOnWheel 0 "Driver hands on wheel" 1 "Driver hands not in wheel"; 
+VAL_ 342 EPS_ControlledByAES 0 "Not controlled" 1 "Controlled"; 
+VAL_ 367 VMC_C_PointTorqueOrder 0 "Not requested" 1 "Requested"; 
+VAL_ 367 VMC_SteeringAngleOrder 0 "No control request" 1 "LCA control request" 2 "HFPB/FullAPK control request" 3 "AES Assist Requested" 4 "AES Auto Requested" 5 "LSS Control Request" 6 "Not used" 7 "Invalid"; 
+VAL_ 367 PathChangeRequest 0 "No Request" 1 "Request"; 
+VAL_ 367 Global_ADmodeStatus 0 "AD/RPK OFF" 1 "AD2 L2 regulation" 2 "AD1 L3 regulation" 3 "RPK regulation" 4 "AD/RPK OFF + TD or MRM in regulation" 5 "AD2 L2 regulation + TD or MRM in regulation" 6 "AD1 L3 regulation + TD or MRM in regulation" 7 "RPK regulation + TD or MRM in regulation"; 
+VAL_ 368 SBW_TuningModeSelected 0 "000b-MODE A" 1 "001b-MODE E" 2 "010b-MODE B" 3 "011b-MODE F" 4 "100b-MODE C" 5 "101b-MODE G" 6 "110b-MODE D" 7 "111b-MODE H"; 
+VAL_ 371 VMC_SteeringAngleOrder_ASD 0 "No control request" 1 "LCA control request" 2 "HFPB/FullAPK control request" 3 "Not used" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 377 SteeringSpeedLimitRequestLow 0 "No request" 1 "request"; 
+VAL_ 380 SwaSensorInternalStatus_EPS 0 "not calibrated, not indexed" 1 "not calibrated, indexed" 2 "fault" 3 "reserved" 4 "calibrated, not initialised" 5 "calibrated, initialised" 6 "reserved" 7 "reserved"; 
+VAL_ 436 ExternalBrakeRequestStatus 0 "EBR Off" 1 "EBR Volume Request Activation" 2 "EBR Max Performance" 3 "Unavailable"; 
+VAL_ 436 PedalFeelActuationStatus 0 "Inactive pedal feel compensation" 1 "Hold pedal feel compensation" 2 "Active pedal feel compensation" 3 "Unavailable"; 
+VAL_ 462 EBA_BrakePedalApplied_AD2 0 "Not initialized" 1 "Brake pedal not applied" 2 "Brake pedal applied" 3 "Failure"; 
+VAL_ 462 ExternalBrakeStatus_AD2 0 "Not initialized" 1 "Not ready" 2 "Ready" 3 "Not used"; 
+VAL_ 462 ExternalBrakeRequestPriority_AD2 0 "Driver brake dominates" 1 "External brake dominates"; 
+VAL_ 478 LKA_DriverHandsOnWheel_RD2 0 "Driver hands on wheel" 1 "Driver hands not in wheel"; 
+VAL_ 478 LCA_SteeringStatus_RD2 0 "Init" 1 "Ready" 2 "Temporary error" 3 "Error"; 
+VAL_ 478 LCA_DriverHandsOnWheel_RD2 0 "Driver hands on wheel" 1 "Driver hands not in wheel"; 
+VAL_ 478 LKA_SteeringStatus_RD2 0 "EPS not able to perform LKA" 1 "EPS not allowed to perform LKA" 2 "EPS able and allowed to perform LKA" 3 "Not used"; 
+VAL_ 514 ABSinRegulation 0 "no ABS regulation" 1 "ABS in regulation"; 
+VAL_ 514 ASRinRegulation 0 "no ASR regulation" 1 "ASR in regulation"; 
+VAL_ 514 MSRinRegulation 0 "no MSR regulation" 1 "MSR in regulation"; 
+VAL_ 514 ESCMalfunction 0 "No VDC (ESC) malfunction" 1 "VDC (ESC) malfunction"; 
+VAL_ 514 AYCinRegulation 0 "no AYC regulation" 1 "AYC in regulation"; 
+VAL_ 514 ASRMalfunction 0 "No ASR malfunction" 1 "ASR malfunction"; 
+VAL_ 514 ABSMalfunction 0 "no ABS malfunction" 1 "ABS malfunction"; 
+VAL_ 526 EBA_DiagActive 0 "EBA diagnosis not active" 1 "EBA diagnosis active"; 
+VAL_ 526 RearPressureReductionStatus 0 "Passive" 1 "preload" 2 "Hold" 3 "Suction" 4 "Hold low pressure" 5 "Abort" 6 "Not used" 7 "Not used"; 
+VAL_ 526 HBCrequest 0 "No HBC support request" 1 "HBC full support request"; 
+VAL_ 534 LCA_SteeringOverride 0 "No override" 1 "Override detected"; 
+VAL_ 534 APA_AngleRequestValidity 0 "Not Valid" 1 "Valid"; 
+VAL_ 534 EPSWarning 0 "No EPS warning" 1 "EPS failure level 1" 2 "EPS failure level 2" 3 "EPS meter lamp check"; 
+VAL_ 534 EPS_TorqueOnFlag 0 "StopAuto forbidden" 1 "StopAuto authorized"; 
+VAL_ 534 EPS_SpeedValid 0 "ESP Speed NOT Valid" 1 "ESP Speed Valid"; 
+VAL_ 534 EPS_ControlledByLKA 0 "Not Controlled" 1 "Controlled"; 
+VAL_ 534 EPS_ControlledByLCA 0 "Not Controlled" 1 "Controlled"; 
+VAL_ 545 ETSMalfunction 0 "no malfuction" 1 "malfunction  (ETS can not work)"; 
+VAL_ 545 OEMmodeConfirmation_4WD 0 "Not Used" 1 "No Dyno Mode" 2 "4WD Dyno Mode activated" 3 "FWD Dyno Mode activated" 4 "RWD Dyno Mode activated" 5 "ICE forced dyno mode activated" 6 "OEM Mode 5 activated" 7 "OEM Mode 6 activated" 8 "OEM Mode 7 activated" 9 "OEM Mode 8 activated" 10 "OEM Mode 9 activated" 11 "OEM Mode 10 activated" 12 "OEM Mode 11 activated" 13 "OEM Mode 12 activated" 14 "OEM Mode 13 activated" 15 "Unavailable"; 
+VAL_ 545 ETS_TorqueReductionReqCoupProt 0 "engine torque reduction not requested" 1 "engine torque reduction  requested"; 
+VAL_ 545 ETS_InternalOperationMode 0 "automatic selection mode" 1 "fixed 4WD mode" 2 "fixed 2WD mode" 3 "4 Lo Mode"; 
+VAL_ 545 AWDmode_switch_state 0 "No request" 1 "4L" 2 "4H" 3 "4H and 4L" 4 "Auto" 5 "Auto and 4L" 6 "Auto and 4H" 7 "Auto and 4H and 4L"; 
+VAL_ 547 VDC_4WDRequestMode 0 "No request" 1 "Minimum request" 2 "Maximum request" 3 "Exact request"; 
+VAL_ 569 ETS_WarningLamp 0 "No ETS warning display Request" 1 "ETS warning display Request"; 
+VAL_ 569 TorqueVectoringIndicateReq_RR 0 "Turn off indicator" 1 "Turn on No.1 indicator" 2 "Turn on No.1 and No.2 indicator" 3 "Turn on No.1,No.2 and No.3 indicator" 4 "Turn on No.1,No.2,No.3 and No.4 indicator" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 569 TorqueVectoringIndicateReq_RL 0 "Turn off indicator" 1 "Turn on No.1 indicator" 2 "Turn on No.1 and No.2 indicator" 3 "Turn on No.1,No.2 and No.3 indicator" 4 "Turn on No.1,No.2,No.3 and No.4 indicator" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 569 ETS_WARN_MMD1 0 "No ETS warning display Request" 1 "ETS warning display Request"; 
+VAL_ 569 ETS_WARN_MMD2 0 "No ETS warning display Request" 1 "ETS warning display Request"; 
+VAL_ 569 ActualModeStatus 0 "AUTO 4Hi" 1 "4Lo shift in process"; 
+VAL_ 569 ETS_ShiftInProgressStatus 0 "No Display - Not in progress" 1 "Display Shift In progress"; 
+VAL_ 569 ETS_ModeLamp_v2 0 "No Display" 1 "LOCK" 2 "2WD" 3 "4Lo (SNOW)" 4 "While shifting H-L 1" 5 "While shifting H-L 2" 6 "AUTO" 7 "Not Used"; 
+VAL_ 650 VehicleSpeedClock 0 "This counter is incremented when CAN buffers are updated"; 
+VAL_ 735 ATP_warning 0 "No warning" 1 "ATP warning"; 
+VAL_ 735 AWD_ModeChangeJudgment 0 "4H change NG" 1 "4H change OK"; 
+VAL_ 735 AWD_ModeChangeCancelReasonRER 0 "No request" 1 "Reemission request"; 
+VAL_ 735 ETS_WarningLamp_v2 0 "No ETS warning display Request" 1 "ETS warning display Request"; 
+VAL_ 735 AT_clutch_release_request 0 "No request" 1 "AT clutch release request"; 
+VAL_ 735 AWD_WarningRequest_TI 0 "no request" 1 "AWD warining lamp request"; 
+VAL_ 735 AWD_state_change_confirmation 0 "No request" 1 "Automatic selection mode" 2 "4H mode" 3 "4L mode"; 
+VAL_ 735 AWD_ModeChangeCanelReason 0 "No display" 1 "4L refused : Not AT position N" 2 "4L refused : Not vehicle speed 0 and brake off" 3 "4H,AUTO refused : Not AT position N" 4 "4H,AUTO refused : Not vehicle speed 0 and brake off" 5 "4L refused : DriveMode condition" 6 "4H refused : DriveMode condition" 7 "AUTO refused : DriveMode condition" 8 "Reserved" 9 "Reserved" 10 "Reserved" 11 "Reserved" 12 "Reserved" 13 "Reserved" 14 "Reserved" 15 "Reserved"; 
+VAL_ 736 AWD_WarningRequest 0 "no request" 1 "AWD warning lamp request"; 
+VAL_ 747 DiffLockOperatingFlag 0 "Diff Lock not operating" 1 "Diff Lock operating"; 
+VAL_ 747 DiffLockControllerFailure 0 "Diff Lock Controller Operational" 1 "Diff Lock Controller Failure"; 
+VAL_ 747 DiffLockChange_CancelReasonRER 0 "No request" 1 "Reemission request"; 
+VAL_ 747 DiffLock_IndicatorSignal 0 "No Display" 1 "Lock ON" 2 "Transition" 3 "Failure"; 
+VAL_ 747 DiffLock_Change_CancelReason 0 "No display" 1 "Not 4L mode" 2 "Not vehicle speed less than 7 km/h" 3 "Not Used"; 
+VAL_ 747 DFR_HMI_TXT 0 "No display" 1 "Display"; 
+VAL_ 747 DFR_HMI_MEMORY_TXT 0 "No Display" 1 "Display"; 
+VAL_ 747 DiffLockSwitching_EDL 0 "Diff lock switching OFF" 1 "Diff lock switching ON"; 
+VAL_ 760 LCA_SteeringOverride_RD2 0 "No override" 1 "Override detected"; 
+VAL_ 760 EPS_ControlledByLKA_RD2 0 "Not controlled" 1 "Controlled"; 
+VAL_ 760 EPS_ControlledByLCA_RD2 0 "Not controlled" 1 "Controlled"; 
+VAL_ 893 LDW_VibrationIntensityState 0 "Unavailable" 1 "Low Intensity" 2 "Middle Intensity" 3 "High Intensity"; 
+VAL_ 893 LCA_SteeringStatus2 0 "Not Ready" 1 "Ready" 2 "Temporary error" 3 "Error"; 
+VAL_ 893 CDU_SteeringWheelTorqueLevel 0 "Driver steering wheel torque < threshold 1" 1 "threshold 1 <= Driver steering wheel torque < threshold 2" 2 "threshold 2 <= Driver steering wheel torque" 3 "Unavailable"; 
+VAL_ 943 ETS_RearDiffLockMalfunction 0 "No malfunction" 1 "Malfunction"; 
+VAL_ 943 ETS_RearDiffLockStatus 0 "Unlock" 1 "Locking/Unlocking" 2 "Lock" 3 "Unavailable"; 
+VAL_ 943 ETS_ATInterlockRequest 0 "No Request" 1 "AT interlock request"; 
+VAL_ 943 ETS_ModeLamp_v3 0 "No Display" 1 "LOCK" 2 "4x2" 3 "4Lo (SNOW)" 4 "While shifting H-L 1" 5 "While shifting H-L 2" 6 "AUTO" 7 "Not Used"; 
+VAL_ 943 ETCModeCustomerRequest 0 "AUTO" 1 "LOCK" 2 "2WD" 3 "4L" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1081 VDC_Deactivated 0 "VDC available" 1 "VDC disable"; 
+VAL_ 1081 DiffLockSwitching_VDC 0 "Diff lock switching OFF" 1 "Diff lock switching ON"; 
+VAL_ 1100 TransmRangeEngaged_Current 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 1100 TransmRangeEngaged_Target 0 "declutched at rest" 1 "1st range" 2 "2nd range" 3 "3rd range" 4 "4th range" 5 "5th range" 6 "6th range" 7 "7th range" 8 "8th range" 9 "reverse" 10 "neutral or parking" 11 "CVT in continuous mode" 12 "9th range" 13 "10th range" 14 "Not used" 15 "AT in limphome"; 
+VAL_ 1100 ETS_ATInterlockControlStatus 0 "Not active" 1 "Active" 2 "Ready" 3 "Fail"; 
+VAL_ 1105 ParkingBrakeStatus 0 "Not used" 1 "Automatic or manual Parking brake not applied" 2 "Automatic or manual Parking brake applied" 3 "Unavailable"; 
+VAL_ 1107 NeutralContact 0 "not used" 1 "neutral contact not reached" 2 "neutral contact reached" 3 "unavailable"; 
+VAL_ 1107 RearGearEngaged 0 "Not used" 1 "Rear Gear not Engaged" 2 "Rear Gear Engaged" 3 "unavailable"; 
+VAL_ 1107 IgnitionSupplyConfirmation 0 "no primary ignition supply" 1 "primary ignition supply on"; 
+VAL_ 1107 EEM_StaticPowerLimitationRequest 0 "No Request" 1 "Life on Board Low SOC power limitation" 2 "Delivery Mode power limitation" 3 "Battery Disconnection power limitation" 4 "Producer failure power limitation" 5 "Not used" 6 "Not used" 7 "Not used"; 
+VAL_ 1109 VehicleSpeedSign 0 "nul vehicle speed" 1 "Positive vehicle speed (= Forward motion)" 2 "Negative vehicle speed (= reverse motion)" 3 "Unavailable"; 
+VAL_ 1109 HBBMalfunction 0 "HBB Malfunction not detected" 1 "HBB Malfunction detected"; 
+VAL_ 1140 LDW_HapticalActionRequest 0 "Haptical Action NOT Requested" 1 "Haptical Action Requested"; 
+VAL_ 1146 ClutchSwitchMinimumTravel 0 "Not used" 1 "Clutch pedal not pressed" 2 "Clutch pedal pressed at minimum" 3 "Unavailable"; 
+VAL_ 1146 VehicleStates 0 "Sleeping" 1 "Not used" 2 "CutoffPending" 3 "AutoACC  - BatTempoLevel" 4 "Not used" 5 "IgnitionLevel" 6 "StartingInProgress" 7 "PowertrainRunning" 8 "AutoStart" 9 "EngineSystemStop" 10 "Not used" 11 "Not used" 12 "Not used" 13 "Not used" 14 "Not used" 15 "Unavailable"; 
+VAL_ 1146 BrakeInfoStatus 0 "Not used" 1 "Brake pedal not pressed" 2 "Brake pedal pressed" 3 "Not used" 4 "Brake pedal confirmed pressed" 5 "Not used" 6 "Not used" 7 "unavailable"; 
+VAL_ 1146 DeliveryModeInformation_v2 0 "customer mode" 1 "delivery mode level 1" 2 "delivery mode level 2" 3 "Not used"; 
+VAL_ 1146 GADE_v2 0 "Sleep or Crank fault, Disable DiagMuxDTC" 1 "AutoACC fault, Disable DiagMuxDTC" 2 "ALL fault, Disable DiagMuxDTC" 3 "ALL fault, Enable DiagMuxDTC" 4 "FOTA switch fault, Disable DiagMuxDTC" 5 "Not used" 6 "Not used" 7 "Unavailable"; 
+VAL_ 1146 ClutchSwitchMaximumTravel 0 "Not used" 1 "Clutch pedal not pressed at maximum" 2 "Clutch pedal pressed at maximum" 3 "Unavailable"; 
+VAL_ 1165 OEMmode 0 "Not Used" 1 "No Dyno Mode" 2 "4WD Dyno Mode" 3 "FWD Dyno Mode" 4 "RWD Dyno Mode" 5 "ICE forced dyno mode" 6 "OEM Mode 5" 7 "OEM Mode 6" 8 "OEM Mode 7" 9 "OEM Mode 8" 10 "OEM Mode 9" 11 "OEM Mode 10" 12 "OEM Mode 11" 13 "OEM Mode 12" 14 "OEM Mode 13" 15 "Unavailable"; 
+VAL_ 1290 ETS_RearTireIndicatorStatus 0 "Not active" 1 "Active" 2 "In progress" 3 "not used"; 
+VAL_ 1290 ETS_RearDiffLockIndicatorStatus 0 "Not active" 1 "Active" 2 "In progress" 3 "not used"; 
+VAL_ 1290 ETS_ModeShiftStatusDisplayReq 0 "No request" 1 "Interruption request" 2 "Re-interruption request" 3 "Not Used"; 
+VAL_ 1290 ETS_FrontTireIndicatorStatus 0 "Not active" 1 "Active" 2 "In progress" 3 "not used"; 
+VAL_ 1290 ETS_HLShiftUnavailableDisplayReq 0 "No Display" 1 "Display request"; 
+VAL_ 1290 ETS_LowRangeIndicatorStatus 0 "No Display" 1 "Low Range Active"; 
+VAL_ 1290 ETS_RearDiffLockCancelDisplayReq 0 "No Display" 1 "Display request"; 
+VAL_ 1290 ETS_SpeedLimitCautionDisplayReq 0 "No Display" 1 "Display request"; 
+VAL_ 1290 ETS_TransferIndicatorStatus 0 "Not active" 1 "Active" 2 "In progress" 3 "not used"; 
+VAL_ 1362 DongleBCM2 0 "Table Value22082"; 
+VAL_ 1362 DongleBCM1 0 "Table Value22081"; 
+VAL_ 1362 DongleBCM3 0 "Table Value22083"; 
+VAL_ 1379 DongleEPS2 0 "Table Value22084"; 
+VAL_ 1379 DongleEPS1 0 "Table Value22080"; 
+VAL_ 1379 DongleEPS3 0 "Table Value22085"; 
+VAL_ 1402 LDW_RoadQualityEstimation 0 "Normal detection" 1 "Degraded detection"; 
+VAL_ 1482 LDW_VibrationIntensityReq2 0 "No request" 1 "Low intensity request" 2 "Middle intensity request" 3 "High intensity request" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Reset request"; 
+VAL_ 1516 LDW_VibrationIntensityReq 0 "No request" 1 "Low intensity request" 2 "Middle intensity request" 3 "High intensity request" 4 "Not used" 5 "Not used" 6 "Not used" 7 "Reset request"; 
+VAL_ 1518 MultiDriveMode_EPS_v2 0 "Mode EPS 1" 1 "Mode EPS 2" 2 "Mode EPS 3" 3 "Mode EPS 4" 4 "Mode EPS 5" 5 "Mode EPS 6" 6 "Mode EPS 7" 7 "Mode EPS 8" 8 "Mode EPS 9" 9 "Mode EPS 10" 10 "Mode EPS 11" 11 "Mode EPS 12" 12 "Mode EPS 13" 13 "Mode EPS 14" 14 "Mode EPS 15" 15 "Unavailable"; 
+VAL_ 1518 MultiDriveMode_AWD 0 "Mode 4WD 1 (Normal)" 1 "Mode 4WD 2" 2 "Mode 4WD 3 (Sport)" 3 "Mode 4WD 4" 4 "Mode 4WD 5 (Eco)" 5 "Mode 4WD 6 (Race)" 6 "Mode 4WD 7 (Snow)" 7 "Mode 4WD 8" 8 "Mode 4WD 9 (Offroad)" 9 "Mode 4WD 10 (MUD)" 10 "Mode 4WD 11" 11 "Mode 4WD 12" 12 "Mode 4WD 13" 13 "Mode 4WD 14" 14 "Mode 4WD 15" 15 "Unavailable"; 
+VAL_ 1518 AWD_state_change_response 0 "No request" 1 "Auto change OK" 2 "Auto change NG" 3 "4H change OK" 4 "4H change NG" 5 "4L change OK" 6 "4L change NG" 7 "Unavailable"; 
+VAL_ 1661 DiffLock_SwitchSignal_IVI 0 "Not used" 1 "ON" 2 "OFF" 3 "Invalid"; 
+VAL_ 1661 AWD_SwitchSignal_IVI 0 "No request" 1 "AUTO" 2 "4H" 3 "4L" 4 "Reset request" 5 "Not Used" 6 "Not Used" 7 "Not Used"; 
+VAL_ 1765 SWA_Config 0 "Table Value26887"; 
+VAL_ 2563507968 SIGMA_CDM 0 "Table Value16461"; 
+VAL_ 2563507968 SIGMA_DTCCDM 0 "Table Value26862"; 
+VAL_ 2563508007 SIGMA_eHBox 0 "Table Value430561"; 
+VAL_ 2563508007 SIGMA_DTCeHBox 0 "Table Value430559"; 
+VAL_ 2563508009 SIGMA_PSD_R 0 "Table Value153060"; 
+VAL_ 2563508009 SIGMA_DTCPSD_R 0 "Table Value153056"; 
+VAL_ 2563508019 SIGMA_PBD 0 "Table Value16399"; 
+VAL_ 2563508019 SIGMA_DTCPBD 0 "Table Value26865"; 
+VAL_ 2563508021 SIGMA_RADAR 0 "Table Value16466"; 
+VAL_ 2563508021 SIGMA_DTCRADAR 0 "Table Value26884"; 
+VAL_ 2563508022 SIGMA_PSCU 0 "Table Value16465"; 
+VAL_ 2563508022 SIGMA_DTCPSCU 0 "Table Value26866"; 
+VAL_ 2563508030 SIGMA_SRad_RL 0 "Table Value16470"; 
+VAL_ 2563508030 SIGMA_DTCSRad_RL 0 "Table Value26868"; 
+VAL_ 2563508035 SIGMA_eRDC_L 0 "Table Value252236"; 
+VAL_ 2563508035 SIGMA_DTCeRDC_L 0 "Table Value252232"; 
+VAL_ 2563508037 SIGMA_eRDC_R 0 "Table Value252238"; 
+VAL_ 2563508037 SIGMA_DTCeRDC_R 0 "Table Value252233"; 
+VAL_ 2563508042 SIGMA_ANC 0 "Table Value16458"; 
+VAL_ 2563508042 SIGMA_DTCANC 0 "Table Value26859"; 
+VAL_ 2563508064 SIGMA_VDC 0 "Table Value16380"; 
+VAL_ 2563508064 SIGMA_DTCVDC 0 "Table Value26886"; 
+VAL_ 2563508066 SIGMA_EPS 0 "Table Value16377"; 
+VAL_ 2563508066 SIGMA_DTCEPS 0 "Table Value26879"; 
+VAL_ 2563508067 SIGMA_METER 0 "Table Value16379"; 
+VAL_ 2563508067 SIGMA_DTCMETER 0 "Table Value26883"; 
+VAL_ 2563508068 SIGMA_HVAC 0 "Table Value28686"; 
+VAL_ 2563508068 SIGMA_DTCHVAC 0 "Table Value28682"; 
+VAL_ 2563508069 SIGMA_BCM 0 "Table Value16381"; 
+VAL_ 2563508069 SIGMA_DTCBCM 0 "Table Value26877"; 
+VAL_ 2563508071 SIGMA_IVI 0 "Table Value16383"; 
+VAL_ 2563508071 SIGMA_DTCIVI 0 "Table Value26882"; 
+VAL_ 2563508072 SIGMA_4WD 0 "Table Value28679"; 
+VAL_ 2563508072 SIGMA_DTC4WD 0 "Table Value28678"; 
+VAL_ 2563508077 SIGMA_USM 0 "Table Value16384"; 
+VAL_ 2563508077 SIGMA_DTCUSM 0 "Table Value26885"; 
+VAL_ 2563508078 SIGMA_SONAR 0 "Table Value28703"; 
+VAL_ 2563508078 SIGMA_DTCSONAR 0 "Table Value28702"; 
+VAL_ 2563508079 SIGMA_DSMU 0 "Table Value16462"; 
+VAL_ 2563508079 SIGMA_DTCDSMU 0 "Table Value26863"; 
+VAL_ 2563508082 SIGMA_ACU 0 "Table Value16374"; 
+VAL_ 2563508082 SIGMA_DTCACU 0 "Table Value26874"; 
+VAL_ 2563508089 SIGMA_PSD_L 0 "Table Value153059"; 
+VAL_ 2563508089 SIGMA_DTCPSD_L 0 "Table Value153054"; 
+VAL_ 2563508093 SIGMA_ADAS 0 "Table Value16457"; 
+VAL_ 2563508093 SIGMA_DTCADAS 0 "Table Value26875"; 
+VAL_ 2563508099 SIGMA_A_IVC 0 "Table Value16456"; 
+VAL_ 2563508099 SIGMA_DTCA_IVC 0 "Table Value26858"; 
+VAL_ 2563508108 SIGMA_INV_ME 0 "Table Value27356"; 
+VAL_ 2563508108 SIGMA_DTCINV_ME 0 "Table Value27351"; 
+VAL_ 2563508115 SIGMA_OBC_AC 0 "Table Value28687"; 
+VAL_ 2563508115 SIGMA_DTCOBC_AC 0 "Table Value28683"; 
+VAL_ 2563508122 SIGMA_HEVC 0 "Table Value27338"; 
+VAL_ 2563508122 SIGMA_DTCHEVC 0 "Table Value27347"; 
+VAL_ 2563508130 SIGMA_AUDIOamp 0 "Table Value16459"; 
+VAL_ 2563508130 SIGMA_DTCAUDIOamp 0 "Table Value26860"; 
+VAL_ 2563508133 SIGMA_HNS 0 "Table Value27353"; 
+VAL_ 2563508133 SIGMA_DTCHNS 0 "Table Value27348"; 
+VAL_ 2563508139 SIGMA_VKM 0 "Table Value252239"; 
+VAL_ 2563508139 SIGMA_DTCVKM 0 "Table Value252234"; 
+VAL_ 2563508153 SIGMA_HFM 0 "Table Value16382"; 
+VAL_ 2563508153 SIGMA_DTCHFM 0 "Table Value26881"; 
+VAL_ 2563508154 SIGMA_AVM 0 "Table Value27338"; 
+VAL_ 2563508154 SIGMA_DTCAVM 0 "Table Value27343"; 
+VAL_ 2563508157 SIGMA_SCU 0 "Table Value28688"; 
+VAL_ 2563508157 SIGMA_DTCSCU 0 "Table Value28684"; 
+VAL_ 2563508164 SIGMA_eShifter 0 "Table Value153058"; 
+VAL_ 2563508164 SIGMA_DTCeShifter 0 "Table Value153055"; 
+VAL_ 2563508181 SIGMA_SRad_RR 0 "Table Value16471"; 
+VAL_ 2563508181 SIGMA_DTCSRad_RR 0 "Table Value26871"; 
+VAL_ 2563508189 SIGMA_FrCamera 0 "Table Value16378"; 
+VAL_ 2563508189 SIGMA_DTCFrCamera 0 "Table Value26880"; 
+VAL_ 2563508200 SIGMA_ECM 0 "Table Value16376"; 
+VAL_ 2563508200 SIGMA_DTCECM 0 "Table Value26878"; 
+VAL_ 2563508201 SIGMA_ATCU 0 "Table Value16375"; 
+VAL_ 2563508201 SIGMA_DTCATCU 0 "Table Value26876"; 
+VAL_ 2563508205 SIGMA_BMS_HV 0 "Table Value27340"; 
+VAL_ 2563508205 SIGMA_DTCBMS_HV 0 "Table Value27344"; 
+VAL_ 2563508207 SIGMA_INV_HSG 0 "Table Value27355"; 
+VAL_ 2563508207 SIGMA_DTCINV_HSG 0 "Table Value27350"; 
+VAL_ 2563567883 SIGMA_BMS_12V 0 "Table Value16460"; 
+VAL_ 2563567883 SIGMA_DTCBMS_12V 0 "Table Value26861"; 
+VAL_ 2563567951 SIGMA_EPS_sub 0 "Table Value28685"; 
+VAL_ 2563567951 SIGMA_DTCEPS_sub 0 "Table Value28681"; 
+VAL_ 2563567958 SIGMA_eShiftAct 0 "Table Value153057"; 
+VAL_ 2563567958 SIGMA_DTCeShiftAct 0 "Table Value153053"; 
+VAL_ 2563567968 SIGMA_HUD 0 "Table Value27354"; 
+VAL_ 2563567968 SIGMA_DTCHUD 0 "Table Value27349"; 
+VAL_ 2563568024 SIGMA_HPCU 0 "Table Value55692"; 
+VAL_ 2563568024 SIGMA_DTCHPCU 0 "Table Value55693"; 
+VAL_ 2563568093 SIGMA_DCDC_HV 0 "Table Value28677"; 
+VAL_ 2563568093 SIGMA_DTCDCDC_HV 0 "Table Value28680"; 
+VAL_ 2563568098 SIGMA_EBA 0 "Table Value16463"; 
+VAL_ 2563568098 SIGMA_DTCEBA 0 "Table Value26864"; 
+VAL_ 2563568101 SIGMA_INV_RE 0 "Table Value27357"; 
+VAL_ 2563568101 SIGMA_DTCINV_RE 0 "Table Value27352"; 
+VAL_ 2563568130 SIGMA_AirSUSP 0 "Table Value359670"; 
+VAL_ 2563568130 SIGMA_DTCAirSUSP 0 "Table Value359671"; 
+VAL_ 2563568148 SIGMA_BSG 0 "Table Value27341"; 
+VAL_ 2563568148 SIGMA_DTCBSG 0 "Table Value27345"; 
+VAL_ 2563568163 SIGMA_SRad_FL 0 "Table Value16468"; 
+VAL_ 2563568163 SIGMA_DTCSRad_FL 0 "Table Value26869"; 
+VAL_ 2563568164 SIGMA_SRad_FR 0 "Table Value16469"; 
+VAL_ 2563568164 SIGMA_DTCSRad_FR 0 "Table Value26870"; 
+VAL_ 2563568201 SIGMA_STBW 0 "Table Value161590"; 
+VAL_ 2563568201 SIGMA_DTCSTBW 0 "Table Value161588"; 
+VAL_ 2563568233 SIGMA_DMC 0 "Table Value27342"; 
+VAL_ 2563568233 SIGMA_DTCDMC 0 "Table Value27346"; 
+VAL_ 2563568267 SIGMA_RSCU3R 0 "Table Value407697"; 
+VAL_ 2563568267 SIGMA_DTCRSCU3R 0 "Table Value407696"; 
+VAL_ 2563568288 SIGMA_BLM_RPK 0 "Table Value55679"; 
+VAL_ 2563568288 SIGMA_DTCBLM_RPK 0 "Table Value55690"; 
+VAL_ 2563568290 SIGMA_SCCM 0 "Table Value16467"; 
+VAL_ 2563568290 SIGMA_DTCSCCM 0 "Table Value26867"; 
+VAL_ 2563568300 SIGMA_RSCU2R 0 "Table Value359675"; 
+VAL_ 2563568300 SIGMA_DTCRSCU2R 0 "Table Value359672"; 
+VAL_ 2615018738 FTOOLS_CGWtoEPS 0 "Table Value30448"; 
+VAL_ 2615036402 FTOOLS_CGWtoSTBW 0 "Table Value143655"; 
+VAL_ 2615079428 FTOOLS_EPStoCGW 0 "Table Value30462"; 
+VAL_ 2615079497 FTOOLS_STBWtoCGW 0 "Table Value143658"; 
+
+
+
+
